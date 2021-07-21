@@ -1,0 +1,3090 @@
+{
+  "count": 72,
+  "value": [
+    {
+      "id": 5850,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:18.773Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:28:10.797Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Implement Process Efficiency",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Workflow is important to automate process such as approval, escalation, review and issue management.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5778",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5850"
+    },
+    {
+      "id": 5849,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:18.58Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:28:03.39Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Implement Operational Excellence",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Data governance is not a one-time project. It is an ongoing program to fuel data-driven decision making and creating opportunities for business. It is critical to document key procedure and business standards.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;\">Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/architecture/framework/devops/principles?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5778",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5849"
+    },
+    {
+      "id": 5848,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:18.353Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-15T14:36:18.353Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Implement Data Catalog",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement Data Catalog",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5848"
+    },
+    {
+      "id": 5847,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:18.153Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:18:00.833Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Solution Scenario : Catalog business-critical assets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><span>I&nbsp;</span>need to have information about each data sets to have a good understanding of what it is. This scenario includes both business and technical metadata data about the data set in the catalog.&nbsp;</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5852",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5847"
+    },
+    {
+      "id": 5846,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:17.937Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:16:49.113Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Solution Scenario : Discover business-critical assets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><span>I&nbsp;</span>need to have a search engine that can search through all metadata in the catalog. I should be able to search using technical term, business term with either simple or complex search using wildcard.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5852",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5846"
+    },
+    {
+      "id": 5845,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:17.73Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:16:42Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Solution Scenario :  Track data to understand its origin and troubleshoot data issues",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">I need to have data lineage to track data in reports, predictions, or models back to its original source and understand the changes and where the data has resided through the data life cycle.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5852",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5845"
+    },
+    {
+      "id": 5844,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:17.527Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:16:35.24Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Solution Scenario : Enrich metadata on critical data assets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">I need to enrich the data set in the catalog with technical metadata that is generated automatically.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5852",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5844"
+    },
+    {
+      "id": 5843,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:17.317Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:16:26.433Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Solution Scenario : Govern data assets with friendly user experience",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">I need to have a Business glossary for business-specific metadata. The business users can use Purview for self-service scenarios to annotate their data and enable the data to be discovered easily via search.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5852",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5843"
+    },
+    {
+      "id": 5842,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:16.99Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:20:29.197Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Navigating Purview",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Understand how to use Purview from the <a href=\"https://docs.microsoft.com/en-us/azure/purview/tutorial-asset-search?wt.mc_id=caf-ado_datagov_content_1\">home </a>page.</span><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5855",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5842"
+    },
+    {
+      "id": 5841,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:16.733Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:20:23.267Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Search and browse",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Allow end users to access Purview and perform end-to-end search and browse scenarios.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/tutorial-browse-and-view-lineage?wt.mc_id=caf-ado_datagov_content_1\">guidance </a>and one <a href=\"https://docs.microsoft.com/en-us/azure/purview/tutorial-schemas-and-classifications?wt.mc_id=caf-ado_datagov_content_1\">more</a></span></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5855",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5841"
+    },
+    {
+      "id": 5840,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:16.5Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:24:42.21Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Get classification and sensitive insights",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span style=\"font-size:14px;text-align:left;display:inline !important;\"></span></span></div><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;\"><span style=\"color:#171717;\">For\nreporting and insight in Purview, you can access this functionality to get\nvarious reports and provide presentation to management.<br style=\"\"><br style=\"\"></span><span style=\"\"></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;\"><span style=\"color:#171717;\">Insights\nare one of the key pillars of Purview. The feature provides customers, a single\npane of glass view into their catalog and further aims to provide specific\ninsights to the data source administrators, business users, data stewards, data\nofficer and, security administrators. Currently, Purview has the following\nInsights reports that will be available to customers at public preview.</span><span style=\"\"></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;\"><span style=\"\">&nbsp;</span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;\"><span style=\"color:#171717;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/concept-insights?wt.mc_id=caf-ado_datagov_content_1\"><span style=\"color:blue;\">Understand Insights in Azure Purview</span></a><br></span><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/classification-insights?wt.mc_id=caf-ado_datagov_content_1\"><span style=\"color:blue;\">Classification insights</span></a></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;\"><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/asset-insights?wt.mc_id=caf-ado_datagov_content_1\"><span style=\"color:blue;\">Asset Insights</span></a></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;\"><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/glossary-insights?wt.mc_id=caf-ado_datagov_content_1\"><span style=\"color:blue;\">Glossary Insights</span></a></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;\"><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/scan-insights?wt.mc_id=caf-ado_datagov_content_1\"><span style=\"color:blue;\">Scan Insights</span></a></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;\"><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/sensitivity-insights?wt.mc_id=caf-ado_datagov_content_1\"><span style=\"color:blue;\">Sensitivity Label Insights</span></a></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;\"><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/file-extension-insights?wt.mc_id=caf-ado_datagov_content_1\"><span style=\"color:blue;\">File extension insights</span></a></span></p>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5859",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5840"
+    },
+    {
+      "id": 5839,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:16.303Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:26:38.253Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Refine your scan using scan rule set",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/create-a-scan-rule-set?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5861",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5839"
+    },
+    {
+      "id": 5838,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:16.037Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:26:46.363Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Get classification and sensitive insights",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:Calibri, sans-serif;font-size:11pt;\">For reporting and insight in Purview, you can access this functionality to get various reports and provide presentation to management.</span><br></div><div><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);\"><br style=\"box-sizing:border-box;\"></span><span style=\"box-sizing:border-box;\"></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);\">Insights are one of the key pillars of Purview. The feature provides customers, a single pane of glass view into their catalog and further aims to provide specific insights to the data source administrators, business users, data stewards, data officer and, security administrators. Currently, Purview has the following Insights reports that will be available to customers at public preview.</span><span style=\"box-sizing:border-box;\"></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">&nbsp;</span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/concept-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Understand Insights in Azure Purview</span></a><br style=\"box-sizing:border-box;\"></span><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/classification-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Classification insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/asset-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Asset Insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/glossary-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Glossary Insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/scan-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Scan Insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/sensitivity-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Sensitivity Label Insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/file-extension-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">File extension insights</span></a></span></p><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5863",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5838"
+    },
+    {
+      "id": 5837,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:15.823Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:26:58.297Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Scan production data sources with Firewall enabled",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">This is optional when firewall is in place but it’s important to explore options to hardening your infrastructure</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5864",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5837"
+    },
+    {
+      "id": 5836,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:15.617Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:26:53.407Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Enable Private Link",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/catalog-private-link?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5864",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5836"
+    },
+    {
+      "id": 5835,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:15.287Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:27:36.227Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Analyze/View All Insights (Assets, Glossary, Scan, Classification, Sensitivity, File)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);\">For reporting and insight in Purview, you can access this functionality to get various reports and provide presentation to management.<br style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></span><span style=\"box-sizing:border-box;\"></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);\">Insights are one of the key pillars of Purview. The feature provides customers, a single pane of glass view into their catalog and further aims to provide specific insights to the data source administrators, business users, data stewards, data officer and, security administrators. Currently, Purview has the following Insights reports that will be available to customers at public preview.</span><span style=\"box-sizing:border-box;\"></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">&nbsp;</span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/concept-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Understand Insights in Azure Purview</span></a><br style=\"box-sizing:border-box;\"></span><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/classification-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Classification insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/asset-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Asset Insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/glossary-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Glossary Insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/scan-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Scan Insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/sensitivity-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">Sensitivity Label Insights</span></a></span></p><p style=\"box-sizing:border-box;margin:0in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/file-extension-insights?wt.mc_id=caf-ado_datagov_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><span style=\"box-sizing:border-box;color:blue;\">File extension insights</span></a></span></p></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5866",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5835"
+    },
+    {
+      "id": 5834,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:14.99Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:27:30.677Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Perform Data Lineage Analysis",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/concept-data-lineage?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5866",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5834"
+    },
+    {
+      "id": 5833,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:14.707Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:27:24.753Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Perform Data Catalog Search",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/concept-search?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5866",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5833"
+    },
+    {
+      "id": 5832,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:14.387Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:26:32.523Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Perform bulk edit (optional)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/how-to-bulk-edit-assets?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5861",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5832"
+    },
+    {
+      "id": 5831,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:14.16Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:27:57.36Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Monitor Health",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/how-to-monitor-with-azure-monitor?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div><div><br></div><div>In the Cloud Adoption Framework we cover off management at scale. Review the section around workload specialization:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/manage/azure-management-guide/workload-specialization\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/manage/azure-management-guide/workload-specialization</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5778",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5831"
+    },
+    {
+      "id": 5830,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:13.96Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:27:50.73Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Implement Disaster Recovery",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/disaster-recovery?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5778",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5830"
+    },
+    {
+      "id": 5829,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:13.77Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:27:18.84Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Maintain and Update Roles and Responsibilities ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><b style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Purview Existing Roles:</span></b></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"font-size:11pt;\">Curator: Data Owner, etc. check within purview.&nbsp;</span></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"font-size:11pt;\">Reader:</span></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"font-size:11pt;\">Admin: Experts, Owners (copy, individual table, datasets).&nbsp;</span><br></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><b style=\"font-size:11pt;\">Create mapping between Data Governance Framework (for a company) and existing roles within Purview.&nbsp;</b></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><b style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\"><br></span></b></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><b style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Executive Sponsor:</span></b></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">This should be someone at the executive level who will perform the following functions:</span></p><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Proactively evangelize the need for data governance as a means to managing the organization’s data to support corporate and business achieve its strategic objectives and vision.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Obtains mandate and authority from senior executives, sets vision to govern the organization’s data in adherence to the strategic objectives.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Exerts influence in the drafting of personnel into various roles and responsibilities for data governance.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">May provide inputs into policy drafting and decisions.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">If necessary, data governance office and/or council may be constituted that implements the vision and enforces policy.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Ensure that data governance framework continues to persist, be relevant and deliver good results.</span></li></ul><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">&nbsp;</span></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><b style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Data Owners:</span></b></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">Data owner needs to be defined for each data domain. Data owner will be accountable for the data in the domain. The following functions are played by the data owner:</span></p><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Accountable for the quality of the data sets of the domain.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Determines access rights to the data and how the data may be used.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Oversees the protection of the data.</span></li></ul><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">&nbsp;</span></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><b style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Data Stewards:</span></b></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">Data owner delegates responsibilities of the data to data stewards. There may be many data stewards under a data owner, depending on the various data set domains in the group. The following functions are played by data stewards:</span></p><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Understand the data in their domain.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Responsible for elements of data stored in different fields.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Responsible for the quality of the data sets in the domain.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Resolve data issues related to the domain.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Responsible for operationalizing and compliance.</span></li></ul><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">&nbsp;</span></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><b style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Data Producers &amp; Consumers:</span></b></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">These are people who basically capture data as it comes into the organization. It may be a blurry line between producers and consumers as some consumers also use data to produce more data. The following functions are applicable:</span></p><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Capture data into the systems via various means.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Use data for reporting and analysis.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">May produce more data from what they consume.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Assist in defining requirements for data quality/usefulness.</span></li></ul><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">&nbsp;</span></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><b style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Data Custodians:</span></b></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">This may be applicable where the technical team is not responsible for data ownership. The responsibilities are:</span></p><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Maintaining data in the systems in accordance with business requirements.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Safe custody, transport, and storage of the data in the systems.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Responsible for databases.</span></li></ul><br><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5866",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5829"
+    },
+    {
+      "id": 5828,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:13.553Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:27:13.263Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Maintain and update policies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">An organization needs data governance policy so as to align with its corprate strategy. Corporate strategies are usually futuristic. Is the data in the organization good enough to meet those strategic goals? If the answer is no, then why is the data not good enough? Hence, what do we need to do with the data to enable the strategic goals? With that in mind, it then becomes clearer on policies to formulate for data governance.</span></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\">Data governance policies are designed as a collection of strategic principles and guidelines that describe the development of common data definitions, business terms, processes for data acquisition, creation, capture, integrity, quality, security and usage/access, retention, archival and destruction. These strategic principles must align with the strategic objectives of the company and necessary regulatory authorities.</p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">Most organizations kind of have some policies, but usually lack a formal structure, coordination, consistency and communication/awareness. These means that these policies are either in silos, implemented in silos, alignment in silos, and/or awareness is in silos, therefore disparate and lack organizational and enterprise wide structure.</span></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">Data policy with corporate executive backing provides a mandate and authority for data governance. It ensures the executive branch acknowledges and signs off on the fact that data is a valuable asset to the organization and must be managed as such.</span></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">Formulating a data policy involves the following:</span></p><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Convene the right people: This involves inviting people that know and use the data. Basically people that have a stake with the data. Legal/Risk/Compliance/Security personnel must be involved, so as to incorporate the appropriate and necessary legalistic and regulatory compliance terms as applicable.</span></li></ul><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.5in;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">&nbsp;</span></p><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Policy should be based on principles. Below are some examples of what a policy may comprise of:</span></li><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">All data must have a data owner.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">The most critical sets of data is identified and proactively managed.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Data quality issues are resolved as close to the source of the data as appropriate.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Limited number of people should have access to production data.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Sensitive data must be protected and available on a need to know basis.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Sensitive data needs to be encrypted or masked when copied to non-production environments.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Data retention, archival and storage on external devices must be defined.</span><br style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">&nbsp;</span></li></ul><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">&nbsp;</span>What to include and level of details: Examples of things to include are:</span></li><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Scope of the policy.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Roles and responsibilities</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Processes</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Data Quality Standards: Categories of data that need to be measured.</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Data Quality Dimensions: metrics to measure the quality of the data.</span></li></ul></ul><br><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5866",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5828"
+    },
+    {
+      "id": 5827,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:13.257Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:27:07.877Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Maintain and update processes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><b style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">PROCESSES</span></b></p><p style=\"box-sizing:border-box;margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><span style=\"box-sizing:border-box;\">To manage data as a valuable organizational asset, four processes must be involved in data governance. This requires initiatives that build competences, roles and responsibilities assignment, and investments in technologies that will support the processes for data governance to be effective. These processes may be focused on a particular business function as an example to proof the efficiency, before being deployed enterprise wide. The business function selected should be such that involves critical business data assets. The 4 processes are:</span></p><ul style=\"box-sizing:border-box;padding:0px 0px 0px 40px;margin-bottom:0in;\"><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Discover</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Define</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Analyze</span></li><li style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Measure and Monitor</span></li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5826",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5866",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5827"
+    },
+    {
+      "id": 5826,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:12.94Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:27:43.54Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Discover Subtask",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Discover Subtask",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5827",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5826"
+    },
+    {
+      "id": 5825,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:12.74Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:23:42.853Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "13. Scan - Azure Blob Storage (BlobStorage)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">RBAC: Verify if Azure Purview MSI has 'Storage Blob Data Reader role' in each of the subscriptions below the selected scope.</span><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\">RBAC: Verify if Azure Purview MSI has 'Reader' role on selected scope.</div><div style=\"box-sizing:border-box;\">Service Endpoint: Verify if Service Endpoint is ON, AND check if 'Allow trusted Microsoft services to access this storage account' is enabled.</div><div style=\"box-sizing:border-box;\">Networking: check if Private Endpoint is created for storage and enabled for Blob.</div><br></div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-blob-storage-source?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5825"
+    },
+    {
+      "id": 5824,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:12.543Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:23:37.18Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "12. Scan - Azure SQL Database (AzureSQLDB)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">SQL Servers:</p><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">Network: Verify if Public or Private Endpoint is enabled.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Firewall: Verify if 'Allow Azure services and resources to access this server' is enabled.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Azure AD Admin: Check if Azure SQL Server has AAD Authentication.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">AAD Admin: Populate Azure SQL Server AAD Admin user or group.</li></ul></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">SQL Databases:</p><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">SQL Role: Check if Azure Purview MSI has db_datareader role.</li></ul></li></ul>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-sql-database?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5824"
+    },
+    {
+      "id": 5823,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:12.25Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:23:31.997Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "11. Scan - Azure SQL Managed Instance (AzureSQLMI)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">SQL Managed Instance Servers:</p><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">Network: Verify if Public or Private Endpoint is enabled.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">ProxyOverride: Verify if Azure SQL Managed Instance is configured as Proxy or Redirect.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Networking: Verify if NSG has an inbound rule to allow AzureCloud over required ports; Redirect: 1433 and 11000-11999 or Proxy: 3342.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Azure AD Admin: Check if Azure SQL Server has AAD Authentication.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">AAD Admin: Populate Azure SQL Server AAD Admin user or group.</li></ul></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">SQL Databases:</p><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">SQL Role: Check if Azure Purview MSI has db_datareader role.</li></ul></li></ul>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-sql-database-managed-instance?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5823"
+    },
+    {
+      "id": 5822,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:11.917Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:23:26.14Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "10. Scan - Azure Synapse (Synapse)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">RBAC: Verify if Azure Purview MSI has 'Storage Blob Data Reader role' in each of the subscriptions below the selected scope.</p></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">RBAC: Verify if Azure Purview MSI has 'Reader' role on selected scope.</p></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">SQL Servers (dedicated pools):</p><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">Network: Verify if Public or Private Endpoint is enabled.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Firewall: Verify if 'Allow Azure services and resources to access this server' is enabled.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Azure AD Admin: Check if Azure SQL Server has AAD Authentication.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">AAD Admin: Populate Azure SQL Server AAD Admin user or group.</li></ul></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">SQL Databases:</p><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">SQL Role: Check if Azure Purview MSI has db_datareader role.</li></ul></li></ul></div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-synapse-workspace?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5822"
+    },
+    {
+      "id": 5821,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:11.703Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:23:20.94Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "9. Scan - Azure Files",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-files-storage-source?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5821"
+    },
+    {
+      "id": 5820,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:11.493Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:23:14.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "8. Scan - Hive Metastore Database",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-hive-metastore-source?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5820"
+    },
+    {
+      "id": 5819,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:11.283Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:23:09.33Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7. Scan - Cosmos DB (SQL API)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-cosmos-database?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5819"
+    },
+    {
+      "id": 5818,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:11.157Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:22:21.86Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Scan Saas Sources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Scan Saas Sources",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5857",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5789",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5788",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5818"
+    },
+    {
+      "id": 5817,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:05.373Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:24:11.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Scan - Teradata",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-teradata-source?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5785",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5817"
+    },
+    {
+      "id": 5816,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:05.14Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:23:50.68Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Scan - On-prem SQL Server",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">The scan will require setting up<span style=\"box-sizing:border-box;\">&nbsp;</span></span><font color=\"rgba(0, 0, 0, 0)\" face=\"Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif\"><span style=\"text-decoration-style:initial;text-decoration-color:initial;cursor:pointer;\"><u><a href=\"https://docs.microsoft.com/en-us/azure/purview/manage-integration-runtimes?wt.mc_id=caf-ado_datagov_content_1\">Self-hosted Integration Runtime</a></u></span></font><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><span style=\"box-sizing:border-box;\">&nbsp;</span>and adding SQL Server as a data source.</span><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\">Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-on-premises-sql-server?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5785",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5816"
+    },
+    {
+      "id": 5815,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:04.947Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:19:17.12Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Verify Landing Zone implementation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">Please review this<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/?wt.mc_id=caf-ado_datagov_content_1\">guidance</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5867",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5815"
+    },
+    {
+      "id": 5814,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:04.733Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:19:12.113Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Tutorial: Enterprise-scale learning path (optional)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">Follow the<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/learn/paths/enterprise-scale-architecture/?wt.mc_id=caf-ado_datagov_content_1\">tutorial<span>&nbsp;</span></a><span style=\"display:inline !important;\">as a preparation effort&nbsp;</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5867",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5814"
+    },
+    {
+      "id": 5813,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:04.32Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:23:03.11Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Scan - Azure Data Explorer",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-data-explorer?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5813"
+    },
+    {
+      "id": 5812,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:04.153Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:22:56.993Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Scan - Azure dedicated SQL Pool (formerly SQL DW)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-synapse-analytics?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5812"
+    },
+    {
+      "id": 5811,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:03.757Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:26:26.71Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Use Purview REST API for integration scenarios",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/tutorial-using-rest-apis?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5861",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5811"
+    },
+    {
+      "id": 5810,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:03.293Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:26:21.297Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Understand Private Link concept when scanning",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/purview/catalog-private-link?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5861",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5810"
+    },
+    {
+      "id": 5809,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:01.85Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:25:50.197Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Understand firewall concept when scanning",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">This step requires some exploration of how the organization configures its firewall and how Purview can authenticate itself to access the data sources for scanning.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5861",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5809"
+    },
+    {
+      "id": 5808,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:01.647Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-15T14:36:01.647Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Implement connections",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement connections",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5808"
+    },
+    {
+      "id": 5807,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:01.473Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-15T14:36:01.473Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Identify all data sources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Identify all data sources",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5807"
+    },
+    {
+      "id": 5806,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:01.203Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:25:42.447Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Assess region availability for scan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Depending on the region of the data sources and organizational requirements on compliance and security, you may want to consider what regions must be available for scanning.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5861",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5806"
+    },
+    {
+      "id": 5805,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:00.79Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:16:18.987Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Define team roles, permissions, responsibilities",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review roles in this <a href=\"https://docs.microsoft.com/en-us/azure/purview/deployment-best-practices#include-the-right-stakeholders?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div><div><br></div><div>The Cloud Adoption Framework references functions needed:&nbsp;</div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-data\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-data</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5851",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5805"
+    },
+    {
+      "id": 5804,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:36:00.407Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:24:20.337Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Scan AWS S3 bucket",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-amazon-s3?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5803",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5804"
+    },
+    {
+      "id": 5803,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:59.983Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:22:16.673Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Scan AWS Sources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Scan AWS Sources",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5857",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5804",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5803"
+    },
+    {
+      "id": 5802,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:59.787Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:21:49.893Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Onboard addition users using Purview managed users",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Purview Admin to work with the Azure Active Directory Admin to establish new Security Groups to grant access to Purview.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/catalog-permissions?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5856",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5802"
+    },
+    {
+      "id": 5801,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:59.373Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:21:44.437Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Add contacts to assets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Assign owners for the Assets</div><div><br></div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/how-to-bulk-edit-assets?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5856",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5801"
+    },
+    {
+      "id": 5800,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:59.13Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:21:38.39Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Add sensitive labels (optional)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Sensitivity labels are a type of annotation that allows you to classify and protect your organization's data, without hindering productivity and collaboration. Sensitivity labels are used to identify the categories of classification types within your organizational data, and group the policies that you wish to apply to each category. Purview makes use of the same sensitive information types as Microsoft 365, which allows you to stretch your existing security policies and protection across your entire content and data estate. The same labels can be shared across Microsoft Office products and data assets in Purview.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/create-sensitivity-label?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5856",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5800"
+    },
+    {
+      "id": 5799,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:58.737Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:21:33.59Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Review your industry/domain specific glossary terms (Taxonomy)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">A glossary provides vocabulary for business users. &nbsp;It consists of business terms that can be related to each other and allows them to be categorized so that they can be understood in different contexts. These terms can be then mapped to assets like a database, tables, columns etc. This helps in abstracting the technical jargon associated with the data repositories and allows the business user to discover and work with data in the vocabulary that is more familiar to them.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/concept-business-glossary?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</span></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5856",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5799"
+    },
+    {
+      "id": 5798,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:58.333Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:20:00.087Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Scan a data source",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Add the data source and set up a scan. Ensure the scan successfully detects all assets.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/tutorial-data-sources-readiness?wt.mc_id=caf-ado_datagov_content_1\">guidance </a>and one <a href=\"https://docs.microsoft.com/en-us/azure/purview/tutorial-msi-configuration?wt.mc_id=caf-ado_datagov_content_1\">more</a></span></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5853",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5798"
+    },
+    {
+      "id": 5797,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:57.93Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:20:13.757Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Configure data share for lineage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/purview/how-to-link-azure-data-share?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5854",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5797"
+    },
+    {
+      "id": 5796,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:57.673Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:20:07.98Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Configure Azure Data Factory (ADF) for lineage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Identify key pipelines and data assets. Gather all information required to connect to an internal ADF account.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Please refer to below guidance</span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><br></span></div><div><font color=\"#171717\" face=\"Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif\">Connect a data factory to <a href=\"https://docs.microsoft.com/en-us/azure/data-factory/connect-data-factory-to-azure-purview?wt.mc_id=caf-ado_datagov_content_1\">Purview&nbsp;</a></font></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/data-factory/how-to-discover-explore-purview-data?wt.mc_id=caf-ado_datagov_content_1\">Discover and Explore</a> data in data factory</span></div><div>Push <a href=\"https://docs.microsoft.com/en-us/azure/data-factory/turorial-push-lineage-to-purview?wt.mc_id=caf-ado_datagov_content_1\">Data Factory Lineage data </a>to Azure Preview</div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5854",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5796"
+    },
+    {
+      "id": 5795,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:57.26Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:19:55.073Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Create Purview Account and Set up the starter kit",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">Go through<span>&nbsp;</span></span><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/create-catalog-portal?wt.mc_id=caf-ado_datagov_content_1\">Quick Start&nbsp;</a>&nbsp;and set up the&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/purview/tutorial-scan-data?wt.mc_id=caf-ado_datagov_content_1\">Starter Kit</a>&nbsp;</span><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\">to demo Purview to all stakeholders.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5853",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5795"
+    },
+    {
+      "id": 5794,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:56.95Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:21:28.843Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Create custom classifications and rules",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">The Azure Purview Data Catalog provides a large set of default classifications that represent typical personal data types that you might have in your data estate.&nbsp;</span><br></div><div><span style=\"font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;color:rgb(23, 23, 23);font-size:16px;\"><br></span></div><div><span style=\"font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;color:rgb(23, 23, 23);font-size:16px;\">Classifications are annotations that can be assigned to entities. The flexibility of classifications enables you to use them for multiple scenarios such as:</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><ul style=\"margin:16px 0px 16px 38px;list-style:none;\"><li style=\"margin:0px;list-style:outside none disc;\">understanding the nature of data stored in the data assets</li><li style=\"margin:0px;list-style:outside none disc;\">defining access control policies</li></ul><p style=\"margin:1rem 0px 0px;\">Purview has more than 100 system classifiers today and you can define your own classifiers in catalog. As part of the scanning process, we automatically detect these classifications and apply them to data assets and schemas. However, you can override them at any point of time. The human overrides are never replaced by automated scans.</p></span></div><div><br></div><div><br></div><div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/create-a-custom-classification-and-classification-rule?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5856",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5794"
+    },
+    {
+      "id": 5793,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:56.703Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:16:12.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Review Technical Requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ol style=\"box-sizing:border-box;padding-left:40px;margin:16px 0px 16px 38px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">What are the main organization data sources and data systems?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">For data sources that are not supported yet by Purview, what are my options?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">How many Purview instances do we need?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">Who are the users?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">Who can scan new data sources?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">Who can modify content inside of Purview?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">What process can I use to improve the data quality in Purview?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">How to bootstrap the platform with existing critical assets, glossary terms, and contacts?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">How to integrate with existing systems?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">How to gather feedback and build a sustainable process?</li><li style=\"box-sizing:border-box;list-style:outside none decimal;margin:0px;\">What type of business value are we trying to maximize?&nbsp;</li></ol><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5851",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5793"
+    },
+    {
+      "id": 5792,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:56.233Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:21:22.933Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Review / Define sensitive data classification definitions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/purview/supported-classifications?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5856",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5792"
+    },
+    {
+      "id": 5791,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:55.777Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:19:29.497Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Create/Import glossary terms",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;text-align:left;display:inline !important;\"><span style=\"font-size:16px;text-align:start;display:inline !important;\">Business glossary term defines the business vocabulary for an organization and helps in bridging the gap between various departments in your company.&nbsp;<span style=\"font-size:14px;display:inline !important;\">In most cases, your organization may already develop a collection of glossary terms and term assignment to assets. This will require an import process into Purview via .csv file.</span></span></span></div><div><br></div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/how-to-create-import-export-glossary?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5868",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5791"
+    },
+    {
+      "id": 5790,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:55.63Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:19:24.677Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Define collections",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/manage-data-sources#manage-collections?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5868",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5790"
+    },
+    {
+      "id": 5789,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:55.433Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:24:33.21Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Scan Oracle Data source",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-oracle-source?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5818",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5789"
+    },
+    {
+      "id": 5788,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:55.153Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:24:27.303Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Scan SAP data sources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"\">Please follow this </span><a href=\"https://docs.microsoft.com/en-us/azure/purview/abap-functions-deployment-guide?wt.mc_id=caf-ado_datagov_content_1\" style=\"\">guidance</a><span style=\"\"> for metadata extraction of ABAP function module for SAP R/3.</span><br></div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-sapecc-source?wt.mc_id=caf-ado_datagov_content_1\">guidance</a> to register SAP ECC Source</div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-saps4hana-source?wt.mc_id=caf-ado_datagov_content_1\">guidance</a> to register SAP S/4HANA source<br><h1 style=\"font-size:2.5rem;margin:-10px 0px 0px;font-weight:600;word-break:break-word;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;\"><br></h1></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5818",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5788"
+    },
+    {
+      "id": 5787,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:54.953Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-15T14:35:54.953Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Scan Teradata hosted data sources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"\">Please follow this </span><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-teradata-source?wt.mc_id=caf-ado_datagov_content_1\" style=\"\">guidance</a><span style=\"\">.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5787"
+    },
+    {
+      "id": 5786,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:54.68Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:22:10.707Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Scan sources with custom API (Apache Atlas)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://github.com/wjohnson/pyapacheatlas?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5857",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5786"
+    },
+    {
+      "id": 5785,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:54.22Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:22:04.477Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Scan on premises data sources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5817",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5816",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5857",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5785"
+    },
+    {
+      "id": 5784,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:53.893Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:22:51.183Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Scan Power BI",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-power-bi-tenant?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5784"
+    },
+    {
+      "id": 5783,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:53.347Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:22:44.77Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Scan - Azure Data Lake Storage Gen 2 (ADLSGen2)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><font color=\"#24292e\" face=\"-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji\"><span style=\"font-size:16px;\"><b>Setup:</b><br></span></font><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\">RBAC: Verify and assign Azure RBAC 'Reader' role to Azure Purview MSI on selected scope.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">RBAC: Verify and assign Azure RBAC 'Storage Blob Data Reader role' to Azure Purview MSI in each of the subscriptions below selected scope.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Networking: Verify and report if Private Endpoint is created for storage and enabled for Blob Storage.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Service Endpoint: If Private Endpoint is disabled check if Service Endpoint is ON, AND enable 'Allow trusted Microsoft services to access this storage account'.</li></ul><div><font color=\"#24292e\" face=\"-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji\"><span style=\"font-size:16px;\">Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-adls-gen2?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</span></font></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5783"
+    },
+    {
+      "id": 5782,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:52.83Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:21:58.697Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Scan Azure hosted Data Sources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/manage-data-sources\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Manage data sources in Azure Purview (Preview) - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-synapse-analytics\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">How to scan Dedicated SQL pools - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-synapse-workspace\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">How to scan Azure Synapse Workspaces - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-multiple-sources\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Scan multiple sources in Azure Purview - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-blob-storage-source\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">How to scan Azure storage blob - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-cosmos-database\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">How to scan Azure Cosmos Database (SQL API) - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-data-explorer\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">How to scan Azure Data Explorer - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-adls-gen1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Register and scan Azure Data Lake Storage (ADLS) Gen1 - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-adls-gen2\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Register and scan Azure Data Lake Storage (ADLS) Gen2 - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-sql-database\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Register and scan Azure SQL Database - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-sql-database-managed-instance\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Register and scan Azure SQL Database Managed Instance - Azure Purview | Microsoft Docs</a><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5820",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5783",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5821",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5822",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5819",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5857",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5825",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5781",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5784",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5813",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5780",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5823",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5824",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5812",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782"
+    },
+    {
+      "id": 5781,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:52.117Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:22:38.7Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Scan - Azure Data Lake Storage Gen 1 (ADLSGen1)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\">Networking: Verify if Service Endpoint is ON, AND check if 'Allow all Azure services to access this Data Lake Storage Gen1 account' is enabled.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Permissions: Verify if Azure Purview MSI has access to Read/Execute.</li></ul>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-adls-gen1?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5781"
+    },
+    {
+      "id": 5780,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:51.783Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:22:33.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Scan - Azure Multiple Sources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-multiple-sources?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5780"
+    },
+    {
+      "id": 5779,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:51.493Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:16:07.767Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Review Functional Requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Some of the common data governance objectives that you might want to identify in the early phases, include:</p><ul style=\"margin:16px 0px 16px 38px;list-style:none;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><li style=\"margin:0px;list-style:outside none disc;\">Maximizing the business value of your data</li><li style=\"margin:0px;list-style:outside none disc;\">Enabling a data culture where data consumers can easily find, interpret, and trust data</li><li style=\"margin:0px;list-style:outside none disc;\">Increasing collaboration amongst various business units to provide a consistent data experience</li><li style=\"margin:0px;list-style:outside none disc;\">Fostering innovation by accelerating data analytics to reap the benefits of the cloud</li><li style=\"margin:0px;list-style:outside none disc;\">Decreasing time to discover data through self-service options for various skill groups</li><li style=\"margin:0px;list-style:outside none disc;\">Reducing time-to-market for the delivery of analytics solutions that improve service to their customers</li><li style=\"margin:0px;list-style:outside none disc;\">Reducing the operational risks that are due to the use of domain-specific tools and unsupported technology</li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5851",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5779"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
