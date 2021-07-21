@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wayneme/Unified Data Governance/_git/SAP on Azure"
+    },
+    "serviceEndpointId": "$SAP on Azure-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}
