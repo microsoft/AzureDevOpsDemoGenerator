@@ -1,0 +1,492 @@
+{
+  "count": 7,
+  "value": [
+    {
+      "id": 5778,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:51.153Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:18:51.533Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Post Implementation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Post Implementation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5850",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5831",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5830",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5771",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5849",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5778"
+    },
+    {
+      "id": 5777,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:50.957Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:18:45.27Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Phase 4: Production",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">The above phases should be followed to create an effective information governance, which is the foundation for better governance programs.&nbsp;</p><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><b>The outcome of this phase is unified data governance in practice</b></p><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Data governance will help your organization prepare for the growing trends such as AI, Hadoop, IoT, and blockchain. It is just the start for many things data and analytics, and there is plenty more that can be discussed. The outcome of this solution would deliver:</p><ul style=\"margin:16px 0px 16px 38px;list-style:none;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><li style=\"margin:0px;list-style:outside none disc;\"><strong style=\"font-weight:600;\">Business Focused</strong><span>&nbsp;</span>- A solution that is aligned to business requirements and scenarios over technical requirements.</li><li style=\"margin:0px;list-style:outside none disc;\"><strong style=\"font-weight:600;\">Future Ready</strong><span>&nbsp;</span>- A solution will maximize default features of the platform and use standardized industry practices for configuration or scripting activities to support the advancements/evolution of the platform.</li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5866",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5771",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5864",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5865",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5777"
+    },
+    {
+      "id": 5776,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:50.74Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:18:39.16Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Phase 3: Pre-production",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Once the MVP phase has passed, it’s time to plan for pre-production milestone. Your organization may decide to have a separate instance of Purview for pre-production and production, or keep the same instance but restrict access. Also in this phase, you may want to include scanning on on-premise data sources such as SQL Server. If there is any gap in data sources not supported by Purview, it is time to explore the Atlas API to understand additional options.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5861",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5863",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5862",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5771",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5776"
+    },
+    {
+      "id": 5775,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:50.12Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:18:33.443Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Phase 2: Minimum viable product",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Once you have the agreed requirements and participated business units to onboard Purview, the next step is to work on a Minimum Viable Product (MVP) release. In this phase, you will expand the usage of Purview to more users who will have additional needs horizontally and vertically. There will be key scenarios that must be met horizontally for all users such as glossary terms, search, and browse. There will also be in-depth requirements vertically for each business unit or group to cover specific end-to-end scenarios such as lineage from Azure Data Lake Storage to Azure Synapse DW to Power BI.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5856",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5860",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5859",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5858",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5771",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5857",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5775"
+    },
+    {
+      "id": 5774,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:49.737Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:18:26.94Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Phase 1: Pilot",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span style=\"font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:14px;text-align:left;display:inline !important;\">Discussion with all stakeholders to gather a full set of requirements. Different personas must participate to agree on a subset of requirements to complete for each phase of the project.</span><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">In this phase, Purview must be created and configured for a very small set of users. Usually, it is just a group of 2-3 people working together to run through end-to-end scenarios. They are considered the advocates of Purview in their organization. The main goal of this phase is to ensure key functionalities can be met and the right stakeholders are aware of the project.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5855",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5771",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5854",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5853",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5774"
+    },
+    {
+      "id": 5773,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:49.44Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:18:16.443Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Implementation of Architecture Strategy and Execution",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implementation of Architecture Strategy and Execution",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5868",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5771",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5867",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5773"
+    },
+    {
+      "id": 5772,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:49.057Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:15:44.907Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Planning for Unified Data Governance on Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Planning for Unified Data Governance on Azure",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5851",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5852",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5770",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5772"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

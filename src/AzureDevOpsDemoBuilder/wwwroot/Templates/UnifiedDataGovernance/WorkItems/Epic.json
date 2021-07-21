@@ -1,0 +1,134 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 5771,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:48.503Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:57:43.617Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Unified Data Governance on Azure Implementation ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Unified Data Governance on Azure Implementation ",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5775",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5776",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5774",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5778",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5773",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5777",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5771"
+    },
+    {
+      "id": 5770,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-15T14:35:48.013Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-07-20T15:15:37.94Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Unified Data Governance on Azure Planning ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Unified Data Governance on Azure Planning ",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5772",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5770"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
