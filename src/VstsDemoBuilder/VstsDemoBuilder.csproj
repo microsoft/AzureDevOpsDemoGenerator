@@ -449,6 +449,7 @@
     <Content Include="Templates\TemplateImages\AzureCommunity\RecommederIcon.PNG" />
     <Content Include="Templates\TemplateImages\AzureCommunity\SapOnAzureLogo.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\Secureresearch.png" />
+    <Content Include="Templates\TemplateImages\AzureCommunity\unifiedgov.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\windows-virtual-desktop.svg" />
     <Content Include="Templates\TemplateImages\AzureFunction.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\AzureGov.png" />
@@ -1740,6 +1741,22 @@
     <Content Include="Templates\SecureResearch\WorkItems\Feature.json" />
     <Content Include="Templates\SecureResearch\WorkItems\Task.json" />
     <Content Include="Templates\SecureResearch\WorkItems\User Story.json" />
+    <Content Include="Templates\UnifiedDataGovernance\ImportSourceCode\SAP on Azure.json" />
+    <Content Include="Templates\UnifiedDataGovernance\Iterations.json" />
+    <Content Include="Templates\UnifiedDataGovernance\ProjectSettings.json" />
+    <Content Include="Templates\UnifiedDataGovernance\ProjectTemplate.json" />
+    <Content Include="Templates\UnifiedDataGovernance\ServiceEndpoints\SAP on Azure-code.json" />
+    <Content Include="Templates\UnifiedDataGovernance\TeamArea.json" />
+    <Content Include="Templates\UnifiedDataGovernance\Teams\Teams.json" />
+    <Content Include="Templates\UnifiedDataGovernance\Teams\Unified Data Governance Team\BoardColumns.json" />
+    <Content Include="Templates\UnifiedDataGovernance\Teams\Unified Data Governance Team\BoardRows.json" />
+    <Content Include="Templates\UnifiedDataGovernance\Teams\Unified Data Governance Team\CardFields.json" />
+    <Content Include="Templates\UnifiedDataGovernance\Teams\Unified Data Governance Team\CardStyles.json" />
+    <Content Include="Templates\UnifiedDataGovernance\Teams\Unified Data Governance Team\TeamSetting.json" />
+    <Content Include="Templates\UnifiedDataGovernance\WorkItems\Epic.json" />
+    <Content Include="Templates\UnifiedDataGovernance\WorkItems\Feature.json" />
+    <Content Include="Templates\UnifiedDataGovernance\WorkItems\Task.json" />
+    <Content Include="Templates\UnifiedDataGovernance\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
