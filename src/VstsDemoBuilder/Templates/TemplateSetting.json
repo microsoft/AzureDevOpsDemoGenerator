@@ -569,7 +569,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/implement-a-code-workflow-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/run-quality-tests-build-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Run quality tests build pipeline</a>",
           "Description": "Set up automated testing in your pipeline to improve code quality. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-quality-tests-build-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Run quality tests build pipeline</a>"
         },
         {
@@ -584,7 +584,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/manage-dependencies-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/scan-for-vulnerabilities/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Scan for vulnerabilities</a>",
           "Description": " Scan for potential vulnerabilities in your source code during the build process. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/scan-for-vulnerabilities/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Scan for vulnerabilities</a>"
         },
         {
@@ -599,7 +599,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/manage-security-and-compliance-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action.",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/scan-open-source/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Scan open source</a>",
           "Description": "Scan open-source components for security vulnerabilities and assess their license ratings when your application builds. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/scan-open-source/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Scan open source</a>"
         },
         {
@@ -614,7 +614,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/run-quality-tests-when-your-application-builds.png",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/manage-build-dependencies/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage build dependencies</a>",
           "Description": "Manage your application and the packages it uses across build pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-build-dependencies/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage build dependencies</a>"
         },
         {
@@ -628,7 +628,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/scan-code-for-vulnerabilities-in-your-build-pipeline.png",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/host-build-agent/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Host build agent</a>",
           "Description": "Use your own build agent when Microsoft-hosted agents don't meet your needs. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/host-build-agent/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Host build agent</a>"
         },
         {
@@ -642,7 +642,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/create-a-release-pipeline-with-azure-pipelines.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-deploy' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/create-release-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Create a release pipeline</a>",
           "Description": "Set up a continuous delivery (CD) pipeline that automates the process of deploying your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-release-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Create a release pipeline</a>"
         },
         {
@@ -656,7 +656,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/create-multi-stage-pipeline.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-deploy' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/create-multi-stage-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Create a multi-stage pipeline</a>",
           "Description": "Build a pipeline that deploys an app to multiple development and testing stages. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/create-multi-stage-pipeline/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Create a multi-stage pipeline</a>"
         },
         {
@@ -670,7 +670,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/manage-database-changes-with-azure-pipelines.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines. ' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-deploy' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/manage-database-changes-in-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage database changes</a>",
           "Description": "Connect your webapp to an Azure SQL Database and manage database schema changes by using a release approval. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-database-changes-in-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage database changes</a>"
         },
         {
@@ -684,7 +684,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/run-functional-tests-azure-pipelines.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-deploy' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/run-functional-tests-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Run functional tests</a>",
           "Description": "Run Selenium UI tests, a form of functional tests, in Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-functional-tests-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Run functional tests</a>"
         },
         {
@@ -698,7 +698,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/run-non-functional-tests-in-azure-pipelines.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-deploy' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/run-non-functional-tests-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Run non-functional tests</a>",
           "Description": "Run load tests with Apache JMeter, a form of non-functional tests, in Azure Pipelines. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/run-non-functional-tests-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Run non-functional tests</a>"
         },
         {
@@ -712,7 +712,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/manage-release-cadence-using-deployment-patterns.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-deploy' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/manage-release-cadence/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage release cadence</a>",
           "Description": "Choose an appropriate  deployment pattern for your application. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-release-cadence/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage release cadence</a>"
         },
         {
@@ -727,7 +727,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/manage-release-cadence-using-deployment-patterns.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-automate' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/provision-infrastructure-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady ' target='_blank'>Provision infrastructure</a>",
           "Description": "Run a Terraform plan in Azure Pipelines to automatically provision Azure resources. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-infrastructure-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady ' target='_blank'>Provision infrastructure</a>"
         },
         {
@@ -741,7 +741,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/provision-database-azure-pipelines.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-automate' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/provision-database-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Provision Database</a>",
           "Description": "Automatically provision Azure SQL Database in Azure Pipelines by using an Azure Resource Manager template. <br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/provision-database-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Provision Database</a>"
         },
         {
@@ -769,7 +769,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/deploy-azure-functions.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-azure-functions' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/deploy-azure-functions/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploy Azure Functions</a>",
           "Description": "Learn to implement a CI/CD pipeline for Azure Functions<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/deploy-azure-functions/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploy Azure Functions</a>"
         },
 
@@ -785,7 +785,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/deploy-docker.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-docker' target='_blank'> repository </a> manually and follow the steps given in the document - <a href=' https://docs.microsoft.com/learn/modules/deploy-docker/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploy Docker containers</a>",
           "Description": "Learn to implement a CI/CD pipeline for Docker containers<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-docker/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploy Docker containers</a>"
         },
         {
@@ -799,7 +799,7 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/deploy-kubernetes.svg",
           "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action",
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-kubernetes' target='_blank'> repository </a> manually and follow the steps given in the document - <a href=' https://docs.microsoft.com/learn/modules/deploy-kubernetes/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploymulti-container solutions to Kubernetes</a>",
           "Description": "Learn to implement a CI/CD pipeline for multi-container solutions orchestrated with Kubernetes<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-kubernetes/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploymulti-container solutions to Kubernetes</a>"
         }
       ]

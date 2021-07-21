@@ -40,7 +40,7 @@ namespace VstsRestAPI.Extractor
                             "From WorkItems " +
                             "Where [Work Item Type] = '" + workItemType + "'" +
                             "And [System.TeamProject] = '" + Project + "' " +
-                            "Order By [Stack Rank] Desc, [Backlog Priority] Desc"
+                            "Order By [Stack Rank] Asc, [Backlog Priority] Asc"
                 };
                 using (var client = GetHttpClient())
                 {
