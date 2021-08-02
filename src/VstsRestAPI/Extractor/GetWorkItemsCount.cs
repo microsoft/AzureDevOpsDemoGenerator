@@ -4,7 +4,7 @@ using System;
 using System.Net.Http;
 using System.Text;
 using VstsRestAPI.Viewmodel.Extractor;
-
+using System.Linq;
 namespace VstsRestAPI.Extractor
 {
     public class GetWorkItemsCount : ApiServiceBase
@@ -36,11 +36,9 @@ namespace VstsRestAPI.Extractor
                 // create wiql object
                 Object wiql = new
                 {
-                    query = "Select [State], [Title] ,[Effort]" +
-                            "From WorkItems " +
-                            "Where [Work Item Type] = '" + workItemType + "'" +
-                            "And [System.TeamProject] = '" + Project + "' " +
-                            "Order By [Stack Rank] Asc, [Backlog Priority] Asc"
+                    query = "SELECT [System.Id], [System.WorkItemType], [System.Title] FROM workitems" +
+                            " WHERE [System.TeamProject] = '" + Project + "'" +
+                            " AND [System.WorkItemType] = '"+ workItemType + "'"
                 };
                 using (var client = GetHttpClient())
                 {
@@ -56,6 +54,19 @@ namespace VstsRestAPI.Extractor
                     if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         viewModel = response.Content.ReadAsAsync<GetWorkItemsResponse.Results>().Result;
+
+                        string workitemIDstoFetch = ""; int WICtr = 0;
+                        if (viewModel != null && viewModel.workItems.Count > 0)
+                        {
+                            foreach (GetWorkItemsResponse.Workitem WI in viewModel.workItems)
+                            {
+                                workitemIDstoFetch += WI.id + ",";
+                                WICtr++;
+                            }
+                            workitemIDstoFetch = workitemIDstoFetch.TrimEnd(',');
+                            fetchedWIs = GetWorkItemsDetailInBatch(workitemIDstoFetch);
+                            return fetchedWIs;
+                        }
                     }
                     else
                     {
@@ -63,17 +74,6 @@ namespace VstsRestAPI.Extractor
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
                         LastFailureMessage = error;
                     }
-
-                    viewModel.HttpStatusCode = response.StatusCode;
-                    string workitemIDstoFetch = ""; int WICtr = 0;
-                    foreach (GetWorkItemsResponse.Workitem WI in viewModel.workItems)
-                    {
-                        workitemIDstoFetch = WI.id + "," + workitemIDstoFetch;
-                        WICtr++;
-                    }
-                    workitemIDstoFetch = workitemIDstoFetch.TrimEnd(',');
-                    fetchedWIs = GetWorkItemsDetailInBatch(workitemIDstoFetch);
-                    return fetchedWIs;
                 }
             }
             catch (Exception ex)
