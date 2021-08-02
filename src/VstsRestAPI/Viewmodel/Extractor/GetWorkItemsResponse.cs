@@ -13,8 +13,8 @@ namespace VstsRestAPI.Viewmodel.Extractor
             public string queryType { get; set; }
             public string queryResultType { get; set; }
             public DateTime asOf { get; set; }
-            public Column[] columns { get; set; }
-            public Workitem[] workItems { get; set; }
+            public List<Column> columns { get; set; }
+            public List<Workitem> workItems { get; set; }
         }
 
         public class Column

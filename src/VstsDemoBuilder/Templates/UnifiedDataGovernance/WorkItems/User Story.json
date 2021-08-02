@@ -2,8 +2,8 @@
   "count": 18,
   "value": [
     {
-      "id": 5868,
-      "rev": 2,
+      "id": 7127,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "Unified Data Governance",
         "System.TeamProject": "Unified Data Governance",
@@ -11,13 +11,13 @@
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:23.54Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:19:05.43Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "2. Create business specific setup",
+        "System.CreatedDate": "2021-07-22T14:34:39.12Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:39.12Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "1. Preparation",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Create business specific setup",
+        "System.Description": "Preparation",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -32,7 +32,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5791",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7083",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -41,7 +41,16 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5790",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7095",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7109",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -50,7 +59,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5773",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7037",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -58,11 +67,11 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5868"
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7127"
     },
     {
-      "id": 5867,
-      "rev": 2,
+      "id": 7126,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "Unified Data Governance",
         "System.TeamProject": "Unified Data Governance",
@@ -70,72 +79,13 @@
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:23.24Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:18:59.733Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "1. Provision Core Infrastructure",
+        "System.CreatedDate": "2021-07-22T14:34:38.847Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:38.847Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "2. Review the scope and align with the scenarios",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><div style=\"box-sizing:border-box;\">Setup Azure Subscription</div><div style=\"box-sizing:border-box;\">Setup<span style=\"box-sizing:border-box;\">&nbsp;</span><a href=\"https://github.com/Azure/Enterprise-Scale#:~:text=Objective%20%20%20%20Key%20customer%20landing%20zone%2c%20%20Yes%20%206%20more%20rows%20?wt.mc_id=caf-ado_datagov_content_1\">Enterprise scale Landing Zone&nbsp;</a></div><br><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5773",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5814",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5815",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5867"
-    },
-    {
-      "id": 5866,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:22.82Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:25:29.19Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "3. Practice Data governance for your enterprise",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Practice Data governance for your enterprise",
+        "System.Description": "Review the scope and align with the scenarios",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -150,7 +100,34 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5835",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7043",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7042",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7044",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7041",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -159,7 +136,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5777",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7037",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -168,43 +145,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5829",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5834",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5827",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5828",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5833",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7045",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -212,11 +153,11 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5866"
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7126"
     },
     {
-      "id": 5865,
-      "rev": 2,
+      "id": 7125,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "Unified Data Governance",
         "System.TeamProject": "Unified Data Governance",
@@ -224,13 +165,13 @@
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:22.56Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:25:23.16Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "2. Initiate Re-scan",
+        "System.CreatedDate": "2021-07-22T14:34:38.2Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:38.2Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "1. Register and scan data sources",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><br></div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-multiple-sources#create-and-run-a-scan?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.Description": "Register and scan data sources",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -245,57 +186,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5777",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5865"
-    },
-    {
-      "id": 5864,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:22.35Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:25:16.837Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "1. Implement Security enabled scan configuration",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Implement Security enabled scan configuration",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5836",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5777",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7035",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -304,7 +195,16 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5837",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7090",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7093",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -312,11 +212,11 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5864"
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7125"
     },
     {
-      "id": 5863,
-      "rev": 2,
+      "id": 7124,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "Unified Data Governance",
         "System.TeamProject": "Unified Data Governance",
@@ -324,568 +224,10 @@
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:22.16Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:25:06.88Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "3. Extended data insights with granular visibility",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/purview/asset-insights?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5776",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5838",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5863"
-    },
-    {
-      "id": 5862,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:21.92Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:25:00.3Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "2. Initiate Re-Scan",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-multiple-sources#create-and-run-a-scan?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5776",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5862"
-    },
-    {
-      "id": 5861,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:21.697Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:24:53.32Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "1. Extend Setup Configuration and expand scope",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Extend Setup Configuration and expand scope",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5811",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5776",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5809",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5810",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5806",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5839",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5832",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5861"
-    },
-    {
-      "id": 5860,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:21.37Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:21:11.8Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "5. Implement Security",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><br></div><div>Please use the following guidnce:</div><div><ol><li><a href=\"https://techcommunity.microsoft.com/t5/azure-purview/network-isolation-and-security-use-private-endpoints-for-your/ba-p/2233446?wt.mc_id=caf-ado_datagov_content_1\">Use private endpoints</a><br></li><li><a href=\"https://techcommunity.microsoft.com/t5/azure-purview/march-ahead-with-azure-purview-access-management-in-azure/ba-p/2199809?wt.mc_id=caf-ado_datagov_content_1\">RBAC</a></li><li><a href=\"https://techcommunity.microsoft.com/t5/azure-purview/march-ahead-with-azure-purview-access-management-in-azure/ba-p/2209936?wt.mc_id=caf-ado_datagov_content_1\">Access Management</a></li></ol></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5775",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5860"
-    },
-    {
-      "id": 5859,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:20.973Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:21:05.663Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "4. View / Analyze data insights",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/concept-insights?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5840",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5775",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5859"
-    },
-    {
-      "id": 5858,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:20.663Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:20:57.73Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "3. Initiate Re-scan",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-multiple-sources#create-and-run-a-scan?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5775",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5858"
-    },
-    {
-      "id": 5857,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:20.45Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:20:50.137Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "2. Register and scan additional data sources as applicable",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Register and scan additional data sources as applicable",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5782",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5785",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5786",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5775",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5818",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5803",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5857"
-    },
-    {
-      "id": 5856,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:20.233Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:20:40.213Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "1. Extend Setup Configuration",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Extend Setup Configuration",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5800",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5802",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5775",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5792",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5799",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5794",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5801",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5856"
-    },
-    {
-      "id": 5855,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:20.047Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:19:48.11Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "3. Create demo for business stakeholders",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5841",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5842",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5774",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5855"
-    },
-    {
-      "id": 5854,
-      "rev": 2,
-      "fields": {
-        "System.AreaPath": "Unified Data Governance",
-        "System.TeamProject": "Unified Data Governance",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:19.837Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:19:43.053Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.CreatedDate": "2021-07-22T14:34:37.973Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:37.973Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
         "System.Title": "2. Setup Configuration",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "Setup Configuration",
@@ -903,7 +245,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5774",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7035",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -912,7 +254,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5797",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7091",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -921,7 +263,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5796",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7092",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -929,11 +271,11 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5854"
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7124"
     },
     {
-      "id": 5853,
-      "rev": 2,
+      "id": 7123,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "Unified Data Governance",
         "System.TeamProject": "Unified Data Governance",
@@ -941,13 +283,13 @@
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:19.61Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:19:37.943Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "1. Register and scan data sources",
+        "System.CreatedDate": "2021-07-22T14:34:37.757Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:37.757Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "3. Create demo for business stakeholders",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Register and scan data sources",
+        "System.Description": "3. Create demo for business stakeholders",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -962,16 +304,7 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5798",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5795",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7046",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -980,19 +313,28 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5774",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7035",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7047",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5853"
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7123"
     },
     {
-      "id": 5852,
-      "rev": 2,
+      "id": 7122,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "Unified Data Governance",
         "System.TeamProject": "Unified Data Governance",
@@ -1000,13 +342,194 @@
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:19.43Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:16:00.777Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "2. Review the scope and align with the scenarios",
+        "System.CreatedDate": "2021-07-22T14:34:37.11Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:37.11Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "1. Extend Setup Configuration",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Review the scope and align with the scenarios",
+        "System.Description": "Extend Setup Configuration",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7089",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7094",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7086",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7096",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7034",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7087",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7088",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7122"
+    },
+    {
+      "id": 7121,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:36.467Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:36.467Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "2. Register and scan additional data sources as applicable",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Register and scan additional data sources as applicable",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7106",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7103",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7085",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7034",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7070",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7102",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7121"
+    },
+    {
+      "id": 7120,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:36.24Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:36.24Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "3. Initiate Re-scan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-multiple-sources#create-and-run-a-scan?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1021,64 +544,19 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5772",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7034",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5845",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5843",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5847",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5844",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5846",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5852"
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7120"
     },
     {
-      "id": 5851,
-      "rev": 2,
+      "id": 7119,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "Unified Data Governance",
         "System.TeamProject": "Unified Data Governance",
@@ -1086,13 +564,63 @@
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-07-15T14:36:19.193Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2021-07-20T15:15:53.987Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "1. Preparation",
+        "System.CreatedDate": "2021-07-22T14:34:36.01Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:36.01Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "4. View / Analyze data insights",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Preparation",
+        "System.Description": "<div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/concept-insights?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7048",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7034",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7119"
+    },
+    {
+      "id": 7118,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:35.36Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:35.36Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "5. Implement Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div>Please use the following guidnce:</div><div><ol><li><a href=\"https://techcommunity.microsoft.com/t5/azure-purview/network-isolation-and-security-use-private-endpoints-for-your/ba-p/2233446?wt.mc_id=caf-ado_datagov_content_1\">Use private endpoints</a><br></li><li><a href=\"https://techcommunity.microsoft.com/t5/azure-purview/march-ahead-with-azure-purview-access-management-in-azure/ba-p/2199809?wt.mc_id=caf-ado_datagov_content_1\">RBAC</a></li><li><a href=\"https://techcommunity.microsoft.com/t5/azure-purview/march-ahead-with-azure-purview-access-management-in-azure/ba-p/2209936?wt.mc_id=caf-ado_datagov_content_1\">Access Management</a></li></ol></div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -1107,7 +635,57 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5772",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7034",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7118"
+    },
+    {
+      "id": 7117,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:35.13Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:35.13Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "1. Extend Setup Configuration and expand scope",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Extend Setup Configuration and expand scope",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7056",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7033",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1116,7 +694,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5793",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7079",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1125,7 +703,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5805",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7078",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1134,7 +712,25 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5779",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7077",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7082",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7049",
           "attributes": {
             "isLocked": "false",
             "comment": "Making a new link for the dependency",
@@ -1142,7 +738,411 @@
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/5851"
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7117"
+    },
+    {
+      "id": 7116,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:34.437Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:34.437Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "2. Initiate Re-Scan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-multiple-sources#create-and-run-a-scan?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7033",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7116"
+    },
+    {
+      "id": 7115,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:34.153Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:34.153Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "3. Extended data insights with granular visibility",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/purview/asset-insights?wt.mc_id=caf-ado_datagov_content_1\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7033",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7050",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7115"
+    },
+    {
+      "id": 7114,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:33.927Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:33.927Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "1. Implement Security enabled scan configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement Security enabled scan configuration",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7051",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7032",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7052",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7114"
+    },
+    {
+      "id": 7113,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:33.7Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:33.7Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "2. Initiate Re-scan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><br></div><div>Please follow this <a href=\"https://docs.microsoft.com/en-us/azure/purview/register-scan-azure-multiple-sources#create-and-run-a-scan?wt.mc_id=caf-ado_datagov_content_1\">guidance</a>.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7032",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7113"
+    },
+    {
+      "id": 7112,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:33.05Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:33.05Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "3. Practice Data governance for your enterprise",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Practice Data governance for your enterprise",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7059",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7032",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7060",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7054",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7055",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7053",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7061",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7112"
+    },
+    {
+      "id": 7111,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:32.813Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:32.813Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "1. Provision Core Infrastructure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\">Setup Azure Subscription</div><div style=\"box-sizing:border-box;\">Setup<span style=\"box-sizing:border-box;\">&nbsp;</span><a href=\"https://github.com/Azure/Enterprise-Scale#:~:text=Objective%20%20%20%20Key%20customer%20landing%20zone%2c%20%20Yes%20%206%20more%20rows%20?wt.mc_id=caf-ado_datagov_content_1\">Enterprise scale Landing Zone&nbsp;</a></div><br><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7073",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7036",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7074",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7111"
+    },
+    {
+      "id": 7110,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Unified Data Governance",
+        "System.TeamProject": "Unified Data Governance",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-07-22T14:34:32.59Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2021-07-22T14:34:32.59Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "2. Create business specific setup",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create business specific setup",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7097",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7098",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7036",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/australiaEastaksh/_apis/wit/workItems/7110"
     }
   ],
   "HttpStatusCode": 0,
