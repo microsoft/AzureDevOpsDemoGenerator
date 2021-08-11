@@ -40,41 +40,63 @@ function checkSession() {
         success: function (res) {
             if (res !== "") {
                 $('#hdnGToken').val(res);
+                localStorage.setItem("gToken", res);
                 $('input[id="gitHubCheckbox"]').prop('checked', true).prop('disabled', true);
                 $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
                 $('#btnSubmit').prop('disabled', false).addClass('btn-primary');
                 mywindown.close();
                 $('#githubAuth').css('border-color', 'initial');
+                GetOrganizations();
             }
             else {
                 window.setTimeout("checkSession()", 500);
-                //$('input[id="gitHubCheckbox"]').prop('checked', false).prop('disabled', false);
-                //$('#gitHubAuthDiv').addClass('d-none');
-                //$('#githubAuth').addClass('btn-primary').prop('disabled', false);
             }
         },
         error: function (er) {
         }
     });
 }
-function checkTokenInSession() {
-    $.ajax({
-        url: '../Environment/CheckSession',
-        type: "GET",
-        async: false,
-        cache: false,
-        success: function (res) {
-            if (res !== "") {
-                $('input[id="gitHubCheckbox"]').prop('checked', true).prop('disabled', true);
-                $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
-                $('#btnSubmit').prop('disabled', false).addClass('btn-primary');
-                $('#githubAuth').css('border-color', 'initial');
+//function checkTokenInSession() {
+//    $.ajax({
+//        url: '../Environment/CheckSession',
+//        type: "GET",
+//        async: false,
+//        cache: false,
+//        success: function (res) {
+//            if (res !== "") {
+//                $('input[id="gitHubCheckbox"]').prop('checked', true).prop('disabled', true);
+//                $('#githubAuth').removeClass('btn-primary').prop('disabled', true);
+//                $('#btnSubmit').prop('disabled', false).addClass('btn-primary');
+//                $('#githubAuth').css('border-color', 'initial');
+//            }
+//            else {
+//                $('#btnSubmit').prop('disabled', true).removeClass('btn-primary');
+//            }
+//        },
+//        error: function (er) {
+//        }
+//    });
+//}
+
+function GetOrganizations() {
+    var gToken = localStorage.getItem("gToken");
+    if (gToken != "") {
+        $.ajax({
+            url: '../Environment/GetOrganizaton',
+            type: 'GET',
+            success: function (data) {
+                debugger;
+                var orgs = "";
+                if (data.length > 0) {
+                    for (var o in data) {
+                        orgs += "<option value=" + data[o].login + ">" + data[o].login + "</option>"
+                    }
+                    $(orgs).appendTo('#ghOrgs');
+                }
+            },
+            error: function (er) {
+                console.log(er);
             }
-            else {
-                $('#btnSubmit').prop('disabled', true).removeClass('btn-primary');
-            }
-        },
-        error: function (er) {
-        }
-    });
+        });
+    }
 }

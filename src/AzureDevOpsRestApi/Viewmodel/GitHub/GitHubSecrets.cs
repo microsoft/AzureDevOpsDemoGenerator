@@ -8,8 +8,11 @@ namespace AzureDevOpsRestApi.Viewmodel.GitHub
     {
         public class Secrets
         {
+            public string org { get; set; }
             public string secretName { get; set; }
             public string secretValue { get; set; }
+            public string visibility { get; set; }
+            public int selected_repository_ids { get; set; }
         }
 
         public class GitHubSecret

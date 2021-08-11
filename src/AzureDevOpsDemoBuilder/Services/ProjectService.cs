@@ -403,7 +403,7 @@ namespace AzureDevOpsDemoBuilder.Services
             model.Environment.ProjectName = model.ProjectName;
 
             // Fork Repo
-            if (model.GitHubFork && model.GitHubToken != null)
+            if (model.GitHubFork && model.GitHubToken != null && model.GitHubOrganization !=null)
             {
                 ImportGitRepository(model, _gitHubConfig);
                 //ForkGitHubRepository(model, _gitHubConfig);
@@ -1002,10 +1002,39 @@ namespace AzureDevOpsDemoBuilder.Services
                             GitHubImportRepo importRepo = new GitHubImportRepo(_gitHubConfig, ai);
                             GitHubUserDetail userDetail = new GitHubUserDetail();
                             GitHubRepoResponse.RepoCreated GitHubRepo = new GitHubRepoResponse.RepoCreated();
-                            var createRepoRes = importRepo.CreateRepo(readCreateRepoFile);
+                            string api = string.Empty;
+                            if(model.GitHubOrganization == _gitHubConfig.UserName)
+                            {
+                                api = "user/repos";
+                            }
+                            else
+                            {
+                                api = "orgs/" + model.GitHubOrganization + "/repos";
+                            }
+                            var createRepoRes = importRepo.CreateRepo(readCreateRepoFile, api);
                             if (createRepoRes.IsSuccessStatusCode)
                             {
-                                var importRepoRes = importRepo.ImportRepo(repoName, repo);
+                                string username = string.Empty;
+                                if (model.GitHubOrganization == _gitHubConfig.UserName)
+                                {
+                                    username = _gitHubConfig.UserName;
+                                }
+                                else
+                                {
+                                    username = model.GitHubOrganization;
+                                }
+
+                                // Get the created repo
+                                var repoRes = importRepo.GetRepository(username, repoName);
+                                if (repoRes.IsSuccessStatusCode)
+                                {
+                                    GetRepository iRes = JsonConvert.DeserializeObject<GetRepository>(repoRes.Content.ReadAsStringAsync().Result);
+                                    model.GitRepoName = iRes.name;
+                                    model.GitRepoId = iRes.id;
+                                }
+                                api = $"repos/{username}/{repoName }/import";
+                                var importRepoRes = importRepo.ImportRepo(repo, api);
+                                
                                 bool flag = false;
                                 if (importRepoRes.IsSuccessStatusCode)
                                 {
@@ -1024,17 +1053,17 @@ namespace AzureDevOpsDemoBuilder.Services
                                     model.GitRepoURL = importStatus.repository_url;
                                     model.GitRepoURL = model.GitRepoURL.Replace("api.", "").Replace("/repos", "/");
                                     isImported = true;
-                                    model.GitRepoName = repoName;
+                                    
                                     if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
                                     {
                                         model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL);
                                     }
-                                    AddMessage(model.Id, string.Format("Imported GitHub repository", model.GitRepoName, _gitHubConfig.UserName));
+                                    AddMessage(model.Id, string.Format("Imported GitHub repository", model.GitRepoName, username));
                                 }
                                 else if (importRepoRes.StatusCode == System.Net.HttpStatusCode.Conflict)
                                 {
                                     isImported = true;
-                                    AddMessage(model.Id, string.Format("Imported GitHub repository", model.GitRepoName = repoName, _gitHubConfig.UserName));
+                                    AddMessage(model.Id, string.Format("Imported GitHub repository", model.GitRepoName = repoName, username));
                                     if (!model.Environment.GitHubRepos.ContainsKey(model.GitRepoName))
                                     {
                                         model.Environment.GitHubRepos.Add(model.GitRepoName, model.GitRepoURL = string.Format("https://github.com/{0}/{1}", _gitHubConfig.UserName, model.GitRepoName));
@@ -1054,7 +1083,18 @@ namespace AzureDevOpsDemoBuilder.Services
                             }
                             if (isImported)
                             {
-                                HttpResponseMessage response = importRepo.GetRepositoryPublicKey(model.GitRepoName);
+                                string username = string.Empty;
+                                if (model.GitHubOrganization == _gitHubConfig.UserName)
+                                {
+                                    username = _gitHubConfig.UserName;
+                                    api = "repos/" + _gitHubConfig.UserName + "/" + model.GitRepoName + "/actions/secrets/public-key";
+                                }
+                                else
+                                {
+                                    username = model.GitHubOrganization;
+                                    api = "orgs/"+ model.GitHubOrganization + "/actions/secrets/public-key";
+                                }
+                                HttpResponseMessage response = importRepo.GetRepositoryPublicKey(model.GitRepoName, api);
                                 if (response.IsSuccessStatusCode)
                                 {
                                     string res = response.Content.ReadAsStringAsync().Result;
@@ -1070,10 +1110,43 @@ namespace AzureDevOpsDemoBuilder.Services
                                             GitHubSecrets.GitHubSecret secrets1 = JsonConvert.DeserializeObject<GitHubSecrets.GitHubSecret>(secrets);
                                             foreach (var secret in secrets1.secrets)
                                             {
-                                                var secretResponse = importRepo.EncryptAndAddSecret(publicKey, secret, model.GitRepoName);
+                                                string json = string.Empty;
+                                                if (model.GitHubOrganization == _gitHubConfig.UserName)
+                                                {
+                                                    api = $"repos/{_gitHubConfig.UserName}/{model.GitRepoName}/actions/secrets/{secret.secretName}";
+
+                                                    var secretValue = System.Text.Encoding.UTF8.GetBytes(secret.secretValue);
+                                                    var _publicKey = Convert.FromBase64String(publicKey.key);
+                                                    var sealedPublicKeyBox = Sodium.SealedPublicKeyBox.Create(secretValue, _publicKey);
+                                                    var encryptedSecret = Convert.ToBase64String(sealedPublicKeyBox);
+
+                                                    dynamic obj = new JObject();
+                                                    obj.encrypted_value = encryptedSecret;
+                                                    obj.key_id = publicKey.key_id;
+                                                    json = obj.ToString();
+                                                }
+                                                else
+                                                {
+                                                    api = $"orgs/{model.GitHubOrganization}/actions/secrets/{secret.secretName}";
+                                                    secret.visibility = "selected";
+                                                    secret.selected_repository_ids =  model.GitRepoId;
+
+                                                    var secretValue = System.Text.Encoding.UTF8.GetBytes(secret.secretValue);
+                                                    var _publicKey = Convert.FromBase64String(publicKey.key);
+                                                    var sealedPublicKeyBox = Sodium.SealedPublicKeyBox.Create(secretValue, _publicKey);
+                                                    var encryptedSecret = Convert.ToBase64String(sealedPublicKeyBox);
+
+                                                    dynamic obj = new JObject();
+                                                    obj.encrypted_value = encryptedSecret;
+                                                    obj.key_id = publicKey.key_id;
+                                                    obj.visibility = secret.visibility;
+                                                    obj.selected_repository_ids = new JArray(secret.selected_repository_ids);
+                                                    json = obj.ToString();
+                                                }
+                                                var secretResponse = importRepo.EncryptAndAddSecret(json, api);
                                                 if (secretResponse.IsSuccessStatusCode)
                                                 {
-                                                    AddMessage(model.Id, string.Format("Added Secret {0} to {1}/{2} repository", secret.secretName, model.GitHubUserName, model.GitRepoName));
+                                                    AddMessage(model.Id, string.Format("Added Secret {0} to {1}/{2} repository", secret.secretName, username, model.GitRepoName));
                                                 }
                                                 else
                                                 {
@@ -1634,13 +1707,15 @@ namespace AzureDevOpsDemoBuilder.Services
         }
 
         private string path = string.Empty;
-
+        private AppConfiguration _ghConfig;
         public ProjectService(IConfiguration appKeyConfiguration, IWebHostEnvironment hostEnvironment, ILogger<ProjectService> _logger, TelemetryClient _ai)
         {
             AppKeyConfiguration = appKeyConfiguration;
             HostingEnvironment = hostEnvironment;
             logger = _logger;
             ai = _ai;
+            string gitHubBaseAddress = AppKeyConfiguration["GitHubBaseAddress"];
+            _ghConfig = new AppConfiguration() { GitBaseAddress = gitHubBaseAddress, MediaType = "application/vnd.github.v3+json", Scheme = "Bearer" };
         }
 
 
@@ -3014,6 +3089,7 @@ namespace AzureDevOpsDemoBuilder.Services
             }
         }
 
+       
         /// <summary>
         /// End the process
         /// </summary>

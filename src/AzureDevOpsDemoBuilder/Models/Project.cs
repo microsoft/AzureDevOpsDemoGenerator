@@ -47,6 +47,7 @@ namespace AzureDevOpsDemoBuilder.Models
         public string GitHubToken { get; set; }
         public bool GitHubFork { get; set; }
         public string GitRepoName { get; set; }
+        public int GitRepoId { get; set; }
         public string GitRepoURL { get; set; }
         public string ForkGitHubRepo { get; set; }
         public bool IsApi { get; set; }
@@ -56,6 +57,7 @@ namespace AzureDevOpsDemoBuilder.Models
         public string PrivateTemplatePath { get; set; }
         public string TemplateImage { get; set; }
         public string Document { get; set; }
+        public string GitHubOrganization { get; set; }
     }
     public class EnvironmentValues
     {

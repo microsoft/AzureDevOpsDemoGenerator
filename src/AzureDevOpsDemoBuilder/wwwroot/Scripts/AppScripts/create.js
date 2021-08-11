@@ -1,5 +1,4 @@
-﻿/// <reference path="../jquery-1.12.4.min.js" />
-$(document).ready(function () {
+﻿$(document).ready(function () {
 
     $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
 
@@ -134,6 +133,7 @@ $(document).ready(function (event) {
             $('#gitHubCheckboxDiv').addClass('d-none');
             $('#gitHubLabelDiv').addClass('d-none');
         }
+        $('#ghOrgs').empty();
         //
         if (infoMsg === "" || typeof infoMsg === "undefined" || infoMsg === null) {
             $('#InfoMessage').html('');
@@ -503,6 +503,12 @@ $('#btnSubmit').click(function () {
     var accountName = $('#ddlAcccountName option:selected').val();
     var token = $('#hiddenAccessToken').val();
     var email = $('#emailID').val();
+    var ghOrg = $('#ghOrgs').val();
+    if (gitHubFork === true && (ghOrg === null || ghOrg === "")) {
+        $("#ghOrgs_Error").text("Please select a GitHub organization");
+        $("#ghOrgs_Error").removeClass("d-none").addClass("d-block");
+        return false;
+    }
     var regex = /^[A-Za-z0-9 -_]*[A-Za-z0-9][A-Za-z0-9 -_]*$/;
     if (accountName === "" || accountName === "Select Organization") {
         $("#ddlAcccountName_Error").text("Please choose an organization first!");
@@ -561,22 +567,6 @@ $('#btnSubmit').click(function () {
         }
     }
 
-    //get userMethod and selected users
-    var SelectedUsers = '';
-    var userMethod = $("input[type='radio']:checked").val();
-    if (userMethod === "Select") {
-        $(".checkbox").each(function () {
-            if (this.checked) {
-                SelectedUsers = SelectedUsers + this.value + ',';
-            }
-        });
-
-        if (SelectedUsers.length === 0) {
-            $("#txtAlert").text("Please select organiaztion users");
-            $("#txtALertContainer").show();
-            return false;
-        }
-    }
 
     $('#status-messages').html('');
     $('#status-messages').show();
@@ -598,11 +588,11 @@ $('#btnSubmit').click(function () {
     var websiteUrl = window.location.href;
     var projData = {
         "ProjectName": projectName, "SelectedTemplate": selectedTemplate, "id": uniqueId,
-        "Parameters": Parameters, "selectedUsers": SelectedUsers, "UserMethod": userMethod,
+        "Parameters": Parameters,
         "SonarQubeDNS": ServerDNS, "isExtensionNeeded": isExtensionNeeded, "isAgreeTerms": isAgreedTerms,
         "websiteUrl": websiteUrl, "accountName": accountName, "accessToken": token,
         "email": email, "GitHubFork": forkGitHub, "PrivateTemplateName": privateTemplateName,
-        "PrivateTemplatePath": privateTemplatePath
+        "PrivateTemplatePath": privateTemplatePath, "GitHubOrganization": ghOrg
     };
     appInsights.trackEvent("Create button clicked");
     appInsights.trackEvent({ name: selectedTemplate });
@@ -1150,7 +1140,6 @@ function openImportPopUp() {
 }
 
 function AppendMessage() {
-    debugger;
     privateTemplateMsg = $('#infoMessageTxt').val();
     gitFork = $('#forkGitRepo').val();
     if (privateTemplateMsg !== "" && privateTemplateMsg !== null && typeof privateTemplateMsg !== "undefined") {
