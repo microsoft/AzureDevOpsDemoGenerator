@@ -39,7 +39,7 @@ namespace VstsRestAPI.Git
                     {
                         var errorMessage = response.Content.ReadAsStringAsync();
                         string error = Utility.GeterroMessage(errorMessage.Result.ToString());
-                        LastFailureMessage = error;
+                        LastFailureMessage = error ?? $"Unable to import repository - {response.StatusCode} - {response.ReasonPhrase}";
                     }
                 }
             }

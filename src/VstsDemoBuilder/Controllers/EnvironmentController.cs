@@ -674,9 +674,16 @@ namespace VstsDemoBuilder.Controllers
                         return Json(new { message = "Template not found", status = "false" }, JsonRequestBehavior.AllowGet);
                     }
 
+                    RequiredExtensions.Extension template = new RequiredExtensions.Extension();
                     string listedExtension = System.IO.File.ReadAllText(extensionJsonFile);
-                    var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(listedExtension);
-
+                    if (!string.IsNullOrEmpty(listedExtension))
+                    {
+                        template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(listedExtension);
+                    }
+                    if (template == null || template.Extensions == null || template.Extensions.Count == 0)
+                    {
+                        return Json(new { message = "no extensions required", status = "false" }, JsonRequestBehavior.AllowGet);
+                    }
                     template.Extensions.RemoveAll(x => x.extensionName.ToLower() == "analytics");
                     template.Extensions = template.Extensions.OrderBy(y => y.extensionName).ToList();
                     string requiresExtensionNames = string.Empty;
