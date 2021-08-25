@@ -1047,8 +1047,6 @@
     <Content Include="Templates\Keyvault\ProjectTemplate.json" />
     <Content Include="Templates\Keyvault\ReleaseDefinitions\SmartHotel-CouponManagement-CD.json" />
     <Content Include="Templates\Keyvault\ServiceEndpoints\Azure-MSDN1.json" />
-    <Content Include="Templates\Keyvault\ServiceEndpoints\GitHub-EndPoint.json" />
-    <Content Include="Templates\Keyvault\ServiceEndpoints\GitHubConnection.json" />
     <Content Include="Templates\Keyvault\TeamArea.json" />
     <Content Include="Templates\Keyvault\Teams\SmartHotel-CouponManagement Team\BoardColumns.json" />
     <Content Include="Templates\Keyvault\Teams\SmartHotel-CouponManagement Team\BoardRows.json" />
@@ -1757,6 +1755,9 @@
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\Feature.json" />
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\Task.json" />
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\User Story.json" />
+    <Content Include="Templates\Keyvault\BuildDefinitions\azure-key-vault.json" />
+    <Content Include="Templates\Keyvault\ImportSourceCode\azure-key-vault.json" />
+    <Content Include="Templates\Keyvault\ServiceEndpoints\azure-key-vault-code.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
