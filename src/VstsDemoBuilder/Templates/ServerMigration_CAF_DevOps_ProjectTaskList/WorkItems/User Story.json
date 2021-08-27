@@ -1,23 +1,23 @@
 {
-  "count": 8,
+  "count": 13,
   "value": [
     {
-      "id": 3420,
-      "rev": 2,
+      "id": 532,
+      "rev": 1,
       "fields": {
-        "System.AreaPath": "SQL Proj - Azure BG Test",
-        "System.TeamProject": "SQL Proj - Azure BG Test",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-12-04T21:18:26.983Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-16T17:00:03.34Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "CAF SQL Migration Project Review and Closer",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "CAF Server Migration Project Review and Clouser",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "CAF SQL Migration Project Review and Closer",
+        "System.Description": null,
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -32,56 +32,69 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3412",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/536",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3378",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/535",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3411",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/534",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/533",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/531",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3420"
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/532"
     },
     {
-      "id": 3419,
-      "rev": 3,
+      "id": 526,
+      "rev": 1,
       "fields": {
-        "System.AreaPath": "SQL Proj - Azure BG Test",
-        "System.TeamProject": "SQL Proj - Azure BG Test",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-12-04T21:18:26.853Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-16T17:29:34.203Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "SQL Migration - Governance",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Monitoring and Reporting",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "SQL Migration - Governance",
+        "System.Description": null,
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "Govern",
+        "System.Tags": null,
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -90,101 +103,70 @@
       },
       "relations": [
         {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/529",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/528",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/527",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/530",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3376",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/520",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3406",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3408",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3407",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3379",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3409",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3410",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4061",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Child"
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3419"
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/526"
     },
     {
-      "id": 3418,
-      "rev": 3,
+      "id": 521,
+      "rev": 1,
       "fields": {
-        "System.AreaPath": "SQL Proj - Azure BG Test",
-        "System.TeamProject": "SQL Proj - Azure BG Test",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-12-04T21:18:26.71Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-16T17:29:14.367Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "Migration - On-Prem to Azure SQL Managed Instance",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Manage",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Migration - On-Prem to Azure SQL Managed Instance",
+        "System.Description": null,
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "Migrate",
+        "System.Tags": null,
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -194,158 +176,133 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3403",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/524",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3402",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/525",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3404",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/523",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/522",
+          "attributes": {
+            "isLocked": "false",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3375",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/520",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3405",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4060",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Child"
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3418"
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/521"
     },
     {
-      "id": 3417,
-      "rev": 3,
+      "id": 516,
+      "rev": 1,
       "fields": {
-        "System.AreaPath": "SQL Proj - Azure BG Test",
-        "System.TeamProject": "SQL Proj - Azure BG Test",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-12-04T21:18:26.53Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-16T17:29:14.367Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "Migration - On-Prem to Azure SQL Database",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Govern",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Migration - On-Prem to Azure SQL Database",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 1.0,
-        "System.BoardLane": null,
-        "System.Tags": "Migrate",
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3400",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3375",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3399",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3398",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4059",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Child"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3417"
-    },
-    {
-      "id": 3416,
-      "rev": 3,
-      "fields": {
-        "System.AreaPath": "SQL Proj - Azure BG Test",
-        "System.TeamProject": "SQL Proj - Azure BG Test",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
-        "System.WorkItemType": "User Story",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2020-12-04T21:18:26.233Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-16T17:29:14.367Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "Migration of On-Prem to Azure VM",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Migration of On-Prem to Azure VM",
+        "System.Description": null,
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "Migrate",
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/511",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/518",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/519",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/517",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/516"
+    },
+    {
+      "id": 512,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Server Migration Transition",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -355,82 +312,285 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3397",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/515",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3380",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/514",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/513",
+          "attributes": {
+            "isLocked": "false",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3375",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/511",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/512"
+    },
+    {
+      "id": 505,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Migration of VMware to Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/509",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/476",
+          "attributes": {
+            "isLocked": "false",
             "name": "Parent"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3395",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/510",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3396",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/506",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4058",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/508",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/507",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3416"
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/505"
     },
     {
-      "id": 3415,
+      "id": 500,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Migration of Hyper-V to Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/476",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/501",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/502",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/503",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/504",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/500"
+    },
+    {
+      "id": 495,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Migration of On-Prem to Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/496",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/498",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/497",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/476",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/499",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/495"
+    },
+    {
+      "id": 489,
       "rev": 3,
       "fields": {
-        "System.AreaPath": "SQL Proj - Azure BG Test",
-        "System.TeamProject": "SQL Proj - Azure BG Test",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-12-04T21:18:26.073Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-16T18:57:20.03Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "SQL Migration Readiness",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:31:41.113Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Adopt-Migrate",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "CAF SQL Migration Readiness",
+        "System.Description": null,
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "Plan",
+        "System.Tags": null,
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -440,52 +600,95 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3391",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/491",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3393",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/490",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3392",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/494",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3381",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/492",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/493",
+          "attributes": {
+            "isLocked": "false",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3374",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/476",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/489"
+    },
+    {
+      "id": 477,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Server Migration Pre-Configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/476",
+          "attributes": {
+            "isLocked": "false",
             "name": "Parent"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4063",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/488",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
@@ -493,7 +696,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4066",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/478",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
@@ -501,7 +704,7 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4064",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/485",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
@@ -509,37 +712,93 @@
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4062",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/483",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/486",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/487",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/484",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/482",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/480",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/481",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/479",
           "attributes": {
             "isLocked": "false",
             "name": "Child"
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3415"
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/477"
     },
     {
-      "id": 3414,
-      "rev": 2,
+      "id": 470,
+      "rev": 1,
       "fields": {
-        "System.AreaPath": "SQL Proj - Azure BG Test",
-        "System.TeamProject": "SQL Proj - Azure BG Test",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-12-04T21:18:25.823Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-16T17:27:50.143Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.Title": "Plan and Assessment",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Cloud Assessment",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Plan and Assessment",
+        "System.Description": null,
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "Plan",
+        "System.Tags": null,
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -549,91 +808,149 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3387",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/471",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3388",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/474",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/473",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/475",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/472",
+          "attributes": {
+            "isLocked": "false",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3374",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/461",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4065",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3386",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3389",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3390",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
-            "name": "Child"
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3414"
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/470"
     },
     {
-      "id": 3413,
-      "rev": 2,
+      "id": 465,
+      "rev": 1,
       "fields": {
-        "System.AreaPath": "SQL Proj - Azure BG Test",
-        "System.TeamProject": "SQL Proj - Azure BG Test",
-        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
         "System.WorkItemType": "User Story",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2020-12-04T21:18:25.68Z",
-        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
-        "System.ChangedDate": "2020-12-16T17:27:50.143Z",
-        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.CreatedDate": "2020-07-15T01:17:14.167Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:17:14.167Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "CAF Server Migration Design",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/468",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/466",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/469",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/467",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/461",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/465"
+    },
+    {
+      "id": 462,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Server_Migration_Project",
+        "System.TeamProject": "Server_Migration_Project",
+        "System.IterationPath": "Server_Migration_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-15T01:14:03.65Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-15T01:14:03.65Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
         "System.Title": "Define Strategy",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "Define Strategy",
+        "System.Description": null,
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
         "System.BoardLane": null,
-        "System.Tags": "Plan",
+        "System.Tags": null,
         "Microsoft.VSTS.TCM.Steps": null,
         "Microsoft.VSTS.TCM.Parameters": null,
         "Microsoft.VSTS.TCM.LocalDataSource": null,
@@ -643,41 +960,30 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3384",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/464",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3374",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/461",
           "attributes": {
             "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         },
         {
           "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3626",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/463",
           "attributes": {
             "isLocked": "false",
-            "name": "Child"
-          }
-        },
-        {
-          "rel": "System.LinkTypes.Hierarchy-Forward",
-          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3385",
-          "attributes": {
-            "isLocked": "false",
-            "comment": "Making a new link for the dependency",
             "name": "Child"
           }
         }
       ],
-      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3413"
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/462"
     }
   ],
   "HttpStatusCode": 0,

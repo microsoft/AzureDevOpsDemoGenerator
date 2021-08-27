@@ -891,7 +891,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FGH",
-          "Name": "CAF Strategy-Plan-Ready-Gov",
+          "Name": "CAF Strategy-Plan-Ready-Governance",
           "TemplateFolder": "CAF-ADO-Strategy-Plan-Ready-Gov",
           "ShortName": "StrategyPlan",
           "Description": "In this checklist we share all the decision points needed to successfully build a Cloud Adoption Plan as well as the Landing Zone with Governance",
@@ -916,7 +916,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37F6",
-          "Name": "ServerMigration_CAF_DevOps_ProjectTaskList",
+          "Name": "Server Migration",
           "TemplateFolder": "ServerMigration_CAF_DevOps_ProjectTaskList",
           "ShortName": "ServerMigration",
           "Description": "Server migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete Server migration and management.",
@@ -936,7 +936,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJH",
-          "Name": "AKS_CAF_DevOps_Project_TaskList",
+          "Name": "AKS_CloudAdoptionFramework",
           "TemplateFolder": "AKS_CAF_DevOps_Project_TaskList",
           "ShortName": "CAFAKS",
           "Description": "AKS deployment has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete AKS deployment and management.",
