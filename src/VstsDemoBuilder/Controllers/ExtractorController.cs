@@ -251,6 +251,7 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public JsonResult AnalyzeProject(Project model)
         {
+            ExtractorService es = new ExtractorService();
             ExtractorAnalysis analysis = new ExtractorAnalysis();
             ProjectConfigurations appConfig = extractorService.ProjectConfiguration(model);
             analysis.teamCount = extractorService.GetTeamsCount(appConfig);
@@ -259,7 +260,7 @@ namespace VstsDemoBuilder.Controllers
             analysis.BuildDefCount = extractorService.GetBuildDefinitionCount(appConfig);
             analysis.ReleaseDefCount = extractorService.GetReleaseDefinitionCount(appConfig);
 
-            analysis.ErrorMessages = ExtractorService.errorMessages;
+            analysis.ErrorMessages = es.errorMessages;
             return Json(analysis, JsonRequestBehavior.AllowGet);
         }
         #endregion

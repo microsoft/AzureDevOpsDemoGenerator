@@ -28,7 +28,7 @@ namespace VstsDemoBuilder.Services
         public static ILog logger = LogManager.GetLogger("ErrorLog");
         public static readonly object objLock = new object();
         public static Dictionary<string, string> statusMessages;
-        public static List<string> errorMessages = new List<string>();
+        public List<string> errorMessages = new List<string>();
         public static string[] workItemTypes = new string[] { };
         public static string extractedTemplatePath = string.Empty;
         private ProjectProperties.Properties projectProperties = new ProjectProperties.Properties();
@@ -1105,7 +1105,7 @@ namespace VstsDemoBuilder.Services
             {
                 Guid g = Guid.NewGuid();
                 string randStr = g.ToString().Substring(0, 8);
-                def["triggers"] = new JArray();
+                // def["triggers"] = new JArray();
                 if (type.ToString().ToLower() == "github")
                 {
                     def["repository"]["properties"]["fullName"] = "repository";
