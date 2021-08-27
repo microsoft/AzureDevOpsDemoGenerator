@@ -1956,6 +1956,14 @@ namespace VstsDemoBuilder.Services
                             string placeHolder = string.Format("${0}$", endpoint);
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.serviceEndpoints[endpoint]);
                         }
+                        if (model.Environment.AgentQueues.Count > 0)
+                        {
+                            foreach (var agentPool in model.Environment.AgentQueues.Keys)
+                            {
+                                string placeHolder = string.Format("${0}$", agentPool);
+                                jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, Convert.ToString(model.Environment.AgentQueues[agentPool]));
+                            }
+                        }
 
                         string[] buildResult = objBuild.CreateBuildDefinition(jsonBuildDefinition, model.ProjectName, model.SelectedTemplate);
 
