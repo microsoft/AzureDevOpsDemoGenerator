@@ -173,7 +173,6 @@ namespace VstsDemoBuilder.Controllers
                     else
                     {
                         TemplateSelected = System.Configuration.ConfigurationManager.AppSettings["DefaultTemplate"];
-                        model.TemplateName = TemplateSelected;
                     }
                     if (Session["PAT"] != null)
                     {
