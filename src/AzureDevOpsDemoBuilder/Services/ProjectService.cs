@@ -2134,13 +2134,18 @@ namespace AzureDevOpsDemoBuilder.Services
             {
                 foreach (BuildDef buildDef in model.BuildDefinitions)
                 {
+                    string gitUser = string.Empty;
+                    if(model.GitHubFork && !string.IsNullOrEmpty(model.GitHubToken))
+                    {
+                        gitUser = model.GitHubOrganization ?? model.GitHubUserName;
+                    }
                     if (File.Exists(buildDef.FilePath))
                     {
                         BuildDefinition objBuild = new BuildDefinition(_buildConfig, ai);
                         string jsonBuildDefinition = model.ReadJsonFile(buildDef.FilePath);
                         jsonBuildDefinition = jsonBuildDefinition.Replace("$ProjectName$", model.Environment.ProjectName)
                                              .Replace("$ProjectId$", model.Environment.ProjectId)
-                                             .Replace("$username$", model.GitHubUserName).Replace("$reponame$", model.GitRepoName);
+                                             .Replace("$username$", gitUser).Replace("$reponame$", model.GitRepoName);
 
                         if (model.Environment.VariableGroups.Count > 0)
                         {
@@ -2164,6 +2169,14 @@ namespace AzureDevOpsDemoBuilder.Services
                             jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, model.Environment.ServiceEndpoints[endpoint]);
                         }
 
+                        if (model.Environment.AgentQueues.Count > 0)
+                        {
+                            foreach (var agentPool in model.Environment.AgentQueues.Keys)
+                            {
+                                string placeHolder = string.Format("${0}$", agentPool);
+                                jsonBuildDefinition = jsonBuildDefinition.Replace(placeHolder, Convert.ToString(model.Environment.AgentQueues[agentPool]));
+                            }
+                        }
                         (string buildId, string buildName) buildResult = objBuild.CreateBuildDefinition(jsonBuildDefinition, model.ProjectName, model.SelectedTemplate);
 
                         if (!(string.IsNullOrEmpty(objBuild.LastFailureMessage)))
