@@ -1,0 +1,117 @@
+{
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "Issue",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": {}
+    }
+  ],
+  "triggers": [
+    {
+      "branchFilters": [
+        "+main"
+      ],
+      "pathFilters": [],
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": "continuousIntegration"
+    }
+  ],
+  "variables": {
+    "EnvironmentType": {
+      "value": "Test"
+    },
+    "ResourceGroupName": {
+      "value": "ToyWebsiteTest"
+    },
+    "ServiceConnectionName": {
+      "value": "ToyWebsiteTest"
+    }
+  },
+  "properties": {},
+  "tags": [],
+  "_links": "{}",
+  "comment": "Update variables",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "yamlFilename": "deploy/azure-pipelines.yml",
+    "type": 2
+  },
+  "repository": {
+    "properties": {
+      "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/toy-website-test",
+      "fullName": "toy-website-test",
+      "defaultBranch": "refs/heads/main",
+      "isFork": "False",
+      "safeRepository": "$toy-website-test$",
+      "reportBuildStatus": "true",
+      "cleanOptions": "0",
+      "fetchDepth": "0",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)"
+    },
+    "id": "$toy-website-test$",
+    "type": "TfsGit",
+    "name": "toy-website-test",
+    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/toy-website-test",
+    "defaultBranch": "main",
+    "clean": null,
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "authoredBy": "{}",
+  "drafts": [],
+  "queue": {
+    "_links": {
+      "self": {
+        "href": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Hosted Ubuntu 1604$"
+      }
+    },
+    "id": "$Hosted Ubuntu 1604$",
+    "name": "Hosted Ubuntu 1604",
+    "url": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Hosted Ubuntu 1604$",
+    "pool": {
+      "id": "",
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "id": "",
+  "name": "toy-website-test",
+  "url": "",
+  "uri": "",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled",
+  "revision": 3,
+  "createdDate": "",
+  "project": "{}"
+}
