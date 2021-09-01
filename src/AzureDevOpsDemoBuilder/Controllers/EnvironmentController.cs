@@ -20,6 +20,8 @@ using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.ApplicationInsights;
+using System.Net.Http.Headers;
+using System.Net.Http;
 
 namespace AzureDevOpsDemoBuilder.Controllers
 {
@@ -150,7 +152,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             return Json(templates);
         }
-       
+
         /// <summary>
         /// View ProjectSetUp
         /// </summary>
@@ -658,7 +660,10 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
                     string listedExtension = System.IO.File.ReadAllText(extensionJsonFile);
                     var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(listedExtension);
-
+                    if (template == null || template.Extensions == null || template.Extensions.Count == 0)
+                    {
+                        return Json(new { message = "no extensions required", status = "false" });
+                    }
                     template.Extensions.RemoveAll(x => x.ExtensionName.ToLower() == "analytics");
                     template.Extensions = template.Extensions.OrderBy(y => y.ExtensionName).ToList();
                     string requiresExtensionNames = string.Empty;
@@ -851,6 +856,57 @@ namespace AzureDevOpsDemoBuilder.Controllers
         public void DeletePrivateTemplate(string TemplateName)
         {
             templateService.deletePrivateTemplate(TemplateName);
+        }
+
+        public JsonResult GetOrganizaton()
+        {
+            try
+            {
+                List<GitHubUserDetail> orgs = new List<GitHubUserDetail>();
+                GitHubUserDetail userDetail = new GitHubUserDetail();
+                using (var client = new HttpClient())
+                {
+                    string baseAddress = AppKeyConfiguration["GitHubBaseAddress"];
+                    client.BaseAddress = new Uri(baseAddress);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("GitHubToken"));
+                    client.DefaultRequestHeaders.Add("User-Agent", "demogenapi");
+                    HttpResponseMessage response = client.GetAsync("/user").Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        userDetail = JsonConvert.DeserializeObject<GitHubUserDetail>(response.Content.ReadAsStringAsync().Result);
+                        HttpContext.Session.SetString("GitUserId", userDetail.login);
+                    }
+                }
+                orgs.Add(userDetail);
+                List<GitHubUserDetail> orgs1 = new List<GitHubUserDetail>();
+
+                //https://api.github.com/user/orgs
+                using (var client = new HttpClient())
+                {
+                    string baseAddress = AppKeyConfiguration["GitHubBaseAddress"];
+                    client.BaseAddress = new Uri(baseAddress);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("GitHubToken"));
+                    client.DefaultRequestHeaders.Add("User-Agent", "demogenapi");
+                    HttpResponseMessage response = client.GetAsync("/user/orgs").Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        orgs1 = JsonConvert.DeserializeObject<List<GitHubUserDetail>>(response.Content.ReadAsStringAsync().Result);
+                    }
+                }
+                orgs.AddRange(orgs1);
+
+                return Json(orgs);
+            }
+            catch (Exception ex)
+            {
+                ai.TrackException(ex);
+                logger.LogDebug(ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return default;
         }
     }
 

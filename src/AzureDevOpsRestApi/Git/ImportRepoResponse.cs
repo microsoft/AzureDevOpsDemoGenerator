@@ -27,4 +27,9 @@ namespace AzureDevOpsRestApi.Git
 
 
     }
+    public class GetRepository
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
 }

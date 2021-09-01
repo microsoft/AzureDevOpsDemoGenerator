@@ -62,10 +62,7 @@
     {
         <input type="hidden" value="@Model.SelectedTemplateFolder" id="selectedTemplateFolder" />
     }
-    @if (!string.IsNullOrEmpty(Model.Message))
-    {
         <input type="hidden" value="@Model.Message" id="infoMessageTxt" />
-    }
     @if (!string.IsNullOrEmpty(Model.SelectedTemplate))
     {
         <input type="hidden" value="@Model.SelectedTemplate" id="selectedTemplate" />
@@ -242,26 +239,30 @@
                     </div>
                 </div>
 
-                <div style="border:1px solid #ccc; margin-top:15px;" id="gitHubCheckboxDiv">
+                <div style="border:1px solid #ccc;" id="gitHubCheckboxDiv">
                     <div class="form-group row">
-                        <div class="col-lg-12">
-                            <div class="git_support">
-                                <div for="Template" class="col-lg-12 col-sm-12 p-0">
-                                    <p class="githubPng"><b>Azure DevOps Demo Generator now supports GitHub importing!</b></p>
-                                    <p class="m-2">
-                                        The selected template includes a GitHub repository. You can choose to import it. If you import, all pipelines will be updated to point to the imported repo.
-                                    </p>
-                                </div>
+                        <div class="git_support" style="margin:14px;">
+                            <div for="Template" class="col-lg-12 col-sm-12 p-0">
+                                <p class="githubPng"><b>Azure DevOps Demo Generator now supports GitHub importing!</b></p>
+                                <p class="m-2">
+                                    The selected template includes a GitHub repository. You can choose to import it. If you import, all pipelines will be updated to point to the imported repo.
+                                </p>
                             </div>
-                            <div class="col-lg-3 float-left"></div>
-                            <div class="col-lg-5  mb-3 mt-3 float-left" style="">
+                        </div>
+                        <div class="col-lg-12 row">
+                            <div class="col-lg-5">
                                 <div class="template-invoke mb-3 mt-1 inlinestyle">
                                     <input type="checkbox" id="gitHubCheckbox" name="gitHubCheckbox">
                                     <label for="gitHubCheckbox">Yes, I want to import this repository</label>
                                 </div>
-                                @*<p class="inlinestyle mt-1">Yes, I want to import this repository</p>*@
                             </div>
-                            <div class="template-invoke mb-3 mt-3 col-lg-3 float-left" id="gitHubAuthDiv">
+                            <div class="col-lg-4">
+                                <select class="form-control" id="ghOrgs">
+                                </select>
+                                <div class="alert alert-danger d-none" role="alert" id="ghOrgs_Error">
+                                </div>
+                            </div>
+                            <div class="col-lg-3" id="gitHubAuthDiv">
                                 <button type="button" class="btn githubIcon" id="githubAuth" style="padding-left:5px; padding-right:5px; width: 100%" disabled="">
                                     Authorize
                                 </button>
