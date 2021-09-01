@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://github.com/MicrosoftDocs/mslearn-test-bicep-code-using-azure-pipelines.git"
+    },
+    "serviceEndpointId": "",
+    "deleteServiceEndpointAfterImportIsDone": false
+  }
+}

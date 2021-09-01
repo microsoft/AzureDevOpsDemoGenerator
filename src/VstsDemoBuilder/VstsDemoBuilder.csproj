@@ -1757,6 +1757,10 @@
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\Feature.json" />
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\Task.json" />
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\User Story.json" />
+    <Content Include="Templates\Test-bicep\BuildDefinitions\toy-website-test.json" />
+    <Content Include="Templates\Test-bicep\ImportSourceCode\toy-website-test.json" />
+    <Content Include="Templates\Test-bicep\ProjectSettings.json" />
+    <Content Include="Templates\Test-bicep\ProjectTemplate.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
