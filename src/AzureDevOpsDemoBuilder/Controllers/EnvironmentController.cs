@@ -152,7 +152,7 @@ namespace AzureDevOpsDemoBuilder.Controllers
             }
             return Json(templates);
         }
-       
+
         /// <summary>
         /// View ProjectSetUp
         /// </summary>
@@ -660,7 +660,10 @@ namespace AzureDevOpsDemoBuilder.Controllers
 
                     string listedExtension = System.IO.File.ReadAllText(extensionJsonFile);
                     var template = JsonConvert.DeserializeObject<RequiredExtensions.Extension>(listedExtension);
-
+                    if (template == null || template.Extensions == null || template.Extensions.Count == 0)
+                    {
+                        return Json(new { message = "no extensions required", status = "false" });
+                    }
                     template.Extensions.RemoveAll(x => x.ExtensionName.ToLower() == "analytics");
                     template.Extensions = template.Extensions.OrderBy(y => y.ExtensionName).ToList();
                     string requiresExtensionNames = string.Empty;
