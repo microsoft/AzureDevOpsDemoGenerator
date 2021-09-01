@@ -12,11 +12,12 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ dotnetcore ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ dotnetcore ]
+  workflow_dispatch:
+ # push:
+ #   branches: [ dotnetcore ]
+ # pull_request:
+ #   # The branches below must be a subset of the branches above
+ #   branches: [ dotnetcore ]
 #   schedule:
 #     - cron: '43 18 * * 1'
 
