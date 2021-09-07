@@ -801,6 +801,20 @@
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-kubernetes' target='_blank'> repository </a> manually and follow the steps given in the document - <a href=' https://docs.microsoft.com/learn/modules/deploy-kubernetes/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploymulti-container solutions to Kubernetes</a>",
           "Description": "Learn to implement a CI/CD pipeline for multi-container solutions orchestrated with Kubernetes<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/deploy-kubernetes/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploymulti-container solutions to Kubernetes</a>"
+        },
+        {
+          "Key": "5B06AA95-9578-438F-8E65-7C95765665A0",
+          "Name": "Test your Bicep code by using Azure Pipelines",
+          "TemplateFolder": "Test-bicep",
+          "ShortName": "testbicep",
+          "Tags": [
+            "Microsoft Learn",
+            "Bicep",
+            "ARM"
+          ],
+          "ForkGitHubRepo": true,
+          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-test-bicep-code-using-azure-pipelines.git' target='_blank'> repository </a> manually and follow the steps given in the document - <a href=' https://docs.microsoft.com/learn/modules/test-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Test Bicep code using Azure Pipelines</a>",
+          "Description": "Validate and test your Bicep code in your deployment pipeline. You'll use linting, preflight validation, and the what-if operation to validate your Azure changes before you deploy, and you'll test your resources after each deployment<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/test-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Test Bicep code using Azure Pipelines</a>"
         }
       ]
     },
@@ -891,7 +905,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FGH",
-          "Name": "CAF Strategy-Plan-Ready-Gov",
+          "Name": "CAF Strategy-Plan-Ready-Governance",
           "TemplateFolder": "CAF-ADO-Strategy-Plan-Ready-Gov",
           "ShortName": "StrategyPlan",
           "Description": "In this checklist we share all the decision points needed to successfully build a Cloud Adoption Plan as well as the Landing Zone with Governance",
@@ -916,7 +930,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37F6",
-          "Name": "ServerMigration_CAF_DevOps_ProjectTaskList",
+          "Name": "Server Migration",
           "TemplateFolder": "ServerMigration_CAF_DevOps_ProjectTaskList",
           "ShortName": "ServerMigration",
           "Description": "Server migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete Server migration and management.",
@@ -936,7 +950,7 @@
         },
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJH",
-          "Name": "AKS_CAF_DevOps_Project_TaskList",
+          "Name": "AKS_CloudAdoptionFramework",
           "TemplateFolder": "AKS_CAF_DevOps_Project_TaskList",
           "ShortName": "CAFAKS",
           "Description": "AKS deployment has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete AKS deployment and management.",
