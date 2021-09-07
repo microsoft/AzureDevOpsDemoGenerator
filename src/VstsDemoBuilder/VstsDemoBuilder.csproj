@@ -1724,6 +1724,7 @@
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\Feature.json" />
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\Task.json" />
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\User Story.json" />
+
     <Content Include="Templates\Keyvault\BuildDefinitions\azure-key-vault.json" />
     <Content Include="Templates\Keyvault\ImportSourceCode\azure-key-vault.json" />
     <Content Include="Templates\Keyvault\ServiceEndpoints\azure-key-vault-code.json" />
@@ -1781,6 +1782,12 @@
     <Content Include="Templates\Python\Teams\Team2\CardStyles.json" />
     <Content Include="Templates\Python\Teams\Team2\TeamSetting.json" />
     <Content Include="Templates\Python\Teams\Teams.json" />
+
+    <Content Include="Templates\Test-bicep\BuildDefinitions\toy-website-test.json" />
+    <Content Include="Templates\Test-bicep\ImportSourceCode\toy-website-test.json" />
+    <Content Include="Templates\Test-bicep\ProjectSettings.json" />
+    <Content Include="Templates\Test-bicep\ProjectTemplate.json" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
