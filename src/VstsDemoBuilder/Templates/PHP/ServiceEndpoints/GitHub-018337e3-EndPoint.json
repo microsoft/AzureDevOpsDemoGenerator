@@ -2,14 +2,14 @@
   "data": {
 
   },
-  "name": "php-code",
+  "name": "GitHub_018337e3",
   "type": "git",
   "url": "https://dev.azure.com/akshayhosur/php/_git/php",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
-      "username": "$username$",
-      "password": "$password$"
+      "username": "$GitUserName$",
+      "password": "$GitUserPassword$"
     }
   },
   "isReady": true
