@@ -1724,18 +1724,12 @@
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\Feature.json" />
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\Task.json" />
     <Content Include="Templates\UnifiedDataGovernance\WorkItems\User Story.json" />
-
     <Content Include="Templates\Keyvault\BuildDefinitions\azure-key-vault.json" />
     <Content Include="Templates\Keyvault\ImportSourceCode\azure-key-vault.json" />
     <Content Include="Templates\Keyvault\ServiceEndpoints\azure-key-vault-code.json" />
     <Content Include="Templates\PHP\BuildDefinitions\php-yaml.json" />
     <Content Include="Templates\PHP\BuildDefinitions\PHP.json" />
     <Content Include="Templates\PHP\Dashboard\Dashboard.json" />
-    <Content Include="Templates\PHP\Dashboard\Queries\All Work Items.json" />
-    <Content Include="Templates\PHP\Dashboard\Queries\Epics.json" />
-    <Content Include="Templates\PHP\Dashboard\Queries\Features.json" />
-    <Content Include="Templates\PHP\Dashboard\Queries\Product Backlog Items.json" />
-    <Content Include="Templates\PHP\Dashboard\Queries\Tasks.json" />
     <Content Include="Templates\PHP\ImportSourceCode\php.json" />
     <Content Include="Templates\PHP\Iterations.json" />
     <Content Include="Templates\PHP\ProjectSettings.json" />
@@ -1782,12 +1776,10 @@
     <Content Include="Templates\Python\Teams\Team2\CardStyles.json" />
     <Content Include="Templates\Python\Teams\Team2\TeamSetting.json" />
     <Content Include="Templates\Python\Teams\Teams.json" />
-
     <Content Include="Templates\Test-bicep\BuildDefinitions\toy-website-test.json" />
     <Content Include="Templates\Test-bicep\ImportSourceCode\toy-website-test.json" />
     <Content Include="Templates\Test-bicep\ProjectSettings.json" />
     <Content Include="Templates\Test-bicep\ProjectTemplate.json" />
-
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
