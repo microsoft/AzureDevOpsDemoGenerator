@@ -35,7 +35,7 @@
     "properties": {
       "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/php",
       "fullName": "php",
-      "defaultBranch": "refs/heads/master",
+      "defaultBranch": "refs/heads/azure-pipelines",
       "isFork": "False",
       "safeRepository": "$php$",
       "reportBuildStatus": "true"
@@ -44,7 +44,7 @@
     "type": "TfsGit",
     "name": "php",
     "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/php",
-    "defaultBranch": "master",
+    "defaultBranch": "azure-pipelines",
     "clean": null,
     "checkoutSubmodules": false
   },
