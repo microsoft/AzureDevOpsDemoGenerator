@@ -703,8 +703,6 @@
     <Content Include="Templates\PartsUnlimited\TestPlans\TestPlan1.json" />
     <Content Include="Templates\PartsUnlimited\TestPlans\TestSuites\TestPlan1.json" />
     <Content Include="Templates\PartsUnlimited\UpdateCardFields.json" />
-    <Content Include="Templates\Python\BoardColumns.json" />
-    <Content Include="Templates\Python\BoardRowsFromTemplate.json" />
     <Content Include="Templates\Python\BuildDefinitions\Python.json" />
     <Content Include="Templates\Python\Dashboard\Queries\All Work Items.json" />
     <Content Include="Templates\Python\Dashboard\Queries\Epic.json" />
@@ -712,15 +710,12 @@
     <Content Include="Templates\Python\Dashboard\Queries\Product Backlog Items.json" />
     <Content Include="Templates\Python\Dashboard\Queries\Tasks.json" />
     <Content Include="Templates\Python\EnableEpic.json" />
-    <Content Include="Templates\Python\Extensions.json" />
     <Content Include="Templates\Python\ImportSourceCode\PythonDjango.json" />
     <Content Include="Templates\Python\ProjectSettings.json" />
     <Content Include="Templates\Python\ProjectTemplate.json" />
     <Content Include="Templates\Python\ReleaseDefinitions\Python.json" />
     <Content Include="Templates\Python\ServiceEndpoints\Python-code.json" />
     <Content Include="Templates\Python\TeamArea.json" />
-    <Content Include="Templates\Python\Teams.json" />
-    <Content Include="Templates\Python\UpdateCardFields.json" />
     <Content Include="Templates\Selenium\BoardColumns.json" />
     <Content Include="Templates\Selenium\BoardRowsFromTemplate.json" />
     <Content Include="Templates\Selenium\BuildDefinitions\Selenium.json" />
@@ -1747,7 +1742,7 @@
     <Content Include="Templates\PHP\ReleaseDefinitions\PHP.json" />
     <Content Include="Templates\PHP\ServiceEndpoints\GitHub-018337e3-EndPoint.json" />
     <Content Include="Templates\PHP\ServiceEndpoints\php-code.json" />
-    <Content Include="Templates\PHP\ServiceEndpoints\Visual Studio Enterprise – MPN%28ab1ad37f-a64b-457e-9de2-d6589579fe0c%29.json" />
+    <Content Include="Templates\PHP\ServiceEndpoints\ARM-Subscription.json" />
     <Content Include="Templates\PHP\TeamArea.json" />
     <Content Include="Templates\PHP\Teams\php Team\BoardColumns.json" />
     <Content Include="Templates\PHP\Teams\php Team\BoardRows.json" />
@@ -1769,6 +1764,23 @@
     <Content Include="Templates\PHP\WorkItems\Feature.json" />
     <Content Include="Templates\PHP\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\PHP\WorkItems\Task.json" />
+    <Content Include="Templates\Python\BuildDefinitions\PythonDjango.json" />
+    <Content Include="Templates\Python\Teams\Python Team\BoardColumns.json" />
+    <Content Include="Templates\Python\Teams\Python Team\BoardRows.json" />
+    <Content Include="Templates\Python\Teams\Python Team\CardFields.json" />
+    <Content Include="Templates\Python\Teams\Python Team\CardStyles.json" />
+    <Content Include="Templates\Python\Teams\Python Team\TeamSetting.json" />
+    <Content Include="Templates\Python\Teams\Team1\BoardColumns.json" />
+    <Content Include="Templates\Python\Teams\Team1\BoardRows.json" />
+    <Content Include="Templates\Python\Teams\Team1\CardFields.json" />
+    <Content Include="Templates\Python\Teams\Team1\CardStyles.json" />
+    <Content Include="Templates\Python\Teams\Team1\TeamSetting.json" />
+    <Content Include="Templates\Python\Teams\Team2\BoardColumns.json" />
+    <Content Include="Templates\Python\Teams\Team2\BoardRows.json" />
+    <Content Include="Templates\Python\Teams\Team2\CardFields.json" />
+    <Content Include="Templates\Python\Teams\Team2\CardStyles.json" />
+    <Content Include="Templates\Python\Teams\Team2\TeamSetting.json" />
+    <Content Include="Templates\Python\Teams\Teams.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
