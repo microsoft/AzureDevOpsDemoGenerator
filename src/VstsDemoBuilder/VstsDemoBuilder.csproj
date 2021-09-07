@@ -417,6 +417,11 @@
     <Content Include="Templates\PartsUnlimited\Images\boards.png" />
     <Content Include="Templates\PartsUnlimited\Images\dashboard.png" />
     <Content Include="Templates\PartsUnlimited\Images\pulwebsite.png" />
+    <Content Include="Templates\PHP\Dashboard\Queries\All Work Items.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\All Epics.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\Features.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\Product Backlog Items.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\Tasks.json" />
     <Content Include="Templates\Python\Images\build-progress.gif" />
     <Content Include="Templates\Python\Images\cd-tasks.png" />
     <Content Include="Templates\Python\Images\ci-pipeline.png" />
