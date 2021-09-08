@@ -418,7 +418,7 @@
     <Content Include="Templates\PartsUnlimited\Images\dashboard.png" />
     <Content Include="Templates\PartsUnlimited\Images\pulwebsite.png" />
     <Content Include="Templates\PHP\Dashboard\Queries\All Work Items.json" />
-    <Content Include="Templates\PHP\Dashboard\Queries\All Epics.json" />
+    <Content Include="Templates\PHP\Dashboard\Queries\Epic.json" />
     <Content Include="Templates\PHP\Dashboard\Queries\Features.json" />
     <Content Include="Templates\PHP\Dashboard\Queries\Product Backlog Items.json" />
     <Content Include="Templates\PHP\Dashboard\Queries\Tasks.json" />
