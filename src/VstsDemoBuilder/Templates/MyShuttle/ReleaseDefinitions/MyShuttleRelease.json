@@ -1,18 +1,53 @@
 {
   "source": "userInterface",
-  "revision": 8,
+  "revision": 3,
   "description": null,
+  "createdBy": "{}",
+  "createdOn": "",
+  "modifiedBy": "{}",
+  "modifiedOn": "",
   "isDeleted": false,
+  "lastRelease": {
+    "id": 1,
+    "name": "Release-1",
+    "artifacts": [],
+    "_links": {},
+    "description": "",
+    "releaseDefinition": {
+      "id": 1,
+      "projectReference": null,
+      "_links": {}
+    },
+    "createdOn": "2021-09-03T14:14:37.55Z",
+    "createdBy": {
+      "displayName": "Akshay Hosur",
+      "url": "https://spsprodsin1.vssps.visualstudio.com/A5ddcb812-79aa-4fdb-b9d3-ae14ee6520a0/_apis/Identities/ddc8930b-7be3-6d29-ba63-9a7b2edf1b5e",
+      "_links": {
+        "avatar": {
+          "href": "https://dev.azure.com/akshayhosur/_apis/GraphProfile/MemberAvatars/aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl"
+        }
+      },
+      "id": "ddc8930b-7be3-6d29-ba63-9a7b2edf1b5e",
+      "uniqueName": "akshay.hosur@ecanarys.com",
+      "imageUrl": "https://dev.azure.com/akshayhosur/_apis/GraphProfile/MemberAvatars/aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl",
+      "descriptor": "aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl"
+    }
+  },
   "variables": {},
   "variableGroups": [],
   "environments": [
     {
+      "id": 1,
       "name": "Azure-Dev",
       "rank": 1,
       "owner": {
-        "id": "$OwnerId$",
         "displayName": "$OwnerDisplayName$",
-        "uniqueName": "$OwnerUniqueName$"
+        "url": "",
+        "_links": "{}",
+        "id": "$OwnerId$",
+        "uniqueName": "$OwnerUniqueName$",
+        "imageUrl": "",
+        "descriptor": ""
       },
       "variables": {},
       "variableGroups": [],
@@ -21,7 +56,8 @@
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false
+            "isNotificationOn": false,
+            "id": 1
           }
         ],
         "approvalOptions": {
@@ -33,13 +69,16 @@
           "executionOrder": "beforeGates"
         }
       },
-      "deployStep": {},
+      "deployStep": {
+        "id": 2
+      },
       "postDeployApprovals": {
         "approvals": [
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false
+            "isNotificationOn": false,
+            "id": 3
           }
         ],
         "approvalOptions": {
@@ -57,6 +96,7 @@
             "parallelExecution": {
               "parallelExecutionType": "none"
             },
+            "agentSpecification": null,
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
@@ -72,6 +112,7 @@
           "rank": 1,
           "phaseType": "agentBasedDeployment",
           "name": "Run on agent",
+          "refName": null,
           "workflowTasks": [
             {
               "environment": {},
@@ -88,10 +129,10 @@
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceName": "",
-                "ServerName": "",
-                "DatabaseName": "",
-                "SqlUsername": "",
-                "SqlPassword": "",
+                "ServerName": "myshuttle0891.mysql.database.azure.com",
+                "DatabaseName": "myshuttle0891",
+                "SqlUsername": "mysqldbuser@myshuttle0891",
+                "SqlPassword": "P2ssw0rd@123",
                 "TaskNameSelector": "SqlTaskFile",
                 "SqlFile": "$(System.DefaultWorkingDirectory)/**/drop/CreateMYSQLDB.sql",
                 "SqlInline": "",
@@ -116,39 +157,32 @@
               "overrideInputs": {},
               "condition": "succeeded()",
               "inputs": {
+                "ConnectionType": "AzureRM",
                 "ConnectedServiceName": "",
+                "PublishProfilePath": "$(System.DefaultWorkingDirectory)/**/*.pubxml",
+                "PublishProfilePassword": "",
                 "WebAppKind": "Web App on Windows",
-                "WebAppName": "",
-                "DeployToSlotFlag": "false",
+                "WebAppName": "myshuttle83a",
+                "DeployToSlotOrASEFlag": "false",
                 "ResourceGroupName": "",
-                "SlotName": "",
-                "ImageSource": "Registry",
-                "AzureContainerRegistry": "",
-                "AzureContainerRegistryLoginServer": "",
-                "AzureContainerRegistryImage": "",
-                "AzureContainerRegistryTag": "",
-                "DockerRepositoryAccess": "public",
-                "RegistryConnectedServiceName": "",
-                "PrivateRegistryImage": "",
-                "PrivateRegistryTag": "",
+                "SlotName": "production",
                 "DockerNamespace": "",
                 "DockerRepository": "",
                 "DockerImageTag": "$(Build.BuildId)",
                 "VirtualApplication": "",
                 "Package": "$(System.DefaultWorkingDirectory)/**/*.war",
-                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
                 "RuntimeStack": "",
+                "RuntimeStackFunction": "",
                 "StartupCommand": "",
-                "WebAppUri": "",
                 "ScriptType": "",
                 "InlineScript": "",
                 "ScriptPath": "",
-                "GenerateWebConfig": "false",
                 "WebConfigParameters": "",
                 "AppSettings": "",
                 "ConfigurationSettings": "",
-                "TakeAppOfflineFlag": "true",
                 "UseWebDeploy": "false",
+                "DeploymentType": "webDeploy",
+                "TakeAppOfflineFlag": "true",
                 "SetParametersFile": "",
                 "RemoveAdditionalFilesFlag": "false",
                 "ExcludeFilesFromAppDataFlag": "false",
@@ -187,7 +221,8 @@
       },
       "schedules": [],
       "currentRelease": {
-        "id": 6,
+        "id": 1,
+        "url": "https://vsrm.dev.azure.com/akshayhosur/99ed66b8-b7be-468b-a12e-8e558bd717f6/_apis/Release/releases/1",
         "_links": {}
       },
       "retentionPolicy": {
@@ -196,81 +231,6 @@
         "retainBuild": true
       },
       "processParameters": {
-        "inputs": [
-          {
-            "aliases": [],
-            "options": {},
-            "properties": {},
-            "name": "ConnectedServiceName",
-            "label": "Azure subscription",
-            "defaultValue": "",
-            "required": true,
-            "type": "connectedService:AzureRM",
-            "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment.",
-            "visibleRule": "",
-            "groupName": ""
-          },
-          {
-            "aliases": [],
-            "options": {
-              "app": "Web App",
-              "applinux": "Linux App",
-              "functionapp": "Function App",
-              "api": "API App",
-              "mobileapp": "Mobile App"
-            },
-            "properties": {
-              "EditableOptions": "false"
-            },
-            "name": "WebAppKind",
-            "label": "App type",
-            "defaultValue": "app",
-            "type": "pickList",
-            "helpMarkDown": "",
-            "groupName": ""
-          },
-          {
-            "aliases": [],
-            "options": {},
-            "properties": {
-              "EditableOptions": "True"
-            },
-            "name": "WebAppName",
-            "label": "App service name",
-            "defaultValue": "MyShuttle1",
-            "required": true,
-            "type": "pickList",
-            "helpMarkDown": "Enter or select the name of an existing Azure App Service.",
-            "visibleRule": "",
-            "groupName": ""
-          },
-          {
-            "aliases": [],
-            "options": {},
-            "properties": {},
-            "name": "DockerNamespace",
-            "label": "Registry or Namespace",
-            "defaultValue": "",
-            "required": true,
-            "type": "string",
-            "helpMarkDown": "A globally unique top-level domain name for your specific registry or namespace.<br/> Note: Fully qualified image name will be of the format: '<b>`<registry or namespace`></b>/`<repository`>:`<tag`>'. For example, '<b>myregistry.azurecr.io</b>/nginx:latest'.",
-            "visibleRule": "WebAppKind = applinux",
-            "groupName": ""
-          },
-          {
-            "aliases": [],
-            "options": {},
-            "properties": {},
-            "name": "DockerRepository",
-            "label": "Repository",
-            "defaultValue": "",
-            "required": true,
-            "type": "string",
-            "helpMarkDown": "Name of the repository where the container images are stored.<br/> Note: Fully qualified image name will be of the format: '`<registry or namespace`>/<b>`<repository`></b>:`<tag`>'. For example, 'myregistry.azurecr.io/<b>nginx</b>:latest'.",
-            "visibleRule": "WebAppKind = applinux",
-            "groupName": ""
-          }
-        ],
         "dataSourceBindings": [
           {
             "dataSourceName": "AzureRMWebAppNamesByType",
@@ -282,7 +242,12 @@
           }
         ]
       },
-      "properties": {},
+      "properties": {
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
+      },
       "preDeploymentGates": {
         "id": 0,
         "gatesOptions": null,
@@ -293,14 +258,15 @@
         "gatesOptions": null,
         "gates": []
       },
-      "environmentTriggers": []
+      "environmentTriggers": [],
+      "badgeUrl": ""
     }
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$MyShuttleBuild-id$",
+      "sourceId": "$ProjectId$:$MyShuttle-yaml-id$",
       "type": "Build",
-      "alias": "MyShuttle Build",
+      "alias": "_MyShuttle-yaml",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -319,30 +285,52 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$MyShuttleBuild-id$",
-          "name": "MyShuttleBuild"
+          "id": "$MyShuttle-yaml-id$",
+          "name": "MyShuttle-yaml"
+        },
+        "definitions": {
+          "id": "",
+          "name": ""
+        },
+        "IsMultiDefinitionType": {
+          "id": "False",
+          "name": "False"
         },
         "project": {
           "id": "$ProjectId$",
           "name": "$ProjectName$"
-        }
+        },
+        "repository": {
+          "id": "",
+          "name": ""
+        },
+        "artifactSourceDefinitionUrl": "{}"
       },
-      "isPrimary": true
+      "isPrimary": true,
+      "isRetained": false
     }
   ],
   "triggers": [],
   "releaseNameFormat": "Release-$(rev:r)",
   "tags": [],
-  "pipelineProcess": {
-    "type": "designer"
-  },
   "properties": {
     "DefinitionCreationSource": {
       "$type": "System.String",
       "$value": "ReleaseNew"
+    },
+    "IntegrateBoardsWorkItems": {
+      "$type": "System.String",
+      "$value": "False"
+    },
+    "IntegrateJiraWorkItems": {
+      "$type": "System.String",
+      "$value": "false"
     }
   },
+  "id": "",
   "name": "MyShuttleRelease",
   "path": "\\",
-  "projectReference": null
+  "projectReference": null,
+  "url": "",
+  "_links": "{}"
 }

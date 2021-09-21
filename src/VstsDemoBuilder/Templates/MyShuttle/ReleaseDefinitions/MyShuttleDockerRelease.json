@@ -1,6 +1,11 @@
 {
   "source": "userInterface",
+  "revision": 3,
   "description": null,
+  "createdBy": "{}",
+  "createdOn": "",
+  "modifiedBy": "{}",
+  "modifiedOn": "",
   "isDeleted": false,
   "variables": {
     "DBPASSWORD": {
@@ -17,25 +22,27 @@
   ],
   "environments": [
     {
+      "id": 2,
       "name": "Azure-Dev",
       "rank": 1,
       "owner": {
-        "id": "$OwnerId$",
         "displayName": "$OwnerDisplayName$",
-        "uniqueName": "$OwnerUniqueName$"
+        "url": "",
+        "_links": "{}",
+        "id": "$OwnerId$",
+        "uniqueName": "$OwnerUniqueName$",
+        "imageUrl": "",
+        "descriptor": ""
       },
-      "variables": {
-
-      },
-      "variableGroups": [
-
-      ],
+      "variables": {},
+      "variableGroups": [],
       "preDeployApprovals": {
         "approvals": [
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false
+            "isNotificationOn": false,
+            "id": 4
           }
         ],
         "approvalOptions": {
@@ -48,13 +55,15 @@
         }
       },
       "deployStep": {
+        "id": 5
       },
       "postDeployApprovals": {
         "approvals": [
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false
+            "isNotificationOn": false,
+            "id": 6
           }
         ],
         "approvalOptions": {
@@ -72,32 +81,26 @@
             "parallelExecution": {
               "parallelExecutionType": "none"
             },
+            "agentSpecification": null,
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
-              "downloadInputs": [
-
-              ]
+              "downloadInputs": []
             },
             "queueId": "$Hosted VS2017$",
-            "demands": [
-
-            ],
+            "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
             "jobCancelTimeoutInMinutes": 1,
             "condition": "succeeded()",
-            "overrideInputs": {
-
-            }
+            "overrideInputs": {}
           },
           "rank": 1,
           "phaseType": "agentBasedDeployment",
           "name": "Run on agent",
+          "refName": null,
           "workflowTasks": [
             {
-              "environment": {
-
-              },
+              "environment": {},
               "taskId": "bd1bed02-f04e-11e7-8c3f-9a214cf093ae",
               "version": "1.*",
               "name": "Execute Azure MySQL : SqlTaskFile",
@@ -107,9 +110,7 @@
               "continueOnError": false,
               "timeoutInMinutes": 0,
               "definitionType": "task",
-              "overrideInputs": {
-
-              },
+              "overrideInputs": {},
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceName": "",
@@ -128,9 +129,7 @@
               }
             },
             {
-              "environment": {
-
-              },
+              "environment": {},
               "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
               "version": "3.*",
               "name": "Deploy Azure App Service",
@@ -218,7 +217,7 @@
       },
       "schedules": [
 
-      ],
+      ],      
       "retentionPolicy": {
         "daysToKeep": 30,
         "releasesToKeep": 3,
@@ -277,32 +276,30 @@
         ]
       },
       "properties": {
-
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
       },
       "preDeploymentGates": {
         "id": 0,
         "gatesOptions": null,
-        "gates": [
-
-        ]
+        "gates": []
       },
       "postDeploymentGates": {
         "id": 0,
         "gatesOptions": null,
-        "gates": [
-
-        ]
+        "gates": []
       },
-      "environmentTriggers": [
-
-      ]
+      "environmentTriggers": [],
+      "badgeUrl": ""
     }
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$MyShuttleDockerBuild-id$",
+      "sourceId": "$ProjectId$:$MyShuttle-Docker-yaml-id$",
       "type": "Build",
-      "alias": "MyShuttleDockerBuild",
+      "alias": "_MyShuttle-Docker-yaml",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -317,12 +314,12 @@
           "name": ""
         },
         "defaultVersionType": {
-          "id": "selectDuringReleaseCreationType",
-          "name": "Specify at the time of release creation"
+          "id": "latestType",
+          "name": "Latest"
         },
         "definition": {
-          "id": "$MyShuttleDockerBuild-id$",
-          "name": "MyShuttleDockerBuild"
+          "id": "$MyShuttle-Docker-yaml-id$",
+          "name": "MyShuttle-Docker-yaml"
         },
         "definitions": {
           "id": "",
@@ -335,28 +332,38 @@
         "project": {
           "id": "$ProjectId$",
           "name": "$ProjectName$"
-        }
+        },
+        "repository": {
+          "id": "",
+          "name": ""
+        },
+        "artifactSourceDefinitionUrl": "{}"
       },
       "isPrimary": true,
       "isRetained": false
     }
   ],
-  "triggers": [
-
-  ],
+  "triggers": [],
   "releaseNameFormat": "Release-$(rev:r)",
-  "tags": [
-
-  ],
-  "pipelineProcess": {
-    "type": "designer"
-  },
+  "tags": [],
   "properties": {
     "DefinitionCreationSource": {
       "$type": "System.String",
       "$value": "ReleaseNew"
+    },
+    "IntegrateBoardsWorkItems": {
+      "$type": "System.String",
+      "$value": "False"
+    },
+    "IntegrateJiraWorkItems": {
+      "$type": "System.String",
+      "$value": "false"
     }
   },
+  "id": "",
   "name": "MyShuttleDockerRelease",
-  "path": "\\"
+  "path": "\\",
+  "projectReference": null,
+  "url": "",
+  "_links": "{}"
 }
