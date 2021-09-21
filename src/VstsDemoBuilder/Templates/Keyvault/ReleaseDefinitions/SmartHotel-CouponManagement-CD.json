@@ -1,6 +1,6 @@
 {
   "source": "userInterface",
-  "revision": 10,
+  "revision": 2,
   "description": null,
   "createdBy": "{}",
   "createdOn": "",
@@ -32,6 +32,7 @@
         "imageUrl": "",
         "descriptor": ""
       },
+      "variables": {},
       "variableGroups": [],
       "preDeployApprovals": {
         "approvals": [
@@ -78,6 +79,7 @@
             "parallelExecution": {
               "parallelExecutionType": "none"
             },
+            "agentSpecification": null,
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
@@ -99,7 +101,7 @@
               "environment": {},
               "taskId": "1e244d32-2dd4-4165-96fb-b7441ca9331e",
               "version": "1.*",
-              "name": "Azure Key Vault: SMCoupon ",
+              "name": "Azure Key Vault: SMCoupon",
               "refName": "",
               "enabled": true,
               "alwaysRun": false,
@@ -110,8 +112,9 @@
               "condition": "succeeded()",
               "inputs": {
                 "ConnectedServiceName": "",
-                "KeyVaultName": "SMCoupon ",
-                "SecretsFilter": "*"
+                "KeyVaultName": "SMCoupon",
+                "SecretsFilter": "*",
+                "RunAsPreJob": "false"
               }
             },
             {
@@ -135,7 +138,7 @@
                 "templateLocation": "Linked artifact",
                 "csmFileLink": "",
                 "csmParametersFileLink": "",
-                "csmFile": "$(System.DefaultWorkingDirectory)/_SmartHotel-CouponManagement-Docker container-CI/drop/azuredeploy.json",
+                "csmFile": "$(System.DefaultWorkingDirectory)/_azure-key-vault-yaml/drop/azuredeploy.json",
                 "csmParametersFile": "",
                 "overrideParameters": "-webAppName $(webappName) -mySQLAdminLoginName \"azureuser\" -mySQLAdminLoginPassword $(sqldbpassword) ",
                 "deploymentMode": "Incremental",
@@ -231,7 +234,7 @@
       },
       "schedules": [],
       "currentRelease": {
-      
+       
       },
       "retentionPolicy": {
         "daysToKeep": 30,
@@ -256,11 +259,10 @@
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$SmartHotel-CouponManagement-CI-id$",
+      "sourceId": "$ProjectId$:$azure-key-vault-yaml-id$",
       "type": "Build",
-      "alias": "_SmartHotel-CouponManagement-Docker container-CI",
+      "alias": "_azure-key-vault-yaml",
       "definitionReference": {
-        "artifactSourceDefinitionUrl": "{}",
         "defaultVersionBranch": {
           "id": "",
           "name": ""
@@ -278,8 +280,8 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$SmartHotel-CouponManagement-CI-id$",
-          "name": "SmartHotel-CouponManagement-CI"
+          "id": "$azure-key-vault-yaml-id$",
+          "name": "azure-key-vault-yaml"
         },
         "definitions": {
           "id": "",
@@ -296,7 +298,8 @@
         "repository": {
           "id": "",
           "name": ""
-        }
+        },
+        "artifactSourceDefinitionUrl": "{}"
       },
       "isPrimary": true,
       "isRetained": false
@@ -305,13 +308,18 @@
   "triggers": [],
   "releaseNameFormat": "Release-$(rev:r)",
   "tags": [],
-  "pipelineProcess": {
-    "type": "designer"
-  },
   "properties": {
     "DefinitionCreationSource": {
       "$type": "System.String",
       "$value": "ReleaseNew"
+    },
+    "IntegrateBoardsWorkItems": {
+      "$type": "System.String",
+      "$value": "False"
+    },
+    "IntegrateJiraWorkItems": {
+      "$type": "System.String",
+      "$value": "false"
     }
   },
   "id": "",
