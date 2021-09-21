@@ -1,6 +1,6 @@
 {
   "source": "userInterface",
-  "revision": 1,
+  "revision": 2,
   "description": null,
   "createdBy": "{}",
   "createdOn": "",
@@ -143,6 +143,8 @@
                 "scriptPath": "",
                 "inlineScript": "call az group create --location $(Location) --name $(myResourceGroup)\ncall az appservice plan create --name $(webappname) --resource-group $(myResourceGroup) --sku S1\ncall az webapp create --name $(webappname) --resource-group $(myResourceGroup) --plan $(webappname)",
                 "args": "",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
                 "cwd": "",
                 "failOnStandardError": "false"
               }
@@ -180,7 +182,7 @@
                 "DockerRepository": "",
                 "DockerImageTag": "",
                 "VirtualApplication": "",
-                "Package": "$(System.DefaultWorkingDirectory)/PHP/drop/*.zip",
+                "Package": "$(System.DefaultWorkingDirectory)/_php-yml/drop/*.zip",
                 "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
                 "RuntimeStack": "node|4.4",
                 "StartupCommand": "",
@@ -260,7 +262,12 @@
           }
         ]
       },
-      "properties": {},
+      "properties": {
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
+      },
       "preDeploymentGates": {
         "id": 0,
         "gatesOptions": {
@@ -289,9 +296,9 @@
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$PHP-id$",
+      "sourceId": "$ProjectId$:$php-yaml-id$",
       "type": "Build",
-      "alias": "PHP",
+      "alias": "_php-yaml",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -310,12 +317,24 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$PHP-id$",
-          "name": "PHP"
+          "id": "$php-yaml-id$",
+          "name": "php-yaml"
+        },
+        "definitions": {
+          "id": "",
+          "name": ""
+        },
+        "IsMultiDefinitionType": {
+          "id": "False",
+          "name": "False"
         },
         "project": {
           "id": "$ProjectId$",
           "name": "$ProjectName$"
+        },
+        "repository": {
+          "id": "",
+          "name": ""
         },
         "artifactSourceDefinitionUrl": "{}"
       },
@@ -323,19 +342,21 @@
       "isRetained": false
     }
   ],
-  "triggers": [
-    {
-      "artifactAlias": "PHP",
-      "triggerConditions": [],
-      "triggerType": "artifactSource"
-    }
-  ],
+  "triggers": [],
   "releaseNameFormat": "Release-$(rev:r)",
   "tags": [],
   "properties": {
     "DefinitionCreationSource": {
       "$type": "System.String",
       "$value": "BuildSummary"
+    },
+    "IntegrateBoardsWorkItems": {
+      "$type": "System.String",
+      "$value": "False"
+    },
+    "IntegrateJiraWorkItems": {
+      "$type": "System.String",
+      "$value": "false"
     }
   },
   "id": "",

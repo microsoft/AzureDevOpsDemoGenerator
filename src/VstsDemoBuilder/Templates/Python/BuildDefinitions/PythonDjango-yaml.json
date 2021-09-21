@@ -11,7 +11,7 @@
   ],
   "variables": {
     "appservice-name": {
-      "value": "pythone58a59e8d"
+      "value": "python$UUID$"
     },
     "appservice-plan": {
       "value": "pythonplan"
