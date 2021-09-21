@@ -718,7 +718,6 @@
     <Content Include="Templates\Python\ImportSourceCode\PythonDjango.json" />
     <Content Include="Templates\Python\ProjectSettings.json" />
     <Content Include="Templates\Python\ProjectTemplate.json" />
-    <Content Include="Templates\Python\ReleaseDefinitions\Python.json" />
     <Content Include="Templates\Python\ServiceEndpoints\Python-code.json" />
     <Content Include="Templates\Python\TeamArea.json" />
     <Content Include="Templates\Selenium\BoardColumns.json" />
@@ -1764,7 +1763,6 @@
     <Content Include="Templates\PHP\WorkItems\Feature.json" />
     <Content Include="Templates\PHP\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\PHP\WorkItems\Task.json" />
-    <Content Include="Templates\Python\BuildDefinitions\PythonDjango.json" />
     <Content Include="Templates\Python\Teams\Python Team\BoardColumns.json" />
     <Content Include="Templates\Python\Teams\Python Team\BoardRows.json" />
     <Content Include="Templates\Python\Teams\Python Team\CardFields.json" />
@@ -1785,6 +1783,8 @@
     <Content Include="Templates\Test-bicep\ImportSourceCode\toy-website-test.json" />
     <Content Include="Templates\Test-bicep\ProjectSettings.json" />
     <Content Include="Templates\Test-bicep\ProjectTemplate.json" />
+    <Content Include="Templates\Python\BuildDefinitions\PythonDjango-yaml.json" />
+    <Content Include="Templates\Python\ReleaseDefinitions\Python-CD.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
