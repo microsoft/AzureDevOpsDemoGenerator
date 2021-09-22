@@ -1,0 +1,81 @@
+{
+  "triggers": [
+    {
+      "branchFilters": [],
+      "pathFilters": [],
+      "settingsSourceType": 2,
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": "continuousIntegration"
+    }
+  ],
+  "variables": {
+    "ACR": {
+      "value": "YOURACR.azurecr.io"
+    },
+    "SQLpassword": {
+      "value": "P2ssw0rd1234"
+    },
+    "SQLserver": {
+      "value": "YOURSQLSERVER.database.windows.net"
+    },
+    "SQLuser": {
+      "value": "sqladmin"
+    }
+  },
+  "properties": {},
+  "tags": [],
+  "_links": "{}",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "yamlFilename": "azure-pipelines.yml",
+    "type": 2
+  },
+  "repository": {
+    "properties": {
+      "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/AKS",
+      "fullName": "AKS",
+      "defaultBranch": "refs/heads/master",
+      "isFork": "False",
+      "safeRepository": "$AKS$",
+      "reportBuildStatus": "true"
+    },
+    "id": "$AKS$",
+    "type": "TfsGit",
+    "name": "AKS",
+    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/AKS",
+    "defaultBranch": "master",
+    "clean": null,
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "authoredBy": "{}",
+  "drafts": [],
+  "queue": {
+    "_links": {
+      "self": {
+        "href": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Hosted Ubuntu 1604$"
+      }
+    },
+    "id": "$Hosted Ubuntu 1604$",
+    "name": "Hosted Ubuntu 1604",
+    "url": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Hosted Ubuntu 1604$",
+    "pool": {
+      "id": "",
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "id": "",
+  "name": "MyHealth.AKS.build-YAML",
+  "url": "",
+  "uri": "",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled",
+  "revision": 3,
+  "createdDate": "",
+  "project": "{}"
+}

@@ -765,8 +765,6 @@
     <Content Include="Templates\WhiteSource-Bolt\TeamArea.json" />
     <Content Include="Templates\WhiteSource-Bolt\Teams.json" />
     <Content Include="Templates\WhiteSource-Bolt\UerStoriesfromTemplate.json" />
-    <Content Include="Templates\AKS\BoardColumns.json" />
-    <Content Include="Templates\AKS\BoardRowsFromTemplate.json" />
     <Content Include="Templates\AKS\BuildDefinitions\AKS.json" />
     <Content Include="Templates\AKS\Dashboard\Queries\All Work Items.json" />
     <Content Include="Templates\AKS\Dashboard\Queries\Epic.json" />
@@ -776,13 +774,8 @@
     <Content Include="Templates\AKS\EnableEpic.json" />
     <Content Include="Templates\AKS\Extensions.json" />
     <Content Include="Templates\AKS\ImportSourceCode\AKS.json" />
-    <Content Include="Templates\AKS\ProjectSettings.json" />
-    <Content Include="Templates\AKS\ProjectTemplate.json" />
     <Content Include="Templates\AKS\ReleaseDefinitions\AKS.json" />
     <Content Include="Templates\AKS\ServiceEndpoints\AKS-code.json" />
-    <Content Include="Templates\AKS\TeamArea.json" />
-    <Content Include="Templates\AKS\Teams.json" />
-    <Content Include="Templates\AKS\UpdateCardFields.json" />
     <Content Include="Templates\Docker\BoardColumns.json" />
     <Content Include="Templates\Docker\BoardRowsFromTemplate.json" />
     <Content Include="Templates\Docker\BugfromTemplate.json" />
@@ -924,10 +917,6 @@
     <None Include="Properties\PublishProfiles\vstsdemogenerator-test - FTP1.pubxml" />
     <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttleDockerBuild.json" />
     <Content Include="Templates\MyShuttle\ReleaseDefinitions\MyShuttleDockerRelease.json" />
-    <Content Include="Templates\AKS\TaskfromTemplate.json" />
-    <Content Include="Templates\AKS\FeaturefromTemplate.json" />
-    <Content Include="Templates\AKS\EpicfromTemplate.json" />
-    <Content Include="Templates\AKS\PBIfromTemplate.json" />
     <Content Include="Views\Environment\CreateProject.cshtml" />
     <Content Include="Templates\SmartHotel360\ReleaseDefinitions\SmartHotelWebsite Deploy.json" />
     <Content Include="Templates\SmartHotel360\BuildDefinitions\SmartHotelPetcheckerWeb.json" />
@@ -1797,6 +1786,30 @@
     <Content Include="Templates\MyShuttle\WorkItems\Test Case.json" />
     <Content Include="Templates\MyShuttle\WorkItems\Test Plan.json" />
     <Content Include="Templates\MyShuttle\WorkItems\Test Suite.json" />
+    <Content Include="Templates\AKS\BuildDefinitions\MyHealthAKSbuild-YAML.json" />
+    <Content Include="Templates\AKS\Teams\Azure Kubernetes Service Team\BoardColumns.json" />
+    <Content Include="Templates\AKS\Teams\Azure Kubernetes Service Team\BoardRows.json" />
+    <Content Include="Templates\AKS\Teams\Azure Kubernetes Service Team\CardFields.json" />
+    <Content Include="Templates\AKS\Teams\Azure Kubernetes Service Team\CardStyles.json" />
+    <Content Include="Templates\AKS\Teams\Azure Kubernetes Service Team\TeamSetting.json" />
+    <Content Include="Templates\AKS\Teams\Team1\BoardColumns.json" />
+    <Content Include="Templates\AKS\Teams\Team1\BoardRows.json" />
+    <Content Include="Templates\AKS\Teams\Team1\CardFields.json" />
+    <Content Include="Templates\AKS\Teams\Team1\CardStyles.json" />
+    <Content Include="Templates\AKS\Teams\Team1\TeamSetting.json" />
+    <Content Include="Templates\AKS\Teams\Team2\BoardColumns.json" />
+    <Content Include="Templates\AKS\Teams\Team2\BoardRows.json" />
+    <Content Include="Templates\AKS\Teams\Team2\CardFields.json" />
+    <Content Include="Templates\AKS\Teams\Team2\CardStyles.json" />
+    <Content Include="Templates\AKS\Teams\Team2\TeamSetting.json" />
+    <Content Include="Templates\AKS\Teams\Teams.json" />
+    <Content Include="Templates\AKS\WorkItems\Epic.json" />
+    <Content Include="Templates\AKS\WorkItems\Feature.json" />
+    <Content Include="Templates\AKS\WorkItems\Product Backlog Item.json" />
+    <Content Include="Templates\AKS\WorkItems\Task.json" />
+    <Content Include="Templates\AKS\ProjectSettings.json" />
+    <Content Include="Templates\AKS\ProjectTemplate.json" />
+    <Content Include="Templates\AKS\TeamArea.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
