@@ -888,17 +888,9 @@
     <Content Include="Templates\LaunchDarkly\UerStoriesfromTemplate.json" />
     <Content Include="Templates\AzureFunctions\BuildDefinitions\AzureFunctions_CI.json" />
     <Content Include="Templates\AzureFunctions\EnableEpic.json" />
-    <Content Include="Templates\AzureFunctions\EpicfromTemplate.json" />
-    <Content Include="Templates\AzureFunctions\FeaturefromTemplate.json" />
     <Content Include="Templates\AzureFunctions\ImportSourceCode\AzureFunctions.json" />
-    <Content Include="Templates\AzureFunctions\PBIfromTemplate.json" />
-    <Content Include="Templates\AzureFunctions\ProjectSettings.json" />
-    <Content Include="Templates\AzureFunctions\ProjectTemplate.json" />
     <Content Include="Templates\AzureFunctions\ReleaseDefinitions\AzureFunctions_CD.json" />
     <Content Include="Templates\AzureFunctions\ServiceEndpoints\AzureFunctions-code.json" />
-    <Content Include="Templates\AzureFunctions\TaskfromTemplate.json" />
-    <Content Include="Templates\AzureFunctions\TeamArea.json" />
-    <Content Include="Templates\AzureFunctions\Teams.json" />
     <Content Include="Templates\Terraform\BuildDefinitions\Terraform.json" />
     <Content Include="Templates\Terraform\Extensions.json" />
     <Content Include="Templates\Terraform\ImportSourceCode\Terraform.json" />
@@ -1810,6 +1802,29 @@
     <Content Include="Templates\AKS\ProjectSettings.json" />
     <Content Include="Templates\AKS\ProjectTemplate.json" />
     <Content Include="Templates\AKS\TeamArea.json" />
+    <Content Include="Templates\AzureFunctions\BuildDefinitions\AzureFunctions_CI-YAML.json" />
+    <Content Include="Templates\AzureFunctions\Iterations.json" />
+    <Content Include="Templates\AzureFunctions\ProjectSettings.json" />
+    <Content Include="Templates\AzureFunctions\ProjectTemplate.json" />
+    <Content Include="Templates\AzureFunctions\TeamArea.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Azure Functions Team\BoardColumns.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Azure Functions Team\BoardRows.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Azure Functions Team\CardFields.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Azure Functions Team\CardStyles.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Azure Functions Team\TeamSetting.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team1\BoardColumns.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team1\BoardRows.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team1\CardFields.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team1\CardStyles.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team1\TeamSetting.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team2\BoardColumns.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team2\BoardRows.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team2\CardFields.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team2\CardStyles.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Team2\TeamSetting.json" />
+    <Content Include="Templates\AzureFunctions\Teams\Teams.json" />
+    <Content Include="Templates\AzureFunctions\WorkItems\Epic.json" />
+    <Content Include="Templates\AzureFunctions\WorkItems\Feature.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
