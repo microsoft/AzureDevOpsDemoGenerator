@@ -776,9 +776,6 @@
     <Content Include="Templates\AKS\ImportSourceCode\AKS.json" />
     <Content Include="Templates\AKS\ReleaseDefinitions\AKS.json" />
     <Content Include="Templates\AKS\ServiceEndpoints\AKS-code.json" />
-    <Content Include="Templates\Docker\BoardColumns.json" />
-    <Content Include="Templates\Docker\BoardRowsFromTemplate.json" />
-    <Content Include="Templates\Docker\BugfromTemplate.json" />
     <Content Include="Templates\Docker\BuildDefinitions\Docker.json" />
     <Content Include="Templates\Docker\Dashboard\Dashboard.json" />
     <Content Include="Templates\Docker\Dashboard\Queries\All Work Items.json" />
@@ -787,19 +784,13 @@
     <Content Include="Templates\Docker\Dashboard\Queries\Product Backlog Items.json" />
     <Content Include="Templates\Docker\Dashboard\Queries\Tasks.json" />
     <Content Include="Templates\Docker\EnableEpic.json" />
-    <Content Include="Templates\Docker\EpicfromTemplate.json" />
     <Content Include="Templates\Docker\Extensions.json" />
-    <Content Include="Templates\Docker\FeaturefromTemplate.json" />
     <Content Include="Templates\Docker\ImportSourceCode\Docker.json" />
-    <Content Include="Templates\Docker\PBIfromTemplate.json" />
     <Content Include="Templates\Docker\ProjectSettings.json" />
     <Content Include="Templates\Docker\ProjectTemplate.json" />
     <Content Include="Templates\Docker\ReleaseDefinitions\Docker.json" />
     <Content Include="Templates\Docker\ServiceEndpoints\Docker-code.json" />
-    <Content Include="Templates\Docker\TaskfromTemplate.json" />
     <Content Include="Templates\Docker\TeamArea.json" />
-    <Content Include="Templates\Docker\Teams.json" />
-    <Content Include="Templates\Docker\UpdateCardFields.json" />
     <Content Include="Templates\ReleaseGates\BugfromTemplate.json" />
     <Content Include="Templates\ReleaseGates\BuildDefinitions\PartsUnlimited-CI.json" />
     <Content Include="Templates\ReleaseGates\Dashboard\Queries\Bugs.json" />
@@ -1825,6 +1816,27 @@
     <Content Include="Templates\AzureFunctions\Teams\Teams.json" />
     <Content Include="Templates\AzureFunctions\WorkItems\Epic.json" />
     <Content Include="Templates\AzureFunctions\WorkItems\Feature.json" />
+    <Content Include="Templates\Docker\BuildDefinitions\MHCDockerbuild-YAML.json" />
+    <Content Include="Templates\Docker\Teams\Docker Team\BoardColumns.json" />
+    <Content Include="Templates\Docker\Teams\Docker Team\BoardRows.json" />
+    <Content Include="Templates\Docker\Teams\Docker Team\CardFields.json" />
+    <Content Include="Templates\Docker\Teams\Docker Team\CardStyles.json" />
+    <Content Include="Templates\Docker\Teams\Docker Team\TeamSetting.json" />
+    <Content Include="Templates\Docker\Teams\Team1\BoardColumns.json" />
+    <Content Include="Templates\Docker\Teams\Team1\BoardRows.json" />
+    <Content Include="Templates\Docker\Teams\Team1\CardFields.json" />
+    <Content Include="Templates\Docker\Teams\Team1\CardStyles.json" />
+    <Content Include="Templates\Docker\Teams\Team1\TeamSetting.json" />
+    <Content Include="Templates\Docker\Teams\Team2\BoardColumns.json" />
+    <Content Include="Templates\Docker\Teams\Team2\BoardRows.json" />
+    <Content Include="Templates\Docker\Teams\Team2\CardFields.json" />
+    <Content Include="Templates\Docker\Teams\Team2\CardStyles.json" />
+    <Content Include="Templates\Docker\Teams\Team2\TeamSetting.json" />
+    <Content Include="Templates\Docker\Teams\Teams.json" />
+    <Content Include="Templates\Docker\WorkItems\Epic.json" />
+    <Content Include="Templates\Docker\WorkItems\Feature.json" />
+    <Content Include="Templates\Docker\WorkItems\Product Backlog Item.json" />
+    <Content Include="Templates\Docker\WorkItems\Task.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
