@@ -1837,6 +1837,13 @@
     <Content Include="Templates\Docker\WorkItems\Feature.json" />
     <Content Include="Templates\Docker\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\Docker\WorkItems\Task.json" />
+    <Content Include="Templates\Ansible\BuildDefinitions\Ansible-CI-YAML.json" />
+    <Content Include="Templates\Ansible\Teams\Ansible Team\BoardColumns.json" />
+    <Content Include="Templates\Ansible\Teams\Ansible Team\BoardRows.json" />
+    <Content Include="Templates\Ansible\Teams\Ansible Team\CardFields.json" />
+    <Content Include="Templates\Ansible\Teams\Ansible Team\CardStyles.json" />
+    <Content Include="Templates\Ansible\Teams\Ansible Team\TeamSetting.json" />
+    <Content Include="Templates\Ansible\Teams\Teams.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
