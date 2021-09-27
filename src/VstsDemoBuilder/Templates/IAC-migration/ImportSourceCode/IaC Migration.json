@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/ricmart/IaC Migration - Sept 22/_git/IaC Migration"
+    },
+    "serviceEndpointId": "$IaC Migration - code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "count": 3,
+  "value": [
+    {
+      "id": 6206,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "IaC Migration - Sept 22",
+        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-09-22T15:00:05.88Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2021-09-22T15:02:41.677Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "1 - Redeployment/Rehosting",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6209",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6211",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6210",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6206"
+    },
+    {
+      "id": 6207,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "IaC Migration - Sept 22",
+        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.IterationPath": "$ProjectName$\\Testing",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-09-22T15:00:15.1Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2021-09-22T15:02:29.583Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "2 - Testing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6213",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6212",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6207"
+    },
+    {
+      "id": 6208,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "IaC Migration - Sept 22",
+        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.IterationPath": "$ProjectName$\\Migration",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-09-22T15:00:21.463Z",
+        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.ChangedDate": "2021-09-22T15:02:13.7Z",
+        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.Title": "3 - Migration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6216",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6215",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6217",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6208"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

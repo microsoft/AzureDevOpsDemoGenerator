@@ -1,0 +1,22 @@
+{
+  "children": [
+    {
+      "name": "Migration",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Redeployment and Rehosting of Migration Waves",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Testing",
+      "structureType": "iteration",
+      "hasChildren": false
+    }
+  ],
+  "name": "IaC Migration - Sept 22",
+  "structureType": "iteration",
+  "hasChildren": true
+}
