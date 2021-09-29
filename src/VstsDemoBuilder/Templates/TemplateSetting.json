@@ -1146,7 +1146,7 @@
           "Name": "Azure Migrations - IaC",
           "TemplateFolder": "IAC-migration",
           "ShortName": "AzureMigrationsIaC",
-          "Description": "A guidance to execute Azure Migrations using IaC approach.",
+          "Description": "A guidance to execute Azure Migrations using IaC approach. <a href='https://github.com/ricmmartins/fta-liftandshift-dcmigration/blob/main/doc/importing-template.md' target='_blank'>IaC Migragtion</a>",
           "Tags": [
             "Migration",
             "Azure"
