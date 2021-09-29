@@ -1844,6 +1844,7 @@
     <Content Include="Templates\Ansible\Teams\Ansible Team\CardStyles.json" />
     <Content Include="Templates\Ansible\Teams\Ansible Team\TeamSetting.json" />
     <Content Include="Templates\Ansible\Teams\Teams.json" />
+    <Content Include="Templates\Terraform\BuildDefinitions\Terraform-CI-YAML.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
