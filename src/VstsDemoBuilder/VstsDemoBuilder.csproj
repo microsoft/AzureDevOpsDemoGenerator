@@ -786,7 +786,6 @@
     <Content Include="Templates\Docker\ReleaseDefinitions\Docker.json" />
     <Content Include="Templates\Docker\ServiceEndpoints\Docker-code.json" />
     <Content Include="Templates\Docker\TeamArea.json" />
-    <Content Include="Templates\ReleaseGates\BugfromTemplate.json" />
     <Content Include="Templates\ReleaseGates\BuildDefinitions\PartsUnlimited-CI.json" />
     <Content Include="Templates\ReleaseGates\Dashboard\Queries\Bugs.json" />
     <Content Include="Templates\ReleaseGates\EnableEpic.json" />
@@ -796,7 +795,6 @@
     <Content Include="Templates\ReleaseGates\ReleaseDefinitions\PartsUnlimited-CD.json" />
     <Content Include="Templates\ReleaseGates\ServiceEndpoints\PartsUnlimited-code.json" />
     <Content Include="Templates\ReleaseGates\TeamArea.json" />
-    <Content Include="Templates\ReleaseGates\Teams.json" />
     <Content Include="Templates\PartsUnlimited\Wiki\ProjectWiki\CreateWiki.json" />
     <Content Include="Templates\MyHealthClinic\Wiki\CodeWiki\CreateWiki.json" />
     <Content Include="Views\Account\Unsupported_browser.cshtml" />
@@ -1857,6 +1855,24 @@
     <Content Include="Templates\Selenium\Teams\Team2\CardStyles.json" />
     <Content Include="Templates\Selenium\Teams\Team2\TeamSetting.json" />
     <Content Include="Templates\Selenium\Teams\Teams.json" />
+    <Content Include="Templates\ReleaseGates\BuildDefinitions\PartsUnlimited-CI-YAML.json" />
+    <Content Include="Templates\ReleaseGates\WorkItems\Bug.json" />
+    <Content Include="Templates\ReleaseGates\Teams\ReleaseGates Team\BoardColumns.json" />
+    <Content Include="Templates\ReleaseGates\Teams\ReleaseGates Team\BoardRows.json" />
+    <Content Include="Templates\ReleaseGates\Teams\ReleaseGates Team\CardFields.json" />
+    <Content Include="Templates\ReleaseGates\Teams\ReleaseGates Team\CardStyles.json" />
+    <Content Include="Templates\ReleaseGates\Teams\ReleaseGates Team\TeamSetting.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team1\BoardColumns.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team1\BoardRows.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team1\CardFields.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team1\CardStyles.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team1\TeamSetting.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team2\BoardColumns.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team2\BoardRows.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team2\CardFields.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team2\CardStyles.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Team2\TeamSetting.json" />
+    <Content Include="Templates\ReleaseGates\Teams\Teams.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
