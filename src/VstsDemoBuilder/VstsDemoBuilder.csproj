@@ -702,8 +702,6 @@
     <Content Include="Templates\Python\ProjectTemplate.json" />
     <Content Include="Templates\Python\ServiceEndpoints\Python-code.json" />
     <Content Include="Templates\Python\TeamArea.json" />
-    <Content Include="Templates\Selenium\BoardColumns.json" />
-    <Content Include="Templates\Selenium\BoardRowsFromTemplate.json" />
     <Content Include="Templates\Selenium\BuildDefinitions\Selenium.json" />
     <Content Include="Templates\Selenium\Dashboard\Queries\All Work Items.json" />
     <Content Include="Templates\Selenium\Dashboard\Queries\Epic.json" />
@@ -717,9 +715,6 @@
     <Content Include="Templates\Selenium\ProjectTemplate.json" />
     <Content Include="Templates\Selenium\ReleaseDefinitions\Selenium.json" />
     <Content Include="Templates\Selenium\ServiceEndpoints\Selenium-code.json" />
-    <Content Include="Templates\Selenium\TeamArea.json" />
-    <Content Include="Templates\Selenium\Teams.json" />
-    <Content Include="Templates\Selenium\UpdateCardFields.json" />
     <Content Include="Templates\SonarQube\BoardColumns.json" />
     <Content Include="Templates\SonarQube\BoardRowsFromTemplate.json" />
     <Content Include="Templates\SonarQube\BuildDefinitions\SonarQube.json" />
@@ -1845,6 +1840,23 @@
     <Content Include="Templates\Ansible\Teams\Ansible Team\TeamSetting.json" />
     <Content Include="Templates\Ansible\Teams\Teams.json" />
     <Content Include="Templates\Terraform\BuildDefinitions\Terraform-CI-YAML.json" />
+    <Content Include="Templates\Selenium\BuildDefinitions\Selenium-YAML.json" />
+    <Content Include="Templates\Selenium\Teams\Selenium Team\BoardColumns.json" />
+    <Content Include="Templates\Selenium\Teams\Selenium Team\BoardRows.json" />
+    <Content Include="Templates\Selenium\Teams\Selenium Team\CardFields.json" />
+    <Content Include="Templates\Selenium\Teams\Selenium Team\CardStyles.json" />
+    <Content Include="Templates\Selenium\Teams\Selenium Team\TeamSetting.json" />
+    <Content Include="Templates\Selenium\Teams\Team1\BoardColumns.json" />
+    <Content Include="Templates\Selenium\Teams\Team1\BoardRows.json" />
+    <Content Include="Templates\Selenium\Teams\Team1\CardFields.json" />
+    <Content Include="Templates\Selenium\Teams\Team1\CardStyles.json" />
+    <Content Include="Templates\Selenium\Teams\Team1\TeamSetting.json" />
+    <Content Include="Templates\Selenium\Teams\Team2\BoardColumns.json" />
+    <Content Include="Templates\Selenium\Teams\Team2\BoardRows.json" />
+    <Content Include="Templates\Selenium\Teams\Team2\CardFields.json" />
+    <Content Include="Templates\Selenium\Teams\Team2\CardStyles.json" />
+    <Content Include="Templates\Selenium\Teams\Team2\TeamSetting.json" />
+    <Content Include="Templates\Selenium\Teams\Teams.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
