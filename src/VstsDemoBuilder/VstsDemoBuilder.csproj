@@ -443,6 +443,7 @@
     <Content Include="Templates\Tailwind Traders\Images\Website.png" />
     <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\Azure Sentinel DevOps.jpg" />
+    <Content Include="Templates\TemplateImages\AzureCommunity\iac.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\ModernDataWarehouse.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\modiot.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\NIST 800-171.png" />
@@ -1761,6 +1762,21 @@
     <Content Include="Templates\Test-bicep\ImportSourceCode\toy-website-test.json" />
     <Content Include="Templates\Test-bicep\ProjectSettings.json" />
     <Content Include="Templates\Test-bicep\ProjectTemplate.json" />
+    <Content Include="Templates\IAC-migration\ImportSourceCode\IaC Migration.json" />
+    <Content Include="Templates\IAC-migration\Iterations.json" />
+    <Content Include="Templates\IAC-migration\ProjectSettings.json" />
+    <Content Include="Templates\IAC-migration\ProjectTemplate.json" />
+    <Content Include="Templates\IAC-migration\ServiceEndpoints\IaC Migration - code.json" />
+    <Content Include="Templates\IAC-migration\TeamArea.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\BoardColumns.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\BoardRows.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\CardFields.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\CardStyles.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\TeamSetting.json" />
+    <Content Include="Templates\IAC-migration\Teams\Teams.json" />
+    <Content Include="Templates\IAC-migration\WorkItems\Epic.json" />
+    <Content Include="Templates\IAC-migration\WorkItems\Task.json" />
+    <Content Include="Templates\IAC-migration\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
