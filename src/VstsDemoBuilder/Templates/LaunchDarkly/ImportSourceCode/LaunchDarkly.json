@@ -5,7 +5,7 @@
         {
           "url": "https://github.com/hsachinraj/PartsUnlimited.git"
         },
-      "serviceEndpointId": "$LaunchDarkley-code$",
-      "deleteServiceEndpointAfterImportIsDone": true
+      "serviceEndpointId": "",
+      "deleteServiceEndpointAfterImportIsDone": false
     }
 }

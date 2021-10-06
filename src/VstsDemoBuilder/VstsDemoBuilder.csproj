@@ -465,6 +465,7 @@
     <Content Include="Templates\TemplateImages\kubernetes.png" />
     <Content Include="Templates\TemplateImages\launchdarkly.png" />
     <Content Include="Templates\TemplateImages\MachineLearning.png" />
+    <Content Include="Templates\TemplateImages\mslearn\bicepenvironments.svg" />
     <Content Include="Templates\TemplateImages\mslearn\create-a-build-pipeline-azure-pipelines.png" />
     <Content Include="Templates\TemplateImages\mslearn\create-a-release-pipeline-with-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\create-multi-stage-pipeline.svg" />
@@ -484,6 +485,7 @@
     <Content Include="Templates\TemplateImages\mslearn\run-non-functional-tests-in-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\run-quality-tests-when-your-application-builds.png" />
     <Content Include="Templates\TemplateImages\mslearn\scan-code-for-vulnerabilities-in-your-build-pipeline.png" />
+    <Content Include="Templates\TemplateImages\mslearn\testbicep.svg" />
     <Content Include="Templates\TemplateImages\MyHealthClinic.png" />
     <Content Include="Templates\TemplateImages\MyShuttle.png" />
     <Content Include="Templates\TemplateImages\octopus.png" />
@@ -1777,6 +1779,12 @@
     <Content Include="Templates\IAC-migration\WorkItems\Epic.json" />
     <Content Include="Templates\IAC-migration\WorkItems\Task.json" />
     <Content Include="Templates\IAC-migration\WorkItems\User Story.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\BuildDefinitions\toy-website-environments.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\ImportSourceCode\toy-website-environments.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\Iterations.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\ProjectSettings.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\ProjectTemplate.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\TeamArea.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
