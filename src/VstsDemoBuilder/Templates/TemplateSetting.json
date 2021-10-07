@@ -1145,8 +1145,8 @@
           "Key": "2DA09437-7FC3-4A81-94CD-041A14C98D61",
           "Name": "Azure Migrations - IaC",
           "TemplateFolder": "IAC-migration",
-          "ShortName": "AzureMigrationsIaC",
-          "Description": "A guidance to execute Azure Migrations using IaC approach. <a href='https://github.com/ricmmartins/fta-liftandshift-dcmigration/blob/main/doc/importing-template.md' target='_blank'>IaC Migragtion</a>",
+          "ShortName": "AzureMirationsIaC",
+          "Description": "A guidance to execute Azure Migrations using IaC approach. <a href='https://github.com/ricmmartins/fta-liftandshift-dcmigration/blob/main/doc/importing-template.md' target='_blank'>IaC Migration</a>",
           "Tags": [
             "Migration",
             "Azure"
