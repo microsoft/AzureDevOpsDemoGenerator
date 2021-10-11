@@ -827,7 +827,6 @@
             "Bicep",
             "ARM"
           ],
-          "ForkGitHubRepo": true,
           "Image": "/Templates/TemplateImages/mslearn/bicep-end-to-end-deployment-pipeline.svg",
           "Description": ": Create a unified pipeline to deploy your entire environment. You'll add a build stage to your pipeline, and use pipeline artifacts and Bicep outputs to publish applications, databases, and blobs<br /><br />Lab URL: <a href=' : https://docs.microsoft.com/learn/modules/manage-end-end-deployment-scenarios-using-bicep-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage end-to-end deployment scenarios by using Bicep and Azure Pipelines</a>"
         }
