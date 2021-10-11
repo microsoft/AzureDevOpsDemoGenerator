@@ -816,6 +816,20 @@
           "ForkGitHubRepo": true,
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-test-bicep-code-using-azure-pipelines.git' target='_blank'> repository </a> manually and follow the steps given in the document - <a href=' https://docs.microsoft.com/learn/modules/test-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Test Bicep code using Azure Pipelines</a>",
           "Description": "Validate and test your Bicep code in your deployment pipeline. You'll use linting, preflight validation, and the what-if operation to validate your Azure changes before you deploy, and you'll test your resources after each deployment<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/test-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Test Bicep code using Azure Pipelines</a>"
+        },
+        {
+          "Key": "CBB8A827-69C8-4073-89C2-A634053FFBC9",
+          "Name": "Manage end-to-end deployment scenarios by using Bicep and Azure Pipelines",
+          "TemplateFolder": "manage-end-end-deployment-scenarios",
+          "ShortName": "bicependtoend",
+          "Tags": [
+            "Microsoft Learn",
+            "Bicep",
+            "ARM"
+          ],
+          "ForkGitHubRepo": true,
+          "Image": "/Templates/TemplateImages/mslearn/bicep-end-to-end-deployment-pipeline.svg",
+          "Description": ": Create a unified pipeline to deploy your entire environment. You'll add a build stage to your pipeline, and use pipeline artifacts and Bicep outputs to publish applications, databases, and blobs<br /><br />Lab URL: <a href=' : https://docs.microsoft.com/learn/modules/manage-end-end-deployment-scenarios-using-bicep-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage end-to-end deployment scenarios by using Bicep and Azure Pipelines</a>"
         }
       ]
     },
