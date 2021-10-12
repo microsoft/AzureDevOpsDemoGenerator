@@ -813,9 +813,22 @@
             "Bicep",
             "ARM"
           ],
-          "ForkGitHubRepo": true,
-          "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-test-bicep-code-using-azure-pipelines.git' target='_blank'> repository </a> manually and follow the steps given in the document - <a href=' https://docs.microsoft.com/learn/modules/test-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Test Bicep code using Azure Pipelines</a>",
+          "Image": "/Templates/TemplateImages/mslearn/testbicep.svg",
           "Description": "Validate and test your Bicep code in your deployment pipeline. You'll use linting, preflight validation, and the what-if operation to validate your Azure changes before you deploy, and you'll test your resources after each deployment<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/test-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Test Bicep code using Azure Pipelines</a>"
+        },
+        {
+
+          "Key": "971E21BF-76C1-4C88-929C-63F824830459",
+          "Name": "Manage multiple environments by using Bicep and Azure Pipelines",
+          "TemplateFolder": "Manage-multiple-environments-azure-pipelines",
+          "ShortName": "bicepenvironments",
+          "Tags": [
+            "Microsoft Learn",
+            "Bicep",
+            "ARM"
+          ],
+          "Image": "/Templates/TemplateImages/mslearn/bicepenvironments.svg",
+          "Description": "Deploy your Bicep code to multiple environments to improve the quality of your deployments. Use pipeline templates to reduce code duplication, and set different parameter values for each environment<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/manage-multiple-environments-using-bicep-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage multiple environments by using Bicep Azure Pipelines</a>"
         }
       ]
     },
