@@ -16,7 +16,7 @@
     <AssemblyName>VstsDemoBuilder</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -715,8 +715,6 @@
     <Content Include="Templates\Selenium\ProjectTemplate.json" />
     <Content Include="Templates\Selenium\ReleaseDefinitions\Selenium.json" />
     <Content Include="Templates\Selenium\ServiceEndpoints\Selenium-code.json" />
-    <Content Include="Templates\SonarQube\BoardColumns.json" />
-    <Content Include="Templates\SonarQube\BoardRowsFromTemplate.json" />
     <Content Include="Templates\SonarQube\BuildDefinitions\SonarQube.json" />
     <Content Include="Templates\SonarQube\Dashboard\Dashboard.json" />
     <Content Include="Templates\SonarQube\Dashboard\Queries\All Work Items.json" />
@@ -725,18 +723,15 @@
     <Content Include="Templates\SonarQube\Dashboard\Queries\Product Backlog Items.json" />
     <Content Include="Templates\SonarQube\Dashboard\Queries\Tasks.json" />
     <Content Include="Templates\SonarQube\EnableEpic.json" />
-    <Content Include="Templates\SonarQube\EpicfromTemplate.json" />
+    <Content Include="Templates\SonarQube\WorkItems\Epic.json" />
     <Content Include="Templates\SonarQube\Extensions.json" />
-    <Content Include="Templates\SonarQube\FeaturefromTemplate.json" />
+    <Content Include="Templates\SonarQube\WorkItems\Feature.json" />
     <Content Include="Templates\SonarQube\ImportSourceCode\MyShuttle.json" />
-    <Content Include="Templates\SonarQube\Iterations.json" />
-    <Content Include="Templates\SonarQube\PBIfromTemplate.json" />
+    <Content Include="Templates\SonarQube\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\SonarQube\ProjectSettings.json" />
     <Content Include="Templates\SonarQube\ProjectTemplate.json" />
     <Content Include="Templates\SonarQube\ServiceEndPoints\SonarQube-code.json" />
-    <Content Include="Templates\SonarQube\TaskfromTemplate.json" />
-    <Content Include="Templates\SonarQube\Teams.json" />
-    <Content Include="Templates\SonarQube\UpdateCardFields.json" />
+    <Content Include="Templates\SonarQube\WorkItems\Task.json" />
     <Content Include="Templates\TemplateSetting.json" />
     <Content Include="Templates\WhiteSource-Bolt\BugfromTemplate.json" />
     <Content Include="Templates\WhiteSource-Bolt\BuildDefinitions\WhiteSourceBolt.json" />
@@ -1873,6 +1868,16 @@
     <Content Include="Templates\ReleaseGates\Teams\Team2\CardStyles.json" />
     <Content Include="Templates\ReleaseGates\Teams\Team2\TeamSetting.json" />
     <Content Include="Templates\ReleaseGates\Teams\Teams.json" />
+    <Content Include="Templates\LaunchDarkly\BuildDefinitions\LaunchDarkly-CI-YAML.json" />
+    <Content Include="Templates\SonarQube\BuildDefinitions\SonarQube-CI.json" />
+    <Content Include="Templates\SonarQube\Teams\SonarQube Team\BoardColumns.json" />
+    <Content Include="Templates\SonarQube\Teams\SonarQube Team\BoardRows.json" />
+    <Content Include="Templates\SonarQube\Teams\SonarQube Team\CardFields.json" />
+    <Content Include="Templates\SonarQube\Teams\SonarQube Team\CardStyles.json" />
+    <Content Include="Templates\SonarQube\Teams\SonarQube Team\TeamSetting.json" />
+    <Content Include="Templates\SonarQube\Teams\Team1\TeamSetting.json" />
+    <Content Include="Templates\SonarQube\Teams\Team2\TeamSetting.json" />
+    <Content Include="Templates\SonarQube\Teams\Teams.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
