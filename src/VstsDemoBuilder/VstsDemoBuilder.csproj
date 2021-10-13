@@ -733,7 +733,6 @@
     <Content Include="Templates\SonarQube\ServiceEndPoints\SonarQube-code.json" />
     <Content Include="Templates\SonarQube\WorkItems\Task.json" />
     <Content Include="Templates\TemplateSetting.json" />
-    <Content Include="Templates\WhiteSource-Bolt\BugfromTemplate.json" />
     <Content Include="Templates\WhiteSource-Bolt\BuildDefinitions\WhiteSourceBolt.json" />
     <Content Include="Templates\WhiteSource-Bolt\Dashboard\Dashboard.json" />
     <Content Include="Templates\WhiteSource-Bolt\Dashboard\Queries\All Work Items.json" />
@@ -742,19 +741,17 @@
     <Content Include="Templates\WhiteSource-Bolt\Dashboard\Queries\Product Backlog Items.json" />
     <Content Include="Templates\WhiteSource-Bolt\Dashboard\Queries\Tasks.json" />
     <Content Include="Templates\WhiteSource-Bolt\EnableEpic.json" />
-    <Content Include="Templates\WhiteSource-Bolt\EpicfromTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\WorkItems\Epic.json" />
     <Content Include="Templates\WhiteSource-Bolt\Extensions.json" />
-    <Content Include="Templates\WhiteSource-Bolt\FeaturefromTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\WorkItems\Feature.json" />
     <Content Include="Templates\WhiteSource-Bolt\ImportSourceCode\WebGoat.json" />
     <Content Include="Templates\WhiteSource-Bolt\Iterations.json" />
-    <Content Include="Templates\WhiteSource-Bolt\PBIfromTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\WorkItems\Product Backlog Item.json" />
     <Content Include="Templates\WhiteSource-Bolt\ProjectSettings.json" />
     <Content Include="Templates\WhiteSource-Bolt\ProjectTemplate.json" />
     <Content Include="Templates\WhiteSource-Bolt\ServiceEndpoints\WebGoat-code.json" />
-    <Content Include="Templates\WhiteSource-Bolt\TaskfromTemplate.json" />
+    <Content Include="Templates\WhiteSource-Bolt\WorkItems\Task.json" />
     <Content Include="Templates\WhiteSource-Bolt\TeamArea.json" />
-    <Content Include="Templates\WhiteSource-Bolt\Teams.json" />
-    <Content Include="Templates\WhiteSource-Bolt\UerStoriesfromTemplate.json" />
     <Content Include="Templates\AKS\BuildDefinitions\AKS.json" />
     <Content Include="Templates\AKS\Dashboard\Queries\All Work Items.json" />
     <Content Include="Templates\AKS\Dashboard\Queries\Epic.json" />
@@ -1878,6 +1875,23 @@
     <Content Include="Templates\SonarQube\Teams\Team1\TeamSetting.json" />
     <Content Include="Templates\SonarQube\Teams\Team2\TeamSetting.json" />
     <Content Include="Templates\SonarQube\Teams\Teams.json" />
+    <Content Include="Templates\WhiteSource-Bolt\BuildDefinitions\WhiteSourceBolt-YAML.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team1\BoardColumns.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team1\BoardRows.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team1\CardFields.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team1\CardStyles.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team1\TeamSetting.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team2\BoardColumns.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team2\BoardRows.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team2\CardFields.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team2\CardStyles.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Team2\TeamSetting.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\Teams.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\BoardColumns.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\BoardRows.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\CardFields.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\CardStyles.json" />
+    <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\TeamSetting.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
