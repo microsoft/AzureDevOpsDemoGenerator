@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://github.com/MicrosoftDocs/mslearn-manage-end-end-deployment-scenarios-using-bicep-azure-pipelines.git"
+    },
+    "serviceEndpointId": "",
+    "deleteServiceEndpointAfterImportIsDone": false
+  }
+}

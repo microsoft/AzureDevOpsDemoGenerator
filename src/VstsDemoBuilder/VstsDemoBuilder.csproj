@@ -465,6 +465,7 @@
     <Content Include="Templates\TemplateImages\kubernetes.png" />
     <Content Include="Templates\TemplateImages\launchdarkly.png" />
     <Content Include="Templates\TemplateImages\MachineLearning.png" />
+    <Content Include="Templates\TemplateImages\mslearn\bicep-end-to-end-deployment-pipeline.svg" />
     <Content Include="Templates\TemplateImages\mslearn\bicepenvironments.svg" />
     <Content Include="Templates\TemplateImages\mslearn\create-a-build-pipeline-azure-pipelines.png" />
     <Content Include="Templates\TemplateImages\mslearn\create-a-release-pipeline-with-azure-pipelines.svg" />
@@ -1785,6 +1786,13 @@
     <Content Include="Templates\Manage-multiple-environments-azure-pipelines\ProjectSettings.json" />
     <Content Include="Templates\Manage-multiple-environments-azure-pipelines\ProjectTemplate.json" />
     <Content Include="Templates\Manage-multiple-environments-azure-pipelines\TeamArea.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\BuildDefinitions\toy-website-end-to-end.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\ImportSourceCode\toy-website-end-to-end.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\Iterations.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\ProjectSettings.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\ProjectTemplate.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\TeamArea.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\VariableGroups\VariableGroup.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
