@@ -829,6 +829,19 @@
           ],
           "Image": "/Templates/TemplateImages/mslearn/bicepenvironments.svg",
           "Description": "Deploy your Bicep code to multiple environments to improve the quality of your deployments. Use pipeline templates to reduce code duplication, and set different parameter values for each environment<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/manage-multiple-environments-using-bicep-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage multiple environments by using Bicep Azure Pipelines</a>"
+        },
+        {
+          "Key": "CBB8A827-69C8-4073-89C2-A634053FFBC9",
+          "Name": "Manage end-to-end deployment scenarios by using Bicep and Azure Pipelines",
+          "TemplateFolder": "manage-end-end-deployment-scenarios",
+          "ShortName": "bicependtoend",
+          "Tags": [
+            "Microsoft Learn",
+            "Bicep",
+            "ARM"
+          ],
+          "Image": "/Templates/TemplateImages/mslearn/bicep-end-to-end-deployment-pipeline.svg",
+          "Description": ": Create a unified pipeline to deploy your entire environment. You'll add a build stage to your pipeline, and use pipeline artifacts and Bicep outputs to publish applications, databases, and blobs<br /><br />Lab URL: <a href=' : https://docs.microsoft.com/learn/modules/manage-end-end-deployment-scenarios-using-bicep-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage end-to-end deployment scenarios by using Bicep and Azure Pipelines</a>"
         }
       ]
     },
