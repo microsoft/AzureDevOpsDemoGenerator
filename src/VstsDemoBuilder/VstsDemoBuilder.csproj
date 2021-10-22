@@ -445,6 +445,7 @@
     <Content Include="Templates\Tailwind Traders\Images\Website.png" />
     <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\Azure Sentinel DevOps.jpg" />
+    <Content Include="Templates\TemplateImages\AzureCommunity\iac.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\ModernDataWarehouse.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\modiot.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\NIST 800-171.png" />
@@ -466,6 +467,8 @@
     <Content Include="Templates\TemplateImages\kubernetes.png" />
     <Content Include="Templates\TemplateImages\launchdarkly.png" />
     <Content Include="Templates\TemplateImages\MachineLearning.png" />
+    <Content Include="Templates\TemplateImages\mslearn\bicep-end-to-end-deployment-pipeline.svg" />
+    <Content Include="Templates\TemplateImages\mslearn\bicepenvironments.svg" />
     <Content Include="Templates\TemplateImages\mslearn\create-a-build-pipeline-azure-pipelines.png" />
     <Content Include="Templates\TemplateImages\mslearn\create-a-release-pipeline-with-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\create-multi-stage-pipeline.svg" />
@@ -485,6 +488,7 @@
     <Content Include="Templates\TemplateImages\mslearn\run-non-functional-tests-in-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\run-quality-tests-when-your-application-builds.png" />
     <Content Include="Templates\TemplateImages\mslearn\scan-code-for-vulnerabilities-in-your-build-pipeline.png" />
+    <Content Include="Templates\TemplateImages\mslearn\testbicep.svg" />
     <Content Include="Templates\TemplateImages\MyHealthClinic.png" />
     <Content Include="Templates\TemplateImages\MyShuttle.png" />
     <Content Include="Templates\TemplateImages\octopus.png" />
@@ -1722,6 +1726,7 @@
     <Content Include="Templates\Test-bicep\ImportSourceCode\toy-website-test.json" />
     <Content Include="Templates\Test-bicep\ProjectSettings.json" />
     <Content Include="Templates\Test-bicep\ProjectTemplate.json" />
+
     <Content Include="Templates\Python\BuildDefinitions\PythonDjango-yaml.json" />
     <Content Include="Templates\Python\ReleaseDefinitions\Python-CD.json" />
     <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttle-Docker-yaml.json" />
@@ -1892,6 +1897,36 @@
     <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\CardFields.json" />
     <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\CardStyles.json" />
     <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\TeamSetting.json" />
+
+    <Content Include="Templates\IAC-migration\ImportSourceCode\IaC Migration.json" />
+    <Content Include="Templates\IAC-migration\Iterations.json" />
+    <Content Include="Templates\IAC-migration\ProjectSettings.json" />
+    <Content Include="Templates\IAC-migration\ProjectTemplate.json" />
+    <Content Include="Templates\IAC-migration\ServiceEndpoints\IaC Migration - code.json" />
+    <Content Include="Templates\IAC-migration\TeamArea.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\BoardColumns.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\BoardRows.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\CardFields.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\CardStyles.json" />
+    <Content Include="Templates\IAC-migration\Teams\IaC Migration - Team\TeamSetting.json" />
+    <Content Include="Templates\IAC-migration\Teams\Teams.json" />
+    <Content Include="Templates\IAC-migration\WorkItems\Epic.json" />
+    <Content Include="Templates\IAC-migration\WorkItems\Task.json" />
+    <Content Include="Templates\IAC-migration\WorkItems\User Story.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\BuildDefinitions\toy-website-environments.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\ImportSourceCode\toy-website-environments.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\Iterations.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\ProjectSettings.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\ProjectTemplate.json" />
+    <Content Include="Templates\Manage-multiple-environments-azure-pipelines\TeamArea.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\BuildDefinitions\toy-website-end-to-end.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\ImportSourceCode\toy-website-end-to-end.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\Iterations.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\ProjectSettings.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\ProjectTemplate.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\TeamArea.json" />
+    <Content Include="Templates\manage-end-end-deployment-scenarios\VariableGroups\VariableGroup.json" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
