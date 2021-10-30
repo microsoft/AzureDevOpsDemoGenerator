@@ -1,7 +1,7 @@
 {
   "parameters": {
     "gitSource": {
-      "url": "https://vstsdemodata.visualstudio.com/AzureFunctions_BuildWorkshop/_git/AzureFunctions"
+      "url": "https://dev.azure.com/vstsdemodata/_git/AzureFunctions"
     },
     "serviceEndpointId": "$AzureFunctions-code$",
     "deleteServiceEndpointAfterImportIsDone": true
