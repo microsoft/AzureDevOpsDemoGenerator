@@ -1,0 +1,83 @@
+[
+  {
+    "cards": {
+      "Epic": [
+        {
+          "fieldIdentifier": "System.Id"
+        },
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "System.State"
+        }
+      ]
+    },
+    "BoardName": "Epics"
+  },
+  {
+    "cards": {
+      "Feature": [
+        {
+          "fieldIdentifier": "System.Id"
+        },
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "System.State"
+        }
+      ]
+    },
+    "BoardName": "Features"
+  },
+  {
+    "cards": {
+      "Bug": [
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort"
+        }
+      ],
+      "Product Backlog Item": [
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort"
+        }
+      ]
+    },
+    "BoardName": "Backlog Items"
+  }
+]

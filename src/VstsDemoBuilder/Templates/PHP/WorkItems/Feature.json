@@ -1,0 +1,79 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 7167,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "php",
+        "System.TeamProject": "php",
+        "System.IterationPath": "php",
+        "System.WorkItemType": "Feature",
+        "System.State": "New",
+        "System.Reason": "New feature",
+        "System.CreatedDate": "2021-08-30T10:03:40.703Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-07T06:17:49.907Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Deployments to Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Deployments to Azure",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7170",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7167"
+    },
+    {
+      "id": 7168,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "php",
+        "System.TeamProject": "php",
+        "System.IterationPath": "php",
+        "System.WorkItemType": "Feature",
+        "System.State": "In Progress",
+        "System.Reason": "Implementation started",
+        "System.CreatedDate": "2021-08-30T10:03:41.78Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-07T06:17:49.907Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Set up CI-CD pipeline for PHP Application",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Set up CI-CD pipeline for PHP Application",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7168"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "08408fbf-2899-4314-8563-c7f1477534d4",
+    "name": "Team2",
+    "description": "Team2 description",
+    "isDefault": "false"
+  },
+  {
+    "id": "c97add56-4429-4d8a-8fab-e74d1f2d6d5b",
+    "name": "Team1",
+    "description": "Team1 description",
+    "isDefault": "false"
+  },
+  {
+    "id": "1ee58219-d40c-4ac8-a9eb-ed6c02da508c",
+    "name": "WhiteSource Bolt Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  }
+]

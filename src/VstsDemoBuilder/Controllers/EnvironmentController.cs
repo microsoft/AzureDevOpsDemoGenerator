@@ -149,8 +149,8 @@ namespace VstsDemoBuilder.Controllers
         {
             try
             {
-                AccessDetails _accessDetails = new AccessDetails();
-                //AccessDetails _accessDetails = ProjectService.AccessDetails;
+
+                AccessDetails _accessDetails = ProjectService.AccessDetails;
                 string TemplateSelected = string.Empty;
                 if (Session["visited"] != null)
                 {

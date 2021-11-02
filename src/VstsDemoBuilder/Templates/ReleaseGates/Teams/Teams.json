@@ -1,0 +1,20 @@
+[
+  {
+    "id": "b1b39a21-8d80-4cdd-a1a3-c47abb45e967",
+    "name": "ReleaseGates Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "f1535bb6-00b2-48a6-acd0-3671718bb3f6",
+    "name": "Team1",
+    "description": "Team1 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "7278c43a-7393-42ce-a8de-907a51db37b2",
+    "name": "Team2",
+    "description": "Team2 Description",
+    "isDefault": "false"
+  }
+]

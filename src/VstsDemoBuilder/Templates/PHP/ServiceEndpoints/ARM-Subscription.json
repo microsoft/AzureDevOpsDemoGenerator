@@ -1,0 +1,23 @@
+{
+  "data": {
+    "environment": "AzureCloud",
+    "subscriptionId": "99AA8818-2A8C-4F32-B5B5-70FBAE8CA9C4",
+    "subscriptionName": "ARM-Subscription",
+    "scopeLevel": "Subscription"
+  },
+  "name": "ARM-Subscription",
+  "type": "azurerm",
+  "url": "https://management.azure.com/",
+  "authorization": {
+    "parameters": {
+      "tenantId": "A78D9CBA-BEAE-498A-86CD-8C20F91A9C89",
+      "servicePrincipalId": "1eb04965-1462-4ef2-80f0-11cd6ff3f405",
+      "authenticationType": "spnKey",
+      "servicePrincipalKey": "spnKey"
+    },
+    "scheme": "ServicePrincipal"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}

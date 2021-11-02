@@ -1,0 +1,20 @@
+[
+  {
+    "id": "e8414d50-c4f5-41a8-b29d-c1aed71f8cbe",
+    "name": "Azure Functions Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "f302bae8-9b24-47be-8218-95e1c16b83e6",
+    "name": "Team1",
+    "description": "Team1 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "820da793-7aa0-4366-aea2-55d36e13eb6a",
+    "name": "Team2",
+    "description": "Team2 Description",
+    "isDefault": "false"
+  }
+]
