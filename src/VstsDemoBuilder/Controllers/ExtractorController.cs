@@ -213,7 +213,7 @@ namespace VstsDemoBuilder.Controllers
         }
 
         //Analyze the selected project to know what all the artifacts it has
-        public static ProjectConfigurations ProjectConfiguration(Project model)
+        public ProjectConfigurations ProjectConfiguration(Project model)
         {
             string repoVersion = System.Configuration.ConfigurationManager.AppSettings["RepoVersion"];
             string buildVersion = System.Configuration.ConfigurationManager.AppSettings["BuildVersion"];

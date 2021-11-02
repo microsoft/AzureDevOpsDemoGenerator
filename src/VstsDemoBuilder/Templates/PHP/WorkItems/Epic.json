@@ -1,0 +1,69 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 7181,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "php",
+        "System.TeamProject": "php",
+        "System.IterationPath": "php",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-30T10:03:50.35Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-07T06:17:44.04Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Azure Deployments for PHP",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Azure Deployments for PHP",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7181"
+    },
+    {
+      "id": 7182,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "php",
+        "System.TeamProject": "php",
+        "System.IterationPath": "php",
+        "System.WorkItemType": "Epic",
+        "System.State": "In Progress",
+        "System.Reason": "Implementation started",
+        "System.CreatedDate": "2021-08-30T10:03:50.66Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-07T06:17:44.04Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Setting Up DevOps pipeline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Setting Up DevOps pipeline",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7182"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

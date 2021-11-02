@@ -1,11 +1,9 @@
 {
-  "parameters":
-    {
-      "gitSource":
-        {
-          "url": "https://github.com/hsachinraj/PartsUnlimited.git"
-        },
-      "serviceEndpointId": "",
-      "deleteServiceEndpointAfterImportIsDone": false
-    }
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/vstsdemodata/LaunchDarkly-Updated/_git/LaunchDarkly"
+    },
+    "serviceEndpointId": "$LaunchDarkly-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
 }

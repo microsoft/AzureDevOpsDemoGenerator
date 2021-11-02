@@ -1,0 +1,665 @@
+{
+  "count": 16,
+  "value": [
+    {
+      "id": 7200,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:44.753Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "As marketer, I want to run an A|B test on alternative Web Sites using Application Insights.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "As marketer, I want to run an A|B test on alternative Web Sites using Application Insights.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7200"
+    },
+    {
+      "id": 7201,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:45.053Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Shopping Cart Facility",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Shopping Cart Facility",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7193",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7189",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7190",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7187",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7201"
+    },
+    {
+      "id": 7202,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:45.75Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Online tracking of shipments",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Online tracking of shipments",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7188",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7191",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7202"
+    },
+    {
+      "id": 7203,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:46.037Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Product reviews and ratings",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Product reviews and ratings",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7186",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7185",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7203"
+    },
+    {
+      "id": 7204,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:46.313Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Promotion and Rewards",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Promotion and Rewards",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7197",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7194",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7204"
+    },
+    {
+      "id": 7205,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:46.61Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Notification",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Notification",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7192",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7205"
+    },
+    {
+      "id": 7206,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:46.893Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Membership and Rewards Program",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Membership and Rewards Program",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7184",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7183",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7206"
+    },
+    {
+      "id": 7207,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:47.31Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Customer Service",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Customer Service",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7195",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7196",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7207"
+    },
+    {
+      "id": 7208,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:47.597Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Product Catalog",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Product Catalog",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7198",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7208"
+    },
+    {
+      "id": 7209,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2021-08-31T15:22:47.88Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-22T11:29:09.463Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Payment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Payment",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7199",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7209"
+    },
+    {
+      "id": 7210,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2021-08-31T15:22:48.167Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-08-31T15:22:48.167Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "As ops guy, I'd like to make sure I am notified anytime public availability is impacted for key user scenarios",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "As ops guy, I'd like to make sure I am notified anytime public availability is impacted for key user scenarios",
+        "System.AssignedTo": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7210"
+    },
+    {
+      "id": 7211,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2021-08-31T15:22:48.51Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-08-31T15:22:48.51Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "As a user i want to be able to search the PartsUnlimited Website so that i can find the products i want to purchase",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "As a user i want to be able to search the PartsUnlimited Website so that i can find the products i want to purchase",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7211"
+    },
+    {
+      "id": 7212,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2021-08-31T15:22:48.817Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-08-31T15:22:48.817Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "As a marketeer i want our website to be performant and available around the world",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "As a marketeer i want our website to be performant and available around the world",
+        "System.AssignedTo": "craig109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7212"
+    },
+    {
+      "id": 7213,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2021-08-31T15:22:49.12Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-08-31T15:22:49.12Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "We want to make frequent enhancements to the MRP application and need to modernize the application from its current legacy state.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "We want to make frequent enhancements to the MRP application and need to modernize the application from its current legacy state.",
+        "System.AssignedTo": "ckelly109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7213"
+    },
+    {
+      "id": 7214,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2021-08-31T15:22:49.413Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-08-31T15:22:49.413Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "As ops guy, I'd like to keep the business owners happy ensuring there is no wasted spend in cloud resources.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "As ops guy, I'd like to keep the business owners happy ensuring there is no wasted spend in cloud resources.",
+        "System.AssignedTo": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7214"
+    },
+    {
+      "id": 7215,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Azure Functions",
+        "System.TeamProject": "Azure Functions",
+        "System.IterationPath": "Azure Functions",
+        "System.WorkItemType": "Epic",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2021-08-31T15:22:49.837Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-08-31T15:22:49.837Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "As developer, I want to use Azure Machine Learning to provide a recommendations engine behind the website.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "As developer, I want to use Azure Machine Learning to provide a recommendations engine behind the website.",
+        "System.AssignedTo": "lsteel109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7215"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

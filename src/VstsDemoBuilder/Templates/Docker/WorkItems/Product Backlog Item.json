@@ -1,0 +1,307 @@
+{
+  "count": 6,
+  "value": [
+    {
+      "id": 7298,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2021-09-13T07:10:54.897Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-13T07:10:54.897Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Create Endpoint for Azure Resource Manager",
+        "Microsoft.VSTS.Scheduling.Effort": 1.0,
+        "System.Description": "Create Endpoint for Azure Resource Manager such that it points to your active Azure subscription",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Azure; VSTS",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7295",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7306",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7298"
+    },
+    {
+      "id": 7299,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2021-09-13T07:10:55.52Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-13T07:10:55.52Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Create Endpoint for Azure Container Registry",
+        "Microsoft.VSTS.Scheduling.Effort": 1.0,
+        "System.Description": "Create Endpoint for Azure Container Registry in VSTS",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Azure; VSTS",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7295",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7307",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7299"
+    },
+    {
+      "id": 7300,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2021-09-13T07:10:56.013Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-13T07:10:56.013Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Identify Azure components required",
+        "Microsoft.VSTS.Scheduling.Effort": 2.0,
+        "System.Description": "Identify Azure components required",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Azure",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7294",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7300"
+    },
+    {
+      "id": 7301,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "New",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2021-09-13T07:10:56.72Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-13T07:10:56.72Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Add Dockercompose.yml files",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "<div>Add below files:</div><div><br></div><div>1. docker-compose.ci.build.yml<br>2. docker-compose.yml </div><div>3. Under (2) add docker-compose.override.yml</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Docker",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7297",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7309",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7301"
+    },
+    {
+      "id": 7302,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2021-09-13T07:10:57.12Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-13T07:10:57.12Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Develop ARM template",
+        "Microsoft.VSTS.Scheduling.Effort": 2.0,
+        "System.Description": "<div>Develop ARM template with below components:</div><div><br></div><div>1. azuredeploy.json</div><div>2. azuredeploy.parameters.json</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Templates",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7305",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7294",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7304",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7302"
+    },
+    {
+      "id": 7303,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Docker",
+        "System.TeamProject": "Docker",
+        "System.IterationPath": "Docker",
+        "System.WorkItemType": "Product Backlog Item",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2021-09-13T07:10:57.473Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-13T07:10:57.473Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Add Dockerfile to .web project",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "<div>Add Dockerfile to .web project</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Docker",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7308",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7296",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7303"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

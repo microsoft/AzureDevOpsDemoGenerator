@@ -5,7 +5,7 @@
     "subscriptionName": "Windows Azure MSDN - Visual Studio Ultimate",
     "scopeLevel": "Subscription"
   },
-  "name": "Azure-Connection",
+  "name": "AzureRM",
   "type": "azurerm",
   "url": "https://management.azure.com/",
   "authorization": {

@@ -28,22 +28,6 @@
       "allowOverride": true
     }
   },
-  "retentionRules": [
-    {
-      "branches": [
-        "+refs/heads/*"
-      ],
-      "artifacts": [],
-      "artifactTypesToDelete": [
-        "FilePath",
-        "SymbolStore"
-      ],
-      "daysToKeep": 10,
-      "minimumToKeep": 1,
-      "deleteBuildRecord": true,
-      "deleteTestResults": true
-    }
-  ],
   "properties": {},
   "tags": [],
   "_links": "{}",
@@ -76,11 +60,13 @@
               "publishJUnitResults": "true",
               "testResultsFiles": "**/surefire-reports/TEST-*.xml",
               "testRunTitle": "",
+              "allowBrokenSymbolicLinks": "true",
               "codeCoverageTool": "None",
               "classFilter": "",
               "classFilesDirectories": "",
               "srcDirectories": "",
               "failIfCoverageEmpty": "false",
+              "restoreOriginalPomXml": "false",
               "javaHomeSelection": "JDKVersion",
               "jdkVersion": "default",
               "jdkUserInputPath": "",
@@ -90,7 +76,9 @@
               "mavenSetM2Home": "false",
               "mavenOpts": "-Xmx1024m",
               "mavenFeedAuthenticate": "false",
+              "skipEffectivePom": "false",
               "sqAnalysisEnabled": "false",
+              "isJacocoCoverageReportXML": "false",
               "sqMavenPluginVersionChoice": "latest",
               "checkstyleAnalysisEnabled": "false",
               "pmdAnalysisEnabled": "false",
@@ -116,7 +104,11 @@
               "TargetFolder": "$(build.artifactstagingdirectory)",
               "CleanTargetFolder": "false",
               "OverWrite": "false",
-              "flattenFolders": "$(Parameters.flattenFolders)"
+              "flattenFolders": "$(Parameters.flattenFolders)",
+              "preserveTimestamp": "false",
+              "retryCount": "0",
+              "delayBetweenRetries": "1000",
+              "ignoreMakeDirErrors": "false"
             }
           },
           {
@@ -138,7 +130,9 @@
               "ArtifactType": "Container",
               "TargetPath": "",
               "Parallel": "false",
-              "ParallelCount": "8"
+              "ParallelCount": "8",
+              "FileCopyOptions": "",
+              "StoreAsTar": "false"
             }
           }
         ],
@@ -158,49 +152,28 @@
     ],
     "target": {
       "agentSpecification": {
-        "identifier": "ubuntu-16.04"
+        "identifier": "ubuntu-18.04"
       }
     },
     "type": 1
   },
   "repository": {
     "properties": {
-      "apiUrl": "https://api.github.com/repos/hsachinraj/SmartHotel360-CouponManagement",
-      "branchesUrl": "https://api.github.com/repos/hsachinraj/SmartHotel360-CouponManagement/branches",
-      "cloneUrl": "https://github.com/hsachinraj/SmartHotel360-CouponManagement.git",
-      "connectedServiceId": "$GitHub$",
-      "defaultBranch": "master",
-      "fullName": "repository",
-      "hasAdminPermissions": "False",
-      "isFork": "True",
-      "isPrivate": "False",
-      "lastUpdated": "02/26/2019 20:40:37",
-      "manageUrl": "https://github.com/hsachinraj/SmartHotel360-CouponManagement",
-      "nodeId": "MDEwOlJlcG9zaXRvcnkxNzE3ODQ0ODY=",
-      "ownerId": "12976154",
-      "orgName": "hsachinraj",
-      "refsUrl": "https://api.github.com/repos/hsachinraj/SmartHotel360-CouponManagement/git/refs",
-      "shortName": "SmartHotel360-CouponManagement",
-      "ownerAvatarUrl": "https://avatars1.githubusercontent.com/u/12976154?v=4",
-      "archived": "False",
-      "safeId": "3802E7CA4683A3B4FC47EB87F435099597436B91165B14E570B3285CBCE5F4885BEECCBDC1869EE0912B9B9B4A32EEC8CDE6EB696AD6C5924438F658EBD5/SmartHotel360-CouponManagement",
-      "safeOwnerId": "3802E7CA4683A3B4FC47EB87F435099597436B91165B14E570B3285CBCE5F4885BEECCBDC1869EE0912B9B9B4A32EEC8CDE6EB696AD6C5924438F658EBD5",
-      "safeRepository": "SmartHotel360-CouponManagement",
-      "ownerIsAUser": "True",
-      "checkoutNestedSubmodules": "false",
       "cleanOptions": "0",
-      "fetchDepth": "0",
-      "gitLfsSupport": "false",
-      "reportBuildStatus": "true",
-      "skipSyncSource": "false",
+      "labelSources": "0",
       "labelSourcesFormat": "$(build.buildNumber)",
-      "labelSources": "0"
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "fetchDepth": "0",
+      "connectedServiceId": ""
     },
-    "id": "hsachinraj/SmartHotel360-CouponManagement",
-    "type": "Git",
-    "name": "repository",
-    "url": "https://github.com/hsachinraj/SmartHotel360-CouponManagement.git",
-    "defaultBranch": "master",
+    "id": "$azure-key-vault$",
+    "type": "TfsGit",
+    "name": "azure-key-vault",
+    "url": "",
+    "defaultBranch": "refs/heads/master",
     "clean": "false",
     "checkoutSubmodules": false
   },
@@ -224,8 +197,12 @@
   "authoredBy": "{}",
   "drafts": [],
   "queue": {
+    "_links": "{}",
+    "id": "",
     "name": "Azure Pipelines",
+    "url": "",
     "pool": {
+      "id": "",
       "name": "Azure Pipelines",
       "isHosted": true
     }
@@ -237,7 +214,7 @@
   "path": "\\",
   "type": "build",
   "queueStatus": "enabled",
-  "revision": 7,
+  "revision": 3,
   "createdDate": "",
   "project": "{}"
 }

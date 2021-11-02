@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2ed16fd4-51f0-46ef-900e-e1775679192d",
+    "name": "Team2",
+    "description": "Team2 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "5033d4de-08be-4e86-9fe0-16a11f662991",
+    "name": "Team1",
+    "description": "Team1 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "d9c2fb62-65dd-426a-982d-a24a5cc2314e",
+    "name": "Azure Kubernetes Service Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  }
+]

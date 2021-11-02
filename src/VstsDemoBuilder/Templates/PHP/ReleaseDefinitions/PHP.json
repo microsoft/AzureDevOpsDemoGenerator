@@ -1,9 +1,38 @@
 {
-  "name": "PHP",
-  "path": "\\",
   "source": "userInterface",
+  "revision": 2,
   "description": null,
+  "createdBy": "{}",
+  "createdOn": "",
+  "modifiedBy": "{}",
+  "modifiedOn": "",
   "isDeleted": false,
+  "lastRelease": {
+    "id": 7,
+    "name": "Release-7",
+    "artifacts": [],
+    "_links": {},
+    "description": "Triggered by PHP 210.",
+    "releaseDefinition": {
+      "id": 1,
+      "projectReference": null,
+      "_links": {}
+    },
+    "createdOn": "2021-08-31T15:36:08.56Z",
+    "createdBy": {
+      "displayName": "Akshay Hosur",
+      "url": "https://spsprodsin1.vssps.visualstudio.com/A5ddcb812-79aa-4fdb-b9d3-ae14ee6520a0/_apis/Identities/ddc8930b-7be3-6d29-ba63-9a7b2edf1b5e",
+      "_links": {
+        "avatar": {
+          "href": "https://dev.azure.com/akshayhosur/_apis/GraphProfile/MemberAvatars/aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl"
+        }
+      },
+      "id": "ddc8930b-7be3-6d29-ba63-9a7b2edf1b5e",
+      "uniqueName": "akshay.hosur@ecanarys.com",
+      "imageUrl": "https://dev.azure.com/akshayhosur/_apis/GraphProfile/MemberAvatars/aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl",
+      "descriptor": "aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl"
+    }
+  },
   "variables": {
     "Location": {
       "value": "SouthEastAsia"
@@ -12,7 +41,7 @@
       "value": "PHP-RG"
     },
     "webappname": {
-      "value": "phpe2e$UUID$"
+      "value": "phpe2ec29e3203"
     }
   },
   "variableGroups": [],
@@ -22,9 +51,13 @@
       "name": "Dev",
       "rank": 1,
       "owner": {
-        "id": "$OwnerId$",
         "displayName": "$OwnerDisplayName$",
-        "uniqueName": "$OwnerUniqueName$"
+        "url": "",
+        "_links": "{}",
+        "id": "$OwnerId$",
+        "uniqueName": "$OwnerUniqueName$",
+        "imageUrl": "",
+        "descriptor": ""
       },
       "variables": {},
       "variableGroups": [],
@@ -33,7 +66,8 @@
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false
+            "isNotificationOn": false,
+            "id": 1
           }
         ],
         "approvalOptions": {
@@ -45,13 +79,16 @@
           "executionOrder": "beforeGates"
         }
       },
-      "deployStep": {},
+      "deployStep": {
+        "id": 2
+      },
       "postDeployApprovals": {
         "approvals": [
           {
             "rank": 1,
             "isAutomated": true,
-            "isNotificationOn": false
+            "isNotificationOn": false,
+            "id": 3
           }
         ],
         "approvalOptions": {
@@ -69,6 +106,7 @@
             "parallelExecution": {
               "parallelExecutionType": "none"
             },
+            "agentSpecification": null,
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
@@ -84,6 +122,7 @@
           "rank": 1,
           "phaseType": "agentBasedDeployment",
           "name": "Run on agent",
+          "refName": null,
           "workflowTasks": [
             {
               "environment": {},
@@ -104,6 +143,8 @@
                 "scriptPath": "",
                 "inlineScript": "call az group create --location $(Location) --name $(myResourceGroup)\ncall az appservice plan create --name $(webappname) --resource-group $(myResourceGroup) --sku S1\ncall az webapp create --name $(webappname) --resource-group $(myResourceGroup) --plan $(webappname)",
                 "args": "",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
                 "cwd": "",
                 "failOnStandardError": "false"
               }
@@ -141,7 +182,7 @@
                 "DockerRepository": "",
                 "DockerImageTag": "",
                 "VirtualApplication": "",
-                "Package": "$(System.DefaultWorkingDirectory)/PHP/drop/*.zip",
+                "Package": "$(System.DefaultWorkingDirectory)/_php-yml/drop/*.zip",
                 "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
                 "RuntimeStack": "node|4.4",
                 "StartupCommand": "",
@@ -192,7 +233,11 @@
         "queueDepthCount": 0
       },
       "schedules": [],
-      "currentRelease": {},
+      "currentRelease": {
+        "id": 7,
+        "url": "https://vsrm.dev.azure.com/akshayhosur/cb8c4049-6bf2-4d8a-a211-d0037ef56ae0/_apis/Release/releases/7",
+        "_links": {}
+      },
       "retentionPolicy": {
         "daysToKeep": 30,
         "releasesToKeep": 3,
@@ -217,7 +262,12 @@
           }
         ]
       },
-      "properties": {},
+      "properties": {
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
+      },
       "preDeploymentGates": {
         "id": 0,
         "gatesOptions": {
@@ -240,14 +290,15 @@
         },
         "gates": []
       },
-      "environmentTriggers": []
+      "environmentTriggers": [],
+      "badgeUrl": ""
     }
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$PHP-id$",
+      "sourceId": "$ProjectId$:$php-yaml-id$",
       "type": "Build",
-      "alias": "PHP",
+      "alias": "_php-yaml",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -266,34 +317,52 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$PHP-id$",
-          "name": "PHP"
+          "id": "$php-yaml-id$",
+          "name": "php-yaml"
+        },
+        "definitions": {
+          "id": "",
+          "name": ""
+        },
+        "IsMultiDefinitionType": {
+          "id": "False",
+          "name": "False"
         },
         "project": {
           "id": "$ProjectId$",
           "name": "$ProjectName$"
-        }
+        },
+        "repository": {
+          "id": "",
+          "name": ""
+        },
+        "artifactSourceDefinitionUrl": "{}"
       },
       "isPrimary": true,
       "isRetained": false
     }
   ],
-  "triggers": [
-    {
-      "artifactAlias": "PHP",
-      "triggerConditions": [],
-      "triggerType": "artifactSource"
-    }
-  ],
+  "triggers": [],
   "releaseNameFormat": "Release-$(rev:r)",
   "tags": [],
-  "pipelineProcess": {
-    "type": "designer"
-  },
   "properties": {
     "DefinitionCreationSource": {
       "$type": "System.String",
       "$value": "BuildSummary"
+    },
+    "IntegrateBoardsWorkItems": {
+      "$type": "System.String",
+      "$value": "False"
+    },
+    "IntegrateJiraWorkItems": {
+      "$type": "System.String",
+      "$value": "false"
     }
-  }
+  },
+  "id": "",
+  "name": "PHP",
+  "path": "\\",
+  "projectReference": null,
+  "url": "",
+  "_links": "{}"
 }

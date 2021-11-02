@@ -29,7 +29,6 @@ namespace VstsDemoBuilder.Services
         public static readonly object objLock = new object();
         public static Dictionary<string, string> statusMessages;
         public List<string> errorMessages = new List<string>();
-        public static string[] workItemTypes = new string[] { };
         public static string extractedTemplatePath = string.Empty;
         private ProjectProperties.Properties projectProperties = new ProjectProperties.Properties();
         public static void AddMessage(string id, string message)

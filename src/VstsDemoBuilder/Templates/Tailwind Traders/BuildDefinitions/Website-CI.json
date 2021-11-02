@@ -228,9 +228,9 @@
         }
       ],
       "target": {
-            "agentSpecification": {
-                "identifier": "ubuntu-16.04"
-            }
+        "agentSpecification": {
+          "identifier": "ubuntu-18.04"
+        }
         },
         "type": 1
     },
