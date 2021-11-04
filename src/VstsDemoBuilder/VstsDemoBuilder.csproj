@@ -1726,7 +1726,6 @@
     <Content Include="Templates\Test-bicep\ImportSourceCode\toy-website-test.json" />
     <Content Include="Templates\Test-bicep\ProjectSettings.json" />
     <Content Include="Templates\Test-bicep\ProjectTemplate.json" />
-
     <Content Include="Templates\Python\BuildDefinitions\PythonDjango-yaml.json" />
     <Content Include="Templates\Python\ReleaseDefinitions\Python-CD.json" />
     <Content Include="Templates\MyShuttle\BuildDefinitions\MyShuttle-Docker-yaml.json" />
@@ -1836,21 +1835,6 @@
     <Content Include="Templates\Ansible\Teams\Teams.json" />
     <Content Include="Templates\Terraform\BuildDefinitions\Terraform-CI-YAML.json" />
     <Content Include="Templates\Selenium\BuildDefinitions\Selenium-YAML.json" />
-    <Content Include="Templates\Selenium\Teams\Selenium Team\BoardColumns.json" />
-    <Content Include="Templates\Selenium\Teams\Selenium Team\BoardRows.json" />
-    <Content Include="Templates\Selenium\Teams\Selenium Team\CardFields.json" />
-    <Content Include="Templates\Selenium\Teams\Selenium Team\CardStyles.json" />
-    <Content Include="Templates\Selenium\Teams\Selenium Team\TeamSetting.json" />
-    <Content Include="Templates\Selenium\Teams\Team1\BoardColumns.json" />
-    <Content Include="Templates\Selenium\Teams\Team1\BoardRows.json" />
-    <Content Include="Templates\Selenium\Teams\Team1\CardFields.json" />
-    <Content Include="Templates\Selenium\Teams\Team1\CardStyles.json" />
-    <Content Include="Templates\Selenium\Teams\Team1\TeamSetting.json" />
-    <Content Include="Templates\Selenium\Teams\Team2\BoardColumns.json" />
-    <Content Include="Templates\Selenium\Teams\Team2\BoardRows.json" />
-    <Content Include="Templates\Selenium\Teams\Team2\CardFields.json" />
-    <Content Include="Templates\Selenium\Teams\Team2\CardStyles.json" />
-    <Content Include="Templates\Selenium\Teams\Team2\TeamSetting.json" />
     <Content Include="Templates\Selenium\Teams\Teams.json" />
     <Content Include="Templates\ReleaseGates\BuildDefinitions\PartsUnlimited-CI-YAML.json" />
     <Content Include="Templates\ReleaseGates\WorkItems\Bug.json" />
@@ -1897,7 +1881,6 @@
     <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\CardFields.json" />
     <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\CardStyles.json" />
     <Content Include="Templates\WhiteSource-Bolt\Teams\WhiteSource Bolt Team\TeamSetting.json" />
-
     <Content Include="Templates\IAC-migration\ImportSourceCode\IaC Migration.json" />
     <Content Include="Templates\IAC-migration\Iterations.json" />
     <Content Include="Templates\IAC-migration\ProjectSettings.json" />
@@ -1926,7 +1909,6 @@
     <Content Include="Templates\manage-end-end-deployment-scenarios\ProjectTemplate.json" />
     <Content Include="Templates\manage-end-end-deployment-scenarios\TeamArea.json" />
     <Content Include="Templates\manage-end-end-deployment-scenarios\VariableGroups\VariableGroup.json" />
-
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

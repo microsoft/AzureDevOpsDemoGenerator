@@ -614,20 +614,26 @@ namespace VstsDemoBuilder.Services
                             }
 
                             // updating card fields for each team and each board
-                            string teamCardFields = "";
-                            template.CardField = "CardFields.json";
-                            teamCardFields = Path.Combine(teamFolderPath, template.CardField);
-                            if (File.Exists(teamCardFields))
+                            try
                             {
-                                teamCardFields = File.ReadAllText(teamCardFields);
-                                List<ImportCardFields.CardFields> cardFields = new List<ImportCardFields.CardFields>();
-                                cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
-                                foreach (var card in cardFields)
+                                string teamCardFields = "";
+                                template.CardField = "CardFields.json";
+                                teamCardFields = Path.Combine(teamFolderPath, template.CardField);
+                                if (File.Exists(teamCardFields))
                                 {
-                                    UpdateCardFields(model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, _teamName);
+                                    teamCardFields = File.ReadAllText(teamCardFields);
+                                    List<ImportCardFields.CardFields> cardFields = new List<ImportCardFields.CardFields>();
+                                    cardFields = JsonConvert.DeserializeObject<List<ImportCardFields.CardFields>>(teamCardFields);
+                                    foreach (var card in cardFields)
+                                    {
+                                        UpdateCardFields(model, JsonConvert.SerializeObject(card, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }), _boardVersion, model.id, card.BoardName, _teamName);
+                                    }
                                 }
                             }
+                            catch(Exception ex)
+                            {
 
+                            }
                             // updating card styles for each team and each board
                             string teamCardStyle = "";
                             template.CardStyle = "CardStyles.json";
