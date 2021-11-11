@@ -1,0 +1,98 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 6872,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:28.807Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:12:41.59Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Modern Data Analytics Planning",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Modern Data Analytics Planning",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6874",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6872"
+    },
+    {
+      "id": 6873,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:29.22Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:12:47.913Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Modern Data Analytics Implementation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Modern Data Analytics Implementation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6876",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6875",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6873"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

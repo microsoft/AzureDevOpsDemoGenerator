@@ -1151,7 +1151,7 @@
           "Name": "Unified Data Governance",
           "TemplateFolder": "UnifiedDataGovernance",
           "ShortName": "datagov",
-          "Description": " Azure Purview is a unified data governance service that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Easily create a holistic, up-to-date map of your data landscape with automated data discovery, sensitive data classification, and end-to-end data lineage. Empower data consumers to find valuable, trustworthy data. <a href=''https://azure.microsoft.com/en-us/services/purview/'> Here </a>",
+          "Description": " Azure Purview is a unified data governance service that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Easily create a holistic, up-to-date map of your data landscape with automated data discovery, sensitive data classification, and end-to-end data lineage. Empower data consumers to find valuable, trustworthy data. <a href=''https://azure.microsoft.com/en-us/services/purview/' target='_blank'> Here </a>",
           "Tags": [
             "Agile",
             "Cloud Adoption",
@@ -1161,6 +1161,22 @@
             "Microsoft Cloud Adoption Framework"
           ],
           "Image": "/Templates/TemplateImages/AzureCommunity/unifiedgov.png"
+        },
+        {
+          "Key": "8207A5A9-3F9E-414F-83C5-CA3CC7A10F07",
+          "Name": "Modern Data Analytics",
+          "TemplateFolder": "ModernDataAnalytics",
+          "ShortName": "dataanalytics",
+          "Description": " Enterprise-scale for analytics and AI builds upon enterprise landing zones for ease of deployment and governance. The principal purpose of the enterprise landing zones is to ensure that when an application or workload lands on Azure, the required plumbing is already in place. It provides greater agility and compliance with enterprise security and governance requirements. Enterprise-scale landing zones must be in place before you deploy your first data management and analytics landing zones. <a href='https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/overview-data-governance' target='_blank'> Modern Data Analytics </a>",
+          "Tags": [
+            "Agile",
+            "Cloud Adoption",
+            "Innovate",
+            "Data",
+            "Governance",
+            "Microsoft Cloud Adoption Framework"
+          ],
+          "Image": "/Templates/TemplateImages/AzureCommunity/ModernDataAnalytics.png"
         }
       ]
     },

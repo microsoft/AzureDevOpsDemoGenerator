@@ -1,0 +1,16 @@
+{
+  "data": {},
+  "name": "Modern Data Analytics-code",
+  "type": "git",
+  "url": "https://dev.azure.com/lpcs/Modern Data Analytics/_git/Modern Data Analytics",
+  "authorization": {
+    "parameters": {
+      "username": "",
+      "password": "password"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}
