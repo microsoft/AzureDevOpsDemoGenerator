@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wayneme/Modern Data Analytics/_git/Modern Data Analytics"
+    },
+    "serviceEndpointId": "$Modern Data Analytics-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

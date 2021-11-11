@@ -446,6 +446,7 @@
     <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\Azure Sentinel DevOps.jpg" />
     <Content Include="Templates\TemplateImages\AzureCommunity\iac.png" />
+    <Content Include="Templates\TemplateImages\AzureCommunity\ModernDataAnalytics.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\ModernDataWarehouse.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\modiot.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\NIST 800-171.png" />
@@ -1909,6 +1910,22 @@
     <Content Include="Templates\manage-end-end-deployment-scenarios\ProjectTemplate.json" />
     <Content Include="Templates\manage-end-end-deployment-scenarios\TeamArea.json" />
     <Content Include="Templates\manage-end-end-deployment-scenarios\VariableGroups\VariableGroup.json" />
+    <Content Include="Templates\ModernDataAnalytics\ImportSourceCode\Modern Data Analytics.json" />
+    <Content Include="Templates\ModernDataAnalytics\Iterations.json" />
+    <Content Include="Templates\ModernDataAnalytics\ProjectSettings.json" />
+    <Content Include="Templates\ModernDataAnalytics\ProjectTemplate.json" />
+    <Content Include="Templates\ModernDataAnalytics\ServiceEndpoints\Modern Data Analytics-code.json" />
+    <Content Include="Templates\ModernDataAnalytics\TeamArea.json" />
+    <Content Include="Templates\ModernDataAnalytics\Teams\Modern Data Analytics Team\BoardColumns.json" />
+    <Content Include="Templates\ModernDataAnalytics\Teams\Modern Data Analytics Team\BoardRows.json" />
+    <Content Include="Templates\ModernDataAnalytics\Teams\Modern Data Analytics Team\CardFields.json" />
+    <Content Include="Templates\ModernDataAnalytics\Teams\Modern Data Analytics Team\CardStyles.json" />
+    <Content Include="Templates\ModernDataAnalytics\Teams\Modern Data Analytics Team\TeamSetting.json" />
+    <Content Include="Templates\ModernDataAnalytics\Teams\Teams.json" />
+    <Content Include="Templates\ModernDataAnalytics\WorkItems\Epic.json" />
+    <Content Include="Templates\ModernDataAnalytics\WorkItems\Feature.json" />
+    <Content Include="Templates\ModernDataAnalytics\WorkItems\Task.json" />
+    <Content Include="Templates\ModernDataAnalytics\WorkItems\User Story.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
