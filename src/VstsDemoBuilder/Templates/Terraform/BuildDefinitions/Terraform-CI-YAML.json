@@ -24,7 +24,7 @@
     "properties": {
       "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/Terraform",
       "fullName": "Terraform",
-      "defaultBranch": "refs/heads/master",
+      "defaultBranch": "refs/heads/terraform",
       "isFork": "False",
       "safeRepository": "$Terraform$",
       "reportBuildStatus": "true"
@@ -33,7 +33,7 @@
     "type": "TfsGit",
     "name": "Terraform",
     "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/Terraform",
-    "defaultBranch": "refs/heads/master",
+    "defaultBranch": "refs/heads/terraform",
     "clean": null,
     "checkoutSubmodules": false
   },

@@ -24,7 +24,7 @@
     "properties": {
       "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/LaunchDarkly",
       "fullName": "LaunchDarkly",
-      "defaultBranch": "refs/heads/azure-pipelines",
+      "defaultBranch": "refs/heads/launch-darkly",
       "isFork": "False",
       "safeRepository": "$LaunchDarkly$",
       "reportBuildStatus": "true"
@@ -33,7 +33,7 @@
     "type": "TfsGit",
     "name": "LaunchDarkly",
     "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/LaunchDarkly",
-    "defaultBranch": "refs/heads/azure-pipelines",
+    "defaultBranch": "refs/heads/launch-darkly",
     "clean": null,
     "checkoutSubmodules": false
   },
