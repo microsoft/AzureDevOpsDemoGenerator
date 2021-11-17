@@ -945,7 +945,6 @@
     <Content Include="Templates\CreateWiki.json" />
     <Content Include="Templates\MovePages.json" />
     <Content Include="Templates\SampleContent.json" />
-    <Content Include="Templates\Tailwind Traders\Wiki\Tailwind Traders.json" />
     <Content Include="Templates\Tailwind Traders\ImportSourceCode\TailwindTraders-Backend.json" />
     <Content Include="Templates\Tailwind Traders\ImportSourceCode\Tailwind Traders.json" />
     <Content Include="Templates\Tailwind Traders\ServiceEndpoints\Tailwind Traders.json" />
