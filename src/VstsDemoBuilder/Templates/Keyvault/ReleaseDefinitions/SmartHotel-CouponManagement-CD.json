@@ -259,7 +259,7 @@
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$azure-key-vault-yaml-id$",
+      "sourceId": "$ProjectId$:$SmartHotel-CouponManagement-CI-id$",
       "type": "Build",
       "alias": "_azure-key-vault-yaml",
       "definitionReference": {
@@ -280,7 +280,7 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$azure-key-vault-yaml-id$",
+          "id": "$SmartHotel-CouponManagement-CI-id$",
           "name": "azure-key-vault-yaml"
         },
         "definitions": {
