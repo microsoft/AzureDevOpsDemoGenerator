@@ -261,7 +261,7 @@
     {
       "sourceId": "$ProjectId$:$SmartHotel-CouponManagement-CI-id$",
       "type": "Build",
-      "alias": "_azure-key-vault-yaml",
+      "alias": "_SmartHotel-CouponManagement-CI",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -281,7 +281,7 @@
         },
         "definition": {
           "id": "$SmartHotel-CouponManagement-CI-id$",
-          "name": "azure-key-vault-yaml"
+          "name": "SmartHotel-CouponManagement-CI"
         },
         "definitions": {
           "id": "",
