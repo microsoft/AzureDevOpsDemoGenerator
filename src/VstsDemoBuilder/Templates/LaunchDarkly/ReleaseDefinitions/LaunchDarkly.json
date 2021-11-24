@@ -79,22 +79,27 @@
 					"parallelExecutionType": "none"
 				},
 				"skipArtifactsDownload": false,
-				"artifactsDownloadInput": {
-					"downloadInputs": [{
-						"artifactItems": [],
-						"alias": "LaunchDarkly-CI",
-						"artifactType": "Build",
-						"artifactDownloadMode": "All"
-					}]
+				"agentSpecification": {
+					"identifier": "windows-2019"
 				},
-				"queueId": "$Hosted VS2017$",
+				"artifactsDownloadInput": {
+					"downloadInputs": [
+						{
+							"artifactItems": [],
+							"alias": "LaunchDarkly-CI",
+							"artifactType": "Build",
+							"artifactDownloadMode": "All"
+						}
+					]
+				},
+				"queueId": "$Azure Pipelines$",
 				"demands": [],
 				"enableAccessToken": false,
 				"timeoutInMinutes": 0,
 				"jobCancelTimeoutInMinutes": 1,
 				"condition": "succeeded()",
 				"overrideInputs": {
-					
+
 				}
 			},
 			"rank": 1,
