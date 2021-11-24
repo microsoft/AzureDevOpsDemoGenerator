@@ -138,7 +138,7 @@
                 "templateLocation": "Linked artifact",
                 "csmFileLink": "",
                 "csmParametersFileLink": "",
-                "csmFile": "$(System.DefaultWorkingDirectory)/_azure-key-vault-yaml/drop/azuredeploy.json",
+                "csmFile": "$(System.DefaultWorkingDirectory)/_SmartHotel-CouponManagement-CI/drop/azuredeploy.json",
                 "csmParametersFile": "",
                 "overrideParameters": "-webAppName $(webappName) -mySQLAdminLoginName \"azureuser\" -mySQLAdminLoginPassword $(sqldbpassword) ",
                 "deploymentMode": "Incremental",
