@@ -75,10 +75,13 @@
               "parallelExecutionType": "none"
             },
             "skipArtifactsDownload": false,
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$vs2017-win2016$",
+            "queueId": "$Azure Pipeline$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
