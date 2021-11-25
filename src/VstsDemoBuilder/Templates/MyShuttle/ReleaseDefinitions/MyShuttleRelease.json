@@ -7,32 +7,6 @@
   "modifiedBy": "{}",
   "modifiedOn": "",
   "isDeleted": false,
-  "lastRelease": {
-    "id": 1,
-    "name": "Release-1",
-    "artifacts": [],
-    "_links": {},
-    "description": "",
-    "releaseDefinition": {
-      "id": 1,
-      "projectReference": null,
-      "_links": {}
-    },
-    "createdOn": "2021-09-03T14:14:37.55Z",
-    "createdBy": {
-      "displayName": "Akshay Hosur",
-      "url": "https://spsprodsin1.vssps.visualstudio.com/A5ddcb812-79aa-4fdb-b9d3-ae14ee6520a0/_apis/Identities/ddc8930b-7be3-6d29-ba63-9a7b2edf1b5e",
-      "_links": {
-        "avatar": {
-          "href": "https://dev.azure.com/akshayhosur/_apis/GraphProfile/MemberAvatars/aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl"
-        }
-      },
-      "id": "ddc8930b-7be3-6d29-ba63-9a7b2edf1b5e",
-      "uniqueName": "akshay.hosur@ecanarys.com",
-      "imageUrl": "https://dev.azure.com/akshayhosur/_apis/GraphProfile/MemberAvatars/aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl",
-      "descriptor": "aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl"
-    }
-  },
   "variables": {},
   "variableGroups": [],
   "environments": [
@@ -96,12 +70,14 @@
             "parallelExecution": {
               "parallelExecutionType": "none"
             },
-            "agentSpecification": null,
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted VS2017$",
+            "queueId": "$Azure Pipelines$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,

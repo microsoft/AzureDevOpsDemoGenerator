@@ -69,7 +69,9 @@
         {
           "deploymentInput": {
             "parallelExecution": { "parallelExecutionType": 0 },
-            "agentSpecification": null,
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": [
@@ -81,7 +83,7 @@
                 }
               ]
             },
-            "queueId": "$Hosted VS2017$",
+            "queueId": "$Azure Pipelines$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,

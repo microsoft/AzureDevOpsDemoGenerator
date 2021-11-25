@@ -80,12 +80,15 @@
               "parallelExecutionType": "none"
             },
             "skipArtifactsDownload": false,
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
             "artifactsDownloadInput": {
               "downloadInputs": [
 
               ]
             },
-            "queueId": "$Hosted VS2017$",
+            "queueId": "$Azure Pipelines$",
             "demands": [
 
             ],
