@@ -57,22 +57,25 @@
             },
             "deployPhases": [
                 {
-                    "deploymentInput": {
-                        "parallelExecution": {
-                            "parallelExecutionType": "none"
-                        },
-                        "skipArtifactsDownload": false,
-                        "artifactsDownloadInput": {
-                            "downloadInputs": []
-                        },
-                        "queueId": "$Hosted VS2017$",
-                        "demands": [],
-                        "enableAccessToken": false,
-                        "timeoutInMinutes": 0,
-                        "jobCancelTimeoutInMinutes": 1,
-                        "condition": "succeeded()",
-                        "overrideInputs": {}
+                  "deploymentInput": {
+                    "parallelExecution": {
+                      "parallelExecutionType": "none"
                     },
+                    "skipArtifactsDownload": false,
+                    "agentSpecification": {
+                      "identifier": "windows-2019"
+                    },
+                    "artifactsDownloadInput": {
+                      "downloadInputs": []
+                    },
+                    "queueId": "$Azure Pipelines$",
+                    "demands": [],
+                    "enableAccessToken": false,
+                    "timeoutInMinutes": 0,
+                    "jobCancelTimeoutInMinutes": 1,
+                    "condition": "succeeded()",
+                    "overrideInputs": {}
+                  },
                     "rank": 1,
                     "phaseType": 1,
                     "name": "Agent phase",

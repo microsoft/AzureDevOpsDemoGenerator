@@ -125,10 +125,13 @@
               "parallelExecutionType": "none"
             },
             "skipArtifactsDownload": false,
+            "agentSpecification": {
+              "identifier": "ubuntu-18.04"
+            },
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted Ubuntu 1604$",
+            "queueId": "$Azure Pipelines$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,

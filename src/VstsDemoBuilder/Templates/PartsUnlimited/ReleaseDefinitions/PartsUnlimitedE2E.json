@@ -137,7 +137,7 @@
           ]
         }
       ],
-      "queueId": "$Hosted$",
+      "queueId": "$Azure Pipelines$",
       "environmentOptions": {
         "emailNotificationType": "OnlyOnFailure",
         "emailRecipients": "release.environment.owner;release.creator",
@@ -192,7 +192,7 @@
         ]
       },
       "deployStep": {
-        
+
       },
       "postDeployApprovals": {
         "approvals": [
@@ -209,11 +209,14 @@
             "parallelExecution": {
               "parallelExecutionType": "none"
             },
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted$",
+            "queueId": "$Azure Pipelines$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -315,7 +318,7 @@
           ]
         }
       ],
-      "queueId": "$Hosted$",
+      "queueId": "$Azure Pipelines$",
       "environmentOptions": {
         "emailNotificationType": "OnlyOnFailure",
         "emailRecipients": "release.environment.owner;release.creator",
@@ -370,7 +373,7 @@
         ]
       },
       "deployStep": {
-       
+
       },
       "postDeployApprovals": {
         "approvals": [
@@ -388,10 +391,13 @@
               "parallelExecutionType": "none"
             },
             "skipArtifactsDownload": false,
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted$",
+            "queueId": "$Azure Pipelines$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -461,7 +467,7 @@
           ]
         }
       ],
-      "queueId": "$Hosted$",
+      "queueId": "$Azure Pipelines$",
       "environmentOptions": {
         "emailNotificationType": "OnlyOnFailure",
         "emailRecipients": "release.environment.owner;release.creator",

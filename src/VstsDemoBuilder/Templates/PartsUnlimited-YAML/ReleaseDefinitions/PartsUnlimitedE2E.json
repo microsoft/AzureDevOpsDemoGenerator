@@ -68,12 +68,14 @@
             "parallelExecution": {
               "parallelExecutionType": "none"
             },
-            "agentSpecification": null,
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted$",
+            "queueId": "$Azure Pipelines$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -275,12 +277,14 @@
             "parallelExecution": {
               "parallelExecutionType": "none"
             },
-            "agentSpecification": null,
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted$",
+            "queueId": "$Azure Pipelines$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
@@ -449,12 +453,14 @@
             "parallelExecution": {
               "parallelExecutionType": "none"
             },
-            "agentSpecification": null,
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
             "skipArtifactsDownload": false,
             "artifactsDownloadInput": {
               "downloadInputs": []
             },
-            "queueId": "$Hosted$",
+            "queueId": "$Azure Pipelines$",
             "demands": [],
             "enableAccessToken": false,
             "timeoutInMinutes": 0,
