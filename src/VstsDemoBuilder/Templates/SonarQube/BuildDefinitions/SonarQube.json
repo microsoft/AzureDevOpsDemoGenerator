@@ -218,7 +218,7 @@
     ],
     "target": {
       "agentSpecification": {
-        "identifier": "vs2017-win2016"
+        "identifier": "ubuntu-18.04"
       }
     },
     "type": 1
