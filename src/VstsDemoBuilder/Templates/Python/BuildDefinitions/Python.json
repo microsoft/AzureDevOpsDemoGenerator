@@ -211,7 +211,7 @@
       ],
       "target": {
             "agentSpecification": {
-                "identifier": "vs2017-win2016"
+                "identifier": "windows-2019"
             }
         },
         "type": 1

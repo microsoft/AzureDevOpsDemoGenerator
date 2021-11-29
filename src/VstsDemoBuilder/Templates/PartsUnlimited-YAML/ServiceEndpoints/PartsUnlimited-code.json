@@ -4,7 +4,7 @@
   },
   "name": "PartsUnlimited-code",
   "type": "git",
-  "url": "https://dev.azure.com/vstsdemodata/PartsUnlimited_YAML/_git/PartsUnlimited",
+  "url": "https://vstsdemodata.visualstudio.com/_git/PartsUnlimited",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {
