@@ -6,31 +6,31 @@
   "variables": {
     "location": {
       "value": "South India",
-      "isSecret": true
+      "isSecret": false
     },
     "mysqlAdmin": {
       "value": "vmadmin",
-      "isSecret": true
+      "isSecret": false
     },
     "mysqlAdminSecret": {
       "value": "P2ssw0rd@123",
-      "isSecret": true
+      "isSecret": false
     },
     "mysqlDbName": {
       "value": "hotel_coupon",
-      "isSecret": true
+      "isSecret": false
     },
     "mysqlServerName": {
       "value": "smh360mysql$UUID$",
-      "isSecret": true
+      "isSecret": false
     },
     "resourceGroupName": {
       "value": "ansible",
-      "isSecret": true
+      "isSecret": false
     },
     "webappName": {
       "value": "smh360web$UUID$",
-      "isSecret": true
+      "isSecret": false
     }
   },
   "variableGroups": [],

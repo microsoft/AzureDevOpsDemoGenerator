@@ -6,23 +6,23 @@
   "variables": {
     "ACR": {
       "value": "YOURACR.azurecr.io",
-      "isSecret": true
+      "isSecret": false
     },
     "DatabaseName": {
       "value": "mhcdb",
-      "isSecret": true
+      "isSecret": false
     },
     "SQLpassword": {
       "value": "P2ssw0rd1234",
-      "isSecret": true
+      "isSecret": false
     },
     "SQLuser": {
       "value": "sqladmin",
-      "isSecret": true
+      "isSecret": false
     },
     "SQLserver": {
       "value": "YOURSQLSERVER.database.windows.net",
-      "isSecret": true
+      "isSecret": false
     }
   },
   "variableGroups": [],

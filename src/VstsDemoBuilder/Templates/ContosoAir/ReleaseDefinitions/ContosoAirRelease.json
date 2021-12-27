@@ -9,11 +9,11 @@
     },
     "resourcegroup": {
       "value": "contosoair",
-      "isSecret": true
+      "isSecret": false
     },
     "web": {
       "value": "contosoair$UUID$",
-      "isSecret": true
+      "isSecret": false
     }
   },
   "variableGroups": [
