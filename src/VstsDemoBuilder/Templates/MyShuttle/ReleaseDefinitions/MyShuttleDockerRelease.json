@@ -10,11 +10,11 @@
   "variables": {
     "DBPASSWORD": {
       "value": null,
-      "isSecret": true
+      "isSecret": false
     },
     "DBUSER": {
       "value": "dbadmin@myshuttle-db",
-      "isSecret": true
+      "isSecret": false
     }
   },
   "variableGroups": [
