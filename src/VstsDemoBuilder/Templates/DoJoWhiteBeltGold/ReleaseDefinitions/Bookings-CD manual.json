@@ -10,11 +10,11 @@
   "variables": {
     "resourcegroup": {
       "value": "Dojo-Booking-Dev-WUS2",
-      "isSecret": true
+      "isSecret": false
     },
     "webapp": {
       "value": "dojo-bookings-app-dev-manual",
-      "isSecret": true
+      "isSecret": false
     }
   },
   "variableGroups": [],

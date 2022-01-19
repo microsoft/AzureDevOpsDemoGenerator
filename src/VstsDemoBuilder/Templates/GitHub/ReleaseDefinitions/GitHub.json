@@ -8,19 +8,19 @@
   "variables": {
     "HostingPlan": {
       "value": "githubplan",
-      "isSecret": true
+      "isSecret": false
     },
     "ResourceGroup": {
       "value": "Github",
-      "isSecret": true
+      "isSecret": false
     },
     "ServerName": {
       "value": "githubserver$UUID$",
-      "isSecret": true
+      "isSecret": false
     },
     "WebsiteName": {
       "value": "Githubwebapp$UUID$",
-      "isSecret": true
+      "isSecret": false
     }
   },
   "variableGroups": [],

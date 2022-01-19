@@ -10,19 +10,19 @@
     },
     "DatabaseName": {
       "value": "mhcdb",
-      "isSecret": true
+      "isSecret": false
     },
     "Password": {
       "value": "P2ssw0rd1234",
-      "isSecret": true
+      "isSecret": false
     },
     "SQLadmin": {
       "value": "sqladmin",
-      "isSecret": true
+      "isSecret": false
     },
     "SQLserver": {
       "value": "YOUR_DBSERVER.database.windows.net",
-      "isSecret": true
+      "isSecret": false
     }
   },
   "variableGroups": [],
