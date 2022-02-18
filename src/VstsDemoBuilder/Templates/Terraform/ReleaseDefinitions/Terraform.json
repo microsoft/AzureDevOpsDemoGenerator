@@ -151,7 +151,7 @@
             {
               "environment": {},
               "taskId": "a8515ec8-7254-4ffd-912c-86772e2b5962",
-              "version": "4.*",
+              "version": "",
               "name": "Replace tokens in terraform file",
               "refName": "",
               "enabled": true,
