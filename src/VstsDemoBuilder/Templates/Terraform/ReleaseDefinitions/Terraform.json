@@ -151,7 +151,7 @@
             {
               "environment": {},
               "taskId": "a8515ec8-7254-4ffd-912c-86772e2b5962",
-              "version": "3.*",
+              "version": "5.*",
               "name": "Replace tokens in terraform file",
               "refName": "",
               "enabled": true,
@@ -195,7 +195,7 @@
             {
               "environment": {},
               "taskId": "fe504acc-6115-40cb-89ff-191386b5e7bf",
-              "version": "0.*",
+              "version": "2.*",
               "name": "Terraform : init",
               "refName": "",
               "enabled": true,
@@ -229,7 +229,7 @@
             {
               "environment": {},
               "taskId": "fe504acc-6115-40cb-89ff-191386b5e7bf",
-              "version": "0.*",
+              "version": "2.*",
               "name": "Terraform : plan",
               "refName": "",
               "enabled": true,
@@ -263,7 +263,7 @@
             {
               "environment": {},
               "taskId": "fe504acc-6115-40cb-89ff-191386b5e7bf",
-              "version": "0.*",
+              "version": "2.*",
               "name": "Terraform : apply -auto-approve",
               "refName": "",
               "enabled": true,

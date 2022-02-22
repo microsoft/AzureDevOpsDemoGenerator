@@ -421,6 +421,7 @@ namespace VstsDemoBuilder.Services
             if (!model.IsApi && model.isExtensionNeeded && model.isAgreeTerms)
             {
                 bool isInstalled = InstallExtensions(model, model.accountName, model.accessToken);
+                Thread.Sleep(1000);
                 if (isInstalled) { AddMessage(model.id, "Required extensions are installed"); }
             }
 

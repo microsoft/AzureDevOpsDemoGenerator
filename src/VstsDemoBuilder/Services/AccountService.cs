@@ -53,7 +53,7 @@ namespace VstsDemoBuilder.Services
                 {
                     BaseAddress = new Uri(baseAddress)
                 };
-
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 var request = new HttpRequestMessage(HttpMethod.Post, "/oauth2/token");
 
                 var requestContent = body;
