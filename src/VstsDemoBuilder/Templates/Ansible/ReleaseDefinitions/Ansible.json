@@ -121,7 +121,7 @@
             {
               "environment": {},
               "taskId": "a8515ec8-7254-4ffd-912c-86772e2b5962",
-              "version": "3.*",
+              "version": "4.*",
               "name": "Replace variables in Ansible script to deploy Azure resources",
               "refName": "",
               "enabled": true,
