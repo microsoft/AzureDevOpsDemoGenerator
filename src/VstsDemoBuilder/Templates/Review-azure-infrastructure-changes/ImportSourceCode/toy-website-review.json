@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://github.com/MicrosoftDocs/mslearn-review-azure-infrastructure-changes-using-bicep-pull-requests.git"
+    },
+    "serviceEndpointId": "",
+    "deleteServiceEndpointAfterImportIsDone": false
+  }
+}

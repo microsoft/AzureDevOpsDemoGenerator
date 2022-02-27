@@ -2009,6 +2009,16 @@
     <Content Include="Templates\ModernDataAnalytics\WorkItems\Task.json" />
     <Content Include="Templates\ModernDataAnalytics\WorkItems\User Story.json" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\ImportSourceCode\toy-website-review.json" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\Iterations.json" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\ProjectSettings.json" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\ProjectTemplate.json" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\TeamArea.json" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\Teams\Teams.json" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\Teams\toy-website-review Team\BoardColumns.json" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\Teams\toy-website-review Team\BoardRows.json" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\Teams\toy-website-review Team\CardFields.json" />
+    <Content Include="Templates\Review-azure-infrastructure-changes\Teams\toy-website-review Team\CardStyles.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
