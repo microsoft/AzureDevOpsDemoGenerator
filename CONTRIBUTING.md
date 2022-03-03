@@ -34,10 +34,10 @@ Once you successfully generate and test your template, you can share it with com
 |-------|-----------|
 |**Name**| Name of your template, which will be displayed in the text box upon template selection |
 |**ShortName** | Short name for your template. This should not contain any space or special characters|
-|**TemplateFolder**| Name of your tempalte folder. This should not contain any space or special characters|
+|**TemplateFolder**| Name of your template folder. This should not contain any space or special characters|
 |**Description** | A brief description about the template|
 |**Tags**| An array of tags, which should be related to technologies used. Ex: .NetCore, Java, Maven, Docker, K8S, etc. |
-| **Icon** | Templte icon to display it publicly in the tempalte selection page |
+| **Icon** | Template icon to display it publicly in the template selection page |
 | **Document link** | Document link for user reference|
 |||
 
