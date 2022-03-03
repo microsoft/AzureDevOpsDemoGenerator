@@ -27,9 +27,9 @@ Once you successfully generate and test your template, you can share it with com
 1. Place the template zip file in any public repository and share the link in [Email](mailto:AzureDevOpsDemoGenerator@service.microsoft.com)
 1. Share the template directly through [Email](mailto:AzureDevOpsDemoGenerator@service.microsoft.com)
 
-> Note: If you have extensions installed in your organization, tempalte would be generated along with reference to all installed extensions in the ```Extensions.json``` file. You can edit this file and keep only the required extensions for the project. If extensions are not required, keep the file empty.
+> Note: If you have extensions installed in your organization, template would be generated along with reference to all installed extensions in the ```Extensions.json``` file. You can edit this file and keep only the required extensions for the project. If extensions are not required, keep the file empty.
 
-## Your template must contian following elements
+## Your template must contain following elements
 |Keys|Description| 
 |-------|-----------|
 |**Name**| Name of your template, which will be displayed in the text box upon template selection |
