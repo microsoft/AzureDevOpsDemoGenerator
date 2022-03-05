@@ -8549,7 +8549,8 @@ html, body {
 }
 
     .navbar .nav-item img {
-        width: 18px;
+        width: 36px;
+        border-radius: 18px;
     }
 
 .navbar-brand img {

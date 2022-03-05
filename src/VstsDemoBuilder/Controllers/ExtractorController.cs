@@ -83,6 +83,7 @@ namespace VstsDemoBuilder.Controllers
                     AccountsResponse.AccountList accountList = accountService.GetAccounts(profile.id, accessDetails);
                     model.accessToken = accessDetails.access_token;
                     model.accountsForDropdown = new List<string>();
+                    model.profileImage = "data:image/png;base64, " + profile.coreAttributes?.Avatar?.value?.value;
                     if (accountList.count > 0)
                     {
                         foreach (var account in accountList.value)

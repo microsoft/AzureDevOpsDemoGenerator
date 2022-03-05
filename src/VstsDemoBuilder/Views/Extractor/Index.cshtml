@@ -133,7 +133,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">
-                    <img src="~/content/assets/images/VSTS-user-image.svg" alt="AzureDevOpsDemogenerator">
+                    <img src="@Model.profileImage" alt="user">
                     @if (Session["User"] != null)
                     {
                         <span class="VSTS-username ml-1" style="font-size:16px">@Session["User"].ToString()</span>

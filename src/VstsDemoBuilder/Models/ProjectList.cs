@@ -21,6 +21,7 @@ namespace VstsDemoBuilder.Models
         public class ProjectDetails
         {
             public int count { get; set; }
+            public string profileImage { get; set; }
             public IList<Value> value { get; set; }
             public string errmsg { get; set; }
             public string accessToken { get; set; }

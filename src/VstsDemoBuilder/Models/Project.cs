@@ -55,6 +55,7 @@ namespace VstsDemoBuilder.Models
         public string PrivateTemplateName { get; set; }
         public string PrivateTemplatePath { get; set; }
         public string templateImage { get; set; }
+        public string profileImage { get; set; }
     }
     public class EnvironmentValues
     {
