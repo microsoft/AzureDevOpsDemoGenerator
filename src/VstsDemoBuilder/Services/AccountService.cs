@@ -93,7 +93,7 @@ namespace VstsDemoBuilder.Services
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessDetails.access_token);
-                    HttpResponseMessage response = client.GetAsync("_apis/profile/profiles/me?api-version=4.1").Result;
+                    HttpResponseMessage response = client.GetAsync("_apis/profile/profiles/me?details=true&api-version=4.1").Result;
                     if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.OK)
                     {
                         string result = response.Content.ReadAsStringAsync().Result;

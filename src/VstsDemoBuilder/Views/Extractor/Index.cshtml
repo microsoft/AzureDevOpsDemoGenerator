@@ -133,7 +133,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">
-                    <img src="~/content/assets/images/VSTS-user-image.svg" alt="AzureDevOpsDemogenerator">
+                    <img src="@Model.profileImage" alt="user">
                     @if (Session["User"] != null)
                     {
                         <span class="VSTS-username ml-1" style="font-size:16px">@Session["User"].ToString()</span>
@@ -141,6 +141,7 @@
                     <span class="sr-only">(current)</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" id="switch" href="https://aex.dev.azure.com/" target="_blank">Switch Directory</a>
                     <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
                 </div>
             </li>
@@ -174,6 +175,7 @@
                             @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "Organization" })
                             <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
                             </div>
+                            <div id="notify" class="d-none" style="color: #918a8a ">Not finding your organization? <a href="../account/index">Sign In</a> </div>
                             <div style="color:red">
                                 @ViewBag.AccDDError
                             </div>
