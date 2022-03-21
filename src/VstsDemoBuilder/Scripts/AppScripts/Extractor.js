@@ -328,6 +328,9 @@ $(document).ready(function () {
         ga('send', 'event', 'fileDownload', 'clicked');
     });
 
+    $('#switch').click(function () {
+        $('#notify').removeClass('d-none');
+    })
 });
 
 function getStatus() {

@@ -192,6 +192,7 @@ namespace VstsDemoBuilder.Controllers
                             model.refreshToken = _accessDetails.refresh_token;
                             Session["PAT"] = _accessDetails.access_token;
                             model.MemberID = profile.id;
+                            model.profileImage = "data:image/png;base64, "+profile.coreAttributes?.Avatar?.value?.value;
                             List<string> accList = new List<string>();
                             if (accountList.count > 0)
                             {

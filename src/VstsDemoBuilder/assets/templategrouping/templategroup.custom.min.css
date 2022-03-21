@@ -3003,7 +3003,7 @@ tbody.collapse.show {
 .dropdown-item {
     display: block;
     width: 100%;
-    padding: 0.25rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     clear: both;
     font-weight: 400;
     color: #212529;
@@ -3016,7 +3016,7 @@ tbody.collapse.show {
     .dropdown-item:hover, .dropdown-item:focus {
         color: #16181b;
         text-decoration: none;
-        background-color: #f8f9fa;
+        background-color: #bdbfc1;
     }
 
     .dropdown-item.active, .dropdown-item:active {
@@ -8549,7 +8549,8 @@ html, body {
 }
 
     .navbar .nav-item img {
-        width: 18px;
+        width: 36px;
+        border-radius: 18px;
     }
 
 .navbar-brand img {

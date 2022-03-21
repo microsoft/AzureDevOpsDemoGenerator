@@ -853,6 +853,7 @@
             "Bicep",
             "ARM"
           ],
+          "Image": "/Templates/TemplateImages/mslearn/review-azure-infrastructure.png",
           "Description": "Ensure the quality of your team's Bicep code. Use branching strategies to protect your main branch from accidental changes. Review Bicep code by using pull requests<br /><br />Lab URL: <a href=' : https://docs.microsoft.com/learn/modules/review-azure-infrastructure-changes-using-bicep-pull-requests/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Review Azure infrastructure changes by using Bicep and pull requests</a>"
         }
       ]

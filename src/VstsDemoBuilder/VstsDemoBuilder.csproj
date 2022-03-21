@@ -567,6 +567,7 @@
     <Content Include="Templates\TemplateImages\mslearn\manage-release-cadence-using-deployment-patterns.svg" />
     <Content Include="Templates\TemplateImages\mslearn\manage-security-and-compliance-in-your-build-pipeline.png" />
     <Content Include="Templates\TemplateImages\mslearn\provision-database-azure-pipelines.svg" />
+    <Content Include="Templates\TemplateImages\mslearn\review-azure-infrastructure.png" />
     <Content Include="Templates\TemplateImages\mslearn\run-functional-tests-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\run-non-functional-tests-in-azure-pipelines.svg" />
     <Content Include="Templates\TemplateImages\mslearn\run-quality-tests-when-your-application-builds.png" />

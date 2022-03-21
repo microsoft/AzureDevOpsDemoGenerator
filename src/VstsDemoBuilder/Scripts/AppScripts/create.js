@@ -22,6 +22,10 @@ $(document).ready(function () {
     $("#btnUserShow").attr('disabled', true);
 
     ga('send', 'event', 'Create page', 'visited');
+
+    $('#switch').click(function () {
+        $('#notify').removeClass('d-none');
+    })
 });
 var messageList = [];
 /**/

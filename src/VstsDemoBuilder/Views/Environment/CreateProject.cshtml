@@ -122,7 +122,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                    aria-expanded="false">
-                    <img src="~/content/assets/images/VSTS-user-image.svg" alt="Azure DevOps Demo Generator">
+                    <img src="@Model.profileImage" alt="user">
                     @if (Session["User"] != null)
                     {
                         <span class="VSTS-username ml-1" style="font-size:16px">@Session["User"].ToString()</span>
@@ -131,6 +131,7 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" id="switch" href="https://aex.dev.azure.com/"  target="_blank">Switch Directory</a>
                     <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
                 </div>
             </li>
@@ -182,26 +183,6 @@
             -->
             <div class="col-md-6 order-1 order-md-2">
                 <div style="border:1px solid #ccc; padding:15px;">
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
-                        <div class="col-lg-8">
-                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
-                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
-                        <div class="col-lg-8">
-
-                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
-                            <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
-                            </div>
-                            <div style="color:red">
-                                @ViewBag.AccDDError
-                            </div>
-                        </div>
-                    </div>
                     <div class="form-group row" id="">
                         <label for="Template" class="col-lg-3 col-form-label mt-1 " style="font-weight:400">Selected Template :</label>
                         <div class="col-lg-5  mb-3 mt-1">
@@ -220,6 +201,28 @@
                             }
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-3 col-form-label" style="font-weight: 400;">New Project Name :</label>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(model => model.ProjectName, null, new { @class = "form-control rmverror", id = "txtProjectName", placeholder = "Project Name", maxlength = "64" })
+                            <div class="alert alert-danger d-none" role="alert" id="txtProjectName_Error">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ddlAcccountName" class="col-lg-3 col-form-label" style="font-weight: 400;">Select Organization :</label>
+                        <div class="col-lg-8">
+
+                            @Html.DropDownListFor(model => model.accountName, new SelectList(Model.accountsForDropdown), "Select Organization", new { @class = "form-control rmverror", id = "ddlAcccountName", name = "accountName", style = "cursor:pointer" })
+                            <div class="alert alert-danger d-none" role="alert" id="ddlAcccountName_Error">
+                            </div>
+                            <div id="notify" class="d-none" style="color: #918a8a ">Not finding your organization? <a href="../account/index">Sign In</a> </div>
+                            <div style="color:red">
+                                @ViewBag.AccDDError
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div style="border:1px solid #ccc; margin-top:15px;" id="gitHubCheckboxDiv">
@@ -308,9 +311,16 @@
                     </div>
                 </div>
                 <div class="card text-white mb-3 vstsScroll" id="announcement" style="max-height:250px;overflow-y:auto;">
-                    <div class="card-header bg-primary">What's new</div>
+                    <div class="card-header bg-primary">What's new?</div>
                     <div class="card-body" style="background-color:white; color:black">
-                        <p>- New templates in Microsoft Learning and Cloud Adoption Framework platform</p>
+                        <ul style="padding-left:10px">
+                            <li>
+                                New templates in Microsoft Learning and Cloud Adoption Framework platform
+                            </li>
+                            <li>
+                                Switch Directory option for switching between organization directories. Click on <a href="../account/index">Sign In</a> once you switch the organization.
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="card bg-primary mb-3 mt-auto" id="errorNotify" style="display:none;">
