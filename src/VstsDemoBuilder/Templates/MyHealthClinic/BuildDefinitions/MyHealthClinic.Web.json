@@ -82,6 +82,38 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
+            "displayName": "Install .net core 1.0.0",
+            "timeoutInMinutes": 0,
+            "retryCountOnTaskFailure": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+              "versionSpec": "2.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "targetType": "inline",
+              "filePath": "",
+              "arguments": "",
+              "script": "choco install dotnetcore --version=1.0.0",
+              "errorActionPreference": "stop",
+              "warningPreference": "default",
+              "informationPreference": "default",
+              "verbosePreference": "default",
+              "debugPreference": "default",
+              "failOnStderr": "false",
+              "showWarnings": "false",
+              "ignoreLASTEXITCODE": "false",
+              "pwsh": "false",
+              "workingDirectory": "",
+              "runScriptInSeparateScope": "false"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
             "displayName": "Restore",
             "timeoutInMinutes": 0,
             "condition": "succeeded()",
@@ -325,7 +357,7 @@
     ],
     "target": {
       "agentSpecification": {
-        "identifier": "vs2017-win2016"
+        "identifier": "windows-2022"
       }
     },
     "type": 1

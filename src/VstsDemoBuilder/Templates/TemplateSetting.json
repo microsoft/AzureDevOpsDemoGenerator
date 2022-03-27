@@ -164,7 +164,7 @@
           "Description": "Use this template to learn how Terraform can be used to implement Infrastructure as Code (IaC) and how we can automate infrastructure deployments in the Cloud with Terraform and Azure pipelines.",
           "Tags": [
             "infrastructure as code",
-            "aspdotnet",
+            "aspdotnetcore",
             "azure cloud"
           ],
           "Image": "/Templates/TemplateImages/Terraform.png",
@@ -371,7 +371,8 @@
           "Tags": [
             "aks",
             "kubernetes",
-            "containers"
+            "containers",
+            "aspnetcore"
           ],
           "Image": "/Templates/TemplateImages/AzureDevOps.png",
           "Author": "Microsoft",
