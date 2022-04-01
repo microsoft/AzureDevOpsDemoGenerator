@@ -54,7 +54,7 @@
           ],
           "Author": "Microsoft",
           "ForkGitHubRepo": true,
-          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version."
+          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version. \n <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>'"
         },
         {
           "Key": "77380",
@@ -164,7 +164,7 @@
           "Description": "Use this template to learn how Terraform can be used to implement Infrastructure as Code (IaC) and how we can automate infrastructure deployments in the Cloud with Terraform and Azure pipelines.",
           "Tags": [
             "infrastructure as code",
-            "aspdotnet",
+            "aspdotnetcore",
             "azure cloud"
           ],
           "Image": "/Templates/TemplateImages/Terraform.png",
@@ -174,7 +174,8 @@
             "/Templates/Terraform/Images/queuebuild.gif",
             "/Templates/Terraform/Images/releasetasks.png",
             "/Templates/Terraform/Images/releasetrigger.gif"
-          ]
+          ],
+          "Message": "Note: <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>"
         },
         {
           "Key": "77386",
@@ -209,7 +210,8 @@
             "/Templates/LaunchDarkly/Images/CD.png",
             "/Templates/LaunchDarkly/Images/buildandrelease.gif",
             "/Templates/LaunchDarkly/Images/browseapp.png"
-          ]
+          ],
+          "Message": "Note: <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>"
         },
         {
           "Key": "77385",
@@ -242,7 +244,7 @@
             "key vault",
             "azureappservice"
           ],
-          "Message": "Note that the code for the Azure Key Vault hosted on <a href='https://github.com/hsachinraj/SmartHotel360-CouponManagement.git' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub",
+          "Message": "Note that the code for the Azure Key Vault hosted on <a href='https://github.com/hsachinraj/SmartHotel360-CouponManagement.git' target='_blank'>GitHub</a> is not imported into Azure Repos. The CI pipeline just points to the code on GitHub. \n <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>",
           "Author": "Microsoft",
           "LastUpdatedDate": "12/3/2019"
         },
@@ -263,7 +265,8 @@
             "/Templates/Docker/Images/buildresult.png",
             "/Templates/Docker/Images/release.png",
             "/Templates/Docker/Images/finalresult.png"
-          ]
+          ],
+          "Message": "Note: <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>"
         },
         {
           "Key": "77372",
@@ -283,7 +286,8 @@
             "/Templates/AKS/Images/aksdashboard.png",
             "/Templates/AKS/Images/update_CD3.png",
             "/Templates/AKS/Images/updateprocessbd.png"
-          ]
+          ],
+          "Message": "Note: <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>"
         },
         {
           "Key": "77370",
@@ -302,7 +306,8 @@
             "/Templates/Octopus/Images/BuildAzureDevOpsServices1.png",
             "/Templates/Octopus/Images/OctopusDeploy.png",
             "/Templates/Octopus/Images/PartsUnlimited.png"
-          ]
+          ],
+          "Message": "Note: <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>"
         },
         {
           "Key": "77367",
@@ -360,7 +365,8 @@
             "/Templates/SonarQube/Images/analysis_report.png",
             "/Templates/SonarQube/Images/build_configure.png",
             "/Templates/SonarQube/Images/build_summary.png"
-          ]
+          ],
+          "Message": "Note: <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>"
         },
         {
           "Key": "77375",
@@ -371,7 +377,8 @@
           "Tags": [
             "aks",
             "kubernetes",
-            "containers"
+            "containers",
+            "aspnetcore"
           ],
           "Image": "/Templates/TemplateImages/AzureDevOps.png",
           "Author": "Microsoft",
@@ -433,7 +440,8 @@
             "/Templates/WhiteSource-Bolt/Images/CI.png",
             "/Templates/WhiteSource-Bolt/Images/WhiteSourceBolt13.png",
             "/Templates/WhiteSource-Bolt/Images/WhiteSourceBolt30.png"
-          ]
+          ],
+          "Message": "Note: <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>"
         },
         {
           "Key": "77374",
