@@ -525,6 +525,7 @@
     <Content Include="Templates\SonarQube\Images\build_summary.png" />
     <Content Include="Templates\Tailwind Traders\Images\Architecture.png" />
     <Content Include="Templates\Tailwind Traders\Images\Website.png" />
+    <Content Include="Templates\TemplateImages\policy-org.png" />
     <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\Azure Sentinel DevOps.jpg" />
     <Content Include="Templates\TemplateImages\AzureCommunity\iac.png" />
