@@ -822,7 +822,7 @@
             "ARM"
           ],
           "Image": "/Templates/TemplateImages/mslearn/testbicep.svg",
-          "Description": "Validate and test your Bicep code in your deployment pipeline. You'll use linting, preflight validation, and the what-if operation to validate your Azure changes before you deploy, and you'll test your resources after each deployment<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/test-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Test Bicep code using Azure Pipelines</a>"
+          "Description": "Validate and test your Bicep code in your deployment pipeline. You'll use linting, preflight validation, and the what-if operation to validate your Azure changes before you deploy, and you'll test your resources after each deployment<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/test-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Test Bicep code using Azure Pipelines</a>"
         },
         {
 
@@ -836,7 +836,7 @@
             "ARM"
           ],
           "Image": "/Templates/TemplateImages/mslearn/bicepenvironments.svg",
-          "Description": "Deploy your Bicep code to multiple environments to improve the quality of your deployments. Use pipeline templates to reduce code duplication, and set different parameter values for each environment<br /><br />Lab URL: <a href=' https://docs.microsoft.com/learn/modules/manage-multiple-environments-using-bicep-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage multiple environments by using Bicep Azure Pipelines</a>"
+          "Description": "Deploy your Bicep code to multiple environments to improve the quality of your deployments. Use pipeline templates to reduce code duplication, and set different parameter values for each environment<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-multiple-environments-using-bicep-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage multiple environments by using Bicep Azure Pipelines</a>"
         },
         {
           "Key": "CBB8A827-69C8-4073-89C2-A634053FFBC9",
@@ -849,7 +849,7 @@
             "ARM"
           ],
           "Image": "/Templates/TemplateImages/mslearn/bicep-end-to-end-deployment-pipeline.svg",
-          "Description": "Create a unified pipeline to deploy your entire environment. You'll add a build stage to your pipeline, and use pipeline artifacts and Bicep outputs to publish applications, databases, and blobs<br /><br />Lab URL: <a href=' : https://docs.microsoft.com/learn/modules/manage-end-end-deployment-scenarios-using-bicep-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage end-to-end deployment scenarios by using Bicep and Azure Pipelines</a>"
+          "Description": "Create a unified pipeline to deploy your entire environment. You'll add a build stage to your pipeline, and use pipeline artifacts and Bicep outputs to publish applications, databases, and blobs<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/manage-end-end-deployment-scenarios-using-bicep-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Manage end-to-end deployment scenarios by using Bicep and Azure Pipelines</a>"
         },
         {
           "Key": "E48A30EB-857C-43AD-9D7F-CFD58CC8D051",
@@ -862,8 +862,22 @@
             "ARM"
           ],
           "Image": "/Templates/TemplateImages/mslearn/review-azure-infrastructure.png",
-          "Description": "Ensure the quality of your team's Bicep code. Use branching strategies to protect your main branch from accidental changes. Review Bicep code by using pull requests<br /><br />Lab URL: <a href=' : https://docs.microsoft.com/learn/modules/review-azure-infrastructure-changes-using-bicep-pull-requests/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Review Azure infrastructure changes by using Bicep and pull requests</a>"
+          "Description": "Ensure the quality of your team's Bicep code. Use branching strategies to protect your main branch from accidental changes. Review Bicep code by using pull requests<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/review-azure-infrastructure-changes-using-bicep-pull-requests/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Review Azure infrastructure changes by using Bicep and pull requests</a>"
+        },
+        {
+          "Key": "06AE7538-42F1-4910-B3A0-183B2F2337C4",
+          "Name": "Publish reusable Bicep code by using Azure Pipelines",
+          "TemplateFolder": "MSL-Toy-reusable",
+          "ShortName": "bicepreusable",
+          "Tags": [
+            "Microsoft Learn",
+            "Bicep",
+            "ARM"
+          ],
+          "Image": "/Templates/TemplateImages/mslearn/bicep-publish-code-pipelines.png",
+          "Description": "Publish Azure template specs and Bicep modules by using a deployment pipeline. Automatically validate and add versioning to your reusable Bicep code.<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/publish-reusable-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Publish reusable Bicep code by using Azure Pipelines</a>"
         }
+        
       ]
     },
     {

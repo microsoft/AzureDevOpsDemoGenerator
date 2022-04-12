@@ -525,6 +525,7 @@
     <Content Include="Templates\SonarQube\Images\build_summary.png" />
     <Content Include="Templates\Tailwind Traders\Images\Architecture.png" />
     <Content Include="Templates\Tailwind Traders\Images\Website.png" />
+    <Content Include="Templates\TemplateImages\mslearn\bicep-publish-code-pipelines.png" />
     <Content Include="Templates\TemplateImages\policy-org.png" />
     <Content Include="Templates\TemplateImages\Ansible.png" />
     <Content Include="Templates\TemplateImages\AzureCommunity\Azure Sentinel DevOps.jpg" />
@@ -2021,6 +2022,18 @@
     <Content Include="Templates\Review-azure-infrastructure-changes\Teams\toy-website-review Team\BoardRows.json" />
     <Content Include="Templates\Review-azure-infrastructure-changes\Teams\toy-website-review Team\CardFields.json" />
     <Content Include="Templates\Review-azure-infrastructure-changes\Teams\toy-website-review Team\CardStyles.json" />
+    <Content Include="Templates\MSL-Toy-reusable\BuildDefinitions\module-storage-account.json" />
+    <Content Include="Templates\MSL-Toy-reusable\BuildDefinitions\template-spec-linux-app-service.json" />
+    <Content Include="Templates\MSL-Toy-reusable\ImportSourceCode\toy-reusable.json" />
+    <Content Include="Templates\MSL-Toy-reusable\Iterations.json" />
+    <Content Include="Templates\MSL-Toy-reusable\ProjectSettings.json" />
+    <Content Include="Templates\MSL-Toy-reusable\ProjectTemplate.json" />
+    <Content Include="Templates\MSL-Toy-reusable\TeamArea.json" />
+    <Content Include="Templates\MSL-Toy-reusable\Teams\Teams.json" />
+    <Content Include="Templates\MSL-Toy-reusable\Teams\toy-reusable Team\BoardColumns.json" />
+    <Content Include="Templates\MSL-Toy-reusable\Teams\toy-reusable Team\BoardRows.json" />
+    <Content Include="Templates\MSL-Toy-reusable\Teams\toy-reusable Team\CardFields.json" />
+    <Content Include="Templates\MSL-Toy-reusable\Teams\toy-reusable Team\CardStyles.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
