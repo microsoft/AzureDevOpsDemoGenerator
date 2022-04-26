@@ -172,6 +172,7 @@
                 "verbosity": "normal",
                 "actionOnMissing": "warn",
                 "keepToken": "false",
+                "tokenPattern": "custom",
                 "tokenPrefix": "__",
                 "tokenSuffix": "__",
                 "emptyValue": "(empty)"
