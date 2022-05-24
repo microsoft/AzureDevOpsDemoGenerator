@@ -631,7 +631,7 @@ namespace VstsDemoBuilder.Services
                                     }
                                 }
                             }
-                            catch(Exception ex)
+                            catch(Exception)
                             {
 
                             }
