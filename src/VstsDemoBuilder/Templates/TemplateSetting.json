@@ -18,7 +18,7 @@
         {
           "Key": "77386",
           "Name": "Tailwind Traders",
-          "TemplateFolder": "Tailwind Traders",
+          "TemplateFolder": "Gen-Tailwind Traders",
           "ShortName": "TailwindTraders",
           "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App.",
           "Tags": [
@@ -38,7 +38,7 @@
         {
           "Key": "77383",
           "Name": "SmartHotel360",
-          "TemplateFolder": "SmartHotel360",
+          "TemplateFolder": "Gen-SmartHotel360",
           "ShortName": "SmartHotel360",
           "Description": "This template contains work items, code and pipeline definitions for the public web site of SmartHotel360, an E2E reference sample app with several consumer and line-of-business apps and an Azure backend. For more information, please see the project page on <a href='https://github.com/Microsoft/SmartHotel360' target='_blank'>GitHub</a>",
           "Tags": [
@@ -59,7 +59,7 @@
         {
           "Key": "77380",
           "Name": "MyHealthClinic",
-          "TemplateFolder": "MyHealthClinic",
+          "TemplateFolder": "Gen-MyHealthClinic",
           "ShortName": "MyHealthClinic",
           "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
           "Tags": [
@@ -80,7 +80,7 @@
         {
           "Key": "77379",
           "Name": "PartsUnlimited",
-          "TemplateFolder": "PartsUnlimited",
+          "TemplateFolder": "Gen-PartsUnlimited",
           "ShortName": "PartsUnlimited",
           "Description": "Use this lab to provision a scrum based team project containing sample work items, complete source code and pipeline definitions to deploy Parts Unlimited, a sample eCommerce website based on the The Phoenix Project book by Gene Kim. See the home page of the project on <a href='https://github.com/Microsoft/PartsUnlimited' target='_blank'>GitHub</a> ",
           "Tags": [
@@ -99,7 +99,7 @@
         {
           "Key": "77387",
           "Name": "PartsUnlimited-YAML",
-          "TemplateFolder": "PartsUnlimited-YAML",
+          "TemplateFolder": "Gen-PartsUnlimited-YAML",
           "ShortName": "yml",
           "Description": "Use this lab to provision a scrum based team project containing sample work items, complete source code and pipeline definitions to deploy Parts Unlimited, a sample eCommerce website based on the The Phoenix Project book by Gene Kim. See the home page of the project on <a href='https://github.com/Microsoft/PartsUnlimited' target='_blank'>GitHub</a> ",
           "Tags": [
@@ -118,7 +118,7 @@
         {
           "Key": "77371",
           "Name": "MyShuttle",
-          "TemplateFolder": "MyShuttle",
+          "TemplateFolder": "Gen-MyShuttle",
           "ShortName": "MyShuttle",
           "Description": "This template contains work items and source code for  MyShuttle, a sample Java application backed by a MySQL database. This template also contains pipeline definitions to build the maven project and deploy the app to Tomcat server on Azure app service. <br />Lab URL: <a href='https://www.azuredevopslabs.com/labs/vstsextend/tomcat/' target='_blank'> Deploying a Java application on Tomcat</a> ",
           "Tags": [
@@ -139,7 +139,7 @@
         {
           "Key": "77384",
           "Name": "ContosoAir",
-          "TemplateFolder": "ContosoAir",
+          "TemplateFolder": "Gen-ContosoAir",
           "ShortName": "ContosoAir",
           "Description": "Contoso Air is a sample airline booking application with a Node.js based frontend with a CosmosDB database. This template provisions an Agile based project with user stories, features, epics and a CI&CD pipeline that builds and deploys code from  <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
           "Message": "Note that the code for the Contoso Air Website is hosted on GitHub and is not imported to Azure Repos. The CI pipeline refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
@@ -159,7 +159,7 @@
         {
           "Key": "77382",
           "Name": "Terraform",
-          "TemplateFolder": "Terraform",
+          "TemplateFolder": "DL-Terraform",
           "ShortName": "Terraform",
           "Description": "Use this template to learn how Terraform can be used to implement Infrastructure as Code (IaC) and how we can automate infrastructure deployments in the Cloud with Terraform and Azure pipelines.",
           "Tags": [
@@ -180,7 +180,7 @@
         {
           "Key": "77386",
           "Name": "Ansible",
-          "TemplateFolder": "Ansible",
+          "TemplateFolder": "DL-Ansible",
           "ShortName": "Ansible",
           "Description": "Use this template to learn how Ansible can be used to implement Infrastructure as Code (IaC) and how we can automate infrastructure deployments in the Cloud with Ansible and Azure pipelines",
           "Tags": [
@@ -201,7 +201,7 @@
         {
           "Key": "77381",
           "Name": "LaunchDarkly",
-          "TemplateFolder": "LaunchDarkly",
+          "TemplateFolder": "DL-LaunchDarkly",
           "ShortName": "LaunchDarkly",
           "Image": "/Templates/TemplateImages/launchdarkly.png",
           "Author": "Microsoft",
@@ -216,7 +216,7 @@
         {
           "Key": "77385",
           "Name": "Azure Machine Learning",
-          "TemplateFolder": "MachineLearning",
+          "TemplateFolder": "DL-MachineLearning",
           "ShortName": "MachineLearning",
           "Description": "This template contains code and pipeline definition for a machine learning project demonstrating how to automate the end to end ML/AI project. The build pipelines include DevOps tasks for data sanity test, unit test, model training on different compute targets, model version management, model evaluation/model selection, model deployment as realtime web service, staged deployment to QA/prod, integration testing and functional testing.",
           "Image": "/Templates/TemplateImages/MachineLearning.png",
@@ -235,7 +235,7 @@
         {
           "Key": "77380",
           "Name": "Azure Key Vault",
-          "TemplateFolder": "Keyvault",
+          "TemplateFolder": "DL-Keyvault",
           "ShortName": "Keyvault",
           "Image": "/Templates/TemplateImages/key-vault.png",
           "Description": "Use this template to learn how you can read a secret from an Azure Key Vault in a CI/CD pipeline. <br/> Lab URL:<a href='https://azuredevopslabs.com/labs/vstsextend/azurekeyvault/' target='_blank'>Using secrets from Azure Key Vault in a pipeline</a>",
@@ -251,7 +251,7 @@
         {
           "Key": "77363",
           "Name": "Docker",
-          "TemplateFolder": "Docker",
+          "TemplateFolder": "DL-Docker",
           "ShortName": "Docker",
           "Description": "Learn how you can use Azure pipelines to build and deploy a Docker based ASP.NET Core web application to Azure Container Registry and  Azure App Service. <br/> Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/docker/' target='_blank'>Deploying Docker Containers to Azure App Service</a>",
           "Tags": [
@@ -271,7 +271,7 @@
         {
           "Key": "77372",
           "Name": "Azure Kubernetes Service",
-          "TemplateFolder": "AKS",
+          "TemplateFolder": "DL-AKS",
           "ShortName": "AKS",
           "Description": "Use this template to learn how to deploy a Docker-based ASP.NET Core web application to a Kubernetes cluster running in Azure Kubernetes Service (AKS) with Azure Pipelines. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/kubernetes/' target='_blank'> Deploying to Azure Container Service (AKS)</a>",
           "Tags": [
@@ -292,7 +292,7 @@
         {
           "Key": "77370",
           "Name": "Octopus",
-          "TemplateFolder": "Octopus",
+          "TemplateFolder": "DL-Octopus",
           "ShortName": "Octopus",
           "Description": "Select this template if you are following the “integrating Octopus Deploy” lab. The template provisions code for a sample PHP application and a build pipeline. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/Octopus/' target='_blank'>Integrating Octopus Deploy</a>",
           "Tags": [
@@ -312,7 +312,7 @@
         {
           "Key": "77367",
           "Name": "Selenium",
-          "TemplateFolder": "Selenium",
+          "TemplateFolder": "DL-Selenium",
           "ShortName": "Selenium",
           "Description": "This template contains code of Parts Unlimited and pipelines definitions that will show you how you can deploy and test applications using Selenium. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/Selenium/' target='_blank'>Driving continuous testing with Selenium</a>",
           "Tags": [
@@ -332,7 +332,7 @@
         {
           "Key": "77368",
           "Name": "DeploymentGroups",
-          "TemplateFolder": "DeploymentGroups",
+          "TemplateFolder": "DL-DeploymentGroups",
           "ShortName": "DeploymentGroups",
           "Description": "Provision a team project using this template to learn how you build and release  applications to multiple target servers on Azure using Deployment Groups with Azure Pipelines. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/deploymentgroups/' target='_blank'>Working with Deployment Groups</a>",
           "Tags": [
@@ -351,7 +351,7 @@
         {
           "Key": "77364",
           "Name": "SonarQube",
-          "TemplateFolder": "SonarQube",
+          "TemplateFolder": "DL-SonarQube",
           "ShortName": "SonarQube",
           "Description": "This template contains code of MyShuttle, a sample application and a pipeline definition that will show you how you can use SonarQube with Azure Pipeline to analyze code during build and improve code quality. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/sonarqube/' target='_blank'>Technical Debt Management with SonarQube</a>",
           "Tags": [
@@ -371,7 +371,7 @@
         {
           "Key": "77375",
           "Name": "ReleaseGates",
-          "TemplateFolder": "ReleaseGates",
+          "TemplateFolder": "DL-ReleaseGates",
           "ShortName": "ReleaseGates",
           "Description": "Release Gates allow you to configure automated calls to external services, where the results are used to approve or reject a deployment. Use this template if you are following the <a href='https://azuredevopslabs.com/labs/vstsextend/releasegates/' target='_blank''>Controlling deployments using Release Gates</a> Lab",
           "Tags": [
@@ -391,7 +391,7 @@
         {
           "Key": "77365",
           "Name": "PHP",
-          "TemplateFolder": "PHP",
+          "TemplateFolder": "DL-PHP",
           "ShortName": "PHP",
           "Description": "This template contains code for a sample PHP application and pipeline definitions to build & deploy a PHP application  to Azure App service. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/PHP/' target='_blank'> Deploy PHP application to Azure App Service</a>",
           "Tags": [
@@ -409,7 +409,7 @@
         {
           "Key": "77369",
           "Name": "Python",
-          "TemplateFolder": "Python",
+          "TemplateFolder": "DL-Python",
           "ShortName": "Python",
           "Description": "Select this template with code for a sample Python application and pipeline definitions to learn how you can build and deploy a Python app to Azure App service using Django framework.<br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/python/' target='_blank'>How to deploy a Python application to Azure using Azure Pipelines</a>",
           "Tags": [
@@ -428,7 +428,7 @@
         {
           "Key": "77362",
           "Name": "WhiteSource Bolt",
-          "TemplateFolder": "WhiteSource-Bolt",
+          "TemplateFolder": "DL-WhiteSource-Bolt",
           "ShortName": "WhiteSource-Bolt",
           "Description": "This template provisions WebGoat code, a deliberately insecure web application from OWASP along with CI and CD definitions that will teach you how you can manage security and compliance when using open-source software, with WhiteSource. <br />Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/WhiteSource/' target='_blank'>OSS governance with WhiteSource</a>",
           "Tags": [
@@ -446,7 +446,7 @@
         {
           "Key": "77374",
           "Name": "AzureFunctions",
-          "TemplateFolder": "AzureFunctions",
+          "TemplateFolder": "DL-AzureFunctions",
           "ShortName": "AzureFunctions",
           "Description": "Provision a team project using this template to learn how you build and release Azure Functions with Azure Pipelines",
           "Tags": [
@@ -465,7 +465,7 @@
         {
           "Key": "77366",
           "Name": "GitHub",
-          "TemplateFolder": "GitHub",
+          "TemplateFolder": "DL-GitHub",
           "ShortName": "GitHub",
           "Description": "Use this team project template to deploy an ASP.Net sample application to Azure App Service using CI/CD pipeline in Azure DevOps with code repository in GitHub. <br /> Lab URL: <a href='https://azuredevopslabs.com/labs/vstsextend/github/' target='_blank'>How to continuously deliver code on GitHub with Azure DevOps</a>",
           "Image": "/Templates/TemplateImages/GitHub.png",
@@ -542,7 +542,7 @@
         {
           "Key": "77738738",
           "Name": "Create a build pipeline with Azure Pipelines",
-          "TemplateFolder": "create-build-pipeline",
+          "TemplateFolder": "MSL-Create-Build-Pipeline",
           "ShortName": "create-build-pipeline",
           "Tags": [
             "Microsoft Learn",
@@ -554,7 +554,7 @@
         {
           "Key": "77738739",
           "Name": "Implement a code workflow in your build pipeline using Git and GitHub",
-          "TemplateFolder": "implement-code-workflow",
+          "TemplateFolder": "MSL-Implement-Code-Workflow",
           "ShortName": "implement-code-workflow",
           "Tags": [
             "Microsoft Learn",
@@ -570,7 +570,7 @@
         {
           "Key": "77738740",
           "Name": "Run quality tests in your build pipeline using Azure Pipelines",
-          "TemplateFolder": "run-quality-tests",
+          "TemplateFolder": "MSL-Run-Quality-Tests",
           "ShortName": "run-quality-tests",
           "Tags": [
             "Microsoft Learn",
@@ -584,7 +584,7 @@
         {
           "Key": "77738741",
           "Name": "Scan code for vulnerabilities in Azure Pipelines",
-          "TemplateFolder": "scan-for-vulnerabilities",
+          "TemplateFolder": "MSL-Scan-for-Vulnerabilities",
           "ShortName": "scan-for-vulnerabilities",
           "Tags": [
             "Microsoft Learn",
@@ -599,7 +599,7 @@
         {
           "Key": "77738742",
           "Name": "Scan open source components for vulnerabilities and license ratings in Azure Pipelines",
-          "TemplateFolder": "scan-open-source",
+          "TemplateFolder": "MSL-Scan-Open-Source",
           "ShortName": "scan-open-source",
           "Tags": [
             "Microsoft Learn",
@@ -614,7 +614,7 @@
         {
           "Key": "77738743",
           "Name": "Manage build dependencies with Azure Artifacts",
-          "TemplateFolder": "manage-build-dependencies",
+          "TemplateFolder": "MSL-Manage-Build-Dependencies",
           "ShortName": "manage-build-dependencies",
           "Tags": [
             "Microsoft Learn",
@@ -629,7 +629,7 @@
         {
           "Key": "77738744",
           "Name": "Host your own build agent in Azure Pipelines",
-          "TemplateFolder": "host-build-agent",
+          "TemplateFolder": "MSL-Host-Build-Agent",
           "ShortName": "host-build-agent",
           "Tags": [
             "Microsoft Learn",
@@ -643,7 +643,7 @@
         {
           "Key": "3456781",
           "Name": "Create a release pipeline with Azure Pipelines",
-          "TemplateFolder": "SpaceGame-web-Release",
+          "TemplateFolder": "MSL-SpaceGame-web-Release",
           "ShortName": "create-release-pipeline",
           "Tags": [
             "Microsoft Learn",
@@ -657,7 +657,7 @@
         {
           "Key": "3456782",
           "Name": "Create a multi-stage pipeline with Azure Pipelines",
-          "TemplateFolder": "SpaceGame-web-Multi-stage",
+          "TemplateFolder": "MSL-SpaceGame-web-Multi-stage",
           "ShortName": "create-multi-stage-pipeline",
           "Tags": [
             "Microsoft Learn",
@@ -671,7 +671,7 @@
         {
           "Key": "3456783",
           "Name": "Manage database changes in Azure Pipelines",
-          "TemplateFolder": "SpaceGame-web-DeployDatabase",
+          "TemplateFolder": "MSL-SpaceGame-web-DeployDatabase",
           "ShortName": "manage-database-changes",
           "Tags": [
             "Microsoft Learn",
@@ -685,7 +685,7 @@
         {
           "Key": "3456784",
           "Name": "Run functional tests in Azure Pipelines",
-          "TemplateFolder": "SpaceGame-web-FunctionalTests",
+          "TemplateFolder": "MSL-SpaceGame-web-FunctionalTests",
           "ShortName": "run-functional-tests",
           "Tags": [
             "Microsoft Learn",
@@ -699,7 +699,7 @@
         {
           "Key": "3456785",
           "Name": "Run non-functional tests in Azure Pipelines",
-          "TemplateFolder": "SpaceGame-web-Non-functionalTests",
+          "TemplateFolder": "MSL-SpaceGame-web-Non-functionalTests",
           "ShortName": "run-non-functional-tests",
           "Tags": [
             "Microsoft Learn",
@@ -713,7 +713,7 @@
         {
           "Key": "3456786",
           "Name": "Manage release cadence in Azure Pipelines with deployment patterns",
-          "TemplateFolder": "SpaceGame-web-DeploymentPatterns",
+          "TemplateFolder": "MSL-SpaceGame-web-DeploymentPatterns",
           "ShortName": "manage-release-cadence",
           "Tags": [
             "Microsoft Learn",
@@ -727,7 +727,7 @@
         {
           "Key": "34567862",
           "Name": "Provision infrastructure in Azure Pipelines",
-          "TemplateFolder": "SpaceGame-web-Terraform",
+          "TemplateFolder": "MSL-SpaceGame-web-Terraform",
           "ShortName": "provision-infrastructure-azure-pipelines",
           "Tags": [
             "Microsoft Learn",
@@ -742,7 +742,7 @@
         {
           "Key": "34567862",
           "Name": "Provision databases in Azure Pipelines",
-          "TemplateFolder": "SpaceGame-web-ProvisionDB",
+          "TemplateFolder": "MSL-SpaceGame-web-ProvisionDB",
           "ShortName": "provision-database-azure-pipelines",
           "Tags": [
             "Microsoft Learn",
@@ -756,7 +756,7 @@
         {
           "Key": "345678643",
           "Name": "Manage Agile software delivery plans across teams",
-          "TemplateFolder": "SpaceGame-DeliveryPlans",
+          "TemplateFolder": "MSL-SpaceGame-DeliveryPlans",
           "ShortName": "DeliveryPlans",
           "Tags": [
             "Microsoft Learn",
@@ -770,7 +770,7 @@
         {
           "Key": "345678644",
           "Name": "Automate Azure Function deployments with Azure Pipelines",
-          "TemplateFolder": "SpaceGame-AzureFunctions",
+          "TemplateFolder": "MSL-SpaceGame-AzureFunctions",
           "ShortName": "DeployAzureFunction",
           "Tags": [
             "Microsoft Learn",
@@ -781,12 +781,10 @@
           "Message": "Code for this project will be forked to your GitHub repository and the build definition will be using the forked repo, need user authentication. </ br> User has to be configured <a href='https://github.com/marketplace/azure-pipelines' target='_blank'>Azure Pipelines</a> extension to complete the action. <br> Forking may fail if the organization protected by SAML enforcement. You can fork the <a href='https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-azure-functions' target='_blank'> repository </a> manually and follow the steps given in the document - <a href='https://docs.microsoft.com/learn/modules/deploy-azure-functions/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploy Azure Functions</a>",
           "Description": "Learn to implement a CI/CD pipeline for Azure Functions<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/deploy-azure-functions/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Deploy Azure Functions</a>"
         },
-
-
         {
           "Key": "345678645",
           "Name": "Automate Docker container deployments with Azure Pipelines",
-          "TemplateFolder": "deploy-docker-template",
+          "TemplateFolder": "MSL-Deploy-Docker-Template",
           "ShortName": "DeployDockercontainers",
           "Tags": [
             "Microsoft Learn",
@@ -800,7 +798,7 @@
         {
           "Key": "345678646",
           "Name": "Automate multi-container deployments to Azure Kubernetes Services with Azure Pipelines",
-          "TemplateFolder": "deploy-kubernetes-template",
+          "TemplateFolder": "MSL-Deploy-Kubernetes-Template",
           "ShortName": "Deploymulti-containersolutionstoKubernetes",
           "Tags": [
             "Microsoft Learn",
@@ -814,7 +812,7 @@
         {
           "Key": "5B06AA95-9578-438F-8E65-7C95765665A0",
           "Name": "Test your Bicep code by using Azure Pipelines",
-          "TemplateFolder": "Test-bicep",
+          "TemplateFolder": "MSL-Test-bicep",
           "ShortName": "testbicep",
           "Tags": [
             "Microsoft Learn",
@@ -841,7 +839,7 @@
         {
           "Key": "CBB8A827-69C8-4073-89C2-A634053FFBC9",
           "Name": "Manage end-to-end deployment scenarios by using Bicep and Azure Pipelines",
-          "TemplateFolder": "manage-end-end-deployment-scenarios",
+          "TemplateFolder": "MSL-manage-end-end-deployment-scenarios",
           "ShortName": "bicependtoend",
           "Tags": [
             "Microsoft Learn",
@@ -854,7 +852,7 @@
         {
           "Key": "E48A30EB-857C-43AD-9D7F-CFD58CC8D051",
           "Name": "Review Azure infrastructure changes by using Bicep and pull requests",
-          "TemplateFolder": "Review-azure-infrastructure-changes",
+          "TemplateFolder": "MSL-Review-azure-infrastructure-changes",
           "ShortName": "bicepreview",
           "Tags": [
             "Microsoft Learn",
@@ -877,7 +875,6 @@
           "Image": "/Templates/TemplateImages/mslearn/bicep-publish-code-pipelines.png",
           "Description": "Publish Azure template specs and Bicep modules by using a deployment pipeline. Automatically validate and add versioning to your reusable Bicep code.<br /><br />Lab URL: <a href='https://docs.microsoft.com/learn/modules/publish-reusable-bicep-code-using-azure-pipelines/?WT.mc_id=devopsgen_inproduct-15843-dabrady' target='_blank'>Publish reusable Bicep code by using Azure Pipelines</a>"
         }
-        
       ]
     },
     {
@@ -886,7 +883,7 @@
         {
           "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E94",
           "Name": "Azure Sentinel DevOps",
-          "TemplateFolder": "AzureSentinel",
+          "TemplateFolder": "AC-AzureSentinel",
           "ShortName": "AzureSentinel",
           "Description": "The objective is helping customers to quickly deploy Azure Sentinel following the best practices using Azure DevOps board with agile practices.",
           "Tags": [
@@ -900,7 +897,7 @@
         {
           "Key": "7DC3758B-2909-4C6C-83CA-D0AC47037E95",
           "Name": "NIST 800-171",
-          "TemplateFolder": "NIST800171Rev2",
+          "TemplateFolder": "AC-NIST800171Rev2",
           "ShortName": "AzureNIST",
           "Description": "By importing the NIST 800-171 DevOps template, you will be able to complete actionable Work Items that correspond to customer responsibilities in order to implement compliance.",
           "Tags": [
@@ -914,7 +911,7 @@
         {
           "Key": "532B15D2-C4E2-4427-897B-3FBD3D5516672",
           "Name": "WVD Guidance",
-          "TemplateFolder": "WVDGuidance",
+          "TemplateFolder": "AC-WVDGuidance",
           "ShortName": "WVD",
           "Description": "A guide to describe the main topics on Windows Virtual Desktop from architecture design through implementation",
           "Tags": [
@@ -928,7 +925,7 @@
         {
           "Key": "79692C2C-845B-4E3E-8DD6-1AB78B5FD171",
           "Name": "SAP on Azure",
-          "TemplateFolder": "SapOnAzure",
+          "TemplateFolder": "AC-SapOnAzure",
           "ShortName": "sapazure",
           "Description": "Main topics for successful SAP on Azure deployment, organized in task lists linking both Azure and SAP documentation. <a href='https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/get-started' target='_blank'>Reference Document</a>",
           "Tags": [
@@ -948,7 +945,7 @@
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37F7A",
           "Name": "Cloud Adoption Plan",
-          "TemplateFolder": "CloudAdoptionPlan",
+          "TemplateFolder": "CAF-CloudAdoptionPlan",
           "ShortName": "CloudAdoptionPlan",
           "Description": "The Cloud Adoption Plan template creates a backlog for managing cloud adoption efforts based on the guidance in the Microsoft Cloud Adoption Framework.",
           "Tags": [
@@ -968,7 +965,7 @@
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FGH",
           "Name": "CAF Strategy-Plan-Ready-Governance",
-          "TemplateFolder": "CAF-ADO-Strategy-Plan-Ready-Gov",
+          "TemplateFolder": "CAF-ADO-Strategy-Plan-Ready-Governance",
           "ShortName": "StrategyPlan",
           "Description": "In this checklist we share all the decision points needed to successfully build a Cloud Adoption Plan as well as the Landing Zone with Governance",
           "Tags": [
@@ -993,7 +990,7 @@
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37F6",
           "Name": "Server Migration",
-          "TemplateFolder": "ServerMigration_CAF_DevOps_ProjectTaskList",
+          "TemplateFolder": "CAF-ServerMigration",
           "ShortName": "ServerMigration",
           "Description": "Server migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete Server migration and management.",
           "Tags": [
@@ -1013,7 +1010,7 @@
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJH",
           "Name": "AKS_CloudAdoptionFramework",
-          "TemplateFolder": "AKS_CAF_DevOps_Project_TaskList",
+          "TemplateFolder": "CAF-AKS_CAF",
           "ShortName": "CAFAKS",
           "Description": "AKS deployment has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete AKS deployment and management.",
           "Tags": [
@@ -1034,7 +1031,7 @@
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
           "Name": "SQL Migration",
-          "TemplateFolder": "SQL_CAF_DevOps_Project_TaskList",
+          "TemplateFolder": "CAF-SQL_Migration",
           "ShortName": "SQLMIGRATION",
           "Description": "SQL migration has many different activities. In the Azure DevOps Project we will provide the steps necessary to go from zero to a complete SQL migration and management.",
           "Tags": [
@@ -1055,7 +1052,7 @@
         {
           "Key": "78B05F45-F411-46E0-9974-6D9633D37FJI",
           "Name": "Windows Virtual Desktop",
-          "TemplateFolder": "WVD_CAF_DevOps_Project_TaskList",
+          "TemplateFolder": "CAF-WindowsVirtualDesktop",
           "ShortName": "WVDMigration",
           "Description": "Project work plan templates in Azure DevOps that provide the steps necessary to go from zero to a complete WVD deployment with ongoing management",
           "Tags": [
@@ -1076,7 +1073,7 @@
         {
           "Key": "3197C45A-9440-4272-99A7-164C89DFA778",
           "Name": "Knowledge Mining",
-          "TemplateFolder": "KnowledgeMining",
+          "TemplateFolder": "CAF-KnowledgeMining",
           "ShortName": "kmine",
           "Description": "Knowledge project simplifies the process of accessing the latent insights contained within structured and unstructured data. Use this project to help you address all the steps.",
           "Tags": [
@@ -1098,7 +1095,7 @@
         {
           "Key": "532B15D2-C4E2-4427-897B-3FBD3D551650",
           "Name": "Azure Governance Readiness",
-          "TemplateFolder": "AzureGovernance",
+          "TemplateFolder": "CAF-AzureGovernance",
           "ShortName": "gov",
           "Description": "The standalone Azure governance project provides guidance and tools on how to ensure that your Azure environment is governed in the correct way.",
           "Tags": [
@@ -1116,7 +1113,7 @@
         {
           "Key": "A7691C19-7D13-4694-A585-85304FB2D147",
           "Name": "Modern Data Warehouse",
-          "TemplateFolder": "ModernDataWarehouse",
+          "TemplateFolder": "CAF-ModernDataWarehouse",
           "ShortName": "moddw",
           "Description": "Build your modern data warehouse using this ADO checklist of items, in this checklist we have links to assets, code and learning material.",
           "Tags": [
@@ -1134,7 +1131,7 @@
         {
           "Key": "F518D392-31BB-45F5-A1E2-E2EA1B25DF57",
           "Name": "Retail Recommender with Azure Synapse",
-          "TemplateFolder": "RetailRecommender-SolutionAccelerator",
+          "TemplateFolder": "CAF-RetailRecommender-SolutionAccelerator",
           "ShortName": "retailai",
           "Description": "This Solution Accelerator is an end-to-end example on how to enable personalized customer experiences for retail scenarios by leveraging Azure Synapse Analytics, Azure Machine Learning Services, and other Azure Big Data services. This project can be found in the following GitHub repo <a href='https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator' target='_blank'>Retail Recommender with Azure Synapse</a>",
           "Tags": [
@@ -1152,7 +1149,7 @@
         {
           "Key": "50428F01-0FC9-47C5-B8B0-3DC6295213C7",
           "Name": "Modern IOT",
-          "TemplateFolder": "ModernIOT",
+          "TemplateFolder": "CAF-ModernIOT",
           "ShortName": "modiot",
           "Description": " Connected sensors, devices, and intelligent operations can transform businesses and enable new growth opportunities. In this project you will get the work items needed to plan and implement your IOT solution using the <a href='https://azure.microsoft.com/en-us/overview/iot/?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal' targer='_blank'> Azure IoT Platform </a>",
           "Tags": [
@@ -1168,7 +1165,7 @@
         {
           "Key": "3EDBAE1D-F776-44E4-ADB5-B356D60CF1DF",
           "Name": "Secure Research",
-          "TemplateFolder": "SecureResearch",
+          "TemplateFolder": "CAF-SecureResearch",
           "ShortName": "secresearch",
           "Description": " Microsoft has developed a secure research enclave architecture designed for existing and emerging standards. The solution enables a centralized and scalable approach that allows institutions to accelerate research efforts without placing added administrative overhead on researchers. <a href='https://info.microsoft.com/en-us-ondemand-SimplifyandautomateresearchcomplianceresponsibilitieswithAzure-none.html' target='_blank'> On-demand Webinar</a>",
           "Tags": [
@@ -1184,7 +1181,7 @@
         {
           "Key": "E4149FAA-D1AF-43CA-AAF3-2E2F3BEA30B2",
           "Name": "Unified Data Governance",
-          "TemplateFolder": "UnifiedDataGovernance",
+          "TemplateFolder": "CAF-UnifiedDataGovernance",
           "ShortName": "datagov",
           "Description": " Azure Purview is a unified data governance service that helps you manage and govern your on-premises, multi-cloud, and software-as-a-service (SaaS) data. Easily create a holistic, up-to-date map of your data landscape with automated data discovery, sensitive data classification, and end-to-end data lineage. Empower data consumers to find valuable, trustworthy data. <a href=''https://azure.microsoft.com/en-us/services/purview/' target='_blank'> Here </a>",
           "Tags": [
@@ -1200,7 +1197,7 @@
         {
           "Key": "8207A5A9-3F9E-414F-83C5-CA3CC7A10F07",
           "Name": "Modern Data Analytics",
-          "TemplateFolder": "ModernDataAnalytics",
+          "TemplateFolder": "CAF-ModernDataAnalytics",
           "ShortName": "dataanalytics",
           "Description": " Enterprise-scale for analytics and AI builds upon enterprise landing zones for ease of deployment and governance. The principal purpose of the enterprise landing zones is to ensure that when an application or workload lands on Azure, the required plumbing is already in place. It provides greater agility and compliance with enterprise security and governance requirements. Enterprise-scale landing zones must be in place before you deploy your first data management and analytics landing zones. <a href='https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/enterprise-scale-landing-zone' target='_blank'> Modern Data Analytics </a>",
           "Tags": [
@@ -1221,7 +1218,7 @@
         {
           "Key": "2DA09437-7FC3-4A81-94CD-041A14C98D61",
           "Name": "Azure Migrations - IaC",
-          "TemplateFolder": "IAC-migration",
+          "TemplateFolder": "FA-IAC-migration",
           "ShortName": "AzureMigrationsIaC",
           "Description": "A guidance to execute Azure Migrations using IaC approach. <a href='https://github.com/ricmmartins/fta-liftandshift-dcmigration/blob/main/doc/importing-template.md' target='_blank'>IaC Migration</a>",
           "Tags": [
