@@ -47,7 +47,7 @@
   },
   {
     "cards": {
-      "Product Backlog Item": [
+      "Bug": [
         {
           "fieldIdentifier": "System.Id"
         },
@@ -68,7 +68,7 @@
           "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort"
         }
       ],
-      "Bug": [
+      "Product Backlog Item": [
         {
           "fieldIdentifier": "System.Id"
         },
