@@ -15,5 +15,7 @@ Azure DevOps Demo Generator is to create a demo set up with predefined templates
 |Test Plans and Suites| Not supported for General templates, supported for standard templates which demonstrates the feature|
 |Service connections|Service connections will be created based on the template requirement, those are needs to be authenticated by the user upon creating project|
 |Source code| Source code can be present in public GitHub repository, which can be imported at the time of project creation, if the source code present in some Azure Repos, user has to provide PAT in ```/Template/ServiceEndPoints/**.json``` files at the time of importing the template, as shown below ```"username": "$username$","password": "$password$"``` |
+|Groups and Permissoins| Demo Generator doesn't support additon or modification of any groups or users and permission|
+|Environments | once you run the YML pipeline environemts will be created|
 
 
