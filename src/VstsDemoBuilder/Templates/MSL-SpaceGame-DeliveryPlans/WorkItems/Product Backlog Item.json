@@ -2,8 +2,8 @@
   "count": 18,
   "value": [
     {
-      "id": 9519,
-      "rev": 2,
+      "id": 1757,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Engine Team",
         "System.TeamProject": "$ProjectName$",
@@ -11,13 +11,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:14:15.57Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:15:01.22Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Complete community interaction training",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Complete community interaction training",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -29,12 +25,21 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9519"
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Reverse",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1771",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Predecessor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1757"
     },
     {
-      "id": 9506,
-      "rev": 3,
+      "id": 1758,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -42,13 +47,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:11:40.573Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:12:04.733Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Create a Git-based workflow",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Create a Git-based workflow",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -60,12 +61,21 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9506"
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Reverse",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1766",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Predecessor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1758"
     },
     {
-      "id": 9520,
-      "rev": 2,
+      "id": 1759,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Engine Team",
         "System.TeamProject": "$ProjectName$",
@@ -73,13 +83,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:14:22.767Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:15:01.22Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Add final music and sound",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Add final music and sound",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -92,11 +98,11 @@
         "System.History": null
       },
       "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9520"
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1759"
     },
     {
-      "id": 9521,
-      "rev": 2,
+      "id": 1760,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Engine Team",
         "System.TeamProject": "$ProjectName$",
@@ -104,13 +110,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:14:34.333Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:15:01.22Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Investigate lag reported by customers in east",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Investigate lag reported by customers in east",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -123,11 +125,11 @@
         "System.History": null
       },
       "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9521"
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1760"
     },
     {
-      "id": 9507,
-      "rev": 2,
+      "id": 1761,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -135,13 +137,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:11:46.553Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:12:04.733Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Create unit tests",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Create unit tests",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -154,11 +152,11 @@
         "System.History": null
       },
       "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9507"
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1761"
     },
     {
-      "id": 9522,
-      "rev": 2,
+      "id": 1762,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Engine Team",
         "System.TeamProject": "$ProjectName$",
@@ -166,13 +164,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:14:51.683Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:15:01.22Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Apply final artwork",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Apply final artwork",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -185,11 +179,11 @@
         "System.History": null
       },
       "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9522"
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1762"
     },
     {
-      "id": 9508,
-      "rev": 2,
+      "id": 1763,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -197,13 +191,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:12:01.27Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:12:04.733Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Stabilize the build server",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Stabilize the build server",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -215,12 +205,29 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9508"
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Forward",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1768",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Successor"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Dependency-Forward",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1764",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Successor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1763"
     },
     {
-      "id": 9523,
-      "rev": 2,
+      "id": 1764,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Engine Team",
         "System.TeamProject": "$ProjectName$",
@@ -228,13 +235,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:14:58.383Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:15:01.22Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Push beta",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Push beta",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -246,12 +249,29 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9523"
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Forward",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1774",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Successor"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Dependency-Reverse",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1763",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Predecessor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1764"
     },
     {
-      "id": 9511,
-      "rev": 2,
+      "id": 1765,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -259,13 +279,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:12:58.913Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:13:12.327Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Move model data to its own package",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Move model data to its own package",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -278,11 +294,11 @@
         "System.History": null
       },
       "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9511"
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1765"
     },
     {
-      "id": 9509,
-      "rev": 3,
+      "id": 1766,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -290,13 +306,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:12:20.943Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:13:13.85Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Check open source code for vulnerabilities and licensing terms",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Check open source code for vulnerabilities and licensing terms",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -308,12 +320,21 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9509"
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Forward",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1758",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Successor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1766"
     },
     {
-      "id": 9510,
-      "rev": 2,
+      "id": 1767,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -321,13 +342,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:12:35.917Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:13:12.327Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Investigate hosted vs private build servers",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Investigate hosted vs private build servers",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -340,11 +357,11 @@
         "System.History": null
       },
       "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9510"
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1767"
     },
     {
-      "id": 9512,
-      "rev": 2,
+      "id": 1768,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -352,13 +369,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:13:07.917Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:13:12.327Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Check code for vulnerabilities",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Check code for vulnerabilities",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -370,12 +383,21 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9512"
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Reverse",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1763",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Predecessor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1768"
     },
     {
-      "id": 9514,
-      "rev": 2,
+      "id": 1769,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -383,13 +405,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:13:28.99Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:13:38.49Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Add link to new community site",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Add link to new community site",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -402,11 +420,11 @@
         "System.History": null
       },
       "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9514"
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1769"
     },
     {
-      "id": 9513,
-      "rev": 2,
+      "id": 1770,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -414,13 +432,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:13:21.007Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:13:38.49Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Integrate with beta DB",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Integrate with beta DB",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -433,11 +447,11 @@
         "System.History": null
       },
       "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9513"
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1770"
     },
     {
-      "id": 9515,
-      "rev": 2,
+      "id": 1771,
+      "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
         "System.TeamProject": "$ProjectName$",
@@ -445,13 +459,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:13:36.033Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:13:38.49Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Update privacy policy",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Update privacy policy",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -463,11 +473,20 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9515"
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Forward",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1757",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Successor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1771"
     },
     {
-      "id": 9518,
+      "id": 1772,
       "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
@@ -476,13 +495,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:14:03.843Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:14:03.843Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Fix leaderboard sorting",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Fix leaderboard sorting",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -494,11 +509,20 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9518"
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Forward",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1722",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Successor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1772"
     },
     {
-      "id": 9517,
+      "id": 1773,
       "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
@@ -507,13 +531,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:13:56.163Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:13:56.163Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Fix level filtering on leaderboard",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Fix level filtering on leaderboard",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -526,10 +546,10 @@
         "System.History": null
       },
       "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9517"
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1773"
     },
     {
-      "id": 9516,
+      "id": 1774,
       "rev": 1,
       "fields": {
         "System.AreaPath": "$ProjectName$\\Space Game Web Team",
@@ -538,13 +558,9 @@
         "System.WorkItemType": "Product Backlog Item",
         "System.State": "New",
         "System.Reason": "New backlog item",
-        "System.CreatedDate": "2020-03-03T22:13:45.617Z",
-        "System.CreatedBy": "Ed Kaim <edkaim@hotmail.com>",
-        "System.ChangedDate": "2020-03-03T22:13:45.617Z",
-        "System.ChangedBy": "Ed Kaim <edkaim@hotmail.com>",
         "System.Title": "Update site branding",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "Update site branding",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -556,8 +572,17 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": null,
-      "url": "https://dev.azure.com/sharplogic/_apis/wit/workItems/9516"
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Reverse",
+          "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1764",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Predecessor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/kaelli0595/_apis/wit/workItems/1774"
     }
   ],
   "HttpStatusCode": 0,

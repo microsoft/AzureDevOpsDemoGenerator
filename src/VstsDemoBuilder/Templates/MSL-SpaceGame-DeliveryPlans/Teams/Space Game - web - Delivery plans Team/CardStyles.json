@@ -13,6 +13,14 @@
       "tagStyle": []
     },
     "_links": "{}",
-    "BoardName": "Issues"
+    "BoardName": "Features"
+  },
+  {
+    "url": "",
+    "rules": {
+      "tagStyle": []
+    },
+    "_links": "{}",
+    "BoardName": "Backlog Items"
   }
 ]
