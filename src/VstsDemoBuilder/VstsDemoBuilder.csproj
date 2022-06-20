@@ -1403,10 +1403,6 @@
     <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Engine Team\BoardRows.json" />
     <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Engine Team\CardFields.json" />
     <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Engine Team\CardStyles.json" />
-    <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Leadership Team\BoardColumns.json" />
-    <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Leadership Team\BoardRows.json" />
-    <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Leadership Team\CardFields.json" />
-    <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Leadership Team\CardStyles.json" />
     <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Web Team\BoardColumns.json" />
     <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Web Team\BoardRows.json" />
     <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game Web Team\CardFields.json" />
@@ -2034,6 +2030,11 @@
     <Content Include="Templates\MSL-Toy-reusable\Teams\toy-reusable Team\BoardRows.json" />
     <Content Include="Templates\MSL-Toy-reusable\Teams\toy-reusable Team\CardFields.json" />
     <Content Include="Templates\MSL-Toy-reusable\Teams\toy-reusable Team\CardStyles.json" />
+    <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game - web - Delivery plans Team\BoardColumns.json" />
+    <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game - web - Delivery plans Team\BoardRows.json" />
+    <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game - web - Delivery plans Team\CardFields.json" />
+    <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game - web - Delivery plans Team\CardStyles.json" />
+    <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game - web - Delivery plans Team\TeamSetting.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

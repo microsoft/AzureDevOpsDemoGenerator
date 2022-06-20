@@ -1,20 +1,20 @@
 [
   {
-    "id": "10573ed6-b888-44d9-9ffc-cf8aa0381c0c",
+    "id": "fdb020e6-d88f-4f76-bcc7-13d90d87387d",
+    "name": "Space Game - web - Delivery plans Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "2930864c-0d39-4ef0-b5c6-75f444044f4b",
     "name": "Space Game Web Team",
     "description": "",
     "isDefault": "false"
   },
   {
-    "id": "4081bfc4-6c9f-4396-a16d-582731750900",
+    "id": "706e1331-eac2-47f9-a3e5-3484302804ee",
     "name": "Space Game Engine Team",
     "description": "",
     "isDefault": "false"
-  },
-  {
-    "id": "a60df62a-292b-4cee-8324-038c114826f1",
-    "name": "Space Game Delivery Plans Team",
-    "description": "The default project team.",
-    "isDefault": "true"
   }
 ]
