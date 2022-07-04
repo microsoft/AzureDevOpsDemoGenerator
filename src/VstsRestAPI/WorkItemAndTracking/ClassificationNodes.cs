@@ -150,7 +150,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                     {
                         string project = projectName;
                         DateTime startDate = DateTime.Today;
-                        DateTime endDate = DateTime.Today.AddDays(12);
+                        DateTime endDate = DateTime.Today.AddDays(18);
 
                         TeamIterations.Map iterationMaps = new TeamIterations.Map();
                         iterationMaps = JsonConvert.DeserializeObject<TeamIterations.Map>(teamIterationMapJson);
@@ -180,7 +180,7 @@ namespace VstsRestAPI.WorkItemAndTracking
                                         else
                                         {
                                             startDate = endDate.AddDays(1);
-                                            endDate = startDate.AddDays(12);
+                                            endDate = startDate.AddDays(18);
                                         }
                                     }
                                 }
