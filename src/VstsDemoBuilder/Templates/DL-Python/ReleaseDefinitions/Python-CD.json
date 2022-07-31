@@ -374,9 +374,9 @@
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$PythonDjango-yaml-id$",
+      "sourceId": "$ProjectId$:$Python-CI-YAML-id$",
       "type": "Build",
-      "alias": "_PythonDjango-yaml",
+      "alias": "_Python-CI-YAML",
       "definitionReference": {
         "defaultVersionBranch": {
           "id": "",
@@ -395,8 +395,8 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$PythonDjango-yaml-id$",
-          "name": "PythonDjango-yaml"
+          "id": "$Python-CI-YAML-id$",
+          "name": "Python-CI-YAML"
         },
         "definitions": {
           "id": "",
