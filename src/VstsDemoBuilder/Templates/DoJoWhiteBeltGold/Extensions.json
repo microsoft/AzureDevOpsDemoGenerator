@@ -65,12 +65,12 @@
       "License": "<a href='https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarcloud' target='_blank'>License Terms</a>"
     },
     {
-      "extensionName": "WhiteSource Bolt",
-      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=whitesource.ws-bolt' target='_blank'><b>WhiteSource Bolt</b></a>",
+      "extensionName": "Mend Bolt",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=whitesource.whiteSource-bolt-v2' target='_blank'><b>WhiteSource Bolt</b></a>",
       "publisherId": "whitesource",
-      "extensionId": "ws-bolt",
+      "extensionId": "whiteSource-bolt-v2",
       "publisherName": "WhiteSource",
-      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=whitesource.ws-bolt' target='_blank'>License Terms</a>"
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=whitesource.whiteSource-bolt-v2' target='_blank'>License Terms</a>"
     },
     {
       "extensionName": "Analytics",

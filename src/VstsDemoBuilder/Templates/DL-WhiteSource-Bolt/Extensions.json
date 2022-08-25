@@ -1,11 +1,12 @@
 ﻿{
   "Extensions": [
     {
-      "extensionName": "WhiteSource Bolt",
-      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=whitesource.ws-bolt&targetId=517f5b8d-735f-4ce6-811c-c7cf9fcd209e&utm_source=vstsproduct&utm_medium=ExtHubManageList' target='_blank'><b>WhiteSource Bolt</b></a>",
+      "extensionName": "Mend Bolt",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=whitesource.whiteSource-bolt-v2' target='_blank'><b>Mend Bolt</b></a>",
       "publisherId": "whitesource",
-      "extensionId": "ws-bolt",
-      "License": ""
+      "extensionId": "whiteSource-bolt-v2",
+      "License": "<a href='https://marketplace.visualstudio.com/items/whitesource.whiteSource-bolt-v2/license' target='_blank'>License Terms</a>"
+
     }
   ]
 }
