@@ -2035,6 +2035,7 @@
     <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game - web - Delivery plans Team\CardFields.json" />
     <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game - web - Delivery plans Team\CardStyles.json" />
     <Content Include="Templates\MSL-SpaceGame-DeliveryPlans\Teams\Space Game - web - Delivery plans Team\TeamSetting.json" />
+    <Content Include="Views\Account\Feedback.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -239,5 +239,12 @@ namespace VstsDemoBuilder.Controllers
             }
             return privateTemplate;
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult Feedback()
+        {
+            return View();
+        }
     }
 }

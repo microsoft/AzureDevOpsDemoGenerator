@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Azure DevOps Demo Generator - Feedback";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/content/assets/css/custom.min.css">
+    <link href="~/assets/templategrouping/templategroup.custom.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+
+    <script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function i(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = "AuthenticatedUserContext", h = "start", c = "stop", l = "Track", a = l + "Event", v = l + "Page", y = u.createElement(o), r, f; y.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js"; u.getElementsByTagName(o)[0].parentNode.appendChild(y); try { t.cookie = u.cookie } catch (p) { } for (t.queue = [], t.version = "1.0", r = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; r.length;) i("track" + r.pop()); return i("set" + s), i("clear" + s), i(h + a), i(c + a), i(h + v), i(c + v), i("flush"), config.disableExceptionTracking || (r = "onerror", i("_" + r), f = e[r], e[r] = function (config, i, u, e, o) { var s = f && f(config, i, u, e, o); return s !== !0 && t["_" + r](config, i, u, e, o), s }), t
+        }({
+            instrumentationKey: "__AIKEY__"
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', '__GAKEY__', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <title>Create Project</title>
+
+    <style type="text/css">
+        .f-div {
+            box-shadow: 0px 3px 10px #e0e0e0;
+            padding: 1rem;
+            border: 1px solid white;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body class="pb-3">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top no-border navbar-toggler" id="headbar">
+        <a class="navbar-brand p-0 mr-auto" href="../Account/Verify">
+            <img src="~/content/assets/images/VS_logo.png" alt="">
+            <span class="navbar-brand-text ml-1">
+                Azure DevOps Demo Generator
+            </span>
+        </a>
+    </nav>
+    <div class="jumbotron mb-0" style="padding-bottom: 25px; padding-top: 25px;">
+        <div class="text-center text-white display-4 p-3" id="greeting" style="line-height: 1.2;">
+            Azure DevOps Demo Generator - Feedback
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3">
+        <div class="row VSTS-mh-100">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="f-div">
+                    <p>
+                        From how many years you are using Azure DevOps Demo Generator?
+                    </p>
+                    <p>
+                        <ul>
+                            <li>
+                                <input type="radio" name="noofyears" id="id01" value="01" />
+                                <label for="id01"> 0-1 </label>
+                            </li>
+                            <li>
+                                <input type="radio" name="noofyears" id="id12" value="12" />
+                                <label for="id01"> 1-2 </label>
+                            </li>
+                            <li>
+                                <input type="radio" name="noofyears" id="id23" value="23" />
+                                <label for="id01"> 2-3 </label>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="~/Scripts/tooltip.js"></script>
+</body>
+</html>
