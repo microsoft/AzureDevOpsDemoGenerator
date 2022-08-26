@@ -145,25 +145,25 @@
             }
           },
           {
-            "environment": {},
-            "enabled": true,
-            "continueOnError": false,
-            "alwaysRun": false,
-            "displayName": "WhiteSource Bolt",
-            "timeoutInMinutes": 0,
-            "refName": "WhiteSourceBolt3",
-            "task": {
-              "id": "521d1e00-f5fb-4b73-a93b-b2fe88a9af91",
-              "versionSpec": "",
-              "definitionType": "task"
-            },
-            "inputs": {
-              "cwd": "WebGoat",
-              "advance": "false",
-              "exclude": "",
-              "extraFolders": ""
-            }
-          },
+				"environment": {},
+				"enabled": true,
+				"continueOnError": false,
+				"alwaysRun": false,
+				"displayName": "WhiteSource",
+				"timeoutInMinutes": 0,
+				"retryCountOnTaskFailure": 0,
+				"condition": "succeeded()",
+				"task": {
+					"id": "58dccf9e-3eaf-4533-a9b6-1e5a1845d036",
+					"versionSpec": "21.*",
+					"definitionType": "task"
+				},
+				"inputs": {
+					"cwd": "$(System.DefaultWorkingDirectory)",
+					"projectName": "WebGoat",
+					"scanReportTimeout": "10"
+				}
+			},
           {
             "environment": {},
             "enabled": true,
