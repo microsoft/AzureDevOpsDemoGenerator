@@ -147,7 +147,7 @@
           {
 				"environment": {},
 				"enabled": true,
-				"continueOnError": true,
+				"continueOnError": false,
 				"alwaysRun": false,
 				"displayName": "WhiteSource",
 				"timeoutInMinutes": 0,
@@ -160,7 +160,7 @@
 				},
 				"inputs": {
 					"cwd": "$(System.DefaultWorkingDirectory)",
-					"projectName": "",
+					"projectName": "WebGoat",
 					"scanReportTimeout": "10"
 				}
 			},
