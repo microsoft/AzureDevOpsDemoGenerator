@@ -5,7 +5,7 @@
   "isDeleted": false,
   "variables": {
     "location": {
-      "value": "South India",
+      "value": "east us",
       "isSecret": false
     },
     "mysqlAdmin": {
