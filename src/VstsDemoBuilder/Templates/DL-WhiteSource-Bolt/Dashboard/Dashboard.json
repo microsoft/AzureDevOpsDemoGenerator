@@ -42,7 +42,7 @@
         "rowSpan": 2,
         "columnSpan": 2
       },
-      "settings": "**WhiteSource Bolt** is an open source security and management solution.\nTeam Services integration with WhiteSource Bolt will enable you to\n\n- Detect vulnerable open source components\n- Get open source inventory reports per project or build\n- Enforce open source license compliance\n- Findout out-of-date open source libraries and recommendations to update\n",
+      "settings": "**Mend Bolt (WhiteSource Bolt)** is an open source security and management solution.\nTeam Services integration with Mend Bolt (WhiteSource Bolt) will enable you to\n\n- Detect vulnerable open source components\n- Get open source inventory reports per project or build\n- Enforce open source license compliance\n- Findout out-of-date open source libraries and recommendations to update\n",
       "settingsVersion": {
         "major": 1,
         "minor": 0,
