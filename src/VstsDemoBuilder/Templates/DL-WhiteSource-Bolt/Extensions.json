@@ -1,7 +1,7 @@
 ﻿{
   "Extensions": [
     {
-      "extensionName": "Mend Bolt",
+      "extensionName": "Mend Bolt (formerly WhiteSource)",
       "link": "<a href='https://marketplace.visualstudio.com/items?itemName=whitesource.whiteSource-bolt-v2' target='_blank'><b>Mend Bolt</b></a>",
       "publisherId": "whitesource",
       "extensionId": "whiteSource-bolt-v2",
