@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Configuration;
 using System.IO;
 using System.Web.Hosting;
 using System.Web.Mvc;
@@ -19,11 +20,14 @@ namespace VstsDemoBuilder.Controllers
         private ILog logger = LogManager.GetLogger("ErrorLog");
         private IProjectService projectService;
         private ITemplateService templateService;
+        private string _con = string.Empty;
 
         public AccountController(IProjectService _projectService, ITemplateService _templateService)
         {
             projectService = _projectService;
             templateService = _templateService;
+            _con = ConfigurationManager.AppSettings["ADOConnection"].ToString();
+
         }
 
         [HttpGet]
@@ -245,6 +249,18 @@ namespace VstsDemoBuilder.Controllers
         public ActionResult Feedback()
         {
             return View();
+        }
+
+        public void SubmitFeedback()
+        {
+            try
+            {
+
+            }
+            catch(Exception ex)
+            {
+                ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
         }
     }
 }

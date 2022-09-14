@@ -41,6 +41,14 @@
             border: 1px solid white;
             list-style-type: none;
         }
+        
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
     </style>
 </head>
 <body class="pb-3">
@@ -64,24 +72,105 @@
             <div class="col-sm-6">
                 <div class="f-div">
                     <p>
-                        From how many years you are using Azure DevOps Demo Generator?
+                        From how many years you have been using Azure DevOps Demo Generator?
                     </p>
                     <p>
-                        <ul>
+                        <ul style="list-style-type: none">
                             <li>
                                 <input type="radio" name="noofyears" id="id01" value="01" />
                                 <label for="id01"> 0-1 </label>
                             </li>
                             <li>
                                 <input type="radio" name="noofyears" id="id12" value="12" />
-                                <label for="id01"> 1-2 </label>
+                                <label for="id12"> 1-2 </label>
                             </li>
                             <li>
                                 <input type="radio" name="noofyears" id="id23" value="23" />
-                                <label for="id01"> 2-3 </label>
+                                <label for="id23"> 2-3 </label>
                             </li>
                         </ul>
                     </p>
+                </div>
+                <div class="f-div">
+                    <p>
+                        How do you come to know about Azure DevOps Demo Generator?
+                    </p>
+                    <ul style="list-style-type: none">
+                        <li>
+                            <input type="checkbox" name="blog" id="blog" value="blog" />
+                            <label for="blog"> Blogs or Microsoft Docs </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="social" id="social" value="Social Media" />
+                            <label for="social"> Social Media </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="Emails" id="Emails" value="Emails" />
+                            <label for="Emails"> Emails </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="friendscolleagues" id="friendscolleagues" value="friendscolleagues" />
+                            <label for="friendscolleagues"> Friends or Colleagues </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="f-div">
+                    <p>
+                        Which Template Section you used most Azure DevOps Demo Generator?
+                    </p>
+                    <p>
+                        <ul style="list-style-type: none">
+                            <li>
+                                <input type="checkbox" name="general" id="general" value="general" />
+                                <label for="general"> General </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="devopslabs" id="devopslabs" value="devopslabs" />
+                                <label for="devopslabs"> Azuer DevOps Labs </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="mslearn" id="mslearn" value="mslearn" />
+                                <label for="mslearn"> Microsoft Learn </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="caf" id="caf" value="Cloud Adoption Framework" />
+                                <label for="caf"> Cloud Adoption Framework </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="azurecommunity" id="azurecommunity" value="Azure Community" />
+                                <label for="azurecommunity"> Azure Community </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="FastTrackonAzure" id="FastTrackonAzure" value="FastTrack on Azure" />
+                                <label for="FastTrackonAzure"> FastTrack on Azure </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="private" id="private" value="Private" />
+                                <label for="private"> Private </label>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="f-div">
+                    <p>
+                        Which Template(s) you used most in Azure DevOps Demo Generator?
+                    </p>
+                    <textarea class="form-control" rows="4" cols="5" type="text" maxlength="255" id="usedtemplatenames" placeholder="Template Names (max 255 chars)"></textarea>
+                </div>
+                <div class="f-div">
+                    <p>
+                        Which kind of Template you are expecting in Azure DevOps Demo Generator?
+                    </p>
+                    <textarea class="form-control" rows="4" cols="5" type="text" id="kindoftemplates" maxlength="255" placeholder="Expected Template(s)/Technology (max 255 chars)"></textarea>
+                </div>
+                <div class="f-div">
+                    <p>Any other feedback?</p>
+                    <textarea class="form-control" rows="4" cols="5" type="text" id="otherfeedback" maxlength="255" placeholder="Other feedback (max 255 chars)"></textarea>
+                </div>
+
+                <div class="" style="text-align:center; margin:4px;">
+                    <button type="button" class="btn btn-primary text-center"> Save </button>
                 </div>
             </div>
             <div class="col-sm-3"></div>
