@@ -448,6 +448,7 @@
     <Content Include="Images\next.png" />
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
+    <Content Include="Scripts\AppScripts\feedback.js" />
     <Content Include="Scripts\AppScripts\GitHubAuth.js" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
