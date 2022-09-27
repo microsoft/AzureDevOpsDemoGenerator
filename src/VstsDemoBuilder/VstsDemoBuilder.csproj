@@ -344,6 +344,7 @@
     <Compile Include="Controllers\Apis\TemplateController.cs" />
     <Compile Include="Controllers\EnvironmentController.cs" />
     <Compile Include="Controllers\ExtractorController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\GitHubController.cs" />
     <Compile Include="Controllers\SessonTimeoutAttribute.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
@@ -358,6 +359,7 @@
     <Compile Include="Models\Default.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\ErrorMessages.cs" />
+    <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\GitHubAccessDetails.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ProfileDetails.cs" />
@@ -2070,6 +2072,7 @@
     <Folder Include="Templates\DL-LaunchDarkly\Dashboard\" />
     <Folder Include="Templates\Gen-PartsUnlimited\Dashboard\Charts\" />
     <Folder Include="Templates\Gen-PartsUnlimited\Dashboard\Widgets\" />
+    <Folder Include="Views\Feedback\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VstsRestAPI\VstsRestAPI.csproj">

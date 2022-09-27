@@ -73,10 +73,10 @@
                 <p>Details will be captured just for information</p>
                 <div class="f-div">
                     <label>Display name: </label>
-                    <input type="text" class="form-control col-sm-5" id="user-name" placeholder="Display name" />
+                    <input type="text" class="form-control col-sm-5" id="user-name" placeholder="Display name" required/>
                 
                     <label>Email: </label>
-                    <input type="email" class="form-control col-sm-5" id="user-email" placeholder="Email address" />
+                    <input type="email" class="form-control col-sm-5" id="user-email" placeholder="Email address" required/>
                 </div>
                 <div class="f-div">
                     <p>
@@ -105,23 +105,23 @@
                     </p>
                     <ul style="list-style-type: none">
                         <li>
-                            <input type="checkbox" name="blog" id="blog" value="blog" />
+                            <input type="checkbox" name="know" id="blog" value="Blogs or Microsoft Docs" />
                             <label for="blog"> Blogs or Microsoft Docs </label>
                         </li>
                         <li>
-                            <input type="checkbox" name="social" id="social" value="Social Media" />
+                            <input type="checkbox" name="know" id="social" value="Social Media" />
                             <label for="social"> Social Media </label>
                         </li>
                         <li>
-                            <input type="checkbox" name="Emails" id="Emails" value="Emails" />
+                            <input type="checkbox" name="know" id="Emails" value="Emails" />
                             <label for="Emails"> Emails </label>
                         </li>
                         <li>
-                            <input type="checkbox" name="friendscolleagues" id="friendscolleagues" value="friendscolleagues" />
+                            <input type="checkbox" name="know" id="friendscolleagues" value="Friends or Colleagues" />
                             <label for="friendscolleagues"> Friends or Colleagues </label>
                         </li>
                         <li>
-                            <input type="checkbox" name="other" id="other" value="other" />
+                            <input type="checkbox" name="know" id="other" value="Other" />
                             <label for="other"> Other </label>
                         </li>
                     </ul>
@@ -154,31 +154,31 @@
                     <p>
                         <ul style="list-style-type: none">
                             <li>
-                                <input type="checkbox" name="general" id="general" />
+                                <input type="checkbox" name="used" value="General" id="general" />
                                 <label for="general"> General </label>
                             </li>
                             <li>
-                                <input type="checkbox" name="devopslabs" id="devopslabs" />
+                                <input type="checkbox" name="used" value="Azure DevOps Labs" id="devopslabs" />
                                 <label for="devopslabs"> Azure DevOps Labs </label>
                             </li>
                             <li>
-                                <input type="checkbox" name="mslearn" id="mslearn" />
+                                <input type="checkbox" name="used" value="Microsoft Learn" id="mslearn" />
                                 <label for="mslearn"> Microsoft Learn </label>
                             </li>
                             <li>
-                                <input type="checkbox" name="caf" id="caf" />
+                                <input type="checkbox" name="used" value="Cloud Adoption Framework" id="caf" />
                                 <label for="caf"> Cloud Adoption Framework </label>
                             </li>
                             <li>
-                                <input type="checkbox" name="azurecommunity" id="azurecommunity" />
+                                <input type="checkbox" name="used" value="Azure Community" id="azurecommunity" />
                                 <label for="azurecommunity"> Azure Community </label>
                             </li>
                             <li>
-                                <input type="checkbox" name="FastTrackonAzure" id="FastTrackonAzure" />
+                                <input type="checkbox" name="used" value="FastTrack on Azure" id="FastTrackonAzure" />
                                 <label for="FastTrackonAzure"> FastTrack on Azure </label>
                             </li>
                             <li>
-                                <input type="checkbox" name="private" id="private" />
+                                <input type="checkbox" name="used" value="Private" id="private" />
                                 <label for="private"> Private </label>
                             </li>
                         </ul>

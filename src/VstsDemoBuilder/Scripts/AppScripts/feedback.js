@@ -4,28 +4,29 @@
     $('#responsediv').addClass('d-none')
 
     $('#feedbacksubmit').click(function () {
-
+        var name = $('#user-name').val();
+        if (name == "" || name == null || name == undefined) { alert("Please enter valid User Name"); return; }
+        var email = $('#user-email').val();
+        if (!validateEmail(email)) {
+            alert("please enter valid email");
+            return;
+        }
+        
         var noofyears = $("input[type='radio'][name='noofyears']:checked").val();
 
         // come to know
-        var blog = $("input[type='checkbox'][name='blog']:checked").val();
-        var social = $("input[type='checkbox'][name='social']:checked").val();
-        var Emails = $("input[type='checkbox'][name='Emails']:checked").val();
-        var friendscolleagues = $("input[type='checkbox'][name='friendscolleagues']:checked").val();
-        var other = $("input[type='checkbox'][name='other']:checked").val();
-
+        var know = $("input[type='checkbox'][name='know']:checked").map(function () {
+            return this.value;
+        }).get().join(',');
+        
         // purpose
-        var noofyears = $("input[type='radio'][name='noofyears']:checked").val();
+        var purpose = $("input[type='radio'][name='purpose']:checked").val();
 
         // template section
-        var general = $("input[type='checkbox'][name='general']:checked").val();
-        var devopslabs = $("input[type='checkbox'][name='devopslabs']:checked").val();
-        var mslearn = $("input[type='checkbox'][name='mslearn']:checked").val();
-        var caf = $("input[type='checkbox'][name='caf']:checked").val();
-        var azurecommunity = $("input[type='checkbox'][name='azurecommunity']:checked").val();
-        var FastTrackonAzure = $("input[type='checkbox'][name='FastTrackonAzure']:checked").val();
-        var private = $("input[type='checkbox'][name='private']:checked").val();
-
+        var used = $("input[type='checkbox'][name='used']:checked").map(function () {
+            return this.value;
+        }).get().join(',');
+        
         // most user template
         var usedtemplatenames = $('#usedtemplatenames').val();
 
@@ -34,14 +35,38 @@
 
         // other feedback
         var otherfeedback = $('#otherfeedback').val();
-
-        var state = true;
-        if (typeof noofyears == 'undefined') {
-            state = false;
-        }
-        else {
-            $('#responsediv').removeClass('d-none')
-            $('#formdiv').addClass('d-none');
-        }
+               
+        var auth = {
+            Name: name,            
+            Email: email,
+            Noofyears: noofyears,
+            Know: know,
+            Purpose: purpose,
+            Used: used,
+            Usedtemplatenames: usedtemplatenames,
+            Kindoftemplates: kindoftemplates,
+            Otherfeedback: otherfeedback
+        };
+        $.ajax({
+            url: "/feedback/storefeedback",
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(auth),            
+            success:
+                function (data) {
+                    if (data == "True") {
+                        $('#responsediv').removeClass('d-none');
+                        $('#formdiv').addClass('d-none');
+                    }
+                },
+            failure: function () {
+                alert("Something went wrong");
+            }
+        });
     }); 
 });
+
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
