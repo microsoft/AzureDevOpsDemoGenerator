@@ -73,10 +73,14 @@
                 <p>Details will be captured just for information</p>
                 <div class="f-div">
                     <label>Display name: </label>
-                    <input type="text" class="form-control col-sm-5" id="user-name" placeholder="Display name" required/>
-                
+                    <input type="text" class="form-control col-sm-5" id="user-name" placeholder="Display name" required />
+                    <div class="alert alert-danger d-none" style="width:260px;" role="alert" id="name_Error">
+                    </div>
+
                     <label>Email: </label>
-                    <input type="email" class="form-control col-sm-5" id="user-email" placeholder="Email address" required/>
+                    <input type="email" class="form-control col-sm-5" id="user-email" placeholder="Email address" required />
+                    <div class="alert alert-danger d-none" style="width:260px;" role="alert" id="email_Error">
+                    </div>
                 </div>
                 <div class="f-div">
                     <p>

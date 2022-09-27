@@ -1,17 +1,31 @@
 ﻿$(document).ready(function () {
 
     $('#formdiv').removeClass('d-none');
-    $('#responsediv').addClass('d-none')
-
+    $('#responsediv').addClass('d-none');
+    $('#user-name').change(function () {
+        $("#name_Error").removeClass("d-block").addClass("d-none");
+    });
+    $('#user-email').change(function () {
+        $("#email_Error").removeClass("d-block").addClass("d-none");
+    });
     $('#feedbacksubmit').click(function () {
         var name = $('#user-name').val();
-        if (name == "" || name == null || name == undefined) { alert("Please enter valid User Name"); return; }
+        if (name == "" || name == null || name == undefined) {
+            $("#name_Error").text("Please enter valid User Name");
+            $("#name_Error").removeClass("d-none").addClass("d-block");
+            $("#user-name").focus();
+            return false;
+        }
         var email = $('#user-email').val();
         if (!validateEmail(email)) {
-            alert("please enter valid email");
-            return;
+            $("#email_Error").text("Please enter valid email");
+            $("#name_Error").removeClass("d-block").addClass("d-none");
+            $("#email_Error").removeClass("d-none").addClass("d-block");
+            $("#user-email").focus();
+            return false;            
         }
-        
+        $("#name_Error").removeClass("d-block").addClass("d-none");
+        $("#email_Error").removeClass("d-block").addClass("d-none");
         var noofyears = $("input[type='radio'][name='noofyears']:checked").val();
 
         // come to know
