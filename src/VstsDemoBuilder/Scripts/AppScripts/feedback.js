@@ -3,14 +3,45 @@
     $('#formdiv').removeClass('d-none');
     $('#responsediv').addClass('d-none');
     $('#user-name').change(function () {
-        $("#name_Error").removeClass("d-block").addClass("d-none");
+        var name = $('#user-name').val();
+        if (name == "" || name == null || name == undefined) {
+            $("#name_Error").empty();
+            $("#name_Error").text("Please enter valid User Name");
+            $("#name_Error").removeClass("d-none").addClass("d-block");
+            $("#user-name").focus();
+            return false;
+        }
+        else {
+            $("#name_Error").removeClass("d-block").addClass("d-none");
+        }
     });
     $('#user-email').change(function () {
-        $("#email_Error").removeClass("d-block").addClass("d-none");
+        var email = $('#user-email').val();
+        if (email == "" || email == null || email == undefined) {
+            $("#email_Error").empty();
+            $("#email_Error").text("Please enter valid Email");
+            $("#email_Error").removeClass("d-none").addClass("d-block");
+            $("#user_email").focus();
+            return false;
+        }
+        else {
+            if (!validateEmail(email)) {
+                $("#email_Error").empty();
+                $("#email_Error").text("Please enter valid Email");
+                $("#name_Error").removeClass("d-block").addClass("d-none");
+                $("#email_Error").removeClass("d-none").addClass("d-block");
+                $("#user-email").focus();
+                return false;
+            }
+            else {
+                $("#email_Error").removeClass("d-block").addClass("d-none");
+            }
+        }
     });
     $('#feedbacksubmit').click(function () {
         var name = $('#user-name').val();
         if (name == "" || name == null || name == undefined) {
+            $("#name_Error").empty();
             $("#name_Error").text("Please enter valid User Name");
             $("#name_Error").removeClass("d-none").addClass("d-block");
             $("#user-name").focus();
@@ -18,7 +49,8 @@
         }
         var email = $('#user-email').val();
         if (!validateEmail(email)) {
-            $("#email_Error").text("Please enter valid email");
+            $("#email_Error").empty();
+            $("#email_Error").text("Please enter valid Email");
             $("#name_Error").removeClass("d-block").addClass("d-none");
             $("#email_Error").removeClass("d-none").addClass("d-block");
             $("#user-email").focus();
