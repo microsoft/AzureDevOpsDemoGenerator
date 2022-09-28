@@ -21,7 +21,7 @@ namespace VstsDemoBuilder.Controllers
         [HttpPost]
         [AllowAnonymous]
 
-        public bool storeFeedback(Feedback data)
+        public string storeFeedback(Feedback data)
         {
             try
             {
@@ -46,13 +46,15 @@ namespace VstsDemoBuilder.Controllers
                         con.Close();                          
                     }
                 }
+                return "True";
             }
             catch (Exception ex)
             {
                 ProjectService.logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
-                ViewBag.ErrorMessage = ex.Message;                
+                ViewBag.ErrorMessage = ex.Message;
+                return ex.Message.ToString();
             }
-            return true;
+            
         }
     }
 }

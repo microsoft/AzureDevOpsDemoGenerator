@@ -104,9 +104,19 @@
                         $('#responsediv').removeClass('d-none');
                         $('#formdiv').addClass('d-none');
                     }
+                    else {
+                        $('#storage_Error').empty();
+                        $('#storage_Error').text("<p>Unable to store data : "+data+"</p>");
+                        $('#storage_Error').removeClass('d-none');
+                        $('#formdiv').addClass('d-none');
+                    }
                 },
             failure: function () {
-                alert("Something went wrong");
+                $('#storage_Error').empty();
+                $('#storage_Error').text("<p>Something went wrong</p>");
+                $('#storage_Error').removeClass('d-none');
+                $('#formdiv').addClass('d-none');
+               //alert("Something went wrong");
             }
         });
     }); 
