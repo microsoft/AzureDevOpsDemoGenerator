@@ -106,14 +106,14 @@
                     }
                     else {
                         $('#storage_Error').empty();
-                        $('#storage_Error').text("<p>Unable to store data : "+data+"</p>");
+                        $('#storage_Error').text("Unable to store data : "+data);
                         $('#storage_Error').removeClass('d-none');
                         $('#formdiv').addClass('d-none');
                     }
                 },
             failure: function () {
                 $('#storage_Error').empty();
-                $('#storage_Error').text("<p>Something went wrong</p>");
+                $('#storage_Error').text("Something went wrong");
                 $('#storage_Error').removeClass('d-none');
                 $('#formdiv').addClass('d-none');
                //alert("Something went wrong");
