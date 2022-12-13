@@ -1,16 +1,16 @@
 {
-  "data": {
-
-  },
+  "data": {},
   "name": "IaC Migration - code",
   "type": "git",
   "url": "https://dev.azure.com/ricmart/IaC Migration - Sept 22/_git/IaC Migration",
   "authorization": {
-    "scheme": "UsernamePassword",
     "parameters": {
-      "username": "$username$",
-      "password": "$password$"
-    }
+      "username": "h.akshay@outlook.com",
+      "password": "password"
+    },
+    "scheme": "UsernamePassword"
   },
-  "isReady": true
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
 }

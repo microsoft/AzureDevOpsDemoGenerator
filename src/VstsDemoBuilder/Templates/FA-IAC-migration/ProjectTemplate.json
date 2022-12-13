@@ -5,9 +5,14 @@
   "ProjectSettings": "ProjectSettings.json",
   "CardStyle": "UpdateCardStyles.json",
   "CardField": "UpdateCardFields.json",
+  "BugfromTemplate": "Bug.json",
   "EpicfromTemplate": "Epic.json",
+  "FeaturefromTemplate": "Feature.json",
+  "PBIfromTemplate": "ProductBacklogItem.json",
   "UserStoriesFromTemplate": "UserStory.json",
   "TaskfromTemplate": "Task.json",
-  "TeamArea": "TeamArea.json",
+  "TestCasefromTemplate": "TestCase.json",
+  "SetEpic": "EnableEpic.json",
+  "TeamArea": "TeamArea.json",  
   "TemplateVersion": "2.0"
 }

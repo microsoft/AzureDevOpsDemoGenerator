@@ -1,7 +1,17 @@
 {
   "children": [
     {
-      "name": "Migration",
+      "name": "Iteration 1",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Iteration 2",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Iteration 3",
       "structureType": "iteration",
       "hasChildren": false
     },
@@ -11,12 +21,17 @@
       "hasChildren": false
     },
     {
+      "name": "Migration",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
       "name": "Testing",
       "structureType": "iteration",
       "hasChildren": false
     }
   ],
-  "name": "IaC Migration - Sept 22",
+  "name": "TestTemplate",
   "structureType": "iteration",
   "hasChildren": true
 }
