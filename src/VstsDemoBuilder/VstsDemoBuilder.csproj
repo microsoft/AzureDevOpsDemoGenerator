@@ -2027,11 +2027,7 @@
     <Content Include="Templates\FA-IAC-migration\Iterations.json" />
     <Content Include="Templates\FA-IAC-migration\ProjectSettings.json" />
     <Content Include="Templates\FA-IAC-migration\ProjectTemplate.json" />
-    <Content Include="Templates\FA-IAC-migration\ServiceEndpoints\GitHub-00554962-EndPoint.json" />
-    <Content Include="Templates\FA-IAC-migration\ServiceEndpoints\GitHub-a6d8c087-EndPoint.json" />
     <Content Include="Templates\FA-IAC-migration\ServiceEndpoints\GitHub-fafc3095-EndPoint.json" />
-    <Content Include="Templates\FA-IAC-migration\ServiceEndpoints\IaC Migration - code.json" />
-    <Content Include="Templates\FA-IAC-migration\ServiceEndpoints\IaC Migration-code.json" />
     <Content Include="Templates\FA-IAC-migration\TeamArea.json" />
     <Content Include="Templates\FA-IAC-migration\Teams\Teams.json" />
     <Content Include="Templates\FA-IAC-migration\Teams\TestTemplate Team\BoardColumns.json" />
@@ -2043,6 +2039,7 @@
     <Content Include="Templates\FA-IAC-migration\WorkItems\Epic.json" />
     <Content Include="Templates\FA-IAC-migration\WorkItems\Task.json" />
     <Content Include="Templates\FA-IAC-migration\WorkItems\User Story.json" />
+    <Content Include="Templates\FA-IAC-migration\ImportSourceCode\GitRepository.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
