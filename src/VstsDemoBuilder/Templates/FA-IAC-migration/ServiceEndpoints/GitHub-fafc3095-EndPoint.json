@@ -4,7 +4,7 @@
   },
   "name": "GitHub_fafc3095",
   "type": "git",
-  "url": "https://dev.azure.com/alexandram/TestTemplate/_git/IaC%20Migration",
+  "url": "https://github.com/amillerb/fta-live-devops-iac-migration-src",
   "authorization": {
     "scheme": "UsernamePassword",
     "parameters": {

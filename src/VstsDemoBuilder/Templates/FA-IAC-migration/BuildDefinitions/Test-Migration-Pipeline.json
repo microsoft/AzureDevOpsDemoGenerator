@@ -23,7 +23,7 @@
     "properties": {
       "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/IaC%20Migration",
       "fullName": "IaC Migration",
-      "defaultBranch": "refs/heads/master",
+      "defaultBranch": "refs/heads/main",
       "isFork": "False",
       "safeRepository": "$IaC Migration$",
       "reportBuildStatus": "true"
@@ -32,7 +32,7 @@
     "type": "TfsGit",
     "name": "IaC Migration",
     "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/IaC%20Migration",
-    "defaultBranch": "refs/heads/master",
+    "defaultBranch": "refs/heads/main",
     "clean": null,
     "checkoutSubmodules": false
   },
