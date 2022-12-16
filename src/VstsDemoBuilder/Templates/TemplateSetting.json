@@ -1220,7 +1220,7 @@
           "Name": "Azure Migrations - IaC",
           "TemplateFolder": "FA-IAC-migration",
           "ShortName": "AzureMigrationsIaC",
-          "Description": "A guidance to execute Azure Migrations using IaC approach. <a href='https://github.com/ricmmartins/fta-liftandshift-dcmigration/blob/main/doc/importing-template.md' target='_blank'>IaC Migration</a>",
+          "Description": "Starter template guidance around executing Azure Migrations through a redeployment approach with Infrastructure as Code (Bicep and Powershell). <a href='https://github.com/amillerb/fta-live-devops-iac-migration-src/blob/main/readme.md' target='_blank'>IaC Migration</a>",
           "Tags": [
             "Migration",
             "Azure"

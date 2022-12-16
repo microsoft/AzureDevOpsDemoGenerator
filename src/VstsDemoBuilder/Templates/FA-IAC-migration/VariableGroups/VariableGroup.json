@@ -1,0 +1,40 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "variables": {
+        "defaultSubnetCIDR": {
+          "value": "<address_range>"
+        },
+        "defaultSubnetName": {
+          "value": "<subnet_name>"
+        },
+        "location": {
+          "value": "<region>"
+        },
+        "resourceGroupName": {
+          "value": "<rg_name>"
+        },
+        "serviceConnectionName": {
+          "value": "<service_principal_name>"
+        },
+        "subnetName": {
+          "value": "<additional_subnet_name>"
+        },
+        "subscription": {
+          "value": "<subscriptionId>"
+        },
+        "virtualNetworkName": {
+          "value": "<migration_vnet_name>"
+        },
+        "vnetCIDR": {
+          "value": "<vnet_address_range>"
+        }
+      },
+      "id": "5",
+      "type": "Vsts",
+      "name": "bicepPipelineVariables - Template",
+      "isShared": false
+    }
+  ]
+}
