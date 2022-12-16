@@ -1,23 +1,23 @@
 {
-  "count": 17,
+  "count": 22,
   "value": [
     {
-      "id": 6218,
-      "rev": 2,
+      "id": 33,
+      "rev": 6,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:08:39.347Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:10:05.823Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "1.1.1 - Prepared list of servers to be migrated delineated by migration wave",
+        "System.CreatedDate": "2021-09-27T14:58:31.74Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-22T14:44:37.397Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "1.1.1 - Complete Discovery for Migration Environment",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "<ul><li><span style=\"\">The&nbsp;</span><a href=\"https://github.com/Azure/FTALive-Sessions/blob/main/content/migration/server-migration/scan.md\" style=\"\">discovery&nbsp;</a><span style=\"\">is completed for the scoped VMs</span><br> </li><li style=\"box-sizing:border-box;\">The&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/main/content/migration/server-migration/assess.md\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">assessment&nbsp;</a>for the environment is created within Azure Migrate.&nbsp;<span style=\"display:inline !important;\">Waves of migration are also defined for execution.</span> </li><li style=\"box-sizing:border-box;\">The assessment was exported as an Excel file to your local machine. </li> </ul>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -32,32 +32,33 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6209",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/50",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6218"
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/33"
     },
     {
-      "id": 6219,
-      "rev": 2,
+      "id": 34,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:10:39.687Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:10:49.68Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "1.1.2 - Set up variables/parameters for the VM templates that include",
+        "System.CreatedDate": "2021-09-27T14:58:31.9Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-22T14:44:57.543Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "1.1.3 - Convert the XSLX Assessment into a CSV",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><ul><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Sizing</span><span style=\"margin:0px;\"><span>&nbsp;</span>Information</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Amount of Disks</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Storage</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Marketplace Image</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">OS</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">needs to be identified and include any prebaked software needed for the migration</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Tags</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Target virtual network and subnet</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Target subscription and resource group</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Optional</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Tags</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Redundancy (AV Set or Availability Zones)</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul></ul><br></div>",
+        "System.Description": "<div>On your local machine, transfer the Azure Migrate Assessment excel file to the local&nbsp;src&nbsp;folder and navigate to the folder. </div><div>Using the&nbsp;provided PowerShell script </div><div>Open a PowerShell session in terminal, navigate to the folder and run with the command: </div><pre><code><div>.\\convert-xlsx-to-csv.ps1 -fullFilePath &quot;&lt;file-path&gt;&quot;\n</div></code></pre><div><span>The expected output is 2 CSV sheets from the assessments:&nbsp;All_Assessed_Machines.csv&nbsp;and&nbsp;All_Assessed_Disks.csv.</span><br> </div><div><br> </div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -72,232 +73,197 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6209",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/50",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6219"
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/34"
     },
     {
-      "id": 6220,
+      "id": 35,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-09-27T14:58:32.063Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-22T14:45:10.18Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "1.1.2 - Set up DevOps Organization and PowerShell Assets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul><li>An&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops\">Azure DevOps Organization</a>&nbsp;is created and linked to your subscriptions in Azure. </li><li>The&nbsp;src folder&nbsp;is cloned on your local machine. </li><li><a href=\"https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.2\">PowerShell</a>&nbsp;and Excel are installed on your local machine. </li> </ul> </div><font face=\"Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif\"><span style=\"font-size:14.6667px;\"><br></span></font><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/50",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/35"
+    },
+    {
+      "id": 36,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-09-27T14:58:32.433Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-22T14:45:25.563Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "1.2.1 - Create a project in Azure DevOps",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"margin:0px;font-family:&quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif;font-size:12px;\"><div style=\"margin:0px;cursor:text;clear:both;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\"></span></span> </p> </div> </div> </div><div><ul><li>Create an&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/devops/repos/get-started/?view=azure-devops\">Azure Repos</a>&nbsp;repository within the project to use for hosting the files from the&nbsp;src folder&nbsp; </li><ul><li>Here is where you will also add the two CSVs that were the output of the provided script,&nbsp;All_Assessed_Machines.csv&nbsp;and&nbsp;All_Assessed_Disks.csv&nbsp;into the repository within Azure Repos. </li> </ul><li>Create an&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops\">Azure Pipeline</a>&nbsp;where it is sourced from the Azure Repo that hosts the templates. </li> </ul> </div><div><div style=\"margin:0px;font-family:&quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif;font-size:12px;\"><div style=\"margin:0px;cursor:text;clear:both;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span> </p> </div> </div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/51",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/36"
+    },
+    {
+      "id": 37,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-09-27T14:58:32.597Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-22T14:33:00.393Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "1.2.2 - Azure DevOps Project Settings Configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul><li>Create&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure?view=azure-devops#:~:text=In%20TFS%2c%20open%20the%20Services%20page%20from%20the%2cto%20use%20when%20referring%20to%20this%20service%20connection.\">a service connection</a>&nbsp;to use within your Azure DevOps environment for resource deployment purposes. </li><li>In the Azure portal, create a resource group (named based on the migration wave/app that is being deployed) within your Azure environment for your resources to be hosted in </li><ul><li>Ensure that the Service principal that is created with this service connection (with the naming convention&nbsp;&lt;organization&gt;-&lt;project-name&gt;-&lt;subscription-id&gt;) has the appropriate permissions (listed below) in order to create resources within Azure. </li><ul><li>Roles:&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#virtual-machine-contributor\">Virtual Machine Contributor</a>,&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#network-contributor\">Network Contributor</a> </li> </ul> </ul> </ul> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/51",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/37"
+    },
+    {
+      "id": 38,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-09-27T14:58:32.917Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-22T14:45:49.483Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "1.2.3 - Azure DevOps Repo Setup",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>This file structure will be auto created for you within the repo (can also be found under the src folder) </div><div> </div><div>Note: With the virtual machines that are created in the script, the default for Linux machines are Ubuntu OS. </div><p dir=auto style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 47);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:start;\"> </p><p dir=auto style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\"> </p><p> </p><p dir=auto style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\">Details: </p><ul dir=auto style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px !important;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\"><li style=\"box-sizing:border-box;\"><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">All_Assessed_Machines.csv</code><span>&nbsp;</span>and<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">All_Assessed_Disks.csv</code>: CSV files extracted from Azure Migrate Assessment excel file </li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">scripts</code>: folder to store powershell files for executing different test and validation scripts<blockquote style=\"box-sizing:border-box;margin:0px 0px 16px;padding:0px 1em;\"><p dir=auto style=\"box-sizing:border-box;margin-top:0px;margin-bottom:0px;\">Note: Test scripts are to be developed based on needs for your migration environment. (Recommendation is to develop them in PowerShell) </p></blockquote> </li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">pipeline-script.ps1</code>: script that deploys compute resources </li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">testing</code><span>&nbsp;</span>folder: used for test migration purposes<ul dir=auto style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\"><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">testing-pipeline.yml</code>: file for testing in an isolated or migration VNet </li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">testing-variables.yml</code>: variables used in powershell and pipeline yaml </li> </ul> </li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">rehost</code><span>&nbsp;</span>folder: used for rehosting migration resources<ul dir=auto style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\"><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">azure-pipeline.yml</code>: file for rehosting VMs in a specified migration VNet </li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">variables.yml</code>: variables used in powershell and pipeline yaml<ul dir=auto style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">Manually populate the<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">variables.yml</code><span>&nbsp;</span>using CSV recommended values and what is expected in Azure. </li> </ul> </li> </ul> </li> </ul><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/51",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/38"
+    },
+    {
+      "id": 40,
       "rev": 1,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:48:52.2Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:48:52.2Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "1.1.3 - Naming conventions for resources in migration waves/environments",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<ul><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Guidance:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Abbreviations Per Resource:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul><br>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6209",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6220"
-    },
-    {
-      "id": 6221,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
-        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:49:48.717Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:49:48.717Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "1.2.1 - Bicep",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><div style=\"margin:0px;font-family:&quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif;font-size:12px;\"><div style=\"margin:0px;cursor:text;clear:both;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Bicep is a declarative language that deploys Azure resources. In this migration scenario, it is useful for standardizing the type of VMs, Virtual Networks, Resource Groups, etc. that are being migrated to Azure.</span></span><span style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></div><div style=\"margin:0px;cursor:text;clear:both;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">&nbsp;</span></span><span style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></div><div style=\"margin:0px;cursor:text;clear:both;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Below is guidance for getting started with creating Bicep templates and integrating it within Azure DevOps Pipelines</span><span style=\"margin:0px;\">:&nbsp;</span></span><span style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></div></div><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Bicep CLI commands and overview:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-cli\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-cli</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Integration with Azure DevOps Pipelines:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/add-template-to-azure-pipelines\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/add-template-to-azure-pipelines</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Uses Azure CLI Task to execute the Bicep deployment</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Pre-deployment checks with Bicep:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if?tabs=azure-powershell\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if?tabs=azure-powershell</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><div style=\"margin:0px;font-family:&quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif;font-size:12px;\"><div style=\"margin:0px;cursor:text;clear:both;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\"> </span></span><span style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></div></div><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6210",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6221"
-    },
-    {
-      "id": 6222,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
-        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:50:18.5Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:50:18.5Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "1.2.2 - Shared Image Gallery + Azure Image Builder",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Shared Image Gallery can be utilized to manage,<span>&nbsp;</span></span><span style=\"margin:0px;\">share,</span><span style=\"margin:0px;\"><span>&nbsp;</span>and globally distribute VM images within Azure. In the context of Migrations, it can be used for storing images<span>&nbsp;</span></span><span style=\"margin:0px;\">utilized for the deployment</span><span style=\"margin:0px;\">.</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/virtual-machines/shared-image-galleries</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Azure Image Builder is used to templatize VM Image customizations in a declarative way. In the context of migrations, it can be used in conjunction with Shared Image Gallery to execute</span><span style=\"margin:0px;\"><span>&nbsp;</span>custom</span><span style=\"margin:0px;\"><span>&nbsp;</span></span><span style=\"margin:0px;\">pre- and post-</span><span style=\"margin:0px;\"><span>&nbsp;</span>scripts and</span><span style=\"margin:0px;\"><span>&nbsp;</span>install extensions onto the</span><span style=\"margin:0px;\"><span>&nbsp;</span>migrated</span><span style=\"margin:0px;\"><span>&nbsp;</span>VMs.</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-machines/image-builder-overview\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/virtual-machines/image-builder-overview</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">DevOps Task:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/virtual-machines/linux/image-builder-devops-task\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/virtual-machines/linux/image-builder-devops-task</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6210",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6222"
-    },
-    {
-      "id": 6223,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
-        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:50:43.473Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:50:43.473Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "1.2.3 - Azure DevOps",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Azure DevOps Pipelines<span>&nbsp;</span></span><span style=\"margin:0px;\">are used to automate and build code projects.</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Using Azure Pipelines:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Use Azure Pipelines - Azure Pipelines | Microsoft Docs</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Task Index:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/?view=azure-devops\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Catalog of the built-in tasks for build-release and Azure Pipelines &amp; TFS - Azure Pipelines | Microsoft Docs</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Azure DevOps Repos<span>&nbsp;</span></span><span style=\"margin:0px;\">is a version control tool that<span>&nbsp;</span></span><span style=\"margin:0px;\">can be utilized to store</span><span style=\"margin:0px;\"><span>&nbsp;</span>files. In the context of migrations, it can be used to store<span>&nbsp;</span></span><span style=\"margin:0px;\">YAML files such as the<span>&nbsp;</span></span><span style=\"margin:0px;\">variables.yml</span><span style=\"margin:0px;\"><span>&nbsp;</span>and<span>&nbsp;</span></span><span style=\"margin:0px;\">pipeline.yml</span><span style=\"margin:0px;\"><span>&nbsp;</span>for the automated workflow and accompanying test scripts<span>&nbsp;</span></span><span style=\"margin:0px;\">for executing the deployment of servers.</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Getting Started:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/devops/repos/get-started/?view=azure-devops\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Guide for getting started with Azure Repos - Azure Repos | Microsoft Docs</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Requirements</span><span style=\"margin:0px;\"><span>&nbsp;</span>for Migration</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Azure DevOps Project</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Permissions for utilizing Pipelines and Repos</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Personal Access Token</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Service Principal connected to Azure AD in your tenant (used to create a service connection in Azure DevOps)</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Powershell</span><span style=\"margin:0px;\"><span>&nbsp;</span>Module (`Az`) installed</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Using the<span>&nbsp;</span></span><span style=\"margin:0px;\">Powershell</span><span style=\"margin:0px;\"><span>&nbsp;</span>task</span><span style=\"margin:0px;\">:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/powershell?view=azure-devops\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/utility/powershell?view=azure-devops</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">This task<span>&nbsp;</span></span><span style=\"margin:0px;\">run</span><span style=\"margin:0px;\">s</span><span style=\"margin:0px;\"><span>&nbsp;</span>the scripts in order of execution with the appropriate variables.</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul></ul></ul><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6210",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6223"
-    },
-    {
-      "id": 6224,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
-        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:54:19.967Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:54:19.967Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "1.2.4 - 3rd Party Orchestration Engines",
-        "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><div style=\"margin:0px;font-family:Calibri, Calibri_MSFontService, sans-serif;font-size:14.6667px;text-align:left;\"><div style=\"margin:0px;cursor:text;clear:both;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;\"><span lang=EN-US style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">The rehost/redeployment of migrated servers can also be executed with automation using the following<span>&nbsp;</span></span><span style=\"margin:0px;\">options<span>&nbsp;</span></span><span style=\"margin:0px;\">below:</span></span><span style=\"margin:0px;font-size:11pt;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></div></div><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">GitHub Actions</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">GitHub</span><span style=\"margin:0px;\"><span>&nbsp;</span>Actions can be used as a CI/CD pipeline<span>&nbsp;</span></span><span style=\"margin:0px;\">to automate the migration of VMs.</span><span style=\"margin:0px;\"><span>&nbsp;</span>Code from GitHub can be utilized for these deployments.</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Documentation:<span>&nbsp;</span></span></span><a href=\"https://docs.github.com/en/actions\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">GitHub Actions Documentation - GitHub Docs</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Jenkins</span><span style=\"margin:0px;\"><span>&nbsp;</span>with Ansible</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Jenkins can be utilized to orchestrate the flow of migration waves and VMs that are being provisioned with Ansible Infrastructure as Code templates.</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Documentation:<span>&nbsp;</span></span></span><a href=\"https://www.jenkins.io/doc/\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Jenkins User Documentation</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><a href=\"https://docs.ansible.com/ansible/latest/index.html\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Ansible Documentation — Ansible Documentation</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul><br></div>",
-        "System.AssignedTo": null,
-        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
-        "Microsoft.VSTS.Common.Priority": 2.0,
-        "System.BoardLane": null,
-        "System.Tags": null,
-        "Microsoft.VSTS.TCM.Steps": null,
-        "Microsoft.VSTS.TCM.Parameters": null,
-        "Microsoft.VSTS.TCM.LocalDataSource": null,
-        "Microsoft.VSTS.TCM.AutomationStatus": null,
-        "System.History": null
-      },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6210",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6224"
-    },
-    {
-      "id": 6225,
-      "rev": 1,
-      "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
-        "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
-        "System.WorkItemType": "Task",
-        "System.State": "New",
-        "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:54:38.36Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:54:38.36Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.CreatedDate": "2021-09-27T14:58:33.573Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2021-09-27T14:58:33.573Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
         "System.Title": "1.3.1 - Set up variables needed for the CI/CD pipeline in a variables.yml file based on the environment",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "1.3.1 - Set up variables needed for the CI/CD pipeline in a variables.yml file based on the environment",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -309,32 +275,23 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6211",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6225"
+      "relations": null,
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/40"
     },
     {
-      "id": 6226,
+      "id": 41,
       "rev": 1,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Redeployment and Rehosting of Migration Waves",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:55:04.32Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:55:04.32Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.CreatedDate": "2021-09-27T14:58:33.86Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2021-09-27T14:58:33.86Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
         "System.Title": "1.3.2 - Example Pipeline Stages for Redeployment/Rehosting of Migration Waves",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
         "System.Description": "<div><ul><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Initialize Redeployment of Servers</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Validate the Migration Pre-requisites</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Initialize the Redeployment utilizing input parameters (CSV,<span>&nbsp;</span></span><span style=\"margin:0px;\">variables.yml</span><span style=\"margin:0px;\">)</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Dry Run</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Ensure that all the appropriate constructs are<span>&nbsp;</span></span><span style=\"margin:0px;\">in the environment</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Start<span>&nbsp;</span></span><span style=\"margin:0px;\">D</span><span style=\"margin:0px;\">eployment of Servers</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Validation of Environment&nbsp;</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul><br></div>",
@@ -349,35 +306,26 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6211",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6226"
+      "relations": null,
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/41"
     },
     {
-      "id": 6227,
-      "rev": 1,
+      "id": 42,
+      "rev": 4,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Testing",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:55:24.13Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:55:24.13Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "2.1.1 - Outline parameters that simulate a smaller scale version of your environment",
+        "System.CreatedDate": "2021-09-27T14:58:34.043Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-22T14:43:46.223Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "2.1.1 - Testing Pre-Requisites - From Redeployment/Rehosting",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "<div>To get started, the assumption is the following: </div><div><ul><li>The&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/main/content/migration/server-migration/scan.md\">discovery&nbsp;</a>is completed for the scoped VMs </li><li>The&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/main/content/migration/server-migration/assess.md\">assessment&nbsp;</a>for the environment is created within Azure Migrate. </li><li>The assessment is the source for where the VMs in the pipeline are created. Please ensure that only the VMs that are scoped for the test environment are in the assessment. Please manually omit VMs not needed in the deployment. </li><li>The assessment was exported as an Excel file to your local machine. </li><li>An&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/organization-management?view=azure-devops\">Azure DevOps Organization</a>&nbsp;is created and linked to your subscription in Azure. </li><li>The&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/alexandram-migration-devops-iac/content/compute-infra/src\">src folder</a>&nbsp;is cloned on your local machine. </li><li><a href=\"https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.2\">PowerShell</a>&nbsp;and Excel are installed on your local machine. </li> </ul> </div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -392,32 +340,33 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6212",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/53",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6227"
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/42"
     },
     {
-      "id": 6228,
-      "rev": 1,
+      "id": 43,
+      "rev": 5,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Testing",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:55:46.69Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:55:46.69Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "2.1.2 - Setup Bicep Scripts to be utilized with smaller testing environment",
+        "System.CreatedDate": "2021-09-27T14:58:34.24Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-22T14:42:57.857Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "2.1.2 - Isolated VNet Pre-Migration Tasks",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><span lang=EN-US style=\"margin:0px;font-size:11pt;text-align:left;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\"><ul><li><span lang=EN-US style=\"margin:0px;font-size:11pt;text-align:left;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Set up an isolated<span>&nbsp;</span></span><span style=\"margin:0px;\">VNet</span><span style=\"margin:0px;\"><span>&nbsp;</span>and test if there is the correct connectivity</span></span><span style=\"margin:0px;font-size:11pt;text-align:left;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></li></ul></span></span></div>",
+        "System.Description": "<div><span>Please refer to the</span><span>&nbsp;</span><a href=\"https://github.com/Azure/FTALive-Sessions/blob/main/content/migration/server-migration/testing.md#1-pre--post--migration-activities-defined\">Pre-Migration and Post-Migration Activities</a><span>&nbsp;</span><span>page that should be defined before executing the test pipeline. General best practices when preparing for test migration:</span><br> </div><div><ul><li><b>Isolated VNet</b> </li><ul><li>Define parameters needed for an isolated VNet implementation (i.e. CIDR block, NSG Ports that will open on the test subnet, etc.). </li><li>Test the connectivity in the isolated (<a href=\"https://github.com/Azure/FTALive-Sessions/blob/main/content/migration/server-migration/testing.md#23-identify-target-vnets-tests-and-migration-workflow\">Guidance for identifying target VNet</a>) </li><li>Ensure that appropriate stakeholders are given the least privilege permissions to execute the pipelines. </li><li>Define Test Migration approach through waves of execution </li><ul><li>Understand dependencies to create migration waves/groups. </li><li>Define test cases. </li><li>Ensure Rollback plan is in place for the re-hosted VMs. </li><li>Make sure that test data is consistent with the data used in production. </li> </ul><li>Clean up test resources that were deployed in an isolated VNet. </li> </ul> </ul> </div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -432,32 +381,33 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6212",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/53",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6228"
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/43"
     },
     {
-      "id": 6229,
-      "rev": 1,
+      "id": 44,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Testing",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:56:07.747Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:56:07.747Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "2.1.3 - Use appropriate Powershell Scripts that correlate to the types of tests needed for your deployment",
+        "System.CreatedDate": "2021-09-27T14:58:34.41Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:06:05.93Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "2.1.3 - Production VNet Pre-Migration Tasks",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><ul><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Smoke Test</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">UAT</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Failover&nbsp;</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul><br></div>",
+        "System.Description": "<div><b>Production VNet</b> </div><div><ul><li>Define parameters needed for the production VNet </li><li>Plan a maintenance window to shut down on-prem workload for test migration, set up a VNet with the parameters needed for production workloads to move to Azure </li><li>Define test cases for the environment </li><li>Choose non-prod VM Migration group to start the test functionality with. </li><li>Perform tests on a smaller VM waves of the workloads first. </li><li>Ensure Rollback plan is in place for the re-hosted VMs. </li> </ul> </div><div><br> </div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -472,32 +422,33 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6212",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/53",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6229"
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/44"
     },
     {
-      "id": 6230,
-      "rev": 1,
+      "id": 45,
+      "rev": 3,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Testing",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:57:30.133Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:57:30.133Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "2.2.1 - Example Pipeline Stages for Test Migration",
+        "System.CreatedDate": "2021-09-27T14:58:34.573Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:05:44.28Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "2.2.1 - Input Parameters for Test VNet Variables",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><ul><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Initialize Test Migration</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Outline input parameters</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Run initial script with Bicep template</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Start Test Migration</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Clean Up Test Migration</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Delete testing resources from environment&nbsp;</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Initialize Test Migration</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Outline input parameters</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Start Test Failover</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Clean up Test Failover</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul><br></div>",
+        "System.Description": "<div>Input parameters your environment using the&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/alexandram-migration-devops-iac/content/compute-infra/src/testing/testing-variables.yml\">testing-variables.yml</a>&nbsp;as a template.<br> </div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -512,32 +463,33 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6213",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/54",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6230"
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/45"
     },
     {
-      "id": 6231,
-      "rev": 2,
+      "id": 46,
+      "rev": 1,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Testing",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:57:50.043Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:58:46.51Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
+        "System.CreatedDate": "2021-09-27T14:58:34.733Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2021-09-27T14:58:34.733Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
         "System.Title": "2.3.1 - Block a maintenance window when executing the CI/CD Pipeline",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": null,
+        "System.Description": "2.3.1 - Block a maintenance window when executing the CI/CD Pipeline",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -549,35 +501,26 @@
         "Microsoft.VSTS.TCM.AutomationStatus": null,
         "System.History": null
       },
-      "relations": [
-        {
-          "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6214",
-          "attributes": {
-            "isLocked": "false",
-            "name": "Parent"
-          }
-        }
-      ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6231"
+      "relations": null,
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/46"
     },
     {
-      "id": 6232,
-      "rev": 1,
+      "id": 47,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Migration",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:59:20.45Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:59:20.45Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "3.1.1 - Delineate CI/CD pipeline based on environment",
+        "System.CreatedDate": "2021-09-27T14:58:34.997Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:11:09.483Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "3.1.1 - Pipeline Stages to Consider for Migration Waves",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><ul><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Ensure have the appropriate bicep files with the correct parameters</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Migrate via the pipeline for environments in the order of non-prod to prod</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul><br></div>",
+        "System.Description": "<div><div>Please refer to the&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/alexandram-migration-devops-iac/content/compute-infra/server-migration/devops-iac-redeployment.md\">Milestone: Redeployment/Rehosting of Migration Waves</a>&nbsp;page in order to have the correct setup for this deployment. </div><div><ul><li>Reference Migration Tasks:&nbsp;<a href=\"https://github.com/Azure/fta-liftandshift-dcmigration/blob/main/doc/migration.md\">Milestone: Wave Migration and Post Go-Live</a> </li><li>Note: The assessment CSV acts as the source of deployment information for the migration wave execution via the Azure Pipeline. Please ensure that once the CSVs are created that the unscoped VMs from the<span style=\"\">&nbsp;</span><span style=\"\">All_Assessed_Machines.csv</span><span style=\"\">&nbsp;</span><span style=\"\">and</span><span style=\"\">&nbsp;</span><span style=\"\">All_Assessed_Disks.csv</span><span style=\"\">&nbsp;</span><span style=\"\">files are manually omitted.</span> </li> </ul> </div><div>Pipeline Stages for Migration utilizing the provided&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/alexandram-migration-devops-iac/content/compute-infra/src/rehost/migration-pipeline.yml\">template</a>. </div><div><ul><li>Setup Cutover Window within the pipeline </li><ul><li>Ensure that there is a backup of the servers before cutover </li> </ul><li>Initialize Migration </li><ul><li>Declare input parameters and modify Target Subscription </li> </ul><li>Start Migration </li><ul><li>Migrate via pipeline specifications in migration waves </li> </ul><li>Have rollback plan ready for execution if needed (send traffic to previous server) </li> </ul> </div> </div><div><font face=\"Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif\"><span style=\"font-size:14.6667px;\"><br></span></font> </div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -592,32 +535,33 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6215",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/56",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6232"
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/47"
     },
     {
-      "id": 6233,
-      "rev": 1,
+      "id": 48,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Migration",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T15:59:51.57Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T15:59:51.57Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "3.2.1 - Example Pipeline Stages for Migration",
+        "System.CreatedDate": "2021-09-27T14:58:35.263Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:15:11.723Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "3.2.1 - Setting variables for Migration Waves",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><ul><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Initialize Migration</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Declare input parameters</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Start Migration</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Migrate via<span>&nbsp;</span></span><span style=\"margin:0px;\">IaC</span><span style=\"margin:0px;\"><span>&nbsp;</span>in specified waves (non-prod to prod</span><span style=\"margin:0px;\"><span>&nbsp;</span>as recommended path</span><span style=\"margin:0px;\">)</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul></ul><br></div>",
+        "System.Description": "<div>Based on the migration wave, manually fill in variables needed for the CI/CD pipeline, using the&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/alexandram-migration-devops-iac/content/compute-infra/src/rehost/variables.yml\">variables.yml</a>&nbsp;file as a template. </div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -632,32 +576,33 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6216",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/57",
           "attributes": {
             "isLocked": "false",
+            "comment": "Making a new link for the dependency",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6233"
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/48"
     },
     {
-      "id": 6234,
-      "rev": 1,
+      "id": 49,
+      "rev": 2,
       "fields": {
-        "System.AreaPath": "IaC Migration - Sept 22",
-        "System.TeamProject": "IaC Migration - Sept 22",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
         "System.IterationPath": "$ProjectName$\\Migration",
         "System.WorkItemType": "Task",
         "System.State": "New",
         "System.Reason": "New",
-        "System.CreatedDate": "2021-09-22T16:00:19.87Z",
-        "System.CreatedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.ChangedDate": "2021-09-22T16:00:19.87Z",
-        "System.ChangedBy": "Ricardo Martins <ricmart@microsoft.com>",
-        "System.Title": "3.3.1 - Post migration activities (optional)",
+        "System.CreatedDate": "2021-09-27T14:58:35.573Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:17:34.297Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "3.3.1 - Post Migration Activities (optional)",
         "Microsoft.VSTS.Scheduling.Effort": 0.0,
-        "System.Description": "<div><ul><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Validate connections<span>&nbsp;</span></span><span style=\"margin:0px;\">to the VMs<span>&nbsp;</span></span><span style=\"margin:0px;\">that were</span><span style=\"margin:0px;\"><span>&nbsp;</span>done in the Testing Phase now that the cutover is complete</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">BCDR Considerations</span><span style=\"margin:0px;\">&nbsp;</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Backup of Servers</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Can be executed via Azure Policy</span><span style=\"margin:0px;\"><span>&nbsp;</span>with Azure Backup</span><span style=\"margin:0px;\">:&nbsp;</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">DevOps Task:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-policy?view=azure-devops\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-policy?view=azure-devops</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">&nbsp;</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Policy:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/backup/backup-azure-auto-enable-backup#policy-4---preview-configure-backup-on-vms-with-a-given-tag-to-a-new-recovery-services-vault-with-a-default-policy\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/backup/backup-azure-auto-enable-backup#policy-4---preview-configure-backup-on-vms-with-a-given-tag-to-a-new-recovery-services-vault-with-a-default-policy</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Enable Azure Site Recovery</span><span style=\"margin:0px;\"><span>&nbsp;</span>for Disaster Recovery</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><a href=\"https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Tutorial to set up Azure VM disaster recovery with Azure Site Recovery - Azure Site Recovery | Microsoft Docs</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Deploy Azure Disk Encryption to help secure disks and keep data safe from theft and unauthorized access.</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Maintenance of Shared Image Gallery</span><span style=\"margin:0px;\"><span>&nbsp;</span>with Azure DevOps</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Release of New Images</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Monitoring of Cloud<span>&nbsp;</span></span><span style=\"margin:0px;\">Assets</span><span style=\"margin:0px;\"><span>&nbsp;</span></span><span style=\"margin:0px;\">Through Azure Monitor</span></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Workbooks:<span>&nbsp;</span></span></span><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-data-sources\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-data-sources</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li><ul><li style=\"cursor:text;clear:both;font-size:11pt;font-family:Calibri, Calibri_MSFontService, sans-serif;\"><p style=\"margin:0px;font-weight:normal;color:windowtext;text-align:left;\"><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Library:<span>&nbsp;</span></span></span><a href=\"https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks\" target=_blank rel=\"noreferrer noopener\" style=\"margin:0px;cursor:pointer;\"><span lang=EN-US style=\"margin:0px;color:rgb(0, 0, 255);text-decoration:underline;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"><span style=\"margin:0px;\">Application-Insights-Workbooks/Workbooks at master ·<span>&nbsp;</span></span><span style=\"margin:0px;\">microsoft</span><span style=\"margin:0px;\">/Application-Insights-Workbooks (github.com)</span></span></a><span lang=EN-US style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\"></span><span style=\"margin:0px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif;\">&nbsp;</span></p></li></ul></ul></ul></ul><br></div>",
+        "System.Description": "<div><ul><li>Validate connections to the VMs that were done in the Testing Phase now that the cutover is complete </li><li>BCDR Considerations </li><ul><li>Backup of Servers </li><ul><li>Can be executed via Azure Policy with Azure Backup: </li><ul><li><a href=\"https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-policy?view=azure-devops\">DevOps Task</a> </li><li><a href=\"https://docs.microsoft.com/en-us/azure/backup/backup-azure-auto-enable-backup#policy-4---preview-configure-backup-on-vms-with-a-given-tag-to-a-new-recovery-services-vault-with-a-default-policy\">Policy</a> </li> </ul> </ul><li>Enable Azure Site Recovery for Disaster Recovery </li><ul><li><a href=\"https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-enable-replication\">Tutorial to set up Azure VM disaster recovery with Azure Site Recovery</a> </li> </ul> </ul><li>Deploy Azure Disk Encryption to help secure disks and keep data safe from theft and unauthorized access </li><li>Maintenance of Shared Image Gallery with Azure DevOps for the releases of New Images/Image Versions </li><li>Monitoring of Cloud Assets Through Azure Monitor </li><ul><li><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-data-sources\">Workbooks</a> </li><ul><li><a href=\"https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks\">Library of Application Insights Workbooks</a> </li> </ul> </ul> </ul> </div><div> </div><div><br> </div>",
         "System.AssignedTo": null,
         "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
         "Microsoft.VSTS.Common.Priority": 2.0,
@@ -672,14 +617,255 @@
       "relations": [
         {
           "rel": "System.LinkTypes.Hierarchy-Reverse",
-          "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6217",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/58",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/49"
+    },
+    {
+      "id": 181,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Testing",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2022-04-04T18:01:13.59Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-22T14:38:56.87Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "2.1.4 - Testing PowerShell Scripts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Create the appropriate scripts that correlate to the&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/main/content/compute-infra/server-migration/testing.md#2-migration-plan-definition\">types of tests</a>&nbsp;needed for your deployment: </div><div><ul><li>Smoke Test </li><li>UAT </li><li>Failover </li> </ul> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/53",
           "attributes": {
             "isLocked": "false",
             "name": "Parent"
           }
         }
       ],
-      "url": "https://dev.azure.com/ricmart/_apis/wit/workItems/6234"
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/181"
+    },
+    {
+      "id": 182,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Testing",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2022-04-04T18:03:06.473Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:05:38.86Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "2.2.2 - Create a Testing Pipeline Yaml Workflow",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Create a&nbsp;testing-pipeline.yml&nbsp;for resource execution using the provided&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/alexandram-migration-devops-iac/content/compute-infra/src/testing/testing-pipeline.yml\">template</a>&nbsp;as a baseline. Below are a description of the tasks: </div><div>Pipeline Tasks: </div><div><ul><li>Start Test Migration </li><ul><li>Create isolated VNet (optional) </li><li>Within Powershell script: </li><ul><li>Create the Migration Group Compute needed </li> </ul> </ul><li>Validate Test Environment (manually or using test scripts) </li><ul><li>Run Testing Scripts (if applicable) </li><ul><li>Smoke Test </li><li>UAT </li><li>Failover </li> </ul> </ul><li>Clean up Test Resources </li> </ul> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/54",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/182"
+    },
+    {
+      "id": 183,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Testing",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2022-04-04T18:04:03.2Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:05:14.013Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "2.2.3 - Validate Target VNet Tests",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul><li>If execute the isolated VNet Testing Pipeline, validate the pipeline has ran through the necessary tasks above. </li><li>If utilizing the final Migration VNet, set the maintenance window and prepare migration waves for execution using the sample pipeline&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/alexandram-migration-devops-iac/content/compute-infra/src/testing/testing-pipeline.yml\">template</a>&nbsp;for migration. </li><li>If any of the tests fail within a pipeline stage, execute the Rollback plan for the migration wave. </li> </ul> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/54",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/183"
+    },
+    {
+      "id": 184,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Testing",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2022-04-04T18:04:29.937Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:05:06.377Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "2.2.4 - Post Test Migration Tasks",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul><li>Validate VM migration was successful and that applications are functioning as expected </li><ul><li>Perform capacity testing to ensure that functioning properly in production </li> </ul> </ul> </div><div><br> </div><div>Expected Results </div><div><ul><li>VNet created with specified parameters for testing its functionality before full migration of servers to Azure </li><li>Standardized pipeline to utilize for deploying compute resources in Azure </li><li>Pipeline provides option for executing tests within Azure on the testing resources that are deployed </li><li>Pipeline performs clean up of test resources after validation of functionality </li> </ul> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/54",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/184"
+    },
+    {
+      "id": 185,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Migration",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2022-04-04T18:15:56.913Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:15:56.913Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "3.2.2 - Migration Pipeline Creation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Create a&nbsp;<a href=\"https://github.com/Azure/FTALive-Sessions/blob/alexandram-migration-devops-iac/content/compute-infra/src/rehost/migration-pipeline.yml\">migration-pipeline.yml</a>&nbsp;for resource execution using the templates as a starter pipeline. </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/57",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/185"
+    },
+    {
+      "id": 186,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Migration",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2022-04-04T18:16:26.607Z",
+        "System.CreatedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.ChangedDate": "2022-04-04T18:16:26.607Z",
+        "System.ChangedBy": "Alexandra Miller-Browne <alexandram@microsoft.com>",
+        "System.Title": "3.2.3 - Migration Pipeline Execution",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Execute the pipeline for the appropriate migration wave and environment. </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/57",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/alexandram/_apis/wit/workItems/186"
     }
   ],
   "HttpStatusCode": 0,

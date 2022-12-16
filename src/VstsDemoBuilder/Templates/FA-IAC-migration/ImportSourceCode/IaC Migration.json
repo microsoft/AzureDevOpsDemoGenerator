@@ -1,9 +1,9 @@
 {
   "parameters": {
     "gitSource": {
-      "url": "https://dev.azure.com/ricmart/IaC Migration - Sept 22/_git/IaC Migration"
+      "url": "https://github.com/amillerb/fta-live-devops-iac-migration-src"
     },
-    "serviceEndpointId": "$IaC Migration - code$",
+    "serviceEndpointId": "$GitHub_fafc3091$",
     "deleteServiceEndpointAfterImportIsDone": true
   }
 }
