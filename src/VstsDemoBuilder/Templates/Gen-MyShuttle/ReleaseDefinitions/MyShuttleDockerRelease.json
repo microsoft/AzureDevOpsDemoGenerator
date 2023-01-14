@@ -320,7 +320,7 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$MyShuttle-Docker-yaml-id$",
+          "id": "$MyShuttle-Docker-YAML-id$",
           "name": "MyShuttle-Docker-yaml"
         },
         "definitions": {
