@@ -299,7 +299,7 @@
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$MyShuttle-Docker-yaml-id$",
+      "sourceId": "$ProjectId$:$MyShuttle-Docker-YAML-id$",
       "type": "Build",
       "alias": "_MyShuttle-Docker-yaml",
       "definitionReference": {
@@ -320,7 +320,7 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$MyShuttle-Docker-yaml-id$",
+          "id": "$MyShuttle-Docker-YAML-id$",
           "name": "MyShuttle-Docker-yaml"
         },
         "definitions": {
