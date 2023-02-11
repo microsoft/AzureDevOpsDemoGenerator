@@ -2221,7 +2221,7 @@ namespace VstsDemoBuilder.Services
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
-                    if (model.SelectedTemplate == "MyHealthClinic" || model.SelectedTemplate == "PartsUnlimited" || model.SelectedTemplate == "PartsUnlimited-agile")
+                    if (model.SelectedTemplate == "Gen-MyHealthClinic" || model.SelectedTemplate == "Gen-PartsUnlimited")
                     {
                         if (isDashboardDeleted)
                         {
@@ -2243,14 +2243,14 @@ namespace VstsDemoBuilder.Services
                                          Replace("$projectName$", model.ProjectName);
 
 
-                            if (model.SelectedTemplate == "MyHealthClinic")
+                            if (model.SelectedTemplate == "Gen-MyHealthClinic")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$ReleaseDefId$", model.ReleaseDefinitions.Where(x => x.Name == "MyHealthClinicE2E").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "MyHealthClinicE2E").FirstOrDefault().Id : string.Empty).
                                              Replace("$ActiveBugs$", queryResults.Where(x => x.name == "Active Bugs_WI").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Active Bugs_WI").FirstOrDefault().id : string.Empty).
                                              Replace("$MyHealthClinicE2E$", model.BuildDefinitions.Where(x => x.Name == "MyHealthClinicE2E").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "MyHealthClinicE2E").FirstOrDefault().Id : string.Empty).
                                                  Replace("$RepositoryId$", model.Environment.repositoryIdList.Any(i => i.Key.ToLower().Contains("myhealthclinic")) ? model.Environment.repositoryIdList.Where(x => x.Key.ToLower() == "myhealthclinic").FirstOrDefault().Value : string.Empty);
                             }
-                            if (model.SelectedTemplate == "PartsUnlimited" || model.SelectedTemplate == "PartsUnlimited-agile")
+                            if (model.SelectedTemplate == "Gen-MyHealthClinic" || model.SelectedTemplate == "Gen-PartsUnlimited")
                             {
                                 QueryResponse workInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress_WI", "Shared%20Queries");
 
@@ -2286,7 +2286,7 @@ namespace VstsDemoBuilder.Services
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
-                    if (model.SelectedTemplate == "MyShuttleDocker")
+                    if (model.SelectedTemplate == "DL-Docker")
                     {
                         if (isDashboardDeleted)
                         {
@@ -2297,8 +2297,6 @@ namespace VstsDemoBuilder.Services
                                   .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
                                   .Replace("$Bugs$", queryResults.Where(x => x.name == "Bugs").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Bugs").FirstOrDefault().id : string.Empty)
                                   .Replace("$AllWorkItems$", queryResults.Where(x => x.name == "All Work Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "All Work Items").FirstOrDefault().id : string.Empty)
-                                  .Replace("$Test Plan$", queryResults.Where(x => x.name == "Test Plans").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Plans").FirstOrDefault().id : string.Empty)
-                                  .Replace("$Test Cases$", queryResults.Where(x => x.name == "Test Cases").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Test Cases").FirstOrDefault().id : string.Empty)
                                   .Replace("$Feature$", queryResults.Where(x => x.name == "Feature").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Feature").FirstOrDefault().id : string.Empty)
                                   .Replace("$Tasks$", queryResults.Where(x => x.name == "Tasks").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Tasks").FirstOrDefault().id : string.Empty)
                                          .Replace("$RepoMyShuttleDocker$", model.Environment.repositoryIdList.Where(x => x.Key == "MyShuttleDocker").FirstOrDefault().ToString() != "" ? model.Environment.repositoryIdList.Where(x => x.Key == "MyShuttleDocker").FirstOrDefault().Value : string.Empty);
@@ -2308,7 +2306,7 @@ namespace VstsDemoBuilder.Services
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
-                    if (model.SelectedTemplate == "MyShuttle")
+                    if (model.SelectedTemplate == "Gen-MyShuttle")
                     {
                         if (isDashboardDeleted)
                         {
@@ -2349,7 +2347,7 @@ namespace VstsDemoBuilder.Services
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
-                    if (model.SelectedTemplate.ToLower() == "docker" || model.SelectedTemplate.ToLower() == "php" || model.SelectedTemplate.ToLower() == "sonarqube" || model.SelectedTemplate.ToLower() == "github" || model.SelectedTemplate.ToLower() == "whitesource bolt" || model.SelectedTemplate == "DeploymentGroups" || model.SelectedTemplate == "Octopus")
+                    if (model.SelectedTemplate.ToLower() == "dl-docker" || model.SelectedTemplate.ToLower() == "dl-php" || model.SelectedTemplate.ToLower() == "dl-sonarqube" || model.SelectedTemplate.ToLower() == "dl-github" || model.SelectedTemplate.ToLower() == "dl-whitesource bolt" || model.SelectedTemplate.ToLower() == "dl-DeploymentGroups" || model.SelectedTemplate.ToLower() == "dl-octopus")
                     {
                         if (isDashboardDeleted)
                         {
@@ -2360,25 +2358,25 @@ namespace VstsDemoBuilder.Services
                                          .Replace("$Projectid$", model.Environment.ProjectId)
                                          .Replace("$Epic$", queryResults.Where(x => x.name == "Epics").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Epics").FirstOrDefault().id : string.Empty);
 
-                            if (model.SelectedTemplate.ToLower() == "docker")
+                            if (model.SelectedTemplate.ToLower() == "dl-docker")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$BuildDocker$", model.BuildDefinitions.Where(x => x.Name == "MHCDocker.build").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "MHCDocker.build").FirstOrDefault().Id : string.Empty)
                                 .Replace("$ReleaseDocker$", model.ReleaseDefinitions.Where(x => x.Name == "MHCDocker.release").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "MHCDocker.release").FirstOrDefault().Id : string.Empty)
                                   .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty);
                             }
-                            else if (model.SelectedTemplate.ToLower() == "php")
+                            else if (model.SelectedTemplate.ToLower() == "dl-php")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$buildPHP$", model.BuildDefinitions.Where(x => x.Name == "PHP").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "PHP").FirstOrDefault().Id : string.Empty)
                         .Replace("$releasePHP$", model.ReleaseDefinitions.Where(x => x.Name == "PHP").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "PHP").FirstOrDefault().Id : string.Empty)
                                  .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty);
                             }
-                            else if (model.SelectedTemplate.ToLower() == "sonarqube")
+                            else if (model.SelectedTemplate.ToLower() == "dl-sonarqube")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$BuildSonarQube$", model.BuildDefinitions.Where(x => x.Name == "SonarQube").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "SonarQube").FirstOrDefault().Id : string.Empty)
                                 .Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty);
 
                             }
-                            else if (model.SelectedTemplate.ToLower() == "github")
+                            else if (model.SelectedTemplate.ToLower() == "dl-github")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
                                              .Replace("$buildGitHub$", model.BuildDefinitions.Where(x => x.Name == "GitHub").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "GitHub").FirstOrDefault().Id : string.Empty)
@@ -2386,19 +2384,19 @@ namespace VstsDemoBuilder.Services
                                              .Replace("$releaseGitHub$", model.ReleaseDefinitions.Where(x => x.Name == "GitHub").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "GitHub").FirstOrDefault().Id : string.Empty);
 
                             }
-                            else if (model.SelectedTemplate.ToLower() == "whitesource bolt")
+                            else if (model.SelectedTemplate.ToLower() == "dl-whitesource bolt")
                             {
                                 dashBoardTemplate = dashBoardTemplate.Replace("$PBI$", queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault() != null ? queryResults.Where(x => x.name == "Product Backlog Items").FirstOrDefault().id : string.Empty)
                                           .Replace("$buildWhiteSource$", model.BuildDefinitions.Where(x => x.Name == "WhiteSourceBolt").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "WhiteSourceBolt").FirstOrDefault().Id : string.Empty);
                             }
 
-                            else if (model.SelectedTemplate == "DeploymentGroups")
+                            else if (model.SelectedTemplate.ToLower() == "dl-deploymentGroups")
                             {
                                 QueryResponse WorkInProgress = objQuery.GetQueryByPathAndName(model.ProjectName, "Work in Progress_WI", "Shared%20Queries");
                                 dashBoardTemplate = dashBoardTemplate.Replace("$WorkinProgress$", WorkInProgress.id);
                             }
 
-                            else if (model.SelectedTemplate == "Octopus")
+                            else if (model.SelectedTemplate.ToLower() == "dl-octopus")
                             {
                                 var BuildDefId = model.BuildDefinitions.FirstOrDefault();
                                 if (BuildDefId != null)
@@ -2414,7 +2412,7 @@ namespace VstsDemoBuilder.Services
                         }
                     }
 
-                    if (model.SelectedTemplate.ToLower() == "smarthotel360")
+                    if (model.SelectedTemplate.ToLower() == "gen-smarthotel360")
                     {
                         if (isDashboardDeleted)
                         {
