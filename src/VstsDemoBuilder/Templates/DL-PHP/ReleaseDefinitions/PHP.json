@@ -298,7 +298,7 @@
   ],
   "artifacts": [
     {
-      "sourceId": "$ProjectId$:$php-yaml-id$",
+      "sourceId": "$ProjectId$:$PHP-YAML-id$",
       "type": "Build",
       "alias": "_php-yaml",
       "definitionReference": {
@@ -319,7 +319,7 @@
           "name": "Latest"
         },
         "definition": {
-          "id": "$php-yaml-id$",
+          "id": "$PHP-YAML-id$",
           "name": "php-yaml"
         },
         "definitions": {
