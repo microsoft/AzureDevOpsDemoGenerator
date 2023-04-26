@@ -21,6 +21,7 @@ using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
 using VstsRestAPI;
 using VstsRestAPI.Build;
+using VstsRestAPI.DeliveryPlans;
 using VstsRestAPI.DeploymentGRoup;
 using VstsRestAPI.Extractor;
 using VstsRestAPI.Git;
@@ -631,7 +632,7 @@ namespace VstsDemoBuilder.Services
                                     }
                                 }
                             }
-                            catch(Exception ex)
+                            catch (Exception ex)
                             {
 
                             }
@@ -908,7 +909,8 @@ namespace VstsDemoBuilder.Services
             // create varibale groups
 
             CreateVaribaleGroups(model, _variableGroupApiVersion);
-
+            // create delivery plans
+            CreateDeliveryPlans(model, _workItemsVersion);
             //create build Definition
             string buildDefinitionsPath = string.Empty;
             model.BuildDefinitions = new List<BuildDef>();
@@ -1046,7 +1048,7 @@ namespace VstsDemoBuilder.Services
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
                 AddMessage(model.id.ErrorId(), "Error while forking repository :" + ex.Message);
@@ -2677,9 +2679,9 @@ namespace VstsDemoBuilder.Services
                                     {
                                         isImported = model.Environment.ReposImported[model.Environment.repositoryIdList[repository]];
                                     }
-                                    
+
                                     string placeHolder = string.Format("${0}$", repository);
-                                    if(json.Contains(placeHolder))
+                                    if (json.Contains(placeHolder))
                                     {
                                         json = json.Replace(placeHolder, model.Environment.repositoryIdList[repository])
                                             .Replace("$Name$", name).Replace("$ProjectID$", model.Environment.ProjectId);
@@ -2687,7 +2689,7 @@ namespace VstsDemoBuilder.Services
                                     }
                                 }
                             }
-                            if(isImported)
+                            if (isImported)
                             {
                                 bool isWiki = manageWiki.CreateCodeWiki(json);
                                 if (isWiki)
@@ -2903,12 +2905,51 @@ namespace VstsDemoBuilder.Services
                 Directory.CreateDirectory(privatePath);
             }
             string[] privatedirs = Directory.GetDirectories(privatePath);
-            
+
             if (privatedirs.Contains(privateTemplate))
             {
                 return true;
             }
             return false;
+        }
+
+        public void CreateDeliveryPlans(Project model, VstsRestAPI.Configuration _projectConfig)
+        {
+            try
+            {
+                Plans plans = new Plans(_projectConfig);
+                string plansPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\DeliveryPlans");
+                if (Directory.Exists(plansPath))
+                {
+                    string[] files = Directory.GetFiles(plansPath);
+                    if (files.Length > 0)
+                    {
+                        foreach (var dfile in files)
+                        {
+                            string content = File.ReadAllText(dfile);
+                            Dictionary<object, object> dict = new Dictionary<object, object>();
+                            dict = JsonConvert.DeserializeObject<Dictionary<object, object>>(content);
+                            var planCreated = plans.AddDeliveryPlan(content, _projectConfig.Project);
+                            if (!string.IsNullOrEmpty(planCreated.id))
+                            {
+                                if (dict.ContainsKey("revision"))
+                                {
+                                    dict["revision"] = 1;
+                                }
+                                else
+                                {
+                                    dict.Add("revision", 1);
+                                }
+                                plans.UpdateDeliveryPlan(JsonConvert.SerializeObject(dict), _projectConfig.Project, planCreated.id);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

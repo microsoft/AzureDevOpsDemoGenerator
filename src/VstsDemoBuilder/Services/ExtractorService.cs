@@ -11,6 +11,7 @@ using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
 using VstsRestAPI;
+using VstsRestAPI.DeliveryPlans;
 using VstsRestAPI.ExtensionManagement;
 using VstsRestAPI.Extractor;
 using VstsRestAPI.ProjectsAndTeams;
@@ -18,6 +19,8 @@ using VstsRestAPI.QueriesAndWidgets;
 using VstsRestAPI.Service;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.GitHub;
+using VstsRestAPI.Viewmodel.Plans;
+using static VstsRestAPI.Viewmodel.Plans.DeliveryPlans;
 using Parameters = VstsRestAPI.Viewmodel.Extractor.GetServiceEndpoints;
 
 namespace VstsDemoBuilder.Services
@@ -245,11 +248,13 @@ namespace VstsDemoBuilder.Services
             ExportWorkItems(appConfig);
             AddMessage(model.id, "Work Items");
 
+            ExportDeliveryPlans(appConfig);
+            AddMessage(model.id, "Delivery Plans");
+
             ExportRepositoryList(appConfig);
             AddMessage(model.id, "Repository and Service Endpoint");
 
             GetServiceEndpoints(appConfig);
-
             int count = GetBuildDefinitions(appConfig);
             if (count >= 1)
             {
@@ -1569,6 +1574,41 @@ namespace VstsDemoBuilder.Services
                 }
             }
             return varibaleGroupDictionary;
+        }
+
+        public void ExportDeliveryPlans(ProjectConfigurations appConfig)
+        {
+            try
+            {
+                Plans plans = new Plans(appConfig.WorkItemConfig);
+                GetPlans.Root plansList = plans.GetDeliveryPlans(appConfig.WorkItemConfig.AccountName, appConfig.WorkItemConfig.Project);
+                if (plansList.count > 0)
+                {
+                    string templatePath = extractedTemplatePath + appConfig.WorkItemConfig.Project;
+
+                    foreach (var plan in plansList.value)
+                    {
+                        APlan.Root aplan = plans.GetAPlan(appConfig.WorkItemConfig.AccountName, appConfig.WorkItemConfig.Project, plan.id);
+                        if (!string.IsNullOrEmpty(aplan.id))
+                        {
+                            if (!(Directory.Exists(templatePath + "\\DeliveryPlans")))
+                            {
+                                Directory.CreateDirectory(templatePath + "\\DeliveryPlans");
+                                File.WriteAllText(templatePath + $"\\DeliveryPlans\\{aplan.name}.json", JsonConvert.SerializeObject(aplan, Formatting.Indented));
+                            }
+                            else
+                            {
+                                File.WriteAllText(templatePath + $"\\DeliveryPlans\\{aplan.name}.json", JsonConvert.SerializeObject(aplan, Formatting.Indented));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
         }
         #endregion END GENERATE ARTIFACTS
     }
