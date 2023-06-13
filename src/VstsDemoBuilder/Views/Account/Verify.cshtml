@@ -90,7 +90,7 @@
     $(document).ready(function () {
         $('#signInWithVSTS').click(function () {
             appInsights.trackEvent("Sign in button clicked");
-            gtag('event', 'clicked', {
+            gtag('event', 'SignIn', {
                 'event_category': 'Sign In',
                 'event_label': 'Sign In',
                 'event_action': 'clicked',
@@ -99,7 +99,7 @@
             window.location.href="../Account/index";
         });
 
-        gtag('event', 'visited', {
+        gtag('event', 'Verify', {
             'event_category': 'Verify page',
             'event_label': 'Verify page',
             'event_action': 'visited',

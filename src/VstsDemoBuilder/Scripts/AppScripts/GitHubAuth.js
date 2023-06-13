@@ -5,7 +5,7 @@ $(document).ready(function () {
         mywindown = window.open(reqorigon + "/GitHub/GitOauth", "Azure DevOps Demo Generator", "width=500,height=500",
             "width=300,height=400,scrollbars=yes");
         checkSession();
-        gtag('event', 'clicked', {
+        gtag('event', 'GitHubAuthorize', {
             'event_category': 'GitHubAuthorize',
             'event_label': 'GitHubAuthorize',
             'event_action': 'clicked',

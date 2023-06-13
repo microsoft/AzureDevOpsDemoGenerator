@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
 
     $('#buildYourTemplate').click(function () {
-        gtag('event', 'visited', {
+        gtag('event', 'Build Your Template', {
             'event_category': 'Build Your Template',
             'event_label': 'Build Your Template',
             'event_action': 'visited',
@@ -26,7 +26,7 @@ $(document).ready(function () {
     $("input[id=Select]").attr('disabled', true);
     $("#btnUserShow").attr('disabled', true);
 
-    gtag('event', 'visited', {
+    gtag('event', 'Create page', {
         'event_category': 'Create page',
         'event_label': 'Create page',
         'event_action': 'visited',
@@ -76,7 +76,7 @@ $(document).ready(function (event) {
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
-        gtag('event', 'clicked', {
+        gtag('event', 'Choose Template', {
             'event_category': 'Choose Template Button',
             'event_label': 'Choose Template Button',
             'event_action': 'clicked',
@@ -247,10 +247,10 @@ $(document).ready(function (event) {
 
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionsForSelectedTemplate = templateFolder;
-        gtag('event', 'clicked', {
+        gtag('event', checkExtensionsForSelectedTemplate, {
             'event_category': 'Selected Template',
             'event_label': checkExtensionsForSelectedTemplate,
-            'event_action': 'clicked',
+            'event_action': 'selected',
             'send_to': '__GAKEY__'
         });
         if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "--select organiaztion--") {
@@ -642,7 +642,7 @@ $('#btnSubmit').click(function () {
         $('input[id="gitHubCheckbox"]').prop('disabled', true);
         appInsights.trackEvent("Create button clicked");
         appInsights.trackEvent("Created project using" + selectedTemplate + " template");
-        gtag('event', 'selected', {
+        gtag('event', selectedTemplate, {
             'event_category': 'Selected Template',
             'event_label': selectedTemplate,
             'event_action': 'selected',

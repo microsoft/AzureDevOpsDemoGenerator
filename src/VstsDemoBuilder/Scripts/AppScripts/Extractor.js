@@ -174,7 +174,7 @@ $(document).ready(function () {
     });
 
     $('#Analyse').click(function () {
-        gtag('event', 'clicked', {
+        gtag('event', 'Analyze', {
             'event_category': 'Analyze Button',
             'event_label': 'Analyze Button',
             'event_action': 'clicked',
@@ -279,7 +279,7 @@ $(document).ready(function () {
     });
 
     $('#GenerateArtifacts').click(function () {
-        gtag('event', 'clicked', {
+        gtag('event', 'Generate Artifact', {
             'event_category': 'Generate Artifact',
             'event_label': 'Generate Artifact',
             'event_action': 'clicked',
@@ -335,7 +335,7 @@ $(document).ready(function () {
         });
     });
     $('#fileDownload').click(function () {
-        gtag('event', 'clicked', {
+        gtag('event', 'fileDownload', {
             'event_category': 'fileDownload',
             'event_label': 'fileDownload',
             'event_action': 'clicked',
