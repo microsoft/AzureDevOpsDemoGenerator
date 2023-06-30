@@ -174,7 +174,12 @@ $(document).ready(function () {
     });
 
     $('#Analyse').click(function () {
-        ga('send', 'event', 'Analyze Button', 'clicked');
+        gtag('event', 'Analyze', {
+            'event_category': 'Analyze Button',
+            'event_label': 'Analyze Button',
+            'event_action': 'clicked',
+            'send_to': '__GAKEY__'
+        });
         var SourceAcc = $("#ddlAcccountName").val();
         var project = $("#projectSelect").val();
         var projectName = $("#projectSelect option:selected").text();
@@ -274,7 +279,12 @@ $(document).ready(function () {
     });
 
     $('#GenerateArtifacts').click(function () {
-        ga('send', 'event', 'Generate Artifact', 'clicked');
+        gtag('event', 'Generate Artifact', {
+            'event_category': 'Generate Artifact',
+            'event_label': 'Generate Artifact',
+            'event_action': 'clicked',
+            'send_to': '__GAKEY__'
+        });
         $('.accorDetails').removeClass('show');
         var SourceAcc = $("#ddlAcccountName").val();
         var project = $("#projectSelect").val();
@@ -325,7 +335,12 @@ $(document).ready(function () {
         });
     });
     $('#fileDownload').click(function () {
-        ga('send', 'event', 'fileDownload', 'clicked');
+        gtag('event', 'fileDownload', {
+            'event_category': 'fileDownload',
+            'event_label': 'fileDownload',
+            'event_action': 'clicked',
+            'send_to': '__GAKEY__'
+        });
     });
 
     $('#switch').click(function () {
