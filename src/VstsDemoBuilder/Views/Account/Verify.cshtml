@@ -90,11 +90,21 @@
     $(document).ready(function () {
         $('#signInWithVSTS').click(function () {
             appInsights.trackEvent("Sign in button clicked");
-            ga('send', 'event', 'Sign In', 'Clicked');
+            gtag('event', 'SignIn', {
+                'event_category': 'Sign In',
+                'event_label': 'Sign In',
+                'event_action': 'clicked',
+                'send_to': '__GAKEY__'
+            });
             window.location.href="../Account/index";
         });
 
-        ga('send', 'event', 'Verify page', 'visited');
+        gtag('event', 'Verify', {
+            'event_category': 'Verify page',
+            'event_label': 'Verify page',
+            'event_action': 'visited',
+            'send_to': '__GAKEY__'
+        });
     });
 
 	$("input").on("keypress", function (e) {

@@ -4,7 +4,12 @@ $(document).ready(function () {
     $("#privateTemplatepop").removeClass('d-block').addClass('d-none');
 
     $('#buildYourTemplate').click(function () {
-        ga('send', 'event', 'Build Your Template', 'visited');
+        gtag('event', 'Build Your Template', {
+            'event_category': 'Build Your Template',
+            'event_label': 'Build Your Template',
+            'event_action': 'visited',
+            'send_to': '__GAKEY__'
+        });
     });
 
     $(window).scroll(function () {
@@ -21,8 +26,12 @@ $(document).ready(function () {
     $("input[id=Select]").attr('disabled', true);
     $("#btnUserShow").attr('disabled', true);
 
-    ga('send', 'event', 'Create page', 'visited');
-
+    gtag('event', 'Create page', {
+        'event_category': 'Create page',
+        'event_label': 'Create page',
+        'event_action': 'visited',
+        'send_to': '__GAKEY__'
+    });
     $('#switch').click(function () {
         $('#notify').removeClass('d-none');
     })
@@ -67,7 +76,12 @@ $(document).ready(function (event) {
     $('#templateselection').click(function () {
         $('.VSTemplateSelection').removeClass('d-none').addClass('d-block');
         $('#ddlTemplates_Error').removeClass("d-block").addClass("d-none");
-        ga('send', 'event', 'Choose Template Button', 'Clicked');
+        gtag('event', 'Choose Template', {
+            'event_category': 'Choose Template Button',
+            'event_label': 'Choose Template Button',
+            'event_action': 'clicked',
+            'send_to': '__GAKEY__'
+        });
     });
 
     //ON CHANGE OF ACCOUNT- VALIDATE EXTENSION
@@ -233,7 +247,12 @@ $(document).ready(function (event) {
 
         var accountNameToCheckExtension = $('#ddlAcccountName option:selected').val();
         var checkExtensionsForSelectedTemplate = templateFolder;
-        ga('send', 'event', 'Selected Template : ', checkExtensionsForSelectedTemplate);
+        gtag('event', checkExtensionsForSelectedTemplate, {
+            'event_category': 'Selected Template',
+            'event_label': checkExtensionsForSelectedTemplate,
+            'event_action': 'selected',
+            'send_to': '__GAKEY__'
+        });
         if (accountNameToCheckExtension === "" || accountNameToCheckExtension === "--select organiaztion--") {
             return false;
         }
@@ -623,7 +642,12 @@ $('#btnSubmit').click(function () {
         $('input[id="gitHubCheckbox"]').prop('disabled', true);
         appInsights.trackEvent("Create button clicked");
         appInsights.trackEvent("Created project using" + selectedTemplate + " template");
-        ga('send', 'event', selectedTemplate, 'selected');
+        gtag('event', selectedTemplate, {
+            'event_category': 'Selected Template',
+            'event_label': selectedTemplate,
+            'event_action': 'selected',
+            'send_to': '__GAKEY__'
+        });
         appInsights.trackEvent("User method" + userMethod);
 
         $('#ddlGroups').attr("disabled", "disabled");
