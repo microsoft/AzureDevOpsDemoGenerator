@@ -4,6 +4,8 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
+using VstsRestAPI.Viewmodel.BranchPolicy;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.Queue;
 
@@ -260,6 +262,58 @@ namespace VstsRestAPI.Extractor
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
             }
             return new Dictionary<string, int>();
+        }
+
+        // Get Policy Types to Replace the policy type id placeholder in the Create Policy Request
+        public BranchPolicyTypes.PolicyTypes GetPolicyTypes()
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync(_configuration.UriString + "/" + Project + "/_apis/policy/types?api-version=" + _configuration.VersionNumber).Result;
+                    if (response.IsSuccessStatusCode && response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        string result = response.Content.ReadAsStringAsync().Result;
+                        BranchPolicyTypes.PolicyTypes policyTypes = JsonConvert.DeserializeObject<BranchPolicyTypes.PolicyTypes>(result);
+                        return policyTypes;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return new BranchPolicyTypes.PolicyTypes();
+        }
+        public bool CreateBranchPolicy(string json, string project)
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    var method = new HttpMethod("POST");
+
+                    var request = new HttpRequestMessage(method, project + "/_apis/policy/configurations?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                    var response = client.SendAsync(request).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        var errorMessage = response.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "QueueBuild" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
+            return false;
         }
     }
 }

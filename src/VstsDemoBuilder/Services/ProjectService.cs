@@ -32,6 +32,8 @@ using VstsRestAPI.Release;
 using VstsRestAPI.Service;
 using VstsRestAPI.Services;
 using VstsRestAPI.TestManagement;
+using VstsRestAPI.Viewmodel.BranchPolicy;
+using VstsRestAPI.Viewmodel.Build;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.GitHub;
 using VstsRestAPI.Viewmodel.Importer;
@@ -983,6 +985,13 @@ namespace VstsDemoBuilder.Services
                 AddMessage(model.id, "Release definition created");
             }
 
+            //Create Branch Policy
+            bool isBuildPolicyCreated = CreateBranchPolicy(model,_buildVersion);
+            if (isBuildPolicyCreated)
+            {
+                AddMessage(model.id, "Branch Policy created");
+            }
+
             //Create query and widgets
             List<string> listDashboardQueriesPath = new List<string>();
             string dashboardQueriesPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\Dashboard\Queries");
@@ -1002,6 +1011,89 @@ namespace VstsDemoBuilder.Services
 
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName, templateUsed };
+        }
+
+        private bool CreateBranchPolicy(Project model, Configuration buildConfig)
+        {
+            bool isBranchPolicyCreated = false;
+            try
+            {
+                string branchPolicyPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\BranchPolicy");
+                BuildandReleaseDefs objBuild = new BuildandReleaseDefs(buildConfig);
+                List<JObject> buildDefsList = objBuild.ExportBuildDefinitions();
+                if (buildDefsList!=null && buildDefsList.Count > 0)
+                {
+                    int buildDefId = 0;
+                    foreach(JObject buildDef in buildDefsList)
+                    {
+                        var yamalfilename = buildDef["process"]["yamlFilename"];
+                        if (yamalfilename!=null && !string.IsNullOrEmpty(yamalfilename.ToString()))
+                        {
+                            buildDefId = Convert.ToInt32(buildDef["id"]);
+                        }
+                    }
+                    BranchPolicyTypes.PolicyTypes policyTypes = objBuild.GetPolicyTypes();
+                    if (policyTypes != null)
+                    {
+                        if (buildDefId > 0)
+                        {
+                            string buildPolicyPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\BranchPolicy\BuildPolicy.json");
+                            if (File.Exists(buildPolicyPath))
+                            {
+                                string buildPolicyJson = File.ReadAllText(buildPolicyPath);
+                                if (!string.IsNullOrEmpty(buildPolicyJson))
+                                {
+                                    BranchPolicy.BuildPolicy buildPolicy = JsonConvert.DeserializeObject<BranchPolicy.BuildPolicy>(buildPolicyJson);
+                                    if (buildPolicy != null)
+                                    {
+                                        string policyTypeId = policyTypes.value.Where(x => x.displayName == buildPolicy.type.displayName).Select(x => x.id).FirstOrDefault();
+                                        buildPolicyJson = buildPolicyJson.Replace("$policyTypeId$", buildDefId.ToString());
+                                    }
+                                    foreach (string repository in model.Environment.repositoryIdList.Keys)
+                                    {
+                                        string placeHolder = string.Format("${0}$", repository);
+                                        buildPolicyJson = buildPolicyJson.Replace(placeHolder, model.Environment.repositoryIdList[repository]);
+                                    }
+                                    buildPolicyJson = buildPolicyJson.Replace("$buildDefId$", buildDefId.ToString())
+                                        .Replace("$projectId$", model.ProjectId)
+                                        .Replace("$orgName$", model.accountName);
+                                    bool isBuildPolicyCreated = objBuild.CreateBranchPolicy(buildPolicyJson, model.ProjectName);
+                                    isBranchPolicyCreated = true;
+                                }
+                            }
+                        }
+                        string wiLinkPolicyPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\BranchPolicy\WorkItemLinkPolicy.json");
+                        if (File.Exists(wiLinkPolicyPath))
+                        {
+                            string wiLinkPolicyJson = File.ReadAllText(wiLinkPolicyPath);
+                            if (!string.IsNullOrEmpty(wiLinkPolicyJson))
+                            {
+                                BranchPolicy.WorkItemLinkPolicy wiLinkPolicy = JsonConvert.DeserializeObject<BranchPolicy.WorkItemLinkPolicy>(wiLinkPolicyJson);
+                                if (wiLinkPolicy != null)
+                                {
+                                    string policyTypeId = policyTypes.value.Where(x => x.displayName == wiLinkPolicy.type.displayName).Select(x => x.id).FirstOrDefault();
+                                    wiLinkPolicyJson = wiLinkPolicyJson.Replace("$policyTypeId$", buildDefId.ToString());
+                                }
+                                foreach (string repository in model.Environment.repositoryIdList.Keys)
+                                {
+                                    string placeHolder = string.Format("${0}$", repository);
+                                    wiLinkPolicyJson = wiLinkPolicyJson.Replace(placeHolder, model.Environment.repositoryIdList[repository]);
+                                }
+                                wiLinkPolicyJson = wiLinkPolicyJson.Replace("$projectId$", model.ProjectId)
+                                    .Replace("$orgName$", model.accountName);
+                                bool isBuildPolicyCreated = objBuild.CreateBranchPolicy(wiLinkPolicyJson, model.ProjectName);
+                                isBranchPolicyCreated = true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                AddMessage(model.id.ErrorId(), "Error while creating branch policy : "+ex.Message);
+            }
+            return isBranchPolicyCreated;
         }
 
         private void ForkGitHubRepository(Project model, Configuration _gitHubConfig)

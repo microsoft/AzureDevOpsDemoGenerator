@@ -449,6 +449,8 @@
     <Content Include="Images\outlook.png" />
     <Content Include="Images\sideImg.png" />
     <Content Include="Scripts\AppScripts\GitHubAuth.js" />
+    <Content Include="Templates\Gen-PartsUnlimited-YAML\BranchPolicy\BuildPolicy.json" />
+    <Content Include="Templates\Gen-PartsUnlimited-YAML\BranchPolicy\WorkItemLinkPolicy.json" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
