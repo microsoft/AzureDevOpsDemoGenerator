@@ -20,6 +20,7 @@ using VstsRestAPI.Service;
 using VstsRestAPI.Viewmodel.Extractor;
 using VstsRestAPI.Viewmodel.GitHub;
 using VstsRestAPI.Viewmodel.Plans;
+using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using static VstsRestAPI.Viewmodel.Plans.DeliveryPlans;
 using Parameters = VstsRestAPI.Viewmodel.Extractor.GetServiceEndpoints;
 
@@ -1586,9 +1587,36 @@ namespace VstsDemoBuilder.Services
                 {
                     string templatePath = extractedTemplatePath + appConfig.WorkItemConfig.Project;
 
+                    VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(appConfig.BoardConfig);
+                    string defaultTeamID = string.Empty;
+
+                    var teamsRes = nodes.GetTeams();
+                    RootTeams rootTeams = new RootTeams();
+                    if (teamsRes != null && teamsRes.IsSuccessStatusCode)
+                    {
+                        rootTeams = JsonConvert.DeserializeObject<RootTeams>(teamsRes.Content.ReadAsStringAsync().Result);
+                    }
+
                     foreach (var plan in plansList.value)
                     {
                         APlan.Root aplan = plans.GetAPlan(appConfig.WorkItemConfig.AccountName, appConfig.WorkItemConfig.Project, plan.id);
+                        if (aplan.properties?.teamBacklogMappings != null)
+                        {
+                            foreach (var team in aplan.properties?.teamBacklogMappings)
+                            {
+                                if (rootTeams.count > 0)
+                                {
+                                    foreach (var teams in rootTeams.value)
+                                    {
+                                        if (team.teamId == teams.id)
+                                        {
+                                            team.teamId = $"${teams.name}$";
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         if (!string.IsNullOrEmpty(aplan.id))
                         {
                             if (!(Directory.Exists(templatePath + "\\DeliveryPlans")))
