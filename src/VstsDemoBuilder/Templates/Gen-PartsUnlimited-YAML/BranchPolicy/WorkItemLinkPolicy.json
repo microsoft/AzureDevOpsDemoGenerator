@@ -14,7 +14,7 @@
   "isEnterpriseManaged": false,
   "type": {
     "id": "$policyTypeId$",
-    "url": "https://dev.azure.com/$orgName$/$projectId$/_apis/policy/types/$policyTypeId$",
+    "url": "$policyTypeUrl$",
     "displayName": "Work item linking"
   }
 }

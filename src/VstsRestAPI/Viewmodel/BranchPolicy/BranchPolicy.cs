@@ -8,21 +8,12 @@ namespace VstsRestAPI.Viewmodel.BranchPolicy
 {
     public class BranchPolicy
     {
-        public class BuildPolicy
+        public class Policy
         {
             public bool isEnabled { get; set; }
             public bool isBlocking { get; set; }
             public bool isDeleted { get; set; }
-            public BuildSettings settings { get; set; }
-            public bool isEnterpriseManaged { get; set; }
-            public Type type { get; set; }
-        }
-        public class WorkItemLinkPolicy
-        {
-            public bool isEnabled { get; set; }
-            public bool isBlocking { get; set; }
-            public bool isDeleted { get; set; }
-            public WorkItemLinkSettings settings { get; set; }
+            public Settings settings { get; set; }
             public bool isEnterpriseManaged { get; set; }
             public Type type { get; set; }
         }
@@ -34,17 +25,13 @@ namespace VstsRestAPI.Viewmodel.BranchPolicy
             public string repositoryId { get; set; }
         }
 
-        public class BuildSettings
+        public class Settings
         {
-            public int buildDefinitionId { get; set; }
+            public string buildDefinitionId { get; set; }
             public bool queueOnSourceUpdateOnly { get; set; }
             public bool manualQueueOnly { get; set; }
             public object displayName { get; set; }
             public double validDuration { get; set; }
-            public List<Scope> scope { get; set; }
-        }
-        public class WorkItemLinkSettings
-        {
             public List<Scope> scope { get; set; }
         }
 

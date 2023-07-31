@@ -3,7 +3,7 @@
   "isBlocking": true,
   "isDeleted": false,
   "settings": {
-    "buildDefinitionId": $buildDefId$,
+    "buildDefinitionId": "$buildDefId$",
     "queueOnSourceUpdateOnly": true,
     "manualQueueOnly": false,
     "displayName": null,
@@ -19,7 +19,7 @@
   "isEnterpriseManaged": false,
   "type": {
     "id": "$policyTypeId$",
-    "url": "https://dev.azure.com/$orgName$/$projectId$/_apis/policy/types/$policyTypeId$",
+    "url": "$policyTypeUrl$",
     "displayName": "Build"
   }
 }
