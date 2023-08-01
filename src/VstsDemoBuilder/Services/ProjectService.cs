@@ -3058,9 +3058,21 @@ namespace VstsDemoBuilder.Services
                     string[] files = Directory.GetFiles(plansPath);
                     if (files.Length > 0)
                     {
+                        VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(_projectConfig);
+                        string defaultTeamID = string.Empty;
+                        var teamsRes = nodes.GetTeams();
+                        RootTeams rootTeams = new RootTeams();
+                        if (teamsRes != null && teamsRes.IsSuccessStatusCode)
+                        {
+                            rootTeams = JsonConvert.DeserializeObject<RootTeams>(teamsRes.Content.ReadAsStringAsync().Result);
+                        }
                         foreach (var dfile in files)
                         {
                             string content = File.ReadAllText(dfile);
+                            foreach(var team in rootTeams.value)
+                            {
+                                content = content.Replace($"${team.name}$", team.id);
+                            }
                             Dictionary<object, object> dict = new Dictionary<object, object>();
                             dict = JsonConvert.DeserializeObject<Dictionary<object, object>>(content);
                             var planCreated = plans.AddDeliveryPlan(content, _projectConfig.Project);

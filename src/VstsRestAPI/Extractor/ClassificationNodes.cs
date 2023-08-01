@@ -238,5 +238,24 @@ namespace VstsRestAPI.Extractor
             }
             return new ExportedIterations.Iterations();
         }
+
+      //  GET https://dev.azure.com/{organization}/_apis/projects/{projectId}/teams?api-version=7.0
+
+        public HttpResponseMessage GetTeams()
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    HttpResponseMessage response = client.GetAsync(string.Format("{0}/_apis/projects/{1}/teams?api-version={2}", _configuration.UriString, ProjectId, "7.0")).Result;
+                    return response;
+                }
+            }
+            catch(Exception ex)
+            {
+                logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + ex.Message + "\n" + ex.StackTrace + "\n");
+            }
+            return new HttpResponseMessage();
+        }
     }
 }
