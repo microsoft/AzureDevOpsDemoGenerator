@@ -994,21 +994,42 @@ namespace VstsDemoBuilder.Services
 
             //Create query and widgets
             List<string> listDashboardQueriesPath = new List<string>();
-            string dashboardQueriesPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\Dashboard\Queries");
-            //templatesFolder + templateUsed + @"\Dashboard\Queries";
             string dashboardPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\Dashboard");
-            //templatesFolder + templateUsed + @"\Dashboard";
-
-            if (Directory.Exists(dashboardQueriesPath))
-            {
-                Directory.GetFiles(dashboardQueriesPath).ToList().ForEach(i => listDashboardQueriesPath.Add(i));
-            }
+            List<string> dashboardDirectories = new List<string>();
             if (Directory.Exists(dashboardPath))
             {
-                CreateQueryAndWidgets(model, listDashboardQueriesPath, _queriesVersion, _dashboardVersion, _releaseVersion, _projectCreationVersion, _boardVersion);
+                dashboardDirectories = Directory.GetDirectories(dashboardPath).ToList();
+            }
+            teamName = string.Empty;
+            if (dashboardDirectories.Count > 0)
+            {
+                foreach (string dashboardDirectory in dashboardDirectories)
+                {
+                    if (Path.GetFileName(dashboardDirectory) == "Queries")
+                    {
+                        teamName = null;
+                    }
+                    else
+                    {
+                        teamName = Path.GetFileName(dashboardDirectory);
+                    }
+                    string dashboardQueryPath = string.Empty;
+                    dashboardQueryPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, @"\Dashboard\Queries");
+                    if(teamName != null)
+                    {
+                        dashboardQueryPath = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, $"\\Dashboard\\{teamName}\\Queries");
+                    }
+                    if (Directory.Exists(dashboardQueryPath))
+                    {
+                        listDashboardQueriesPath = Directory.GetFiles(dashboardQueryPath).ToList();
+                        if (listDashboardQueriesPath.Count > 0)
+                        {
+                            CreateQueryAndWidgets(model, listDashboardQueriesPath, _queriesVersion, _dashboardVersion, _releaseVersion, _projectCreationVersion, _boardVersion,teamName);
+                        }
+                    }
+                }
                 AddMessage(model.id, "Queries, Widgets and Charts created");
             }
-
             StatusMessages[model.id] = "100";
             return new string[] { model.id, accountName, templateUsed };
         }
@@ -2212,7 +2233,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_configuration2"></param>
         /// <param name="_configuration3"></param>
         /// <param name="releaseConfig"></param>
-        public void CreateQueryAndWidgets(Project model, List<string> listQueries, VstsRestAPI.Configuration _queriesVersion, VstsRestAPI.Configuration _dashboardVersion, VstsRestAPI.Configuration _releaseConfig, VstsRestAPI.Configuration _projectConfig, VstsRestAPI.Configuration _boardConfig)
+        public void CreateQueryAndWidgets(Project model, List<string> listQueries, VstsRestAPI.Configuration _queriesVersion, VstsRestAPI.Configuration _dashboardVersion, VstsRestAPI.Configuration _releaseConfig, VstsRestAPI.Configuration _projectConfig, VstsRestAPI.Configuration _boardConfig,string teamName=null)
         {
             try
             {
@@ -2221,22 +2242,36 @@ namespace VstsDemoBuilder.Services
                 List<QueryResponse> queryResults = new List<QueryResponse>();
 
                 //GetDashBoardDetails
-                string dashBoardId = objWidget.GetDashBoardId(model.ProjectName);
+                string dashBoardId = objWidget.GetDashBoardId(model.ProjectName,teamName);
                 Thread.Sleep(2000); // Adding delay to get the existing dashboard ID 
 
                 if (!string.IsNullOrEmpty(objQuery.LastFailureMessage))
                 {
                     AddMessage(model.id.ErrorId(), "Error while getting dashboardId: " + objWidget.LastFailureMessage + Environment.NewLine);
                 }
-
+                Queries _newobjQuery = new Queries(_queriesVersion);
+                bool isFolderCreated=false;
+                if (!string.IsNullOrEmpty(teamName))
+                {
+                    string createQueryFolderJson = File.ReadAllText(HostingEnvironment.MapPath("~") + @"PreSetting\\CreateQueryFolder.json");
+                    createQueryFolderJson = createQueryFolderJson.Replace("$TeamName$", teamName);
+                    QueryResponse createFolderResponse = _newobjQuery.CreateQuery(model.ProjectName, createQueryFolderJson);
+                    isFolderCreated=createFolderResponse.id!=null? true : false;
+                }
                 foreach (string query in listQueries)
                 {
-                    Queries _newobjQuery = new Queries(_queriesVersion);
-
                     //create query
                     string json = model.ReadJsonFile(query);
                     json = json.Replace("$projectId$", model.Environment.ProjectName);
-                    QueryResponse response = _newobjQuery.CreateQuery(model.ProjectName, json);
+                    QueryResponse response = new QueryResponse();
+                    if (isFolderCreated)
+                    {
+                        response = _newobjQuery.CreateQuery(model.ProjectName, json,teamName);
+                    }
+                    else
+                    {
+                        response = _newobjQuery.CreateQuery(model.ProjectName, json);
+                    }
                     queryResults.Add(response);
 
                     if (!string.IsNullOrEmpty(_newobjQuery.LastFailureMessage))
@@ -2246,8 +2281,15 @@ namespace VstsDemoBuilder.Services
 
                 }
                 //Create DashBoards
-                string dashBoardTemplate = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard\Dashboard.json");
-                //string.Format(templatesFolder + @"{0}\Dashboard\Dashboard.json", model.SelectedTemplate);
+                string dashBoardTemplate = string.Empty;
+                if(!string.IsNullOrEmpty(teamName))
+                {
+                    dashBoardTemplate = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, $"\\Dashboard\\{teamName}\\Dashboard.json");
+                }
+                else
+                {
+                    dashBoardTemplate = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\Dashboard\Dashboard.json");
+                }
                 if (File.Exists(dashBoardTemplate))
                 {
                     dynamic dashBoard = new System.Dynamic.ExpandoObject();
@@ -2255,9 +2297,9 @@ namespace VstsDemoBuilder.Services
                     dashBoard.position = 4;
 
                     string jsonDashBoard = Newtonsoft.Json.JsonConvert.SerializeObject(dashBoard);
-                    string dashBoardIdToDelete = objWidget.CreateNewDashBoard(model.ProjectName, jsonDashBoard);
+                    string dashBoardIdToDelete = objWidget.CreateNewDashBoard(model.ProjectName, jsonDashBoard,teamName);
 
-                    bool isDashboardDeleted = objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardId);
+                    bool isDashboardDeleted = objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardId,teamName);
 
                     if (model.SelectedTemplate.ToLower() == "bikesharing360")
                     {
@@ -2540,6 +2582,26 @@ namespace VstsDemoBuilder.Services
 
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
+                        }
+                    }
+                    if (model.SelectedTemplate.ToLower() == "gen-eshoponweb")
+                    {
+                        if (isDashboardDeleted)
+                        {
+                            dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
+                            Teams objTeam = new Teams(_projectConfig);
+                            TeamResponse teamDetails = objTeam.GetTeamByName(model.ProjectName, teamName != null ? teamName : model.ProjectName + " team");
+                            foreach (string queries in listQueries)
+                            {
+                                string queryName = Path.GetFileName(queries).Replace(".json", string.Empty);
+                                string placeHolder = "$" + queryName + "$";
+                                QueryResponse query = objQuery.GetQueryByPathAndName(model.ProjectName, queryName, "Shared%20Queries/"+teamName);
+                                dashBoardTemplate = dashBoardTemplate.Replace(placeHolder, query.id != null ? query.id : string.Empty);
+                            }
+                            dashBoardTemplate = dashBoardTemplate.Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty).
+                                Replace("$DefaultTeamId$", teamDetails.id != null ? teamDetails.id : string.Empty);
+                            string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate,teamName);
+                            objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete,teamName);
                         }
                     }
                 }

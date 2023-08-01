@@ -1,0 +1,55 @@
+{
+  "id": "3fd0d03d-f3f5-4dbc-957e-06e46b623b85",
+  "revision": 1,
+  "name": "App-DB features",
+  "type": "deliveryTimelineView",
+  "properties": {
+    "teamBacklogMappings": [
+      {
+        "teamId": "7f1602f9-8a59-485c-a7b2-1b488be95ae8",
+        "categoryReferenceName": "Microsoft.FeatureCategory"
+      },
+      {
+        "teamId": "6c5f3fe6-0e93-4245-83b6-5b9a90447bda",
+        "categoryReferenceName": "Microsoft.FeatureCategory"
+      }
+    ],
+    "criteria": null,
+    "cardSettings": {
+      "fields": {
+        "showId": false,
+        "showAssignedTo": true,
+        "assignedToDisplayFormat": "avatarAndFullName",
+        "showState": true,
+        "showTags": true,
+        "showParent": false,
+        "showEmptyFields": false,
+        "showChildRollup": false,
+        "additionalFields": null,
+        "coreFields": [
+          {
+            "referenceName": "System.AssignedTo",
+            "displayName": "Assigned To",
+            "fieldType": "string",
+            "isIdentity": true
+          },
+          {
+            "referenceName": "System.State",
+            "displayName": "State",
+            "fieldType": "string",
+            "isIdentity": false
+          },
+          {
+            "referenceName": "System.Tags",
+            "displayName": "Tags",
+            "fieldType": "plainText",
+            "isIdentity": false
+          }
+        ]
+      }
+    },
+    "markers": null,
+    "styleSettings": [],
+    "tagStyleSettings": []
+  }
+}

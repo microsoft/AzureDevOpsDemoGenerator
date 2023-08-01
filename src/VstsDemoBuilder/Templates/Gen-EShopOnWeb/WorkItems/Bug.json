@@ -1,0 +1,412 @@
+{
+  "count": 9,
+  "value": [
+    {
+      "id": 4886,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Bug",
+        "System.State": "Resolved",
+        "System.Reason": "Fixed",
+        "System.CreatedDate": "2023-07-10T10:54:39.203Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-27T13:12:51.64Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Failed to capture the credit card payment details",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 8.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4602",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4886"
+    },
+    {
+      "id": 4888,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Bug",
+        "System.State": "Resolved",
+        "System.Reason": "Fixed",
+        "System.CreatedDate": "2023-07-10T10:56:17.827Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-27T13:12:51.64Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Items are removed automatically when the new item added to the wishlist",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 8.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4591",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4888"
+    },
+    {
+      "id": 4891,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Bug",
+        "System.State": "Active",
+        "System.Reason": "Approved",
+        "System.CreatedDate": "2023-07-10T10:57:49.82Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-27T13:12:31.023Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Pages are taking long time to load in peak time ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 16.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4590",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4891"
+    },
+    {
+      "id": 4892,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Bug",
+        "System.State": "Resolved",
+        "System.Reason": "Fixed",
+        "System.CreatedDate": "2023-07-10T10:58:06.32Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-17T04:57:07.45Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Images are not displaying properly",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 19.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4590",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4892"
+    },
+    {
+      "id": 5291,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "eShoponweb",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-22T10:59:32.16Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-22T10:59:33.24Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Admin account not authenticated",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5283",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///TestManagement/TcmResultAttachment/1000381.100000.1000214",
+          "attributes": {
+            "authorizedDate": "2023-07-22T10:59:33.24Z",
+            "id": "14684520",
+            "resourceCreatedDate": "2023-07-22T10:59:33.24Z",
+            "resourceModifiedDate": "2023-07-22T10:59:33.24Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Result Attachment"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///TestManagement/TcmResult/1000381.100000",
+          "attributes": {
+            "authorizedDate": "2023-07-22T10:59:32.16Z",
+            "id": "14684518",
+            "resourceCreatedDate": "2023-07-22T10:59:32.16Z",
+            "resourceModifiedDate": "2023-07-22T10:59:32.16Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Test Result"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///TestManagement/TcmResultAttachment/1000381.100000.1000213",
+          "attributes": {
+            "authorizedDate": "2023-07-22T10:59:32.16Z",
+            "id": "14684519",
+            "resourceCreatedDate": "2023-07-22T10:59:32.16Z",
+            "resourceModifiedDate": "2023-07-22T10:59:32.16Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "comment": "Admin account not authenticating.png",
+            "name": "Result Attachment"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5291"
+    },
+    {
+      "id": 5293,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Bug",
+        "System.State": "Closed",
+        "System.Reason": "Verified",
+        "System.CreatedDate": "2023-07-26T11:28:29.413Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T09:57:45.513Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Build 20230719.1 failed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Microsoft.VisualStudio.Services.TFS <00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5293"
+    },
+    {
+      "id": 5299,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Bug",
+        "System.State": "Closed",
+        "System.Reason": "Verified",
+        "System.CreatedDate": "2023-07-27T11:28:29.183Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T09:57:44.203Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Build 20230720.1 failed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5299"
+    },
+    {
+      "id": 5305,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "Build Failure",
+        "System.CreatedDate": "2023-07-28T11:28:28.53Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T11:28:28.53Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Build 20230721.1 failed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Microsoft.VisualStudio.Services.TFS <00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Build/Build/1287",
+          "attributes": {
+            "authorizedDate": "2023-07-28T11:28:28.53Z",
+            "id": "14755046",
+            "resourceCreatedDate": "2023-07-28T11:28:28.53Z",
+            "resourceModifiedDate": "2023-07-28T11:28:28.53Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Found in build"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5305"
+    },
+    {
+      "id": 5306,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "Build Failure",
+        "System.CreatedDate": "2023-07-31T05:27:24.98Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-31T05:27:24.98Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Build 20230724.1 failed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Microsoft.VisualStudio.Services.TFS <00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Build/Build/1295",
+          "attributes": {
+            "authorizedDate": "2023-07-31T05:27:24.98Z",
+            "id": "14767418",
+            "resourceCreatedDate": "2023-07-31T05:27:24.98Z",
+            "resourceModifiedDate": "2023-07-31T05:27:24.98Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Found in build"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5306"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
