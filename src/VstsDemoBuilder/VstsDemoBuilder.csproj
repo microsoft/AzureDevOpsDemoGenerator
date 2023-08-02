@@ -2059,7 +2059,6 @@
     <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL-DB\Dashboard.json" />
     <Content Include="Templates\Gen-EShopOnWeb\BranchPolicy\BuildPolicy.json" />
     <Content Include="Templates\Gen-EShopOnWeb\BranchPolicy\WorkItemLinkPolicy.json" />
-    <Content Include="Templates\Gen-EShopOnWeb\BuildDefinitions\eShoponweb-ASPNET Core-CI.json" />
     <Content Include="Templates\Gen-EShopOnWeb\BuildDefinitions\eShoponweb-Yaml.json" />
     <Content Include="Templates\Gen-EShopOnWeb\DeliveryPlans\App-DB features.json" />
     <Content Include="Templates\Gen-EShopOnWeb\DeliveryPlans\DevelopmentPlan.json" />
