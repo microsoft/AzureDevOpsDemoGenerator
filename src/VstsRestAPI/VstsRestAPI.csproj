@@ -213,6 +213,7 @@
     <Compile Include="Viewmodel\Importer\ImpotCardStyle.cs" />
     <Compile Include="Viewmodel\Importer\ImportBoardColumns.cs" />
     <Compile Include="Viewmodel\Importer\ImportCardFields.cs" />
+    <Compile Include="Viewmodel\Importer\IncludeSubAreas.cs" />
     <Compile Include="Viewmodel\Plans\APlan.cs" />
     <Compile Include="Viewmodel\Plans\DeliveryPlans.cs" />
     <Compile Include="Viewmodel\ProjectAndTeams\AccountMembers.cs" />

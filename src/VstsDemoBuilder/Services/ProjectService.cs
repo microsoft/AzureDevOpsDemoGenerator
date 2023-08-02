@@ -560,6 +560,7 @@ namespace VstsDemoBuilder.Services
                     string jsonTeams = model.ReadJsonFile(teamsJsonPath);
                     JArray jTeams = JsonConvert.DeserializeObject<JArray>(jsonTeams);
                     JContainer teamsParsed = JsonConvert.DeserializeObject<JContainer>(jsonTeams);
+                    _buildVersion.ProjectId = model.Environment.ProjectId;
                     foreach (var jteam in jTeams)
                     {
                         string _teamName = string.Empty;
@@ -654,6 +655,25 @@ namespace VstsDemoBuilder.Services
                                         UpdateCardStyles(model, JsonConvert.SerializeObject(cardStyle), _boardVersion, model.id, cardStyle.BoardName, _teamName);
                                     }
                                 }
+                            }
+
+                            template.IncludeSubAreas = "IncludeSubAreas.json";
+                            string includeSubArea = Path.Combine(teamFolderPath, template.IncludeSubAreas);
+                            if (File.Exists(includeSubArea))
+                            {
+                                Teams objTeam = new Teams(_boardVersion);
+                                TeamResponse teamRes = objTeam.GetTeamByName(model.ProjectName, _teamName);
+                                _boardVersion.ProjectId = model.Environment.ProjectId;
+
+                                includeSubArea = File.ReadAllText(includeSubArea);
+                                IncludeSubAreas.Root subAreas = JsonConvert.DeserializeObject<IncludeSubAreas.Root>(includeSubArea);
+
+                                subAreas.defaultValue = model.Environment.ProjectName;
+                                subAreas.values.FirstOrDefault().includeChildren = true;
+                                subAreas.values.FirstOrDefault().value = model.Environment.ProjectName;
+
+                                BoardColumn board = new BoardColumn(_boardVersion);
+                                board.IncludeSubAreas(JsonConvert.SerializeObject(subAreas), _boardVersion, teamRes);
                             }
                         }
                         AddMessage(model.id, "Board-Column, Swimlanes, Styles updated");
@@ -3058,6 +3078,7 @@ namespace VstsDemoBuilder.Services
                     string[] files = Directory.GetFiles(plansPath);
                     if (files.Length > 0)
                     {
+                        _projectConfig.ProjectId = model.Environment.ProjectId;
                         VstsRestAPI.Extractor.ClassificationNodes nodes = new VstsRestAPI.Extractor.ClassificationNodes(_projectConfig);
                         string defaultTeamID = string.Empty;
                         var teamsRes = nodes.GetTeams();
@@ -3093,6 +3114,17 @@ namespace VstsDemoBuilder.Services
                 }
             }
             catch (Exception ex)
+            {
+
+            }
+        }
+
+        public void IncludeSubAreas(string json, VstsRestAPI.Configuration _projectConfig, TeamResponse teamRes)
+        {
+            try
+            {
+            }
+            catch(Exception ex)
             {
 
             }

@@ -137,6 +137,7 @@ namespace VstsDemoBuilder.Models
         public string TeamArea { get; set; }
         public string TestPlanfromTemplate { get; set; }
         public string TestSuitefromTemplate { get; set; }
+        public string IncludeSubAreas { get; set; }
     }
 
     public class ProjectSettings

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using VstsRestAPI.Viewmodel.ProjectAndTeams;
 using VstsRestAPI.Viewmodel.WorkItem;
 
 namespace VstsRestAPI.WorkItemAndTracking
@@ -86,7 +87,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch (Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "UpdateBoard" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return false;
         }
@@ -122,7 +123,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch(Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetBoardColumns" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetBoardColumnResponse.ColumnResponse();
         }
@@ -152,9 +153,39 @@ namespace VstsRestAPI.WorkItemAndTracking
             }
             catch(Exception ex)
             {
-                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "CreateNewTeam" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "GetBoardColumnsAgile" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
             return new GetBoardColumnResponseAgile.ColumnResponse();
+        }
+
+        public void IncludeSubAreas(string json, VstsRestAPI.Configuration _projectConfig, TeamResponse teamRes)
+        {
+            try
+            {
+                using (var client = GetHttpClient())
+                {
+                    var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    var method = new HttpMethod("PATCH");
+                    string url = $"{_projectConfig.UriString}{_projectConfig.ProjectId}/_apis/work/teamsettings/teamfieldvalues?api-version=7.0";
+                    HttpRequestMessage request = new HttpRequestMessage(method, url);
+                    request.Content = jsonContent;
+                    var res = client.SendAsync(request).Result;
+                    if (res.IsSuccessStatusCode)
+                    {
+
+                    }
+                    else
+                    {
+                        var errorMessage = res.Content.ReadAsStringAsync();
+                        string error = Utility.GeterroMessage(errorMessage.Result.ToString());
+                        this.LastFailureMessage = error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "IncludeSubAreas" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
+            }
         }
     }
 }

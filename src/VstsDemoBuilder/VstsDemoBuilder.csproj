@@ -2143,6 +2143,7 @@
     <Content Include="Templates\Gen-EShopOnWeb\Dashboard\App Development Team\Queries\AppDevelopmentTeam Bugs.json" />
     <Content Include="Templates\Gen-EShopOnWeb\Dashboard\App Development Team\Queries\AllWorkofAppdevTeam.json" />
     <Content Include="Templates\Gen-EShopOnWeb\Dashboard\App Development Team\Queries\TestcaseinDesignState.json" />
+    <Content Include="Templates\Gen-EShopOnWeb\Teams\eShoponweb Team\IncludeSubAreas.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

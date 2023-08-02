@@ -5,9 +5,9 @@
       "id": 5292,
       "rev": 1,
       "fields": {
-        "System.AreaPath": "eShoponweb",
-        "System.TeamProject": "eShoponweb",
-        "System.IterationPath": "eShoponweb",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
         "System.WorkItemType": "Shared Steps",
         "System.State": "Active",
         "System.Reason": "New",

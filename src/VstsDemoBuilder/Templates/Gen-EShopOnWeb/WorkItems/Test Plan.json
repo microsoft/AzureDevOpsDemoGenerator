@@ -5,9 +5,9 @@
       "id": 4564,
       "rev": 2,
       "fields": {
-        "System.AreaPath": "eShoponweb",
-        "System.TeamProject": "eShoponweb",
-        "System.IterationPath": "eShoponweb",
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
         "System.WorkItemType": "Test Plan",
         "System.State": "Active",
         "System.Reason": "New test plan",

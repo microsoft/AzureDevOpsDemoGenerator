@@ -6,11 +6,11 @@
   "properties": {
     "teamBacklogMappings": [
       {
-        "teamId": "7f1602f9-8a59-485c-a7b2-1b488be95ae8",
+        "teamId": "$App Development Team$",
         "categoryReferenceName": "Microsoft.RequirementCategory"
       },
       {
-        "teamId": "6c5f3fe6-0e93-4245-83b6-5b9a90447bda",
+        "teamId": "$DBA Team$",
         "categoryReferenceName": "Microsoft.RequirementCategory"
       }
     ],
