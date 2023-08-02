@@ -525,6 +525,7 @@
     <Content Include="Templates\DL-SonarQube\Images\build_summary.png" />
     <Content Include="Templates\Gen-Tailwind Traders\Images\Architecture.png" />
     <Content Include="Templates\Gen-Tailwind Traders\Images\Website.png" />
+    <Content Include="Templates\TemplateImages\eShop.png" />
     <Content Include="Templates\TemplateImages\mslearn\bicep-publish-code-pipelines.png" />
     <Content Include="Templates\TemplateImages\policy-org.png" />
     <Content Include="Templates\TemplateImages\Ansible.png" />
