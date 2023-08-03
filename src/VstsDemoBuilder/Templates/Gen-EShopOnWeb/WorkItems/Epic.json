@@ -608,6 +608,46 @@
         }
       ],
       "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4902"
+    },
+    {
+      "id": 5310,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-08-03T10:38:06.74Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-08-03T10:38:49.817Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Login and Registration functionality",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5311",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5310"
     }
   ],
   "HttpStatusCode": 0,

@@ -2091,8 +2091,6 @@
     <Content Include="Templates\Gen-EShopOnWeb\WorkItems\Shared Steps.json" />
     <Content Include="Templates\Gen-EShopOnWeb\WorkItems\Task.json" />
     <Content Include="Templates\Gen-EShopOnWeb\WorkItems\Test Case.json" />
-    <Content Include="Templates\Gen-EShopOnWeb\WorkItems\Test Plan.json" />
-    <Content Include="Templates\Gen-EShopOnWeb\WorkItems\Test Suite.json" />
     <Content Include="Templates\Gen-EShopOnWeb\WorkItems\User Story.json" />
     <Content Include="Templates\Gen-EShopOnWeb\Dashboard\App Development Team\Dashboard.json" />
     <Content Include="Templates\Gen-EShopOnWeb\Dashboard\Queries\Active Bugs.json" />
@@ -2144,6 +2142,8 @@
     <Content Include="Templates\Gen-EShopOnWeb\Dashboard\App Development Team\Queries\AllWorkofAppdevTeam.json" />
     <Content Include="Templates\Gen-EShopOnWeb\Dashboard\App Development Team\Queries\TestcaseinDesignState.json" />
     <Content Include="Templates\Gen-EShopOnWeb\Teams\eShoponweb Team\IncludeSubAreas.json" />
+    <Content Include="Templates\Gen-EShopOnWeb\TestPlans\TestPlan.json" />
+    <Content Include="Templates\Gen-EShopOnWeb\TestPlans\TestSuites\TestPlan.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

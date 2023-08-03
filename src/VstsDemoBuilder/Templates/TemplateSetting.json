@@ -16,6 +16,20 @@
       "Groups": "General",
       "Template": [
         {
+          "Key": "bd068fd0-10dc-475f-8483-78e983b5e211",
+          "Name": "eShopOnWeb",
+          "TemplateFolder": "Gen-eShopOnWeb",
+          "ShortName": "eShopOnWeb",
+          "Description": "Sample ASP.NET Core reference application, powered by Microsoft, demonstrating a single-process (monolithic) application architecture and deployment model.<a href='https://github.com/dotnet-architecture/eShopOnWeb' target='_blank'>GitHub</a>",
+          "Tags": [
+            "agile",
+            "aspdotnetcore",
+            "User stories"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/eShop.png"
+        },
+        {
           "Key": "77379",
           "Name": "PartsUnlimited",
           "TemplateFolder": "Gen-PartsUnlimited",
@@ -150,21 +164,8 @@
           ],
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/ContosAir.png"
-        },
-        {
-          "Key": "bd068fd0-10dc-475f-8483-78e983b5e211",
-          "Name": "eShopOnWeb",
-          "TemplateFolder": "Gen-eShopOnWeb",
-          "ShortName": "eShopOnWeb",
-          "Description": "Sample ASP.NET Core reference application, powered by Microsoft, demonstrating a single-process (monolithic) application architecture and deployment model.<a href='https://github.com/dotnet-architecture/eShopOnWeb' target='_blank'>GitHub</a>",
-          "Tags": [
-            "agile",
-            "aspdotnetcore",
-            "User stories"
-          ],
-          "Author": "Microsoft",
-          "Image": "/Templates/TemplateImages/eShop.png"
         }
+
       ]
     },
     {

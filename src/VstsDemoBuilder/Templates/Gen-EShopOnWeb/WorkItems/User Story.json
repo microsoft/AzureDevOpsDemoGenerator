@@ -1,5 +1,5 @@
 {
-  "count": 48,
+  "count": 50,
   "value": [
     {
       "id": 4506,
@@ -2380,6 +2380,118 @@
         }
       ],
       "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5303"
+    },
+    {
+      "id": 5312,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Active",
+        "System.CreatedDate": "2023-08-03T10:39:11.327Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-08-03T10:41:31.967Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Login and new user registraion to the eShopOnWeb portal using email id and password",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5311",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4566",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4579",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4572",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5312"
+    },
+    {
+      "id": 5313,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-08-03T10:39:40.62Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-08-03T10:39:40.62Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Register to eShop using your email id and passoword",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4572",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5311",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5313"
     }
   ],
   "HttpStatusCode": 0,
