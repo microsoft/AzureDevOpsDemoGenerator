@@ -752,7 +752,6 @@
     <Content Include="Templates\Gen-PartsUnlimited\BoardRowsFromTemplate.json" />
     <Content Include="Templates\Gen-PartsUnlimited\BugfromTemplate.json" />
     <Content Include="Templates\Gen-PartsUnlimited\BuildDefinitions\PartsUnlimitedE2E.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\WidgetQuery.json" />
     <Content Include="Templates\Gen-PartsUnlimited\EnableEpic.json" />
     <Content Include="Templates\Gen-PartsUnlimited\EpicfromTemplate.json" />
     <Content Include="Templates\Gen-PartsUnlimited\Extensions.json" />
@@ -2033,30 +2032,6 @@
     <Content Include="Templates\FA-IAC-migration\WorkItems\Task.json" />
     <Content Include="Templates\FA-IAC-migration\WorkItems\User Story.json" />
     <Content Include="Templates\FA-IAC-migration\ImportSourceCode\GitRepository.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PartsUnlimited Team\Queries\All Items.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PartsUnlimited Team\Queries\Critical Bugs.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PartsUnlimited Team\Queries\Feedback.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PartsUnlimited Team\Queries\Test Case-Readiness.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PartsUnlimited Team\Queries\UnfinishedWork.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PartsUnlimited Team\Queries\User Stories.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PartsUnlimited Team\Queries\Work in Progress.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PartsUnlimited Team\Dashboard.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL\Queries\All Items.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL\Queries\Critical Bugs.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL\Queries\Feedback.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL\Queries\Test Case-Readiness.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL\Queries\UnfinishedWork.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL\Queries\User Stories.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL\Queries\Work in Progress.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL\Dashboard.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL-DB\Queries\All Items.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL-DB\Queries\Critical Bugs.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL-DB\Queries\Feedback.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL-DB\Queries\Test Case-Readiness.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL-DB\Queries\UnfinishedWork.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL-DB\Queries\User Stories.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL-DB\Queries\Work in Progress.json" />
-    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\PUL-DB\Dashboard.json" />
     <Content Include="Templates\Gen-EShopOnWeb\BranchPolicy\BuildPolicy.json" />
     <Content Include="Templates\Gen-EShopOnWeb\BranchPolicy\WorkItemLinkPolicy.json" />
     <Content Include="Templates\Gen-EShopOnWeb\BuildDefinitions\eShoponweb-Yaml.json" />
@@ -2144,6 +2119,15 @@
     <Content Include="Templates\Gen-EShopOnWeb\Teams\eShoponweb Team\IncludeSubAreas.json" />
     <Content Include="Templates\Gen-EShopOnWeb\TestPlans\TestPlan.json" />
     <Content Include="Templates\Gen-EShopOnWeb\TestPlans\TestSuites\TestPlan.json" />
+    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\Dashboard.json" />
+    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\Queries\All Items.json" />
+    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\Queries\Critical Bugs.json" />
+    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\Queries\Feedback.json" />
+    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\Queries\Test Case-Readiness.json" />
+    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\Queries\UnfinishedWork.json" />
+    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\Queries\User Stories.json" />
+    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\Queries\Work in Progress.json" />
+    <Content Include="Templates\Gen-PartsUnlimited\Dashboard\WidgetQuery.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2175,8 +2159,6 @@
     <Folder Include="Templates\DL-GitHub\Dashboard\Charts\" />
     <Folder Include="Templates\DL-GitHub\Dashboard\Widgets\" />
     <Folder Include="Templates\DL-LaunchDarkly\Dashboard\" />
-    <Folder Include="Templates\Gen-PartsUnlimited\Dashboard\Charts\" />
-    <Folder Include="Templates\Gen-PartsUnlimited\Dashboard\Widgets\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VstsRestAPI\VstsRestAPI.csproj">
