@@ -2038,7 +2038,7 @@
     <Content Include="Templates\Gen-EShopOnWeb\BuildDefinitions\eShoponweb-Yaml.json" />
     <Content Include="Templates\Gen-EShopOnWeb\DeliveryPlans\App-DB features.json" />
     <Content Include="Templates\Gen-EShopOnWeb\DeliveryPlans\DevelopmentPlan.json" />
-    <Content Include="Templates\Gen-EShopOnWeb\ImportSourceCode\eShoponweb.json" />
+    <Content Include="Templates\Gen-EShopOnWeb\ImportSourceCode\eShopOnWeb.json" />
     <Content Include="Templates\Gen-EShopOnWeb\Iterations.json" />
     <Content Include="Templates\Gen-EShopOnWeb\ProjectSettings.json" />
     <Content Include="Templates\Gen-EShopOnWeb\ProjectTemplate.json" />
