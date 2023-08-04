@@ -1,7 +1,5 @@
 {
-  "id": "3fd0d03d-f3f5-4dbc-957e-06e46b623b85",
-  "revision": 1,
-  "name": "App-DB features",
+  "name": "Application-DB Team features",
   "type": "deliveryTimelineView",
   "properties": {
     "teamBacklogMappings": [

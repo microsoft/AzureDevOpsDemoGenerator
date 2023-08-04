@@ -3,7 +3,7 @@
     "gitSource": {
       "url": "https://dev.azure.com/vstsdemodata/eShopOnWeb/_git/eShopOnWeb"
     },
-    "serviceEndpointId": "$eShoponweb-code$",
+    "serviceEndpointId": "$eShopOnWeb-code$",
     "deleteServiceEndpointAfterImportIsDone": true
   }
 }

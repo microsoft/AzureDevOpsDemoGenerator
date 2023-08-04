@@ -43,18 +43,18 @@
   },
   "repository": {
     "properties": {
-      "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/eShoponweb",
-      "fullName": "eShoponweb",
+      "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/eShopOnWeb",
+      "fullName": "eShopOnWeb",
       "defaultBranch": "refs/heads/main",
       "isFork": "False",
-      "safeRepository": "$eShoponweb$",
+      "safeRepository": "$eShopOnWeb$",
       "reportBuildStatus": "true",
       "fetchDepth": "1"
     },
-    "id": "$eShoponweb$",
+    "id": "$eShopOnWeb$",
     "type": "TfsGit",
-    "name": "eShoponweb",
-    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/eShoponweb",
+    "name": "eShopOnWeb",
+    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/eShopOnWeb",
     "defaultBranch": "refs/heads/main",
     "clean": null,
     "checkoutSubmodules": false
@@ -78,7 +78,7 @@
     }
   },
   "id": "",
-  "name": "eShoponweb-Yaml",
+  "name": "eShopOnWeb",
   "url": "",
   "uri": "",
   "path": "\\",

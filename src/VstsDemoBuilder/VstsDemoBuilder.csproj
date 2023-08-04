@@ -2042,7 +2042,6 @@
     <Content Include="Templates\Gen-EShopOnWeb\Iterations.json" />
     <Content Include="Templates\Gen-EShopOnWeb\ProjectSettings.json" />
     <Content Include="Templates\Gen-EShopOnWeb\ProjectTemplate.json" />
-    <Content Include="Templates\Gen-EShopOnWeb\ReleaseDefinitions\eShoponwebapp-Deployment.json" />
     <Content Include="Templates\Gen-EShopOnWeb\ServiceEndpoints\eShoponweb-code.json" />
     <Content Include="Templates\Gen-EShopOnWeb\TeamArea.json" />
     <Content Include="Templates\Gen-EShopOnWeb\Teams\App Development Team\BoardColumns.json" />
