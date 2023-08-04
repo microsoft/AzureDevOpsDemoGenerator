@@ -771,6 +771,34 @@
         }
       ],
       "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5290"
+    },
+    {
+      "id": 5322,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CommentCount": 0,
+        "System.Title": "Verify the background color of add to basket button",
+        "Microsoft.VSTS.Common.Priority": 2,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.Description": "0d 2h 45m",
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"3\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;Navigate to eShopOnWeb&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Check the color of ADD TO BASKET button&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;P&gt;color should be blue&lt;/P&gt;</parameterizedString><description/></step></steps>"
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/akshayhosur/269036b4-72bf-4849-a991-cbda5f5bef6f/_apis/wit/workItems/11417",
+          "attributes": {
+            "isLocked": false,
+            "name": "Tests"
+          }
+        }
+      ]
     }
   ],
   "HttpStatusCode": 0,
