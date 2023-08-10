@@ -21,6 +21,9 @@
     },
     "WebsiteName": {
       "value": "eshop$UUID$"
+    },
+    "rg_name": {
+      "value": "eShopOnWeb"
     }
   },
   "properties": {},
