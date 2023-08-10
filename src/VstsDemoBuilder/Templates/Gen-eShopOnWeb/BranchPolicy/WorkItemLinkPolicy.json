@@ -7,7 +7,7 @@
         {
           "refName": "refs/heads/main",
           "matchKind": "Exact",
-          "repositoryId": "$eShopOnWeb$"
+          "repositoryId": "$eshoponweb$"
         }
       ]
     },

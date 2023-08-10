@@ -1096,7 +1096,7 @@ namespace VstsDemoBuilder.Services
                                         policyJson = policyJson.Replace("$policyTypeId$", policyTypeId).Replace("$policyTypeUrl$", policyUrl);
                                         foreach (string repository in model.Environment.repositoryIdList.Keys)
                                         {
-                                            string placeHolder = string.Format("${0}$", repository);
+                                            string placeHolder = string.Format("${0}$", repository.ToLower());
                                             policyJson = policyJson.Replace(placeHolder, model.Environment.repositoryIdList[repository]);
                                         }
                                         policyJson = policyJson.Replace("$buildDefId$", buildDefId.ToString());
