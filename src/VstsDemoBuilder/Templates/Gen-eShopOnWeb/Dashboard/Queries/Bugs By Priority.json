@@ -1,0 +1,4 @@
+{
+  "name": "Bugs By Priority",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo], [System.State], [Microsoft.VSTS.Common.Priority] from WorkItems where [System.TeamProject] = @project and [System.WorkItemType] = 'Bug' and [Microsoft.VSTS.Common.Priority] <> '' and [System.State] <> 'Closed'"
+}

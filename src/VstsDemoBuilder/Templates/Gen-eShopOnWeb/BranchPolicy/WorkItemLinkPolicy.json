@@ -1,0 +1,20 @@
+{
+    "isEnabled": true,
+    "isBlocking": true,
+    "isDeleted": false,
+    "settings": {
+      "scope": [
+        {
+          "refName": "refs/heads/main",
+          "matchKind": "Exact",
+          "repositoryId": "$eShopOnWeb$"
+        }
+      ]
+    },
+    "isEnterpriseManaged": false,
+    "type": {
+      "id": "$policyTypeId$",
+      "url": "$policyTypeUrl$",
+      "displayName": "Work item linking"
+    }
+  }
