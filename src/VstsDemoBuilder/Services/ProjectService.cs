@@ -2608,6 +2608,8 @@ namespace VstsDemoBuilder.Services
                     {
                         if (isDashboardDeleted)
                         {
+                            string startDate = DateTime.Now.AddDays(-3).ToString("yyyy-MM-dd");
+                            string endDate = DateTime.Now.AddDays(3).ToString("yyyy-MM-dd");
                             dashBoardTemplate = model.ReadJsonFile(dashBoardTemplate);
                             Teams objTeam = new Teams(_projectConfig);
                             TeamResponse teamDetails = objTeam.GetTeamByName(model.ProjectName, teamName != null ? teamName : model.ProjectName + " team");
@@ -2619,8 +2621,8 @@ namespace VstsDemoBuilder.Services
                                 dashBoardTemplate = dashBoardTemplate.Replace(placeHolder, query.id != null ? query.id : string.Empty);
                             }
                             dashBoardTemplate = dashBoardTemplate.Replace("$projectId$", model.Environment.ProjectId != null ? model.Environment.ProjectId : string.Empty).
-                                Replace("$DefaultTeamId$", teamDetails.id != null ? teamDetails.id : string.Empty);
-                            string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate,teamName);
+                                Replace("$DefaultTeamId$", teamDetails.id != null ? teamDetails.id : string.Empty).Replace("$startDate$", startDate).Replace("$endDate$", endDate);
+                            string dashboardId = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate,teamName);
                             objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete,teamName);
                         }
                     }

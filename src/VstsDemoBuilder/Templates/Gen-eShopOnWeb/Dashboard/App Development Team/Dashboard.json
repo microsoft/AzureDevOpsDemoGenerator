@@ -204,7 +204,7 @@
         "rowSpan": 2,
         "columnSpan": 3
       },
-      "settings": "{\"teams\":[{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\"}],\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"completedWorkEnabled\":false,\"fieldFilters\":[],\"stackByWorkItemTypeEnabled\":false,\"burndownTrendlineEnabled\":true,\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"includeBugsForRequirementCategory\":false,\"timePeriodConfiguration\":{\"startDate\":\"2023-07-14\",\"samplingConfiguration\":{\"identifier\":0,\"settings\":{\"endDate\":\"2023-07-28\",\"lastDayOfWeek\":5,\"sampleInterval\":0}}},\"totalScopeTrendlineEnabled\":true,\"showResolvedItemsAsCompletedEnabled\":false}",
+      "settings": "{\"teams\":[{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\"}],\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"completedWorkEnabled\":false,\"fieldFilters\":[],\"stackByWorkItemTypeEnabled\":false,\"burndownTrendlineEnabled\":true,\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"includeBugsForRequirementCategory\":false,\"timePeriodConfiguration\":{\"startDate\":\"$startDate$\",\"samplingConfiguration\":{\"identifier\":0,\"settings\":{\"endDate\":\"$endDate$\",\"lastDayOfWeek\":5,\"sampleInterval\":0}}},\"totalScopeTrendlineEnabled\":true,\"showResolvedItemsAsCompletedEnabled\":false}",
       "settingsVersion": {
         "major": 1,
         "minor": 0,
@@ -276,32 +276,6 @@
       "loadingImageUrl": null
     },
     {
-      "name": "Assigned to Me",
-      "position": {
-        "row": 8,
-        "column": 4
-      },
-      "size": {
-        "rowSpan": 2,
-        "columnSpan": 3
-      },
-      "settings": null,
-      "settingsVersion": {
-        "major": 1,
-        "minor": 0,
-        "patch": 0
-      },
-      "artifactId": "",
-      "isEnabled": false,
-      "contentUri": null,
-      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget",
-      "typeId": null,
-      "configurationContributionId": null,
-      "configurationContributionRelativeId": null,
-      "isNameConfigurable": false,
-      "loadingImageUrl": null
-    },
-    {
       "name": "All User Stories by State",
       "position": {
         "row": 2,
@@ -341,7 +315,7 @@
         "rowSpan": 2,
         "columnSpan": 3
       },
-      "settings": "{\"teams\":[{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\"}],\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"completedWorkEnabled\":false,\"fieldFilters\":[],\"stackByWorkItemTypeEnabled\":false,\"burndownTrendlineEnabled\":true,\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"includeBugsForRequirementCategory\":false,\"timePeriodConfiguration\":{\"startDate\":\"2023-07-14\",\"samplingConfiguration\":{\"identifier\":0,\"settings\":{\"endDate\":\"2023-07-28\",\"lastDayOfWeek\":5,\"sampleInterval\":0}}},\"totalScopeTrendlineEnabled\":true,\"showResolvedItemsAsCompletedEnabled\":false}",
+      "settings": "{\"teams\":[{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\"}],\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"completedWorkEnabled\":false,\"fieldFilters\":[],\"stackByWorkItemTypeEnabled\":false,\"burndownTrendlineEnabled\":true,\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"includeBugsForRequirementCategory\":false,\"timePeriodConfiguration\":{\"startDate\":\"$startDate$\",\"samplingConfiguration\":{\"identifier\":0,\"settings\":{\"endDate\":\"$endDate$\",\"lastDayOfWeek\":5,\"sampleInterval\":0}}},\"totalScopeTrendlineEnabled\":true,\"showResolvedItemsAsCompletedEnabled\":false}",
       "settingsVersion": {
         "major": 1,
         "minor": 0,

@@ -20,15 +20,15 @@ namespace VstsRestAPI.QueriesAndWidgets
         /// </summary>
         /// <param name="projectName"></param>
         /// <returns></returns>
-        public string GetDashBoardId(string projectName,string teamName=null)
+        public string GetDashBoardId(string projectName, string teamName = null)
         {
             try
             {
                 string dashBoardId = string.Empty;
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = new HttpResponseMessage(); 
-                    if(string.IsNullOrEmpty(teamName))
+                    HttpResponseMessage response = new HttpResponseMessage();
+                    if (string.IsNullOrEmpty(teamName))
                     {
                         response = client.GetAsync(projectName + "/" + projectName + "%20Team/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber).Result;
                     }
@@ -67,7 +67,7 @@ namespace VstsRestAPI.QueriesAndWidgets
         /// <param name="project"></param>
         /// <param name="json"></param>
         /// <returns></returns>
-        public QueryResponse CreateQuery(string project, string json,string teamName=null)
+        public QueryResponse CreateQuery(string project, string json, string teamName = null)
         {
             try
             {
@@ -86,9 +86,9 @@ namespace VstsRestAPI.QueriesAndWidgets
                             var method = new HttpMethod("POST");
                             HttpRequestMessage request = new HttpRequestMessage();
                             request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
-                            if(!string.IsNullOrEmpty(teamName))
+                            if (!string.IsNullOrEmpty(teamName))
                             {
-                                request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/"+teamName+"?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                                request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/" + teamName + "?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                             }
                             var response = client.SendAsync(request).Result;
                             if (response.IsSuccessStatusCode)
@@ -192,7 +192,7 @@ namespace VstsRestAPI.QueriesAndWidgets
         /// <param name="project"></param>
         /// <param name="dashBoardId"></param>
         /// <returns></returns>
-        public bool DeleteDefaultDashboard(string project, string dashBoardId,string teamName=null)
+        public bool DeleteDefaultDashboard(string project, string dashBoardId, string teamName = null)
         {
             try
             {
@@ -235,7 +235,7 @@ namespace VstsRestAPI.QueriesAndWidgets
         /// <param name="project"></param>
         /// <param name="json"></param>
         /// <returns></returns>
-        public string CreateNewDashBoard(string project, string json,string teamName=null)
+        public string CreateNewDashBoard(string project, string json, string teamName = null)
         {
             try
             {
@@ -248,7 +248,7 @@ namespace VstsRestAPI.QueriesAndWidgets
                     var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                     if (!string.IsNullOrEmpty(teamName))
                     {
-                        request= new HttpRequestMessage(method, project + "/" + teamName + "/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                        request = new HttpRequestMessage(method, project + "/" + teamName + "/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
                     }
                     var response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
