@@ -2310,8 +2310,8 @@ namespace VstsDemoBuilder.Services
                                   .Replace("$BuildDocker$", model.BuildDefinitions.Where(x => x.Name == "MHCDocker.build").FirstOrDefault() != null ? model.BuildDefinitions.Where(x => x.Name == "MHCDocker.build").FirstOrDefault().Id : string.Empty)
                                   .Replace("$ReleaseDocker$", model.ReleaseDefinitions.Where(x => x.Name == "MHCDocker.release").FirstOrDefault() != null ? model.ReleaseDefinitions.Where(x => x.Name == "MHCDocker.release").FirstOrDefault().Id : string.Empty);
 
-                            objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                             string isDashBoardCreated = objWidget.CreateNewDashBoard(model.ProjectName, dashBoardTemplate);
+                            objWidget.DeleteDefaultDashboard(model.ProjectName, dashBoardIdToDelete);
                         }
                     }
                     if (model.SelectedTemplate == "Gen-MyShuttle")
