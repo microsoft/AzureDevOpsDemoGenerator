@@ -20,14 +20,22 @@ namespace VstsRestAPI.QueriesAndWidgets
         /// </summary>
         /// <param name="projectName"></param>
         /// <returns></returns>
-        public string GetDashBoardId(string projectName)
+        public string GetDashBoardId(string projectName, string teamName = null)
         {
             try
             {
                 string dashBoardId = string.Empty;
                 using (var client = GetHttpClient())
                 {
-                    HttpResponseMessage response = client.GetAsync(projectName + "/" + projectName + "%20Team/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber).Result;
+                    HttpResponseMessage response = new HttpResponseMessage();
+                    if (string.IsNullOrEmpty(teamName))
+                    {
+                        response = client.GetAsync(projectName + "/" + projectName + "%20Team/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber).Result;
+                    }
+                    else
+                    {
+                        response = client.GetAsync(projectName + "/" + teamName + "/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber).Result;
+                    }
                     if (response.IsSuccessStatusCode)
                     {
                         DashboardResponse.Dashboard dashBoard = response.Content.ReadAsAsync<DashboardResponse.Dashboard>().Result;
@@ -59,7 +67,7 @@ namespace VstsRestAPI.QueriesAndWidgets
         /// <param name="project"></param>
         /// <param name="json"></param>
         /// <returns></returns>
-        public QueryResponse CreateQuery(string project, string json)
+        public QueryResponse CreateQuery(string project, string json, string teamName = null)
         {
             try
             {
@@ -76,8 +84,12 @@ namespace VstsRestAPI.QueriesAndWidgets
                         {
                             var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
                             var method = new HttpMethod("POST");
-
-                            var request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                            HttpRequestMessage request = new HttpRequestMessage();
+                            request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                            if (!string.IsNullOrEmpty(teamName))
+                            {
+                                request = new HttpRequestMessage(method, project + "/_apis/wit/queries/Shared%20Queries/" + teamName + "?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                            }
                             var response = client.SendAsync(request).Result;
                             if (response.IsSuccessStatusCode)
                             {
@@ -180,7 +192,7 @@ namespace VstsRestAPI.QueriesAndWidgets
         /// <param name="project"></param>
         /// <param name="dashBoardId"></param>
         /// <returns></returns>
-        public bool DeleteDefaultDashboard(string project, string dashBoardId)
+        public bool DeleteDefaultDashboard(string project, string dashBoardId, string teamName = null)
         {
             try
             {
@@ -189,7 +201,12 @@ namespace VstsRestAPI.QueriesAndWidgets
                     using (var client = GetHttpClient())
                     {
                         var method = new HttpMethod("DELETE");
-                        var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards/" + dashBoardId + "?api-version=" + _configuration.VersionNumber);
+                        HttpRequestMessage request;
+                        request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards/" + dashBoardId + "?api-version=" + _configuration.VersionNumber);
+                        if (!string.IsNullOrEmpty(teamName))
+                        {
+                            request = new HttpRequestMessage(method, project + "/" + teamName + "/_apis/dashboard/dashboards/" + dashBoardId + "?api-version=" + _configuration.VersionNumber);
+                        }
                         var response = client.SendAsync(request).Result;
 
                         if (response.IsSuccessStatusCode)
@@ -218,7 +235,7 @@ namespace VstsRestAPI.QueriesAndWidgets
         /// <param name="project"></param>
         /// <param name="json"></param>
         /// <returns></returns>
-        public string CreateNewDashBoard(string project, string json)
+        public string CreateNewDashBoard(string project, string json, string teamName = null)
         {
             try
             {
@@ -229,6 +246,10 @@ namespace VstsRestAPI.QueriesAndWidgets
                     var method = new HttpMethod("POST");
 
                     var request = new HttpRequestMessage(method, project + "/" + project + "%20Team/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                    if (!string.IsNullOrEmpty(teamName))
+                    {
+                        request = new HttpRequestMessage(method, project + "/" + teamName + "/_apis/dashboard/dashboards?api-version=" + _configuration.VersionNumber) { Content = jsonContent };
+                    }
                     var response = client.SendAsync(request).Result;
                     if (response.IsSuccessStatusCode)
                     {

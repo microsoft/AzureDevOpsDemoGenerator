@@ -1,0 +1,29 @@
+{
+  "value": [
+    {
+      "name": "$5312$ : Login and new user registraion to the eShopOnWeb portal using email id and password.",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [ "$5312$" ],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "4566", "4572", "4579" ]
+    },
+    {
+      "name": "$5319$ : Change the background color of the [ADD TO BASKET] button.",
+      "plan": {
+        "id": "$planID$",
+        "name": "$planName$"
+      },
+      "requirementIds": [ "$5319$" ],
+      "revision": 1,
+      "suiteType": "RequirementTestSuite",
+      "inheritDefaultConfigurations": true,
+      "TestCases": [ "5322" ]
+    }
+  ],
+  "count": 1
+}

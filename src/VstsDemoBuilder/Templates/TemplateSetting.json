@@ -16,6 +16,21 @@
       "Groups": "General",
       "Template": [
         {
+          "Key": "bd068fd0-10dc-475f-8483-78e983b5e211",
+          "Name": "eShopOnWeb",
+          "TemplateFolder": "Gen-eShopOnWeb",
+          "ShortName": "eShopOnWeb",
+          "Description": "This template contains the source code, pipelines and e2e implementations for GitHub Advanced Security for Azure DevOps using eShopOnWeb source code. See the home page for project on <a href='https://github.com/dotnet-architecture/eShopOnWeb' target='_blank'> GitHub</a>. <a href='https://azuredevopslabs.com/labs/azuredevops/EndtoEnd/' target='_blank'> Refer to Azure DevOps End to End Concepts </a>",
+          "Tags": [
+            "GHAS",
+            "Advanced Security",
+            "agile",
+            "aspdotnetcore"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/eShop.png"
+        },
+        {
           "Key": "77379",
           "Name": "PartsUnlimited",
           "TemplateFolder": "Gen-PartsUnlimited",
@@ -151,6 +166,7 @@
           "Author": "Microsoft",
           "Image": "/Templates/TemplateImages/ContosAir.png"
         }
+
       ]
     },
     {

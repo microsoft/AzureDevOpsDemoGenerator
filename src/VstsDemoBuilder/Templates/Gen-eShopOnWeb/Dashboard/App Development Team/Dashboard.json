@@ -1,0 +1,400 @@
+{
+  "name": "Overview",
+  "description": "",
+  "refreshInterval": 0,
+  "position": 1,
+  "widgets": [
+    {
+      "name": "Active Tasks by Assigned To",
+      "position": {
+        "row": 4,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": "{\"chartType\":\"PieChart\",\"groupKey\":\"$AppDevTeam Tasks$\",\"scope\":\"WorkitemTracking.Queries\",\"title\":\"Active Tasks by Assigned To\",\"transformOptions\":{\"filter\":\"$AppDevTeam Tasks$\",\"groupBy\":\"System.AssignedTo\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":true,\"FilteredGroups\":[]},\"lastArtifactName\":\"Active Tasks by Assigned To\"}",
+      "settingsVersion": {
+        "major": 3,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "isNameConfigurable": true,
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "All Bugs",
+      "position": {
+        "row": 1,
+        "column": 4
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"defaultBackgroundColor\":\"#e60017\",\"queryId\":\"$All Bugs$\",\"queryName\":\"All Bugs\",\"colorRules\":[],\"lastArtifactName\":\"All Bugs\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "isNameConfigurable": true
+    },
+    {
+      "name": "All Features by State",
+      "position": {
+        "row": 2,
+        "column": 3
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$All Features$\",\"title\":\"All Features by State\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$All Features$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"lastArtifactName\":\"All Features by State\"}",
+      "settingsVersion": {
+        "major": 3,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "isNameConfigurable": true,
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "All Tasks",
+      "position": {
+        "row": 1,
+        "column": 3
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"defaultBackgroundColor\":\"#fbbc3d\",\"queryId\":\"$All Tasks$\",\"queryName\":\"All Tasks\",\"colorRules\":[],\"lastArtifactName\":\"All Tasks\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "isNameConfigurable": true
+    },
+    {
+      "name": "All Tasks by State",
+      "position": {
+        "row": 4,
+        "column": 3
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$All Tasks$\",\"title\":\"All Tasks by State\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$All Tasks$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"lastArtifactName\":\"All Tasks by State\"}",
+      "settingsVersion": {
+        "major": 3,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "isNameConfigurable": true,
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "All User Stories",
+      "position": {
+        "row": 1,
+        "column": 2
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$All User Stories$\",\"queryName\":\"All User Stories\",\"colorRules\":[],\"lastArtifactName\":\"All User Stories\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "isNameConfigurable": true
+    },
+    {
+      "name": "All Epics",
+      "position": {
+        "row": 1,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"defaultBackgroundColor\":\"#db552c\",\"queryId\":\"$All Epics$\",\"queryName\":\"All Epics\",\"colorRules\":[],\"lastArtifactName\":\"All Epics\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "isNameConfigurable": true
+    },
+    {
+      "name": "Burndown",
+      "position": {
+        "row": 6,
+        "column": 4
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 3
+      },
+      "settings": "{\"teams\":[{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\"}],\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"completedWorkEnabled\":false,\"fieldFilters\":[],\"stackByWorkItemTypeEnabled\":false,\"burndownTrendlineEnabled\":true,\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"includeBugsForRequirementCategory\":false,\"timePeriodConfiguration\":{\"startDate\":\"$startDate$\",\"samplingConfiguration\":{\"identifier\":0,\"settings\":{\"endDate\":\"$endDate$\",\"lastDayOfWeek\":5,\"sampleInterval\":0}}},\"totalScopeTrendlineEnabled\":true,\"showResolvedItemsAsCompletedEnabled\":false}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurndownWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.BurndownWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurndownWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BurndownWidget.Configuration",
+      "isNameConfigurable": true,
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "Test Cases",
+      "position": {
+        "row": 1,
+        "column": 5
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$Test Cases$\",\"queryName\":\"Test Cases\",\"colorRules\":[],\"lastArtifactName\":\"Test Cases\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+      "isNameConfigurable": true
+    },
+    {
+      "name": "Other Links",
+      "position": {
+        "row": 1,
+        "column": 6
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": false,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.OtherLinksWidget",
+      "typeId": null,
+      "configurationContributionId": null,
+      "configurationContributionRelativeId": null,
+      "isNameConfigurable": false,
+      "loadingImageUrl": null
+    },
+    {
+      "name": "All User Stories by State",
+      "position": {
+        "row": 2,
+        "column": 5
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$All User Stories$\",\"title\":\"All User Stories by State\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$All User Stories$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"lastArtifactName\":\"All User Stories by State\"}",
+      "settingsVersion": {
+        "major": 3,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "isNameConfigurable": true,
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "Burnup",
+      "position": {
+        "row": 8,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 3
+      },
+      "settings": "{\"teams\":[{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\"}],\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"completedWorkEnabled\":false,\"fieldFilters\":[],\"stackByWorkItemTypeEnabled\":false,\"burndownTrendlineEnabled\":true,\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"includeBugsForRequirementCategory\":false,\"timePeriodConfiguration\":{\"startDate\":\"$startDate$\",\"samplingConfiguration\":{\"identifier\":0,\"settings\":{\"endDate\":\"$endDate$\",\"lastDayOfWeek\":5,\"sampleInterval\":0}}},\"totalScopeTrendlineEnabled\":true,\"showResolvedItemsAsCompletedEnabled\":false}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurnupWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.BurnupWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.BurnupWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.BurnupWidget.Configuration",
+      "isNameConfigurable": true,
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "Velocity",
+      "position": {
+        "row": 6,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 3
+      },
+      "settings": "{\"projectId\":\"$projectId$\",\"teamId\":\"$DefaultTeamId$\",\"workItemTypeFilter\":{\"identifier\":\"BacklogCategory\",\"settings\":\"Microsoft.RequirementCategory\"},\"aggregation\":{\"identifier\":0,\"settings\":\"\"},\"numberOfIterations\":6,\"plannedWorkDelay\":0,\"lateWorkDelay\":0,\"lastArtifactName\":null,\"showResolvedItemsAsCompleted\":false}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.VelocityWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.VelocityWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.VelocityWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.VelocityWidget.Configuration",
+      "isNameConfigurable": true,
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    },
+    {
+      "name": "All Epics by State",
+      "position": {
+        "row": 2,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$All Epics$\",\"title\":\"All Epics by State\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$All Epics$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"lastArtifactName\":\"All Epics by State\"}",
+      "settingsVersion": {
+        "major": 3,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+      "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+      "isNameConfigurable": true,
+      "lightboxOptions": {
+        "width": 900,
+        "height": 700,
+        "resizable": true
+      }
+    }
+  ],
+  "dashboardScope": "project_Team"
+}

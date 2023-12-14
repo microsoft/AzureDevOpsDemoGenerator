@@ -1,0 +1,53 @@
+{
+  "name": "Application-DB Team features",
+  "type": "deliveryTimelineView",
+  "properties": {
+    "teamBacklogMappings": [
+      {
+        "teamId": "$App Development Team$",
+        "categoryReferenceName": "Microsoft.FeatureCategory"
+      },
+      {
+        "teamId": "$DBA Team$",
+        "categoryReferenceName": "Microsoft.FeatureCategory"
+      }
+    ],
+    "criteria": null,
+    "cardSettings": {
+      "fields": {
+        "showId": false,
+        "showAssignedTo": true,
+        "assignedToDisplayFormat": "avatarAndFullName",
+        "showState": true,
+        "showTags": true,
+        "showParent": false,
+        "showEmptyFields": false,
+        "showChildRollup": false,
+        "additionalFields": null,
+        "coreFields": [
+          {
+            "referenceName": "System.AssignedTo",
+            "displayName": "Assigned To",
+            "fieldType": "string",
+            "isIdentity": true
+          },
+          {
+            "referenceName": "System.State",
+            "displayName": "State",
+            "fieldType": "string",
+            "isIdentity": false
+          },
+          {
+            "referenceName": "System.Tags",
+            "displayName": "Tags",
+            "fieldType": "plainText",
+            "isIdentity": false
+          }
+        ]
+      }
+    },
+    "markers": null,
+    "styleSettings": [],
+    "tagStyleSettings": []
+  }
+}

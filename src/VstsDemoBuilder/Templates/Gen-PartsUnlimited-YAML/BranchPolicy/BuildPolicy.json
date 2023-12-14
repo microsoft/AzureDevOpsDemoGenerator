@@ -1,0 +1,25 @@
+{
+  "isEnabled": true,
+  "isBlocking": true,
+  "isDeleted": false,
+  "settings": {
+    "buildDefinitionId": "$buildDefId$",
+    "queueOnSourceUpdateOnly": true,
+    "manualQueueOnly": false,
+    "displayName": null,
+    "validDuration": 720.0,
+    "scope": [
+      {
+        "refName": "refs/heads/master",
+        "matchKind": "Exact",
+        "repositoryId": "$PartsUnlimited$"
+      }
+    ]
+  },
+  "isEnterpriseManaged": false,
+  "type": {
+    "id": "$policyTypeId$",
+    "url": "$policyTypeUrl$",
+    "displayName": "Build"
+  }
+}

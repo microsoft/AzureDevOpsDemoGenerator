@@ -1,0 +1,87 @@
+{
+  "triggers": [
+    {
+      "branchFilters": [],
+      "pathFilters": [],
+      "settingsSourceType": 2,
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": "continuousIntegration"
+    }
+  ],
+  "variables": {
+    "BuildConfiguration": {
+      "value": "Release"
+    },
+    "BuildPlatform": {
+      "value": "any cpu"
+    },
+    "eshop_ServerName": {
+      "value": "eShopOnWeb$UUID$"
+    },
+    "WebsiteName": {
+      "value": "eshop$UUID$"
+    },
+    "rg_name": {
+      "value": "eShopOnWeb"
+    }
+  },
+  "properties": {},
+  "tags": [],
+  "_links": "{}",
+  "comment": "Update variables",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "badgeEnabled": true,
+  "process": {
+    "yamlFilename": "azure-pipelines.yml",
+    "type": 2
+  },
+  "repository": {
+    "properties": {
+      "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/eShopOnWeb",
+      "fullName": "eShopOnWeb",
+      "defaultBranch": "refs/heads/main",
+      "isFork": "False",
+      "safeRepository": "$eShopOnWeb$",
+      "reportBuildStatus": "true",
+      "fetchDepth": "1"
+    },
+    "id": "$eShopOnWeb$",
+    "type": "TfsGit",
+    "name": "eShopOnWeb",
+    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/eShopOnWeb",
+    "defaultBranch": "refs/heads/main",
+    "clean": null,
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "authoredBy": "{}",
+  "drafts": [],
+  "queue": {
+    "_links": {
+      "self": {
+        "href": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Azure Pipelines$"
+      }
+    },
+    "id": "$Azure Pipelines$",
+    "name": "Azure Pipelines",
+    "url": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Azure Pipelines$",
+    "pool": {
+      "id": "",
+      "name": "Azure Pipelines",
+      "isHosted": true
+    }
+  },
+  "id": "",
+  "name": "eShopOnWeb",
+  "url": "",
+  "uri": "",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled",
+  "revision": 7,
+  "createdDate": "",
+  "project": "{}"
+}
