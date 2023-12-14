@@ -1,0 +1,4 @@
+{
+  "name": "New Epic",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo], [System.State], [System.Tags] from WorkItems where [System.TeamProject] = @project and [System.WorkItemType] = 'Epic' and [System.State] = 'New'"
+}

@@ -248,6 +248,22 @@ namespace VstsRestAPI.WorkItemAndTracking
                                 dicWIFields.Add(boardRowField, newWI.fields.SystemBoardLane);
                             }
                         }
+                        if (workItemType.ToLower() == "task")
+                        {
+                            if (dicWIFields.ContainsKey("/fields/System.CreatedDate"))
+                            {
+                                // generate random number from 1-3
+                                Random random = new Random();
+                                int randomNumber = random.Next(-4, -1);
+                                dicWIFields["/fields/System.CreatedDate"] = DateTime.UtcNow.AddDays(randomNumber).ToString("yyyy-MM-ddThh:mm:ss.sssZ");
+                            }
+                            else
+                            {
+                                Random random = new Random();
+                                int randomNumber = random.Next(-4, -1);
+                                dicWIFields.Add("/fields/System.CreatedDate", DateTime.UtcNow.AddDays(randomNumber).ToString("yyyy-MM-ddThh:mm:ss.sssZ"));
+                            }
+                        }
                         UpdateWorkIteminTarget(workItemType, newWI.id.ToString(), projectName, dicWIFields);
                     }
 
