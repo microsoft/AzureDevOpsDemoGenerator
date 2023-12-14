@@ -2040,6 +2040,23 @@
     <Content Include="Templates\FA-IAC-migration\WorkItems\Task.json" />
     <Content Include="Templates\FA-IAC-migration\WorkItems\User Story.json" />
     <Content Include="Templates\FA-IAC-migration\ImportSourceCode\GitRepository.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\BuildDefinitions\TailwindTraders-Build.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\BuildDefinitions\TailwindTraders-CodeScanning.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\BuildDefinitions\TailwindTraders-PullRequest.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\ImportSourceCode\Documents.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\ImportSourceCode\TailwindTraders.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\Iterations.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\ProjectSettings.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\ProjectTemplate.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\ServiceEndpoints\Documents-code.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\ServiceEndpoints\TailwindTraders-code.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\TeamArea.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\Teams\GHAzDo-E2E Team\BoardColumns.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\Teams\GHAzDo-E2E Team\BoardRows.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\Teams\GHAzDo-E2E Team\CardFields.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\Teams\GHAzDo-E2E Team\CardStyles.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\Teams\GHAzDo-E2E Team\TeamSetting.json" />
+    <Content Include="Templates\Gen-TailwindTradersNew\Teams\Teams.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
