@@ -16,6 +16,28 @@
       "Groups": "General",
       "Template": [
         {
+          "Key": "773866",
+          "Name": "Tailwind Traders",
+          "TemplateFolder": "Gen-TailwindTradersNew",
+          "ShortName": "TailwindTraders",
+          "Description": "Tailwind Traders is an .NET Core & React application. The template has been configured to showcase the features of GHAzDo. Please refer to <a href='https://azure.microsoft.com/en-in/products/devops/github-advanced-security'> GitHub Advanced Security for Azure DevOps </a>",
+          "Tags": [
+            "GHAzDo",
+            "Code Scanning",
+            "Dependency Scanning",
+            "Secret Scanning",
+            "Advanced Security"
+
+          ],
+          "PreviewImages": [
+            "/Templates/Tailwind Traders/Images/Architecture.png",
+            "/Templates/Tailwind Traders/Images/Website.png"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/TailwindTraders.png",
+          "Message": "Note: Once you provision the project, the documents will be imported to Azure Repos. Please follow the steps provided to see the GHAzDo in action."
+        },
+        {
           "Key": "77379",
           "Name": "PartsUnlimited",
           "TemplateFolder": "Gen-PartsUnlimited",
@@ -56,45 +78,6 @@
           "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version. \n <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>'"
         },
         {
-          "Key": "77386",
-          "Name": "Tailwind Traders",
-          "TemplateFolder": "Gen-Tailwind Traders",
-          "ShortName": "TailwindTraders",
-          "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App.",
-          "Tags": [
-            "Agile",
-            "Data and AI",
-            "React"
-          ],
-          "PreviewImages": [
-            "/Templates/Tailwind Traders/Images/Architecture.png",
-            "/Templates/Tailwind Traders/Images/Website.png"
-          ],
-          "Author": "Microsoft",
-          "Image": "/Templates/TemplateImages/TailwindTraders.png",
-          "ForkGitHubRepo": true,
-          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version. <br> Fork <a href='https://github.com/microsoft/tailwindtraders-website' target='_blank'> Tailwind Traders Website </a> and <a href='https://github.com/microsoft/tailwindTraders-Backend' target='_blank'> Tailwind Traders Backend </a> repository and follow the steps given in the document to set up your resources on Azure and deployment pipelines."
-        },
-        {
-          "Key": "773866",
-          "Name": "Tailwind Traders - New",
-          "TemplateFolder": "Gen-TailwindTradersNew",
-          "ShortName": "TailwindTraders",
-          "Description": "Tailwind Traders is an ASP.NET & React application, which uses Azure App Service, AKS, Cosmos DB, Logic App and the Function App.",
-          "Tags": [
-            "Agile",
-            "Data and AI",
-            "React",
-            "GHAzDo"
-          ],
-          "PreviewImages": [
-            "/Templates/Tailwind Traders/Images/Architecture.png",
-            "/Templates/Tailwind Traders/Images/Website.png"
-          ],
-          "Author": "Microsoft",
-          "Image": "/Templates/TemplateImages/TailwindTraders.png"
-        },
-        {
           "Key": "77380",
           "Name": "MyHealthClinic",
           "TemplateFolder": "Gen-MyHealthClinic",
@@ -114,25 +97,6 @@
           ],
           "Author": "Microsoft",
           "LastUpdatedDate": "20/12/2018"
-        },
-        {
-          "Key": "77387",
-          "Name": "PartsUnlimited-YAML",
-          "TemplateFolder": "Gen-PartsUnlimited-YAML",
-          "ShortName": "yml",
-          "Description": "Use this lab to provision a scrum based team project containing sample work items, complete source code and pipeline definitions to deploy Parts Unlimited, a sample eCommerce website based on the The Phoenix Project book by Gene Kim. See the home page of the project on <a href='https://github.com/Microsoft/PartsUnlimited' target='_blank'>GitHub</a> ",
-          "Tags": [
-            "scrum",
-            "aspdotnet",
-            "azureappservice"
-          ],
-          "Image": "/Templates/TemplateImages/Partunlimited.png",
-          "Author": "Microsoft",
-          "PreviewImages": [
-            "/Templates/PartsUnlimited/Images/boards.png",
-            "/Templates/PartsUnlimited/Images/pulwebsite.png",
-            "/Templates/PartsUnlimited/Images/dashboard.png"
-          ]
         },
         {
           "Key": "77371",
