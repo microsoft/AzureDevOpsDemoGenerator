@@ -433,6 +433,9 @@
     <Content Include="Images\create_img_final1.png" />
     <Content Include="Images\cross-10.png" />
     <Content Include="Images\cross10_new.png" />
+    <Content Include="Images\enable_classic.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon.png" />
     <Content Include="Images\github-icon.png" />
