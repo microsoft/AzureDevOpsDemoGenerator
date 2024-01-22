@@ -1,0 +1,31 @@
+﻿{
+  "count": 1,
+  "value": [
+    {
+      "comments": [
+        {
+          "parentCommentId": 0,
+          "content": "The fix looks good 👍 👍",
+          "commentType": 1
+        }
+      ],
+      "properties": {
+        "Microsoft.TeamFoundation.Discussion.SupportsMarkdown": {
+          "type": "System.Int32",
+          "value": 1
+
+        }
+      },
+      "status": 1,
+      "pullRequestThreadContext": null,
+      "threadContext": null,
+      "Replies": [
+         {
+          "content": "Thanks for the review 😃",
+          "parentCommentId": 1,
+          "commentType": 1
+        }
+      ]
+    }
+  ]
+}

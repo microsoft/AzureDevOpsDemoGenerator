@@ -1,0 +1,11 @@
+﻿{
+    "title": "Added Terms and Conditions for Sale in Layout.cshtml Page",
+  "description": "Updated _Layout.cshtml\nTerms and Conditions for Sale added",
+  "sourceRefName": "refs/heads/AddTerms&Conditions",
+  "targetRefName": "refs/heads/master",
+  "reviewers": [
+    {
+      "id": "$reviewer$"
+    }
+  ]
+}

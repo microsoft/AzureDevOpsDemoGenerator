@@ -1,0 +1,38 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 12444,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "PartsUnlimited-tc",
+        "System.TeamProject": "PartsUnlimited-tc",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Test Plan",
+        "System.State": "Active",
+        "System.Reason": "New test plan",
+        "System.CreatedDate": "2023-12-19T08:22:06.813Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-12-19T08:22:06.813Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "PartsUnlimited-tc_TestPlan1",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 0.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/12444"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
