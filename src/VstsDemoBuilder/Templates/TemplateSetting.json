@@ -16,6 +16,21 @@
       "Groups": "General",
       "Template": [
         {
+          "Key": "bd068fd0-10dc-475f-8483-78e983b5e211",
+          "Name": "eShopOnWeb",
+          "TemplateFolder": "Gen-eShopOnWeb",
+          "ShortName": "eShopOnWeb",
+          "Description": "This template contains the source code, pipelines and e2e implementations for GitHub Advanced Security for Azure DevOps using eShopOnWeb source code. See the home page for project on <a href='https://github.com/dotnet-architecture/eShopOnWeb' target='_blank'> GitHub</a>. <a href='https://azuredevopslabs.com/labs/azuredevops/EndtoEnd/' target='_blank'> Refer to Azure DevOps End to End Concepts </a>",
+          "Tags": [
+            "GHAS",
+            "Advanced Security",
+            "agile",
+            "aspdotnetcore"
+          ],
+          "Author": "Microsoft",
+          "Image": "/Templates/TemplateImages/eShop.png"
+        },
+        {
           "Key": "773866",
           "Name": "Tailwind Traders",
           "TemplateFolder": "Gen-TailwindTradersNew",
@@ -38,21 +53,6 @@
           "Message": "Note: Once you provision the project, the documents will be imported to Azure Repos. Please follow the steps provided to see the GHAzDo in action."
         },
         {
-          "Key": "bd068fd0-10dc-475f-8483-78e983b5e211",
-          "Name": "eShopOnWeb",
-          "TemplateFolder": "Gen-eShopOnWeb",
-          "ShortName": "eShopOnWeb",
-          "Description": "This template contains the source code, pipelines and e2e implementations for GitHub Advanced Security for Azure DevOps using eShopOnWeb source code. See the home page for project on <a href='https://github.com/dotnet-architecture/eShopOnWeb' target='_blank'> GitHub</a>. <a href='https://azuredevopslabs.com/labs/azuredevops/EndtoEnd/' target='_blank'> Refer to Azure DevOps End to End Concepts </a>",
-          "Tags": [
-            "GHAS",
-            "Advanced Security",
-            "agile",
-            "aspdotnetcore"
-          ],
-          "Author": "Microsoft",
-          "Image": "/Templates/TemplateImages/eShop.png"
-        },
-        {
           "Key": "77379",
           "Name": "PartsUnlimited",
           "TemplateFolder": "Gen-PartsUnlimited-tc",
@@ -70,48 +70,6 @@
             "/Templates/PartsUnlimited/Images/pulwebsite.png",
             "/Templates/PartsUnlimited/Images/dashboard.png"
           ]
-        },
-        {
-          "Key": "77383",
-          "Name": "SmartHotel360",
-          "TemplateFolder": "Gen-SmartHotel360",
-          "ShortName": "SmartHotel360",
-          "Description": "This template contains work items, code and pipeline definitions for the public web site of SmartHotel360, an E2E reference sample app with several consumer and line-of-business apps and an Azure backend. For more information, please see the project page on <a href='https://github.com/Microsoft/SmartHotel360' target='_blank'>GitHub</a>",
-          "Tags": [
-            "scrum",
-            "aspnetcore",
-            "azureappservice"
-          ],
-          "Image": "/Templates/TemplateImages/SmartHotel.png",
-          "PreviewImages": [
-            "/Templates/SmartHotel360/Images/dashboard.png",
-            "/Templates/SmartHotel360/Images/Diagram.png",
-            "/Templates/SmartHotel360/Images/Screens.png"
-          ],
-          "Author": "Microsoft",
-          "ForkGitHubRepo": true,
-          "Message": "Note: This template requires latest versions of ARM Outputs extension, please update. Ignore if you already have the latest version. \n <p>If you're using Demo Generator for the first time, please make the following setting in your organization settings </p> </p><img src='/Templates/TemplateImages/policy-org.png' style='width:100%;border:1px solid blue;' alt='note'/></p>'"
-        },
-        {
-          "Key": "77380",
-          "Name": "MyHealthClinic",
-          "TemplateFolder": "Gen-MyHealthClinic",
-          "ShortName": "MyHealthClinic",
-          "Description": "This template provisions a scrum based team project with code, work items for a  sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.",
-          "Tags": [
-            "scrum",
-            "aspnetcore",
-            "azureappservice"
-          ],
-          "Image": "/Templates/TemplateImages/MyHealthClinic.png",
-          "PreviewImages": [
-            "/Templates/MyHealthClinic/Images/boards.png",
-            "/Templates/MyHealthClinic/Images/CI.png",
-            "/Templates/MyHealthClinic/Images/dashboard.png",
-            "/Templates/MyHealthClinic/Images/site.png"
-          ],
-          "Author": "Microsoft",
-          "LastUpdatedDate": "20/12/2018"
         },
         {
           "Key": "77371",
@@ -143,7 +101,7 @@
           "Message": "Note that the code for the Contoso Air Website is hosted on GitHub and is not imported to Azure Repos. The CI pipeline refers to the code on <a href='https://github.com/Microsoft/ContosoAir' target='_blank'>GitHub</a>",
           "Tags": [
             "agile",
-            " node.js",
+            "node.js",
             "User stories"
           ],
           "Author": "Microsoft",
