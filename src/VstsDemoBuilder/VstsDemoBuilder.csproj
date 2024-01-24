@@ -442,6 +442,7 @@
     <Content Include="Images\GitHub-Mark.png" />
     <Content Include="Images\image2.png" />
     <Content Include="Images\img_verify2.jpg" />
+    <Content Include="Images\twitter.png" />
     <Content Include="Images\linkedin.png" />
     <Content Include="Images\loader_trans_1.gif" />
     <Content Include="Images\loading.gif" />
@@ -593,7 +594,6 @@
     <Content Include="Images\tfs.png" />
     <Content Include="Images\theme_img_3.png" />
     <Content Include="Images\Thinking_Face_Emoji.png" />
-    <Content Include="Images\twitter.png" />
     <Content Include="Images\user-clear.png" />
     <Content Include="Images\Verify_image.jpg" />
     <Content Include="Images\vs-logo.png" />
