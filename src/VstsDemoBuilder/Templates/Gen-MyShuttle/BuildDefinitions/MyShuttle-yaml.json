@@ -9,9 +9,24 @@
       "triggerType": "continuousIntegration"
     }
   ],
+  "variables": {
+    "ServerName": {
+      "value": "myshuttledb"
+    },
+    "SqlPassword": {
+      "value": "P2ssw0rd@123"
+    },
+    "SqlUserName": {
+      "value": "myshuttleadmin"
+    },
+    "WebAppName": {
+      "value": "myshuttleweb$UUID$"
+    }
+  },
   "properties": {},
   "tags": [],
   "_links": "{}",
+  "comment": "Update variables",
   "jobAuthorizationScope": "projectCollection",
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
@@ -55,13 +70,13 @@
     }
   },
   "id": "",
-  "name": "MyShuttle-YAML",
+  "name": "MyShuttle",
   "url": "",
   "uri": "",
   "path": "\\",
   "type": "build",
   "queueStatus": "enabled",
-  "revision": 2,
+  "revision": 6,
   "createdDate": "",
   "project": "{}"
 }

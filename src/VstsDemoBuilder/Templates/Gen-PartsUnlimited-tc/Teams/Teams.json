@@ -1,0 +1,20 @@
+[
+  {
+    "id": "a1f8afcd-dfaa-49ef-abc1-ab18fee7911a",
+    "name": "PUL-DB",
+    "description": "PUL DB Team",
+    "isDefault": "false"
+  },
+  {
+    "id": "d3e8e679-c20d-428d-928d-1464a76858e7",
+    "name": "PartsUnlimited-tc Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "0c38fbe0-cb50-4f47-9a66-d2c3594f0e58",
+    "name": "PUL",
+    "description": "Parts Unlimited Web Team",
+    "isDefault": "false"
+  }
+]

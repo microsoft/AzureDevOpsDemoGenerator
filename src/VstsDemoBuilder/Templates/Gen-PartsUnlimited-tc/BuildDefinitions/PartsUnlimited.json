@@ -1,0 +1,76 @@
+{
+  "triggers": [
+    {
+      "branchFilters": [],
+      "pathFilters": [],
+      "settingsSourceType": 2,
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": "continuousIntegration"
+    }
+  ],
+  "variables": {
+    "HostingPlan": {
+      "value": "pule2e"
+    },
+    "ResourceGroupName": {
+      "value": "ASPDOTNET"
+    },
+    "ServerName": {
+      "value": "pule2e$UUID$"
+    },
+    "WebsiteName": {
+      "value": "pule2e$UUID$"
+    }
+  },
+  "properties": {},
+  "tags": [],
+  "_links": "{}",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "badgeEnabled": true,
+  "process": {
+    "yamlFilename": "azure-pipelines.yml",
+    "type": 2
+  },
+  "repository": {
+    "properties": {
+      "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/PartsUnlimited",
+      "fullName": "PartsUnlimited",
+      "defaultBranch": "refs/heads/master",
+      "isFork": "False",
+      "safeRepository": "$PartsUnlimited$",
+      "reportBuildStatus": "true",
+      "fetchDepth": "1"
+    },
+    "id": "$PartsUnlimited$",
+    "type": "TfsGit",
+    "name": "PartsUnlimited",
+    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/PartsUnlimited",
+    "defaultBranch": "refs/heads/master",
+    "clean": null,
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "authoredBy": "{}",
+  "drafts": [],
+  "queue": {
+    "_links": {
+      "self": {
+        "href": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Azure Pipelines$"
+      }
+    },
+    "id": "$Azure Pipelines$",
+    "name": "Azure Pipelines",
+    "url": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Azure Pipelines$",
+    "pool": {
+      "id": "",
+      "name": "Azure Pipelines",
+      "isHosted": true
+    }
+  },
+  "name": "PartsUnlimited",
+  "path": "\\",
+  "type": "build"
+}

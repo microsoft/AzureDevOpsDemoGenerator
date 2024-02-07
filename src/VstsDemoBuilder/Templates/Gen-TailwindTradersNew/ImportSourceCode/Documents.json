@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/vstsdemodata/TailwindTraders/_git/Documents"
+    },
+    "serviceEndpointId": "$Documents-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

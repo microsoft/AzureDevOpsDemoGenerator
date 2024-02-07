@@ -1,0 +1,20 @@
+[
+  {
+    "id": "d5f422b0-0e02-47ac-bcd2-6befa2ca3892",
+    "name": "DB Team",
+    "description": "",
+    "isDefault": "false"
+  },
+  {
+    "id": "4896681d-db61-4fd0-86d8-a4fec3b7c3a3",
+    "name": "ContosoAir-tc Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "48d56332-fc6a-4154-9c4b-f2fab178871c",
+    "name": "Web Team",
+    "description": "",
+    "isDefault": "false"
+  }
+]
