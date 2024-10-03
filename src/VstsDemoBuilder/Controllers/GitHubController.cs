@@ -40,7 +40,7 @@ namespace VstsDemoBuilder.Controllers
                 // Getting access token, if access token is null, will return to Index page [relogin takes place]
                 GitHubAccessDetails _accessDetails = GetAccessToken(reqUrl);
                 if (_accessDetails.access_token != null)
-                {
+                {   
                     Session["GitHubToken"] = _accessDetails.access_token;
                     ViewBag.Response = _accessDetails.access_token;
                     return RedirectToAction("Status");

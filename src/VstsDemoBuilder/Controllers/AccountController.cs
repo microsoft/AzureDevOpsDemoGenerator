@@ -3,8 +3,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.IO;
+using System.Net;
 using System.Web.Hosting;
 using System.Web.Mvc;
+using VstsDemoBuilder.Extensions;
 using VstsDemoBuilder.Models;
 using VstsDemoBuilder.ServiceInterfaces;
 using VstsDemoBuilder.Services;
@@ -43,92 +45,112 @@ namespace VstsDemoBuilder.Controllers
         [AllowAnonymous]
         public ActionResult Verify(LoginModel model, string id)
         {
-            Session.Clear();
-            // check to enable extractor
-            if (string.IsNullOrEmpty(model.EnableExtractor) || model.EnableExtractor.ToLower() == "false")
-            {
-                model.EnableExtractor = System.Configuration.ConfigurationManager.AppSettings["EnableExtractor"];
-            }
-            if (!string.IsNullOrEmpty(model.EnableExtractor))
-            {
-                Session["EnableExtractor"] = model.EnableExtractor;
-            }
 
-            var browser = Request.Browser.Type;
-            if (browser.Contains("InternetExplorer"))
+            Uri uriResult;
+            bool isValidUrl = Uri.TryCreate(Request.Url.ToString(), UriKind.Absolute, out uriResult)
+                              && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+            if (isValidUrl)
             {
-                return RedirectToAction("Unsupported_browser", "Account");
-            }
-            try
-            {
-                if (!string.IsNullOrEmpty(model.name))
+                Session.Clear();
+                // check to enable extractor
+                if (string.IsNullOrEmpty(model.EnableExtractor) || model.EnableExtractor.ToLower() == "false")
                 {
-                    if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
+                    model.EnableExtractor = System.Configuration.ConfigurationManager.AppSettings["EnableExtractor"];
+                }
+                if (!string.IsNullOrEmpty(model.EnableExtractor))
+                {
+                    Session["EnableExtractor"] = model.EnableExtractor;
+                }
+
+                var browser = Request.Browser.Type;
+                if (browser.Contains("InternetExplorer"))
+                {
+                    return RedirectToAction("Unsupported_browser", "Account");
+                }
+                try
+                {
+                    if (!string.IsNullOrEmpty(model.name))
                     {
-                        string privateTemplatesJson = System.IO.File.ReadAllText(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
-                        templates = Newtonsoft.Json.JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
-                        if (templates != null)
+                        if (System.IO.File.Exists(Server.MapPath("~") + @"\Templates\TemplateSetting.json"))
                         {
-                            bool flag = false;
-                            foreach (var grpTemplate in templates.GroupwiseTemplates)
+                            string privateTemplatesJson = System.IO.File.ReadAllText(Server.MapPath("~") + @"\Templates\TemplateSetting.json");
+                            templates = Newtonsoft.Json.JsonConvert.DeserializeObject<TemplateSelection.Templates>(privateTemplatesJson);
+                            if (templates != null)
                             {
-                                foreach (var template in grpTemplate.Template)
+                                bool flag = false;
+                                foreach (var grpTemplate in templates.GroupwiseTemplates)
                                 {
-                                    if (template.ShortName != null && template.ShortName.ToLower() == model.name.ToLower())
+                                    foreach (var template in grpTemplate.Template)
                                     {
-                                        flag = true;
-                                        Session["templateName"] = template.Name;
+                                        if (template.ShortName != null && template.ShortName.ToLower() == model.name.ToLower())
+                                        {
+                                            flag = true;
+                                            Session["templateName"] = template.Name;
+                                        }
+                                    }
+                                }
+                                if (flag == false)
+                                {
+                                    Session["templateName"] = null;
+                                }
+                            }
+                        }
+                    }
+
+                    if (!string.IsNullOrEmpty(model.Event))
+                    {
+                        string eventsTemplate = Server.MapPath("~") + @"\Templates\Events.json";
+                        if (System.IO.File.Exists(eventsTemplate))
+                        {
+                            string eventContent = System.IO.File.ReadAllText(eventsTemplate);
+                            var jItems = JObject.Parse(eventContent);
+                            if (jItems[model.Event] != null)
+                            {
+                                model.Event = jItems[model.Event].ToString();
+                            }
+                            else
+                            {
+                                model.Event = string.Empty;
+                            }
+                        }
+                    }
+
+                    if (!string.IsNullOrEmpty(model.TemplateURL))
+                    {
+                        Uri templateUrl;
+                        bool isTemplateUrlValid = Uri.TryCreate(model.TemplateURL, UriKind.Absolute, out templateUrl)
+                                          && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+                        if (isTemplateUrlValid)
+                        {
+                            IPAddress[] addresses = Dns.GetHostAddresses(uriResult.Host);
+                            foreach (IPAddress ip in addresses)
+                            {
+                                if (!IPAddress.IsLoopback(ip) && !ip.IsPrivate())
+                                {
+                                    if (model.TemplateURL.EndsWith(".zip"))
+                                    {
+                                        PrivateTemplate _privateTemplate = UploadPrivateTempalteFromHome(model.TemplateURL);
+                                        if (_privateTemplate.IsTemplateValid)
+                                        {
+                                            Session["PrivateTemplateURL"] = _privateTemplate.privateTemplatePath;
+                                            Session["PrivateTemplateName"] = _privateTemplate.privateTemplateName;
+                                            Session["PrivateTemplateOriginalName"] = _privateTemplate.privateTemplateOriginalName;
+                                        }
+                                        else
+                                        {
+                                            ViewBag.resMessage = _privateTemplate.responseMessage;
+                                            return View(new LoginModel());
+                                        }
                                     }
                                 }
                             }
-                            if (flag == false)
-                            {
-                                Session["templateName"] = null;
-                            }
                         }
                     }
                 }
-
-                if (!string.IsNullOrEmpty(model.Event))
+                catch (Exception ex)
                 {
-                    string eventsTemplate = Server.MapPath("~") + @"\Templates\Events.json";
-                    if (System.IO.File.Exists(eventsTemplate))
-                    {
-                        string eventContent = System.IO.File.ReadAllText(eventsTemplate);
-                        var jItems = JObject.Parse(eventContent);
-                        if (jItems[model.Event] != null)
-                        {
-                            model.Event = jItems[model.Event].ToString();
-                        }
-                        else
-                        {
-                            model.Event = string.Empty;
-                        }
-                    }
+                    logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
                 }
-
-                if (!string.IsNullOrEmpty(model.TemplateURL))
-                {
-                    if (model.TemplateURL.EndsWith(".zip"))
-                    {
-                        PrivateTemplate _privateTemplate = UploadPrivateTempalteFromHome(model.TemplateURL);
-                        if (_privateTemplate.IsTemplateValid)
-                        {
-                            Session["PrivateTemplateURL"] = _privateTemplate.privateTemplatePath;
-                            Session["PrivateTemplateName"] = _privateTemplate.privateTemplateName;
-                            Session["PrivateTemplateOriginalName"] = _privateTemplate.privateTemplateOriginalName;
-                        }
-                        else
-                        {
-                            ViewBag.resMessage = _privateTemplate.responseMessage;
-                            return View(new LoginModel());
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Debug(JsonConvert.SerializeObject(ex, Formatting.Indented) + Environment.NewLine);
             }
             //return RedirectToAction("../account/verify");
             return View(model);
