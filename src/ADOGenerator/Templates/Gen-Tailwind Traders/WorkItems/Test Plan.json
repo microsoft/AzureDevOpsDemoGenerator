@@ -1,0 +1,38 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 280,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website",
+        "System.WorkItemType": "Test Plan",
+        "System.State": "Active",
+        "System.Reason": "New test plan",
+        "System.CreatedDate": "2019-01-25T21:22:08.603Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2019-01-25T21:22:08.603Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "Test Plan 1.0",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Sachin Raj <sraj@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 0.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/280"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

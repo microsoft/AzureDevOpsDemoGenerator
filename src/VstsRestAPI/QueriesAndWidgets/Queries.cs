@@ -12,7 +12,7 @@ namespace VstsRestAPI.QueriesAndWidgets
 {
     public class Queries : ApiServiceBase
     {
-        public Queries(IConfiguration configuration) : base(configuration) { }
+        public Queries(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
 
         /// <summary>

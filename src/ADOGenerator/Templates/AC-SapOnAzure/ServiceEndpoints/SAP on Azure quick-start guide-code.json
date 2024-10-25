@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "SAP on Azure quick-start guide-code",
+  "type": "git",
+  "url": "https://dev.azure.com/bobsmess/SAP on Azure quick-start guide/_git/SAP on Azure quick-start guide",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

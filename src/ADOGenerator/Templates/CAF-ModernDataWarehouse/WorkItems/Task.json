@@ -1,0 +1,3181 @@
+{
+  "count": 77,
+  "value": [
+    {
+      "id": 4112,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:53.48Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:44.813Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Review and Align OKRs",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/business-outcomes/okr?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/business-outcomes/okr?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4177",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4112"
+    },
+    {
+      "id": 4176,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:03.747Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:44.813Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Assemble Team - Key roles in a data warehouse migration team",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Key roles in a migration project include:<br></div><div><br></div><div><p style=\"margin:0in;\"><ul><li><span style=\"\">Business owner</span></li><li><span style=\"\">Project manager\n(with agile methodology experience e.g. scrum)</span></li><li><span style=\"\">Project coordinator</span></li><li><span style=\"\">Cloud engineer</span></li><li><span style=\"\">Database\nadministrator (existing data warehouse DBMS and Azure Synapse)</span></li><li><span style=\"\">Data modeler(s)</span></li><li><span style=\"\">ETL developers</span></li><li><span style=\"\">Data virtualization\nspecialist (could be a DBA)</span></li><li><span style=\"\">Testing engineer</span></li><li><span style=\"\">Business analysts\n(to help test BI tool queries, reports and analyses</span></li><li><span style=\"\">Support of your\non-premises infrastructure team</span></li></ul></p><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4177",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4176"
+    },
+    {
+      "id": 4175,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:03.59Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:44.813Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Readiness Skills and training for the team",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>With respect to skills, expertise is important in a data warehouse migration. Therefore,\nensure the appropriate members of your migration team are trained in Azure cloud\nfundamentals, Azure Blob Store, Azure Data Lake Storage, Azure Databox, Azure\nExpressRoute, Azure identity management, Azure Data Factory, and Azure Synapse.\nYour data modelers will most likely need to fine tune your Azure Synapse data\nmodel(s) once migration from your existing data warehouse has occurred. \n<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4177",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4175"
+    },
+    {
+      "id": 4119,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:54.777Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:43:38.1Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Verify Landing Zone implementation ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal</a>&nbsp;<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4197",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4119"
+    },
+    {
+      "id": 4198,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T21:05:51.58Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T21:06:20.47Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Reference: Azure Quickstarts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>There are over 900 Azure quickstarts which you could leverage as code in your projects.</div><div><br></div><div><a href=\"https://azure.microsoft.com/en-us/resources/templates?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">https://azure.microsoft.com/en-us/resources/templates?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4177",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4198"
+    },
+    {
+      "id": 4118,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:54.42Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Enterprise-scale learning path",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/browse/?products=azure%2csql-server%2cwindows-server&amp;terms=enterprise%20scalehttps://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/browse/?products=azure%2Csql-server%2Cwindows-server&amp;terms=enterprise%20scalehttps://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4197",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4118"
+    },
+    {
+      "id": 4117,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:54.28Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Introduction to Azure Synapse",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/introduction-azure-synapse-analytics?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/introduction-azure-synapse-analytics?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4177",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4117"
+    },
+    {
+      "id": 4116,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:54.14Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Store Data in Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4177",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4116"
+    },
+    {
+      "id": 4115,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:54Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Azure Networking Services",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/azure-networking-fundamentals?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/azure-networking-fundamentals?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4177",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4115"
+    },
+    {
+      "id": 4114,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:53.853Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Create production workloads on Azure Databricks with Azure Data Factory",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/create-production-workloads-azure-databricks-azure-data-factory?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/create-production-workloads-azure-databricks-azure-data-factory?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4177",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4114"
+    },
+    {
+      "id": 4113,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:53.697Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Tutorial: Integrate data with Azure Data Factory or Azure Synapse Pipeline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4177",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4113"
+    },
+    {
+      "id": 4111,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:53.34Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Solution Scenario : Migrations from  SQL Server",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://datamigration.microsoft.com/scenario/sql-to-sqldw?step=1?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance&nbsp;</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4196",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4111"
+    },
+    {
+      "id": 4110,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:53.17Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:44:21.397Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Provision HDInsight Kafka Cluster",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/kafka/apache-kafka-get-started?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Provision Cluster</a></div><div><br></div><div>Add Enterprise Security using <a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/domain-joined/apache-domain-joined-run-kafka?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">ESP enablement&nbsp;</a>&nbsp;<span style=\"\">(optional)</span></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4107",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4110"
+    },
+    {
+      "id": 4109,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:53.017Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:46:45.463Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Dimensional modeling",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">A<span>&nbsp;</span></span><a href=\"https://en.wikipedia.org/wiki/Star_schema\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">star schema</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>organizes data into fact and dimension tables. Some tables are used for integration or staging data before moving to a fact or dimension table. As you design a table, decide whether the table data belongs in a fact, dimension, or integration table.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div>Please refer to the details <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-overview#determine-table-category?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">here</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4186",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4109"
+    },
+    {
+      "id": 4108,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:51.837Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:53:51.067Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Dimensional Modeling",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">A<span style=\"box-sizing:border-box;\">&nbsp;</span></span><a href=\"https://en.wikipedia.org/wiki/Star_schema\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">star schema</a><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span style=\"box-sizing:border-box;\">&nbsp;</span>organizes data into fact and dimension tables. Some tables are used for integration or staging data before moving to a fact or dimension table. As you design a table, decide whether the table data belongs in a fact, dimension, or integration table.</span><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br></div><div style=\"box-sizing:border-box;\"><span style=\"display:inline !important;\">Please refer to the details<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-overview#determine-table-category?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">here</a><br></div><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4187",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4108"
+    },
+    {
+      "id": 4107,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:51.7Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:44:09.99Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Ingestion using HDInsight Kafka",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://kafka.apache.org/\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Apache Kafka</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>is an open-source distributed streaming platform that can be used to build real-time data pipelines and streaming applications. Kafka also provides message broker functionality similar to a message queue, where you can publish and subscribe to named data streams. It is horizontally scalable, fault-tolerant, and extremely fast.<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/kafka/apache-kafka-get-started\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Kafka on HDInsight</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>provides a Kafka as a managed, highly scalable, and highly available service in Azure.</span><br></div><div><br></div><div>Review this <a href=\"https://docs.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/real-time-ingestion#kafka-on-hdinsight?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">details</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4182",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4167",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4110",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4107"
+    },
+    {
+      "id": 4106,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:51.55Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:53:44.373Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Load data to Synapse Analytics using Polybase",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>While SQL pool supports many loading methods including non-Polybase options such as BCP and SQL BulkCopy API, the fastest and most scalable way to load date is through PolyBase. PolyBase is a technology that accesses external data stored in Azure Blob storage or Azure Data Lake Store via the T-SQL language.<br></div><div><br></div><div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/load-data-overview?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4187",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4106"
+    },
+    {
+      "id": 4105,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:51.227Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:46:39.253Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Data Ingestion to Synapse Analytics with Stream Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Prerequisites:&nbsp;<br></span><div><ul><li>Azure Stream Analytics Job - To create an Azure Stream Analytics job</li><li><span>Synapse dedicated SQL pool for your data warehouse - To create a new data warehouse, follow the steps in the Quickstart to create a new data warehouse.</span></li></ul></div></div><div>Please refer to details <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-integrate-azure-stream-analytics?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">here</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4186",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4105"
+    },
+    {
+      "id": 4104,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:51.063Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:53:23.953Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Load data to Synapse Analytics using COPY INTO",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">The COPY statement is the recommended loading utility as it enables you to seamlessly and flexibly load data by providing functionality to:</p><ul style=\"margin:16px 0px 16px 38px;list-style:none;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><li style=\"margin:0px;list-style:outside none disc;\">Allow lower privileged users to load without needing strict CONTROL permissions on the data warehouse</li><li style=\"margin:0px;list-style:outside none disc;\">Leverage only a single T-SQL statement without having to create any additional database objects</li><li style=\"margin:0px;list-style:outside none disc;\">Leverage a finer permission model without exposing storage account keys using Share Access Signatures (SAS)</li><li style=\"margin:0px;list-style:outside none disc;\">Specify a different storage account for the ERRORFILE location (REJECTED_ROW_LOCATION)</li><li style=\"margin:0px;list-style:outside none disc;\">Customize default values for each target column and specify source data fields to load into specific target columns</li><li style=\"margin:0px;list-style:outside none disc;\">Specify a custom row terminator for CSV files</li><li style=\"margin:0px;list-style:outside none disc;\">Escape string, field, and row delimiters for CSV files</li><li style=\"margin:0px;list-style:outside none disc;\">Leverage SQL Server Date formats for CSV files</li><li style=\"margin:0px;list-style:outside none disc;\">Specify wildcards and multiple files in the storage location path</li></ul></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&amp;bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&amp;view=azure-sqldw-latest\">https://docs.microsoft.com/en-us/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&amp;bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&amp;view=azure-sqldw-latest</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4187",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4104"
+    },
+    {
+      "id": 4103,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:50.91Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:46:33.753Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Table design for staging data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review Data <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-distribute?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Distribution Design</a></div><div><br></div><div><span style=\"\">For fast inserts use </span><b style=\"\">round robin</b><span style=\"\"> distribution:</span><br></div><div><br></div><div><span style=\"\">Indexing&nbsp;</span><br></div><div>When you are temporarily landing data in dedicated SQL pool, you may find that using a <b>heap </b>table makes the overall process faster. This is because loads to heaps are faster than to index tables and in some cases the subsequent read can be done from cache. If you are loading data only to stage it before running more transformations, loading the table to <b>heap </b>table is much faster than loading the data to a clustered columnstore table<br></div><div>Review <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-index?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Index Design</a></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4186",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4103"
+    },
+    {
+      "id": 4102,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:50.657Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:53:16.397Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Data preparation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/data-loading-best-practices?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4187",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4102"
+    },
+    {
+      "id": 4101,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:50.513Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:53:04.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Data Loading Strategies ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>While SQL pool supports many loading methods, including popular SQL Server options such as bcp and the SqlBulkCopy API, the fastest and most scalable way to load data is through PolyBase external tables and the COPY statement.<br></span><div><br></div><span>With PolyBase and the COPY statement, you can access external data stored in Azure Blob storage or Azure Data Lake Store via the T-SQL language. For the most flexibility when loading, we recommend using the COPY statement.</span><br></div><div><br></div><div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/design-elt-data-loading?toc=/azure/synapse-analytics/toc.json&amp;bc=/azure/synapse-analytics/breadcrumb/toc.json?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4187",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4101"
+    },
+    {
+      "id": 4174,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:03.43Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:42:07.233Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Analyze existing data sources, schema design and complexity",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Obtain a detailed understanding of your existing data sources, schema design and complexity, architecture, size, and growth rates<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4178",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4174"
+    },
+    {
+      "id": 4173,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:03.27Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:41:59.75Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Assess your existing ETL jobs, job dependencies, and data usage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Assess your existing ETL jobs, job dependencies, and data usage",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4178",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4173"
+    },
+    {
+      "id": 4172,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:03.103Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:41:53.853Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Analyze  performance and scalability",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Understand what you do to\nenable performance and\ncurrent issues you have<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4178",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4172"
+    },
+    {
+      "id": 4171,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:02.953Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:41:48.103Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Analyze Security and change control management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Assess how easy it is to make\nchanges to your existing data\nwarehouse<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4178",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4171"
+    },
+    {
+      "id": 4170,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:02.817Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:41:41.533Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Analyze current data warehousing technologies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Assess the strengths,\nweaknesses and gaps in\ncurrent data warehousing\ntechnologies<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4178",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4170"
+    },
+    {
+      "id": 4169,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:02.69Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:42:55.64Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Obtain the necessary approvals to migrate your data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Ensure you obtain the\nnecessary approvals to\nmigrate your data. Cloud Center of Excellence, Governance team sign-off<br></div><div>Ready your on-premises\ninfrastructure teams to\nenable smooth data\nmigration<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4179",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4169"
+    },
+    {
+      "id": 4168,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:02.543Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:42:15.673Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Analyze and ensure network bandwidth and infrastructure for data migration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Current data volumes and\nnetwork speed will dictate\nwhich option you use to\nmigrate your historical data\nto Azure<br></div><div><br></div><div>Run-time software is needed\nin your data center to enable\nAzure Data Factory to control\nexecution of data export<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4179",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4168"
+    },
+    {
+      "id": 4167,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:02.413Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:44:27.517Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Create Kafka Topic for consumers",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Setup Apache kafka <a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/kafka/apache-kafka-introduction?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Topics</a></div><div>Enable&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/kafka/apache-kafka-auto-create-topics?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Auto create topics</a>&nbsp; (if required)</div><div><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4107",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4167"
+    },
+    {
+      "id": 4166,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:02.273Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:45:57.907Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Data Preparation and Transformation using Databricks (Hot Path)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><h3 style=\"box-sizing:border-box;margin:0px;font-family:Barlow, Helvetica, Arial, sans-serif;font-weight:300;color:rgb(51, 51, 51);\"><a href=\"https://docs.microsoft.com/en-us/azure/azure-databricks\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;\">Databricks</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;display:inline !important;\"><span>&nbsp;</span>is an Apache Spark-based analytics platform optimized for the Microsoft Azure cloud services platform.</span><br></h3></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;display:inline !important;\"><br></span></div><div>Please refer to this <a href=\"https://databricks.com/blog/2019/02/07/high-performance-modern-data-warehousing-with-azure-databricks-and-azure-sql-dw.html?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a>&nbsp;and one <a href=\"https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/data/stream-processing-databricks?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">more</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4184",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4166"
+    },
+    {
+      "id": 4165,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:02.133Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:57:53.737Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - For HDInsight Kafka - Infrastructure Consideration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"\">Please refer to </span><a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-business-continuity-architecture?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"\">this </a><span style=\"\">guidance and one </span><a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/kafka/apache-kafka-high-availability?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"\">more</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4191",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4165"
+    },
+    {
+      "id": 4164,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:01.993Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:56:33.193Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "8 - For Kafka - Provision cluster using Enterprise Security Package",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Provision ESP enabled HDInsight Cluster</div><div>Refer to <a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/domain-joined/apache-domain-joined-architecture?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">this</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4190",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4164"
+    },
+    {
+      "id": 4163,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:01.847Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:53:58.373Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6 - Fast performance caching data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"></div></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Materialized views provide a low maintenance method for complex analytical queries to get fast performance without any query change</span><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br style=\"box-sizing:border-box;\"></span></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\"><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-materialized-view-performance-tuning?view=azure-sqldw-latest?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Materialized Views</a><br style=\"box-sizing:border-box;\"></span><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/sql/t-sql/statements/set-result-set-caching-transact-sql?toc=/azure/synapse-analytics/toc.json&amp;bc=/azure/synapse-analytics/breadcrumb/toc.json&amp;view=azure-sqldw-latest?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Result set Cache</a><span>&nbsp;</span>Controls the result set caching behavior for the current client session.</span></div></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4187",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4163"
+    },
+    {
+      "id": 4162,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:01.7Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:46:51.913Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Fast performance caching data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Materialized views provide a low maintenance method for complex analytical queries to get fast performance without any query change</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/develop-materialized-view-performance-tuning?view=azure-sqldw-latest?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Materialized Views</a><br></span><div><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/sql/t-sql/statements/set-result-set-caching-transact-sql?toc=/azure/synapse-analytics/toc.json&amp;bc=/azure/synapse-analytics/breadcrumb/toc.json&amp;view=azure-sqldw-latest?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Result set Cache</a> Controls the result set caching behavior for the current client session.</span><br></div><div><br></div><div><br></div><div><br></div><span></span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4186",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4162"
+    },
+    {
+      "id": 4161,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:01.49Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:58:13.427Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - For HDInsight Kafka - Native fetaure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/kafka/apache-kafka-scalability?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4194",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4161"
+    },
+    {
+      "id": 4160,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:01.347Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:59:23.147Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Performance Optimization with Kafka HDInsight",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/advisor/advisor-performance-recommendations?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance </a>and one <a href=\"https://docs.microsoft.com/en-us/azure/hdinsight/kafka/apache-kafka-performance-tuning?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">more</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4193",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4160"
+    },
+    {
+      "id": 4159,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:01.207Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:54:45.9Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Preparation and General Resources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>There are critical tools and resources that helps field and customers in developing Power BI content.</div><div><br></div><div><b>Tools:</b></div><div><br></div><div>DAX Studio: A tool for working with DAX queries</div><div><a href=\"https://daxstudio.org/\">DAX Studio - The ultimate client tool for working with DAX queries</a><br></div><div><br></div><div>Vertipaq Analyzer:&nbsp;is a useful tool to analyze VertiPaq storage structures for a data model in Power BI and Analysis Services Tabular.</div><div><a href=\"https://www.sqlbi.com/tools/vertipaq-analyzer/\">VertiPaq Analyzer - SQLBI</a><br></div><div><br></div><div><br></div><div>Tabular Editor:&nbsp;<span>Tabular Editor is an editor alternative to SSDT for authoring Tabular models for Analysis Services even without a workspace server.<br></span><div><a href=\"https://www.sqlbi.com/tools/tabular-editor/\">Tabular Editor - SQLBI</a><br></div><div><br></div><div>BISM Normalizer:is a free and open-source tool to manage Microsoft Analysis Services tabular models</div><div><a href=\"http://bism-normalizer.com/\">Home Page - BISM Normalizer (bism-normalizer.com)</a><br></div><div><br></div><div><br></div><div><b>Blogs and Articles:</b></div><div><br></div><div>Power Bi Tips:</div><div><a href=\"https://powerbi.tips/\">Home - (powerbi.tips)</a><br></div><div><br></div><div>Power Bi <a href=\"https://docs.microsoft.com/en-us/power-bi/guidance/whitepapers?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Whitepapers</a>:</div><div><br></div><div><br></div><div>Excellent Blogs on any aspects of Power BI / Tabular Model development&nbsp;</div><div><a href=\"https://www.sqlbi.com/\">Home - SQLBI</a><br></div><div><a href=\"https://radacad.com/category/power-bi\">https://radacad.com/category/power-bi</a><br></div><div><br></div><span></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4189",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4159"
+    },
+    {
+      "id": 4158,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:01.07Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:54:36.48Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Planning a Power BI Enterprise Deployment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<ol><li>Customer OnBoarding and Readiness:&nbsp;</li><ul><li>Demos: Search Power BI in <a href=\"http://aka.ms/learning\">http://aka.ms/learning</a><br><a href=\"https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">What is Power BI</a>&nbsp;<br></li><li>Videos :&nbsp;<a href=\"https://www.sqlbi.com/\">Home - SQLBI</a>,&nbsp;<a href=\"https://www.youtube.com/channel/UCFp1vaKzpfvoGai0vE5VJ0w\">Guy in a Cube - YouTube</a></li><li><a href=\"https://powerbi.microsoft.com/en-us/learning/?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Learnings</a></li></ul><li>Get Familiar with Power BI licensing structure and offers</li><ol><li><a href=\"https://powerbi.microsoft.com/en-us/pricing/\">Pricing &amp; Product Comparison | Microsoft Power BI</a>,&nbsp;<br><a href=\"https://docs.microsoft.com/en-us/power-bi/admin/service-admin-licensing-organization\">Power BI licensing for users in your organization - Power BI | Microsoft Docs</a><br></li><li>Power Bi Premium:&nbsp;<a href=\"https://aka.ms/pbipremiumwhitepaper\">https://aka.ms/pbipremiumwhitepaper</a><br></li><li>Power BI for SAP:&nbsp;<a href=\"https://aka.ms/powerbiandsapbw\">https://aka.ms/powerbiandsapbw</a></li><li>Power BI GDPR:&nbsp;<a href=\"https://aka.ms/power-bi-gdpr-whitepaper\">https://aka.ms/power-bi-gdpr-whitepaper</a></li></ol></ol>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4189",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4158"
+    },
+    {
+      "id": 4157,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:00.92Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:54:29.76Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Identify the Sources and Connect to the Data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"\">As part of the MDW architectural design the sources are usually identified ahead of time. Below is the data connection guidelines depending on the data sources:</span><br></div><div><br></div><div><ul><li>List of Data Sources . Refer to <a href=\"https://docs.microsoft.com/en-us/power-bi/connect-data/desktop-data-sources?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">this</a></li><li>Connecting to Data Sources in the Power BI service <a href=\"https://docs.microsoft.com/en-us/power-bi/transform-model/dataflows/dataflows-introduction-self-service?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">using Dataflows</a>:<br>Dataflows white paper:&nbsp;<a href=\"https://go.microsoft.com/fwlink/?linkid=2034388&amp;clcid=0x409\">https://go.microsoft.com/fwlink/?linkid=2034388&amp;clcid=0x409</a><br></li><li>On Premise Data Gateways: (&nbsp; Sizing, Best Practices, Configuration and etc.)</li><ul><li>Architecture <a href=\"https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-onprem-indepth?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal%20?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">details</a><br></li><li><a href=\"https://docs.microsoft.com/en-us/power-bi/connect-data/service-gateway-deployment-guidance\">P</a>lease refer to this <a href=\"https://docs.microsoft.com/en-us/power-bi/connect-data/service-gateway-deployment-guidance?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a>&nbsp;and <a href=\"https://docs.microsoft.com/en-us/power-bi/connect-data/service-gateway-onprem?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">more</a><br></li><li>Installation <a href=\"https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-install?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">details</a><br></li><li>High Availability of Gateways: <a href=\"https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-high-availability-clusters?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">details</a><br></li><li>Proactively Monitor Gateways: <a href=\"https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-performance?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">details</a></li><li>Gateway Performance Template Tool:&nbsp;<a href=\"https://download.microsoft.com/download/D/A/1/DA1FDDB8-6DA8-4F50-B4D0-18019591E182/GatewayPerformanceMonitoring.pbit\">https://download.microsoft.com/download/D/A/1/DA1FDDB8-6DA8-4F50-B4D0-18019591E182/GatewayPerformanceMonitoring.pbit</a></li><li>Using on-premises gateway app - <a href=\"https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-app?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">details</a><br></li><li><a href=\"https://docs.microsoft.com/en-us/power-bi/connect-data/service-gateway-sql-tutorial\">C</a>onnect to on-premises SQL Server - <a href=\"https://docs.microsoft.com/en-us/power-bi/connect-data/service-gateway-sql-tutorial?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">details</a><br></li><li>How to <a href=\"https://docs.microsoft.com/en-us/power-bi/connect-data/service-gateway-onprem-tshoot?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Troubleshoot</a></li></ul><li>If you already have Power BI datasets published to the services you can use <a href=\"https://docs.microsoft.com/en-us/power-bi/connect-data/service-datasets-hub?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">dataset hub to discover</a> your current organization datasets<br><br></li></ul></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4189",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4157"
+    },
+    {
+      "id": 4156,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:00.773Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:54:23.87Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Transform and Model the Data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>At the heart of implementation of Power BI is transformation and modeling the data. In cases that the model is built in Azure Analysis Services, Azure Synapse Analytics ( SQL DW), SQL Server and other sources and you are connecting to sources using direct query, import or composite models you may not need to perform any modeling or transformation in Power BI tools. The items below refers to the guidelines when you perform transformation and modeling using Power BI Desktop or other tools. Some general modeling practices indicated here would help in all cases:</div><div><br></div><div><br></div><div>General:</div><div><ol><li>Reference book for General Tabular Modeling&nbsp;<a href=\"https://www.sqlbi.com/books/tabular-modeling-in-microsoft-sql-server-analysis-services-2nd-edition/\">Tabular Modeling in SQL Server Analysis Services (2nd Edition) - SQLBI</a></li><li><a href=\"https://docs.microsoft.com/en-us/power-bi/guidance/star-schema\">U</a>nderstand STAR schema in PowerBI. Please refer to this <a href=\"https://docs.microsoft.com/en-us/power-bi/guidance/star-schema?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></li><li><a href=\"https://docs.microsoft.com/en-us/power-bi/guidance/import-modeling-data-reduction\">D</a>ata Reduction technique in Data models.. Please refer to this <a href=\"https://docs.microsoft.com/en-us/power-bi/guidance/import-modeling-data-reduction?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a><br></li><li><a href=\"https://docs.microsoft.com/en-us/power-bi/transform-model/\">T</a>ransform, Shape and Model. Please refer to this <a href=\"https://docs.microsoft.com/en-us/power-bi/transform-model/?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a><br></li><li><a href=\"https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics\">U</a>sing DAX. Please refer to this <a href=\"https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a><br></li><li>Refer to the General Resources task in this ADO for other great resources on modeling including&nbsp;<a href=\"https://docs.microsoft.com/en-us/archive/blogs/analysisservices/whitepaper-on-modeling-for-as-tabular-scalability\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Whitepaper on modeling for AS tabular scalability | Microsoft Docs</a></li></ol><div><br></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4189",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4156"
+    },
+    {
+      "id": 4155,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:00.603Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:44:01.633Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Create Raw zone,  Enriched Zone and Curated Zone containers",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Create containers within ADLS Gen2 to define clear security boundaries to hold types of data</div><div><br></div><div>Reference</div><div><span style=\"display:inline !important;\">Ensure data lake storage design follows<span>&nbsp;</span></span><a href=\"https://github.com/rukmani-msft/adlsguidancedoc/blob/master/Hitchhikers_Guide_to_the_Datalake.md?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"box-sizing:border-box;text-decoration:underline;\">best practices</a><br></div><div><span style=\"box-sizing:border-box;\">Please review this<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">details</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4181",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4155"
+    },
+    {
+      "id": 4154,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:00.473Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:45:00.097Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Ingestion using Azure Stream Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>To enable highly cost-effective, large volume of real-time data ingestion, direct output from the stream analytics into ADLS Gen2&nbsp;</div><div><br></div><div>Please refer to&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/stream-analytics/blob-storage-azure-data-lake-gen2-output\">t</a>his <a href=\"https://docs.microsoft.com/en-us/azure/stream-analytics/blob-storage-azure-data-lake-gen2-output?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4182",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4154"
+    },
+    {
+      "id": 4153,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:00.317Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:44:51.977Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Ingestion using Event hub",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Event Hubs enables you to automatically capture the streaming data in Event Hubs in an<span>&nbsp;</span></span><a href=\"https://azure.microsoft.com/services/storage/blobs/\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Azure Blob storage</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>or<span>&nbsp;</span></span><a href=\"https://azure.microsoft.com/services/data-lake-store/\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Azure Data Lake Storage Gen 1 or Gen 2</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>account of your choice, with the added flexibility of specifying a time or size interval.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div>Please refer to -&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-capture-overview?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Capture streaming events into ADLS Gen2</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4182",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4153"
+    },
+    {
+      "id": 4152,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:00.143Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:44:44.09Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Ingestion using Event Grid into Data bricks Delta Tables",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><a href=\"https://delta.io/\" style=\"cursor:pointer;\">Delta Lake</a><span>&nbsp;</span>is an<span>&nbsp;</span><a href=\"https://github.com/delta-io/delta\" style=\"cursor:pointer;\">open source storage layer</a><span>&nbsp;</span>that brings reliability to data lakes. Delta Lake provides ACID transactions, scalable metadata handling, and unifies streaming and batch data processing. Delta Lake runs on top of your existing data lake and is fully compatible with Apache Spark APIs. Delta Lake on Azure Databricks allows you to <a href=\"https://docs.microsoft.com/en-us/azure/databricks/delta/?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">configure Delta Lake based</a> on your workload patterns.</p><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><br></p></div><h3><span style=\"\">Please refer to this </span><a href=\"https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-events?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"\">guidance</a><span style=\"\">&nbsp;</span></h3><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4182",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4152"
+    },
+    {
+      "id": 4151,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:27:00Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:44:36.49Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Ingestion using IOT Hub (Device to Hub Messages)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Message routing enables you to send messages from your devices to cloud services in an automated, scalable, and reliable manner.<span>&nbsp;</span></span><br></div><div><br></div><div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4182",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4151"
+    },
+    {
+      "id": 4150,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:59.87Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:45:44.103Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Ingestion using Azure Synapse Analytics Pipelines",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/data-factory/concepts-pipelines-activities?toc=/azure/synapse-analytics/toc.json&amp;bc=/azure/synapse-analytics/breadcrumb/toc.json?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><div style=\"box-sizing:border-box;\"><br></div></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4183",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4150"
+    },
+    {
+      "id": 4149,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:59.73Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:45:37.873Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Ingestion using Data Factory",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/data-factory/introduction?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a>&nbsp;and one <a href=\"https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-sql-data-warehouse?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">more</a></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4183",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4149"
+    },
+    {
+      "id": 4148,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:59.6Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:45:24.51Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Bulk Load using COPY command (Azure Synapse Analytics)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to</div><div><span style=\"display:inline !important;\">Bulk load data using the <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">COPY </a>statement</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4183",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4148"
+    },
+    {
+      "id": 4147,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:59.47Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:45:16.96Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Ingestion using SSIS Packages",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\">Please refer to this <a href=\"https://docs.microsoft.com/en-us/sql/integration-services/lift-shift/ssis-azure-lift-shift-ssis-packages-overview?view=sql-server-ver15?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4183",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4147"
+    },
+    {
+      "id": 4146,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:59.323Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:45:51.773Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Data Preparation and Transformation using Azure Synapse Analytics Data flows (Hot Path)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Use SQL Pool or Spark Pool (depending on the available skillset</p><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">For SQL Pool, Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql/overview-architecture?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></p><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><span style=\"\">For Apache Spark Pool,&nbsp;</span><span style=\"font-size:14px;\">Please refer to this </span><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/quickstart-data-flow?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"font-size:14px;\">guidance</a><span style=\"font-size:14px;\">&nbsp;and one </span><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-overview\" style=\"font-size:14px;\">more</a><br></p></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4184",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4146"
+    },
+    {
+      "id": 4145,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:59.127Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:46:26.263Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - Data Preparation and Transformation using Azure Synapse Analytics Pipelines (Cold Path)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/get-started-pipelines?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4185",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4145"
+    },
+    {
+      "id": 4144,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:58.897Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:43:22.89Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Set Migration Goals",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Define Migration goals</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4195",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4144"
+    },
+    {
+      "id": 4143,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:58.763Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:43:16.49Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Set Migration Approach",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Please review</span><br></div><div><span><br></span></div><div><span><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-develop?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Design Decisions</a></span></div><div><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-best-practices-development?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\" style=\"\">Development Best Practices</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4195",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4143"
+    },
+    {
+      "id": 4142,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:58.61Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:43:09.57Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Define Migration Scope",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div></div><div style=\"box-sizing:border-box;\">Please review readiness session</div><div style=\"box-sizing:border-box;\"><a href=\"https://azure.microsoft.com/en-us/resources/videos/overview-of-migration-and-recommended-tools-services/?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Study Migration Journey and Tools</a><br></div><div style=\"box-sizing:border-box;\"><br></div><div style=\"box-sizing:border-box;\">TODO</div><div style=\"box-sizing:border-box;\">Add any contextual scope definition</div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-best-practices-development\"></a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4195",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4142"
+    },
+    {
+      "id": 4141,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:58.453Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Solution Scenario : Migrations from Teradata",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/analytics/analytics-solutions-teradata?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4196",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4141"
+    },
+    {
+      "id": 4140,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:58.277Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Solution Scenario : Migrations from Netezza",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/analytics/analytics-solutions-netezza?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></span></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4196",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4140"
+    },
+    {
+      "id": 4139,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "Modern Data Warehouse",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:58.093Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:35:46.023Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Solution Scenario : Migrations from Exadata (Oracle)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/analytics/analytics-solutions-exadata?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4196",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4139"
+    },
+    {
+      "id": 4138,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:57.923Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:56:23.953Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7 - For Databricks - Enterprise Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/databricks/security/?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4190",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4138"
+    },
+    {
+      "id": 4137,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:57.767Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:56:16.333Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6 - For Synapse Analytics -  Enterprise Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to below guidance</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/security/how-to-set-up-access-control/?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Access Control</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/security/how-to-grant-workspace-managed-identity-permissions?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Using Managed Identity</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/security/how-to-create-a-workspace-with-data-exfiltration-protection?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Data Exfiltration</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/security/how-to-create-managed-private-endpoints?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Using Managed Private Endpoint</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4190",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4137"
+    },
+    {
+      "id": 4136,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:57.59Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:56:06.977Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - For Data Lake - Enterprise Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-best-practices#security-considerations?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4190",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4136"
+    },
+    {
+      "id": 4135,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:57.443Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:56:00.317Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - For Data Factory - Enterprise Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/data-factory/data-movement-security-considerations#:~:text=Data%20Factory%20management%20resources%20are%20built%20on%20Azure%2cgrouping%20of%20activities%20that%20together%20perform%20a%20task.?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4190",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4135"
+    },
+    {
+      "id": 4134,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:57.303Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:55:10.763Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - For CosmosDB - Enterprise Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/cosmos-db/database-security?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4190",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4134"
+    },
+    {
+      "id": 4133,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:57.17Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:55:04.34Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - For Azure ML - Enterprise Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/concept-enterprise-security?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4190",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4133"
+    },
+    {
+      "id": 4132,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:57.027Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:54:56.09Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - For PowerBI - Enterprise Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/power-bi/guidance/whitepaper-powerbi-securityy?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4190",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4132"
+    },
+    {
+      "id": 4131,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:56.89Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:59:15.76Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Using Azure advisor for insights into optimzation areas",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Optimize across, security, reliability, operations and cost</div><div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/advisor/advisor-overview?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4193",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4131"
+    },
+    {
+      "id": 4130,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:56.753Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:58:06.973Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - For Azure Synapse Analytics - Native feature",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/quickstart-scale-compute-portal?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4194",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4130"
+    },
+    {
+      "id": 4129,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:56.61Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:58:00.41Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - For Databricks - Native configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/databricks/clusters/configure?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4194",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4129"
+    },
+    {
+      "id": 4128,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:56.443Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:57:47.59Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - For Cosmos DB - Native feature",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/cosmos-db/high-availability?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4191",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4128"
+    },
+    {
+      "id": 4127,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:56.253Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:57:40.91Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - For Azure Synapse Analytics - Native feature",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/azure-best-practices/analytics/azure-synapse?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4191",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4127"
+    },
+    {
+      "id": 4126,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:56.093Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:46:19.817Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Security Consideration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/data-factory/data-movement-security-considerations?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4185",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4126"
+    },
+    {
+      "id": 4125,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:55.957Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:46:13.417Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Create Integration Runtimes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">The Integration Runtime (IR) is the compute infrastructure used by Azure Data Factory to provide data integration capabilities across different network environments. For more information about IR, see<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/azure/data-factory/concepts-integration-runtime?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Integration runtime</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">.</span><br></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/data-factory/create-self-hosted-integration-runtime?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Create\na self-hosted integration runtime</a><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/data-factory/create-azure-integration-runtime?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Create\nAzure integration runtime</a><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Create\nan Azure-SSIS integration runtime</a><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4185",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4125"
+    },
+    {
+      "id": 4124,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:55.777Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:46:07.277Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Create Transformations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Using Mapping Data flows&nbsp;</div><div><a href=\"https://docs.microsoft.com/en-us/azure/data-factory/concepts-data-flow-overview?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Mapping\ndata flows</a><br></div><div><br></div><div>Using Copy Activity</div><div><a href=\"https://docs.microsoft.com/en-us/azure/data-factory/copy-activity-overview?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Copy\nactivity</a><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4185",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4124"
+    },
+    {
+      "id": 4123,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:55.633Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:58:25.893Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Monitoring",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<p style=\"margin:0in;font-family:&quot;Segoe UI&quot;;font-size:12.0pt;color:#171717;\"><span style=\"background:white;\">Use below set of guidance</span></p><p style=\"margin:0in;font-family:&quot;Segoe UI&quot;;font-size:12.0pt;color:#171717;\"><span style=\"background:white;\"><br></span></p><p style=\"margin:0in;font-family:&quot;Segoe UI&quot;;font-size:12.0pt;color:#171717;\"><span style=\"background:white;\">Azure Databricks</span></p><p style=\"margin:0in;margin-left:.375in;\"><font face=\"Segoe UI\"><span style=\"font-size:16px;\"><a href=\"https://docs.microsoft.com/en-us/azure/architecture/databricks-monitoring/?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Using Azure Monitor</a></span></font></p><p style=\"margin:0in;margin-left:.375in;\"><br></p><p style=\"margin:0in;font-family:&quot;Segoe UI&quot;;font-size:12.0pt;color:#171717;\"><span style=\"background:white;\">Data Factory</span></p><p style=\"margin:0in;margin-left:.375in;\"><span style=\"font-family:&quot;Segoe UI&quot;;font-size:12.0pt;background:white;\"><a href=\"https://docs.microsoft.com/en-us/azure/data-factory/monitor-using-azure-monitor?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Using Azure Monitor</a></span></p><p style=\"margin:0in;margin-left:.375in;\"><font face=\"Segoe UI\"><span style=\"font-size:16px;\"><a href=\"https://azure.microsoft.com/en-us/blog/create-alerts-to-proactively-monitor-your-data-factory-pipelines/?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Using Alerts</a></span></font></p><p style=\"margin:0in;margin-left:.375in;\"><br></p><p style=\"margin:0in;font-family:&quot;Segoe UI&quot;;font-size:12.0pt;color:#171717;\"><span style=\"background:white;\">Synapse Analytics</span></p><p style=\"margin:0in;font-family:&quot;Segoe UI&quot;;font-size:12.0pt;color:#171717;\"><span style=\"background:white;\">&nbsp; &nbsp; &nbsp; &nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-concept-resource-utilization-query-activity?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\"> Monitor Resource utilization and query activity</a></span></p><p style=\"margin:0in;margin-left:.375in;\"><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-manage-monitor?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Monitoring using DMVs</a></p><p style=\"margin:0in;font-family:&quot;Segoe UI&quot;;font-size:12.0pt;color:#171717;\"><span style=\"background:white;\"><br></span></p><p style=\"margin:0in;font-family:&quot;Segoe UI&quot;;font-size:12.0pt;color:#171717;\"><span style=\"background:white;\">Azure Storage</span></p><p style=\"margin:0in;margin-left:.375in;\"><font face=\"Segoe UI\"><span style=\"font-size:16px;\"><a href=\"https://docs.microsoft.com/en-us/azure/storage/blobs/monitor-blob-storage?tabs=azure-powershell?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">Using Azure Monitor</a></span></font></p>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4193",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4123"
+    },
+    {
+      "id": 4122,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:55.497Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:54:18.043Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Performance Tuning",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"><div style=\"box-sizing:border-box;\">Performance Tuning:</div></div><div style=\"box-sizing:border-box;\"><ol style=\"box-sizing:border-box;padding-left:40px;\"><li style=\"box-sizing:border-box;\">Push transformation to the Source:&nbsp;<a href=\"https://www.youtube.com/watch?v=ZSUCmi6h5SY&amp;feature=youtu.be\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Where to create your columns in Power BI | Data Modeling Best Practices - YouTube</a></li><li style=\"box-sizing:border-box;\">Optimize Query Folding:&nbsp;<a href=\"https://www.youtube.com/watch?v=ZSUCmi6h5SY&amp;feature=youtu.be\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Where to create your columns in Power BI | Data Modeling Best Practices - YouTube</a><br style=\"box-sizing:border-box;\">Please refer to this <a href=\"https://docs.microsoft.com/en-us/power-bi/guidance/power-query-folding?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></li><li style=\"box-sizing:border-box;\">Remove<a href=\"https://docs.microsoft.com/en-us/power-bi/guidance/import-modeling-data-reduction?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\"> Extra Columns:</a></li><li style=\"box-sizing:border-box;\">Use this tool to see what fields are being used in your repots&nbsp;<a href=\"https://github.com/stephbruno/Power-BI-Field-Finder\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">GitHub - stephbruno/Power-BI-Field-Finder</a><br style=\"box-sizing:border-box;\"></li><li style=\"box-sizing:border-box;\">check the Model size and attributes using Vertipaq Analyzer:&nbsp;<a href=\"https://www.sqlbi.com/tools/vertipaq-analyzer/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">VertiPaq Analyzer - SQLBI</a></li><li style=\"box-sizing:border-box;\">Reduce the calculated columns.</li><li style=\"box-sizing:border-box;\">Avoid using Excel / SharePoint as possible and try to use relational databases or dataflows</li></ol></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4189",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4122"
+    },
+    {
+      "id": 4121,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:55.357Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:54:11.977Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Configure output from Stream Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">You can use<span>&nbsp;</span></span><a href=\"https://powerbi.microsoft.com/\" style=\"cursor:pointer;font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Power BI</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>as an output for a Stream Analytics job to provide for a rich visualization experience of analysis results. You can use this capability for operational dashboards, report generation, and metric-driven reporting.</span><br></div><div><br></div><div>Please refer to this <a href=\"https://docs.microsoft.com/en-us/azure/stream-analytics/power-bi-output?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4188",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4121"
+    },
+    {
+      "id": 4120,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Warehouse",
+        "System.TeamProject": "Modern Data Warehouse",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-01-29T20:26:55.16Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-01-29T20:54:06.11Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Configure PowerBI embedded",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(76, 76, 81);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Using Power BI with Azure Stream Analytics allows users of Power BI Embedded dashboards to easily visualize insights from streaming data within the context of the apps they use every day. With Power BI Embedded, users can also embed real-time dashboards right in their organization's web apps.</span><br></div><div><br></div><div>Please refer to this <a href=\"https://azure.microsoft.com/en-us/blog/power-bi-embedded-dashboards-with-azure-stream-analytics/?WT.mc_id=devops_userstory_service_mdndatawrh_-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Implementation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4188",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4120"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

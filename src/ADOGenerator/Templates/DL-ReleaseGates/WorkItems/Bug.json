@@ -1,0 +1,38 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 7405,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "ReleaseGates",
+        "System.TeamProject": "ReleaseGates",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "Not fixed",
+        "System.CreatedDate": "2021-09-29T14:44:45.737Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2021-09-29T14:44:45.737Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Disk out of space in Canary Environment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Disk out of space in Canary Environment",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/7405"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

@@ -1,0 +1,788 @@
+{
+  "count": 12,
+  "value": [
+    {
+      "id": 3649,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:30.28Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:25:23.97Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Readiness Skills, training and samples for the team",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;\">With respect to skills, ,ensure the appropriate members of your migration team are trained in Azure cloud fundamentals, Azure Blob Store, Azure Data Lake Storage, Azure Logic App (optional), Azure Functions (Optional)</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3631",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3676",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3677",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3674",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3675",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3672",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3673",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3649"
+    },
+    {
+      "id": 3660,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:32.117Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:25:23.97Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Preparation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Preparation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3644",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3648",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3647",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3643",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3646",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3645",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3650",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3631",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3660"
+    },
+    {
+      "id": 3661,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:32.24Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:25:23.97Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Query Data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/search/search-query-overview?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Query Types Overview</a><br></div><div><br></div><div>Apply&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/search/search-filters?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">filters</a></div><div><br></div><div>Apply <a href=\"https://docs.microsoft.com/en-us/azure/search/search-pagination-page-layout?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Pagination</a></div><div><br></div><div>Apply <a href=\"https://docs.microsoft.com/en-us/azure/search/index-add-scoring-profiles?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Ranking</a></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3630",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3651",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3653",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3652",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3661"
+    },
+    {
+      "id": 3662,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:32.367Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:03:59.123Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Data Source Design",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Azure cognitive search supports accessing data natively for belo list of data sources</div><div><ul style=\"margin:16px 0px 16px 38px;list-style:none;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><li style=\"margin:0px;list-style:outside none disc;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-howto-indexing-azure-blob-storage\" style=\"outline:none;cursor:pointer;text-decoration:underline;\">Azure Blob Storage</a></li><li style=\"margin:0px;list-style:outside none disc;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-howto-index-azure-data-lake-storage\" style=\"cursor:pointer;\">Azure Data Lake Storage Gen2</a><span>&nbsp;</span>(in preview)</li><li style=\"margin:0px;list-style:outside none disc;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-howto-indexing-azure-tables\" style=\"cursor:pointer;\">Azure Table Storage</a></li><li style=\"margin:0px;list-style:outside none disc;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-howto-index-cosmosdb\" style=\"cursor:pointer;\">Azure Cosmos DB</a></li><li style=\"margin:0px;list-style:outside none disc;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-howto-connecting-azure-sql-database-to-azure-search-using-indexers\" style=\"cursor:pointer;\">Azure SQL Database</a></li><li style=\"margin:0px;list-style:outside none disc;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers\" style=\"cursor:pointer;\">SQL Managed Instance</a></li><li style=\"margin:0px;list-style:outside none disc;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers\" style=\"cursor:pointer;\">SQL Server on Azure Virtual Machines</a></li></ul><br></div><div><span style=\"\">For any additional data sources, apply integration using Logic App, Function App, Connector etc.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3667",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3658",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3656",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3655",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3657",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3659",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3662"
+    },
+    {
+      "id": 3663,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:32.52Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:25:23.97Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Create Infrastructure in Azure Resource Group",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create Infrastructure in Azure Resource Group",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3633",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3632",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3630",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3634",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3636",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3635",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3663"
+    },
+    {
+      "id": 3664,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:32.78Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:27:05.153Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Plan for Results Consumption",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Web App Implementation</div><div><a href=\"https://docs.microsoft.com/en-us/azure/search/search-howto-dotnet-sdk?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Details</a><br></div><div><br></div><div>Bot&nbsp;<span style=\"display:inline !important;\">Implementation</span></div><div><a href=\"https://docs.microsoft.com/en-us/previous-versions/azure/bot-service/bot-service-design-pattern-knowledge-base?view=azure-bot-service-3.0?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Details</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3680",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3664"
+    },
+    {
+      "id": 3665,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:32.92Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:25:56.937Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Plan for Monitoring ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Monitor Knowledge Mining Solution&nbsp;</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/search/search-monitor-usage?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Details</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Manage",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3679",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3665"
+    },
+    {
+      "id": 3666,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:33.06Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:27:05.153Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Plan for Search Analyzers and Scoring Profile (optional)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/search/search-analyzers?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Full Text Search</a></div><div><span style=\"\"><br></span></div><div><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/search/index-add-scoring-profiles?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Scoring Profiles</a></span><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3680",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3666"
+    },
+    {
+      "id": 3667,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:33.193Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:27:05.153Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Plan for Required Object Model in Enrichment Pipeline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/search/search-what-is-azure-search?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Overview</a></div><div><br></div><div><b>Required Object Models</b></div><div><span><a href=\"https://docs.microsoft.com/en-us/azure/search/search-indexer-overview?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Indexers</a></span><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/search/search-what-is-data-import?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\" style=\"\">Data Sources</a><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/search/cognitive-search-working-with-skillsets?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\" style=\"\">Skillset</a><br></div><div><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-what-is-an-index?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Index</a></span><br></div><div><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3680",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3662",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3667"
+    },
+    {
+      "id": 3668,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:33.333Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:25:56.937Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Plan for Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/search/security-baseline?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Review Baseline Security</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/search/search-security-overview?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Overview</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/search/search-indexer-securing-resources?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Accessing Protected Content</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/search/security-controls-policy?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Regulatory Compliance</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3679",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3640",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3638",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3639",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3668"
+    },
+    {
+      "id": 3669,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T16:59:33.537Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:25:56.937Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Plan for Infrastructure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<p style=\"margin:0in;margin-left:.75in;\"><b>Review </b>:&nbsp;</p><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/search/search-features-list?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Capabilities</a></div><div style=\"margin:0px 0in 0px 0.75in;\"></div><div style=\"margin:0px 0in 0px 0.75in;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-modeling-multitenant-saas-applications?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Scalability</a></div><p style=\"margin:0in;margin-left:.75in;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-performance-optimization?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Performance Consideration</a></p><div style=\"margin:0px 0in 0px 0.75in;\"><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.75in;\">Key Performance considerations</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 1.125in;\">Service tier and number of partitions/replicas - Adding partitions and increasing your tier will both increase indexing speeds.</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 1.125in;\">Index Schema - Adding fields and adding additional properties to fields (such as searchable, facetable, or filterable) both reduce indexing speeds.</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 1.125in;\">Batch size - The optimal batch size varies based on your index schema and dataset.</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 1.125in;\">Number of threads/workers - a single thread won't take full advantage of indexing speeds</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 1.125in;\">Retry strategy - An exponential backoff retry strategy should be used to optimize indexing.</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 1.125in;\">Network data transfer speeds - Data transfer speeds can be a limiting factor. Index data from within your Azure environment to increase data transfer speed</p><br></div><p style=\"margin:0in;margin-left:.75in;\"><br></p><p style=\"margin:0in;margin-left:.75in;\"><a href=\"https://docs.microsoft.com/en-us/azure/search/search-sku-tier?WT.mc_id=devops_userstory_service_knwldgemining-inproduct-devopsportal\">Tiers</a></p><p style=\"margin:0in;margin-left:.75in;\"><b>Components</b></p><p style=\"margin:0in;margin-left:.75in;\">Azure\nServices : Azure Cognitive Search, Azure Cognitive services, Azure Functions,\nAzure Logic App, Virtual Network</p><p style=\"margin:0in;margin-left:.75in;\"><br></p><p style=\"margin:0in;margin-left:.75in;\"><b>Tools</b>\n: Power BI Desktop, Postman, Visual Studio Code</p><p style=\"margin:0in;margin-left:.75in;\"><br></p><p style=\"margin:0in;margin-left:1.125in;\"><br></p><p style=\"margin:0in;margin-left:1.125in;\"><br></p><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3679",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3678",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3669"
+    },
+    {
+      "id": 3681,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Knowledge Mining",
+        "System.TeamProject": "Knowledge Mining",
+        "System.IterationPath": "Knowledge Mining",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-12-14T20:49:49.033Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-12-14T20:53:16.363Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Cloud Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/overview\">Microsoft Cloud Adoption Framework for Azure documentation - Cloud Adoption Framework | Microsoft Docs</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3683",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3682",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3631",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3681"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

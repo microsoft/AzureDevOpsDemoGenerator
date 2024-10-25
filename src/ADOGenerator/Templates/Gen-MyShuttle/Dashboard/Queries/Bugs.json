@@ -1,0 +1,4 @@
+{
+  "name": "Bugs",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AreaPath], [System.IterationPath], [System.Tags] from workitems where [System.TeamProject] = @project and [System.WorkItemType] = 'Bug' order by [System.ChangedDate] desc"
+}

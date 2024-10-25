@@ -1,0 +1,174 @@
+﻿{
+   "name":"Overview",
+   "refreshInterval":0,
+   "position":1,
+   "widgets":[
+    {
+      "name": "Work in Progress",
+      "position": {
+        "row": 3,
+        "column": 5
+      },
+      "size": {
+        "rowSpan": 1,
+        "columnSpan": 1
+      },
+      "settings": "{\"queryId\":\"$WorkinProgress$\", \"queryName\": \"Work in Progress\"}",
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "artifactId": "",
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+    },
+      {
+         "name":"Team Members",
+         "position":{
+            "row":1,
+            "column":6
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":2
+         },
+         "settings":null,
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.TeamMembersWidget"
+      },
+      {
+         "name":"Sprint Burndown",
+         "position":{
+            "row":3,
+            "column":1
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":2
+         },
+         "settings":null,
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.SprintBurndownWidget"
+      },
+      {
+         "name":"Work Links",
+         "position":{
+            "row":2,
+            "column":6
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":2
+         },
+         "settings":null,
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WorkLinksWidget"
+      },
+      {
+         "name":"New Work Item",
+         "position":{
+            "row":3,
+            "column":3
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":2
+         },
+         "settings":null,
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "artifactId":"",
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.NewWorkItemWidget"
+      },
+      {
+         "name":"Assigned to Me",
+         "position":{
+            "row":1,
+            "column":3
+         },
+         "size":{
+            "rowSpan":2,
+            "columnSpan":3
+         },
+         "settings":null,
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.AssignedToMeWidget",
+         "lightboxOptions":{
+            "width":900,
+            "height":700,
+            "resizable":true
+         }
+      },
+      {
+         "name":"Visual Studio Shortcuts",
+         "position":{
+            "row":3,
+            "column":6
+         },
+         "size":{
+            "rowSpan":1,
+            "columnSpan":2
+         },
+         "settings":null,
+         "settingsVersion":{
+            "major":1,
+            "minor":0,
+            "patch":0
+         },
+         "isEnabled":true,
+         "contentUri":null,
+         "contributionId":"ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.VSLinksWidget"
+      },
+    {
+      "name": "Welcome",
+      "position": {
+        "row": 1,
+        "column": 1
+      },
+      "size": {
+        "rowSpan": 2,
+        "columnSpan": 2
+      },
+      "settings": null,
+      "settingsVersion": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+      },
+      "isEnabled": true,
+      "contentUri": null,
+      "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.HowToLinksWidget"
+    }
+   ]
+}

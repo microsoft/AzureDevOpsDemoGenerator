@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wayneme/Knowledge Mining/_git/Knowledge Mining Solution on Azure"
+    },
+    "serviceEndpointId": "$Knowledge Mining Solution on Azure-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

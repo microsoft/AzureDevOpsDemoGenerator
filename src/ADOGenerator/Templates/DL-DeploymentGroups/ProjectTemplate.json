@@ -1,0 +1,23 @@
+{
+  "Name": "DeploymentGroups",
+  "Teams": "Teams.json",
+  "SourceCode": "ImportSourceCode.json",
+  "CreateService": "",
+  "BoardColumns": "",
+  "ProjectSettings": "ProjectSettings.json",
+  "CardStyle": "",
+  "CardField": "",
+  "PBIfromTemplate": "PBIfromTemplate.json",
+  "BugfromTemplate": "BugfromTemplate.json",
+  "EpicfromTemplate": "EpicfromTemplate.json",
+  "TaskfromTemplate": "TaskfromTemplate.json",
+  "TestCasefromTemplate": "",
+  "FeaturefromTemplate": "FeaturefromTemplate.json",
+  "UserStoriesFromTemplate": "UerStoriesfromTemplate.json",
+  "SetEpic": "EnableEpic.json",
+  "BoardRows": "",
+  "Widget": "",
+  "Chart": "",
+  "TeamArea": "TeamArea.json"
+
+}

@@ -1,0 +1,806 @@
+{
+  "count": 22,
+  "value": [
+    {
+      "id": 4566,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "User Registration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Navigate to the registration page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter valid user details (name, email, password, etc.).</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Submit the registration form.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the user is successfully registered and redirected to the login page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4566"
+    },
+    {
+      "id": 4567,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Product Search",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter a search term in the search bar.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click the search button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the search results page is displayed.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check if the displayed products match the search criteria.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tests"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4567"
+    },
+    {
+      "id": 4568,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Add Product to Cart",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Browse to a product detail page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click the \"Add to Cart\" button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Navigate to the shopping cart page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the added product is displayed in the cart.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tests"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4568"
+    },
+    {
+      "id": 4569,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Update Cart Quantity",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Add multiple products to the cart.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to the shopping cart page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Update the quantity of a product.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the cart total is updated accordingly.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tests"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4569"
+    },
+    {
+      "id": 4570,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Checkout Process",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"6\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Add products to the cart.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to the checkout page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter valid shipping and payment details.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Complete the checkout process.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the order confirmation page is displayed.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4570"
+    },
+    {
+      "id": 4571,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-28T06:21:29.417Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Social Media Sharing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Navigate to a product detail page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on a social media sharing button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the social media sharing dialog or page opens.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check if the shared content includes the correct product information and link.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4571"
+    },
+    {
+      "id": 4572,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "User Account Login",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to the login page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter valid login credentials (email and password).</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click the login button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the user is successfully logged in and redirected to the home page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4572"
+    },
+    {
+      "id": 4573,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Order Tracking",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log in to the user account.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to the order history page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select an order to track.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the order details and shipment status are displayed accurately.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4573"
+    },
+    {
+      "id": 4574,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Wishlist Creation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log in to the user account.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Navigate to a product detail page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on the &amp;quot;Add to Wishlist&amp;quot; button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the product is added to the user&amp;#39;s wishlist.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tests"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4574"
+    },
+    {
+      "id": 4575,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Wishlist Sharing",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"6\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log in to the user account.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to the wishlist page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select a wishlist to share.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click on the share button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the sharing options (email, social media) are available.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tests"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4575"
+    },
+    {
+      "id": 4576,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-28T06:21:34.85Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Review Submission",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"6\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log in to the user account.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Navigate to a product detail page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter a review rating and comment.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Submit the review form.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the review is displayed on the product page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4576"
+    },
+    {
+      "id": 4577,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Password Reset",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"6\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to the password reset page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter a valid email address associated with an existing account.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click the reset password button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check the email inbox for a password reset link.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"6\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the password reset process is successful.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4577"
+    },
+    {
+      "id": 4578,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-28T06:21:24.07Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Order History",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Log in to the user account.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to the order history page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the user&amp;#39;s previous orders are displayed.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check if the order details (products, quantities, prices) are accurate.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4578"
+    },
+    {
+      "id": 4579,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Invalid Login Attempt",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"5\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to the login page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter an invalid email or password.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Click the login button.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"5\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that an error message is displayed indicating the invalid credentials.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4579"
+    },
+    {
+      "id": 4580,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-28T06:21:18.393Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Low Stock Notification",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Add a product to the cart.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that a low stock notification is displayed if the product quantity is limited.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check if the notification disappears when the product is no longer in low stock.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4580"
+    },
+    {
+      "id": 4581,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Product Sorting",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Go to a product listing page.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Select a sorting option (e.g., price, popularity, rating).</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the products are rearranged according to the selected sorting criterion.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tests"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4581"
+    },
+    {
+      "id": 4582,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-28T06:21:13.717Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Internationalization",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Change the language settings to a different supported language.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the UI elements and content are translated accordingly.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check if the currency and date formats are adjusted to the selected region.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4582"
+    },
+    {
+      "id": 4583,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-28T06:19:54.323Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Account Lockout",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Enter incorrect login credentials multiple times.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the account is locked after reaching the specified threshold.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Test if the account can be unlocked after a specific duration or through the password reset process.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4583"
+    },
+    {
+      "id": 4584,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-28T06:21:05.11Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Cross-Browser Compatibility",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Access the eShopOnWeb application using different web browsers (Chrome, Firefox, Safari, Edge).</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the application functions properly and displays correctly across browsers.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Test any browser-specific features or functionalities.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4584"
+    },
+    {
+      "id": 4585,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:42:50.953Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-06-22T12:42:50.953Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": " Responsive Design",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Access the eShopOnWeb application on different devices (desktop, tablet, mobile).</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"3\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Verify that the application is responsive and adjusts layout and functionality based on the device.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step><step id=\"4\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">Check if all features and content are accessible and readable on different screen sizes.</parameterizedString><parameterizedString isformatted=\"true\"/><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tests"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4585"
+    },
+    {
+      "id": 5283,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-22T07:57:30.107Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-22T12:07:39.993Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Confirm that order number appears after successful order",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"12\"><compref id=\"12\" ref=\"5292\"><step id=\"7\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;Choose T-Shirt and click on search icon&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"8\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;Enter @Email @Password&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"9\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;Click Checkout&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Order #OrderID# should appear &lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"10\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Logout&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"11\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Close browser&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step></compref></steps>",
+        "Microsoft.VSTS.TCM.Parameters": "<parameters><param name=\"Email\" bind=\"default\"/><param name=\"Password\" bind=\"default\"/></parameters>",
+        "Microsoft.VSTS.TCM.LocalDataSource": "<NewDataSet><xs:schema id='NewDataSet' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:msdata='urn:schemas-microsoft-com:xml-msdata'><xs:element name='NewDataSet' msdata:IsDataSet='true' msdata:Locale=''><xs:complexType> <xs:choice minOccurs='0' maxOccurs = 'unbounded'><xs:element name='Table1'><xs:complexType><xs:sequence><xs:element name='Email' type='xs:string' minOccurs='0' /><xs:element name='Password' type='xs:string' minOccurs='0' /></xs:sequence></xs:complexType></xs:element></xs:choice></xs:complexType></xs:element></xs:schema><Table1><Email>admin@test.com</Email><Password>P@ssw0rd</Password></Table1></NewDataSet>",
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5291",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tests"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.TestCase.SharedStepReferencedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5292",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Shared Steps"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5283"
+    },
+    {
+      "id": 5290,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-22T08:34:16.58Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-22T08:34:16.58Z",
+        "System.ChangedBy": "Suraj <suraj@ecanarys.com>",
+        "System.Title": "Order Summary page will be having order details",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"4\"><step id=\"1\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">View **My Orders**</parameterizedString><parameterizedString isformatted=\"true\">Delivery address will be shown</parameterizedString><description/></step><step id=\"2\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on delivery address </parameterizedString><parameterizedString isformatted=\"true\">Present given address will be displayed</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on **Change location** option</parameterizedString><parameterizedString isformatted=\"true\">Text boxes to collect new address will be shown</parameterizedString><description/></step><step id=\"4\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">Click on **submit**</parameterizedString><parameterizedString isformatted=\"true\">New Expected delivery date will be shown</parameterizedString><description/></step></steps>",
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5286",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tests"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5290"
+    },
+    {
+      "id": 5322,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Test Case",
+        "System.State": "Design",
+        "System.Reason": "New",
+        "System.CommentCount": 0,
+        "System.Title": "Verify the background color of add to basket button",
+        "Microsoft.VSTS.Common.Priority": 2,
+        "Microsoft.VSTS.TCM.AutomationStatus": "Not Automated",
+        "System.Description": "0d 2h 45m",
+        "Microsoft.VSTS.TCM.Steps": "<steps id=\"0\" last=\"3\"><step id=\"2\" type=\"ActionStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;Navigate to eShopOnWeb&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;&lt;BR/&gt;&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><description/></step><step id=\"3\" type=\"ValidateStep\"><parameterizedString isformatted=\"true\">&lt;DIV&gt;&lt;P&gt;Check the color of ADD TO BASKET button&lt;/P&gt;&lt;/DIV&gt;</parameterizedString><parameterizedString isformatted=\"true\">&lt;P&gt;color should be blue&lt;/P&gt;</parameterizedString><description/></step></steps>"
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Reverse",
+          "url": "https://dev.azure.com/akshayhosur/269036b4-72bf-4849-a991-cbda5f5bef6f/_apis/wit/workItems/11417",
+          "attributes": {
+            "isLocked": false,
+            "name": "Tests"
+          }
+        }
+      ]
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

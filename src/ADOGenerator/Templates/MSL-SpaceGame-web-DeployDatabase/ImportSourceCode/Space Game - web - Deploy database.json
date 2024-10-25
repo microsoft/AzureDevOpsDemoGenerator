@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/lp3-staging-03/Space Game - web - Deploy database/_git/Space Game - web - Deploy database"
+    },
+    "serviceEndpointId": "$Space Game - web - Deploy database-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

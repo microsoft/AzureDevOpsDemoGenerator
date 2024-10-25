@@ -10,7 +10,7 @@ namespace VstsRestAPI.Extractor
     public class GetWorkItemsCount : ApiServiceBase
     {
 
-        public GetWorkItemsCount(IConfiguration configuration) : base(configuration)
+        public GetWorkItemsCount(IADOConfiguration configuration) : base(configuration)
         {
 
         }

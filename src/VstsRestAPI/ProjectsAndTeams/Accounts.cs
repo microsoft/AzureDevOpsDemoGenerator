@@ -7,7 +7,7 @@ namespace VstsRestAPI.ProjectsAndTeams
 {
     public class Accounts : ApiServiceBase
     {
-        public Accounts(IConfiguration configuration) : base(configuration) { }
+        public Accounts(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Get Account members

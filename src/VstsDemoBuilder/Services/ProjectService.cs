@@ -146,7 +146,7 @@ namespace VstsDemoBuilder.Services
             string defaultHost = System.Configuration.ConfigurationManager.AppSettings["DefaultHost"];
             string ProjectCreationVersion = System.Configuration.ConfigurationManager.AppSettings["ProjectCreationVersion"];
 
-            Configuration config = new Configuration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
+            ADOConfiguration config = new ADOConfiguration() { AccountName = accname, PersonalAccessToken = pat, UriString = defaultHost + accname, VersionNumber = ProjectCreationVersion };
             Projects projects = new Projects(config);
             HttpResponseMessage response = projects.GetListOfProjects();
             return response;
@@ -246,7 +246,7 @@ namespace VstsDemoBuilder.Services
                 objIssue.CreateReportWI(patBase64, "4.1", url, websiteUrl, reportName, "", templateUsed, projectId, model.Region);
             }
 
-            Configuration _gitHubConfig = new Configuration() { _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken, _mediaType = "application/json", _scheme = "Bearer" };
+            ADOConfiguration _gitHubConfig = new ADOConfiguration() { _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken, _mediaType = "application/json", _scheme = "Bearer" };
 
             if (model.GitHubFork && model.GitHubToken != null)
             {
@@ -262,24 +262,24 @@ namespace VstsDemoBuilder.Services
             }
             //configuration setup
             string _credentials = model.accessToken;
-            Configuration _projectCreationVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _releaseVersion = new Configuration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _buildVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
-            Configuration _workItemsVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _queriesVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _boardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _wikiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _endPointVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
-            Configuration _extensionVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _dashboardVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _repoVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            ADOConfiguration _projectCreationVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = projectCreationVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _releaseVersion = new ADOConfiguration() { UriString = releaseHost + accountName + "/", VersionNumber = releaseVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _buildVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = buildVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            ADOConfiguration _workItemsVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = workItemsVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _queriesVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = queriesVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _boardVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = boardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _wikiVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = wikiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _endPointVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = endPointVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            ADOConfiguration _extensionVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = extensionVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _dashboardVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = dashboardVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _repoVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = repoVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
 
-            Configuration _getSourceCodeVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
-            Configuration _agentQueueVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _testPlanVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _deploymentGroup = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _graphApiVersion = new Configuration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
-            Configuration _variableGroupApiVersion = new Configuration() { UriString = defaultHost + accountName + "/", VersionNumber = variableGroupsApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _getSourceCodeVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = getSourceCodeVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName, _gitbaseAddress = gitHubBaseAddress, _gitcredential = model.GitHubToken };
+            ADOConfiguration _agentQueueVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = agentQueueVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _testPlanVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = testPlanVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _deploymentGroup = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = deploymentGroup, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _graphApiVersion = new ADOConfiguration() { UriString = graphAPIHost + accountName + "/", VersionNumber = graphApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
+            ADOConfiguration _variableGroupApiVersion = new ADOConfiguration() { UriString = defaultHost + accountName + "/", VersionNumber = variableGroupsApiVersion, PersonalAccessToken = pat, Project = model.ProjectName, AccountName = accountName };
 
             string projTemplateFile = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, templateUsed, "ProjectTemplate.json");
             string projectSettingsFile = string.Empty;
@@ -1054,7 +1054,7 @@ namespace VstsDemoBuilder.Services
             return new string[] { model.id, accountName, templateUsed };
         }
 
-        private bool CreateBranchPolicy(Project model, Configuration buildConfig)
+        private bool CreateBranchPolicy(Project model, ADOConfiguration buildConfig)
         {
             bool isBranchPolicyCreated = false;
             try
@@ -1117,7 +1117,7 @@ namespace VstsDemoBuilder.Services
             return isBranchPolicyCreated;
         }
 
-        private void ForkGitHubRepository(Project model, Configuration _gitHubConfig)
+        private void ForkGitHubRepository(Project model, ADOConfiguration _gitHubConfig)
         {
             try
             {
@@ -1176,7 +1176,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <param name="teamAreaJSON"></param>
-        private void CreateTeams(Project model, string teamsJSON, VstsRestAPI.Configuration _projectConfig, string id, string teamAreaJSON)
+        private void CreateTeams(Project model, string teamsJSON, VstsRestAPI.ADOConfiguration _projectConfig, string id, string teamAreaJSON)
         {
             try
             {
@@ -1328,7 +1328,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private TeamMemberResponse.TeamMembers GetTeamMembers(string projectName, string teamName, VstsRestAPI.Configuration _configuration, string id)
+        private TeamMemberResponse.TeamMembers GetTeamMembers(string projectName, string teamName, VstsRestAPI.ADOConfiguration _configuration, string id)
         {
             try
             {
@@ -1358,7 +1358,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="workItemJSON"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
-        private void CreateWorkItems(Project model, string workItemJSON, VstsRestAPI.Configuration _defaultConfiguration, string id)
+        private void CreateWorkItems(Project model, string workItemJSON, VstsRestAPI.ADOConfiguration _defaultConfiguration, string id)
         {
             try
             {
@@ -1398,7 +1398,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool UpdateBoardColumn(Project model, string BoardColumnsJSON, VstsRestAPI.Configuration _BoardConfig, string id, string BoardType, string team)
+        private bool UpdateBoardColumn(Project model, string BoardColumnsJSON, VstsRestAPI.ADOConfiguration _BoardConfig, string id, string BoardType, string team)
         {
             bool result = false;
             try
@@ -1430,7 +1430,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardFields(Project model, string json, Configuration _configuration, string id, string boardType, string team)
+        private void UpdateCardFields(Project model, string json, ADOConfiguration _configuration, string id, string boardType, string team)
         {
             try
             {
@@ -1459,7 +1459,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
         /// <param name="id"></param>
-        private void UpdateCardStyles(Project model, string json, Configuration _configuration, string id, string boardType, string team)
+        private void UpdateCardStyles(Project model, string json, ADOConfiguration _configuration, string id, string boardType, string team)
         {
             try
             {
@@ -1486,7 +1486,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="json"></param>
         /// <param name="_config3_0"></param>
         /// <param name="id"></param>
-        private void EnableEpic(Project model, string json, VstsRestAPI.Configuration _boardVersion, string id, string team)
+        private void EnableEpic(Project model, string json, VstsRestAPI.ADOConfiguration _boardVersion, string id, string team)
         {
             try
             {
@@ -1516,7 +1516,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="id"></param>
         /// <param name="currentUser"></param>
         /// <param name="projectSettingsJSON"></param>
-        private void UpdateWorkItems(Project model, string workItemUpdateJSON, VstsRestAPI.Configuration _defaultConfiguration, string id, string currentUser, string projectSettingsJSON)
+        private void UpdateWorkItems(Project model, string workItemUpdateJSON, VstsRestAPI.ADOConfiguration _defaultConfiguration, string id, string currentUser, string projectSettingsJSON)
         {
             try
             {
@@ -1552,7 +1552,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="iterationsJSON"></param>
-        private void UpdateIterations(Project model, VstsRestAPI.Configuration _boardConfig, string iterationsJSON)
+        private void UpdateIterations(Project model, VstsRestAPI.ADOConfiguration _boardConfig, string iterationsJSON)
         {
             try
             {
@@ -1662,7 +1662,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="settings"></param>
-        private void UpdateSprintItems(Project model, VstsRestAPI.Configuration _boardConfig, ProjectSettings settings)
+        private void UpdateSprintItems(Project model, VstsRestAPI.ADOConfiguration _boardConfig, ProjectSettings settings)
         {
             try
             {
@@ -1693,7 +1693,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="_defaultConfiguration"></param>
         /// <param name="renameIterations"></param>
-        public void RenameIterations(Project model, VstsRestAPI.Configuration _defaultConfiguration, Dictionary<string, string> renameIterations)
+        public void RenameIterations(Project model, VstsRestAPI.ADOConfiguration _defaultConfiguration, Dictionary<string, string> renameIterations)
         {
             try
             {
@@ -1718,7 +1718,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_defaultConfiguration"></param>
         /// <param name="importSourceConfiguration"></param>
         /// <param name="id"></param>
-        private void ImportSourceCode(Project model, string sourceCodeJSON, VstsRestAPI.Configuration _repo, string id, VstsRestAPI.Configuration _retSourceCodeVersion)
+        private void ImportSourceCode(Project model, string sourceCodeJSON, VstsRestAPI.ADOConfiguration _repo, string id, VstsRestAPI.ADOConfiguration _retSourceCodeVersion)
         {
 
             try
@@ -1781,7 +1781,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="pullRequestJsonPath"></param>
         /// <param name="_configuration3_0"></param>
-        private void CreatePullRequest(Project model, string pullRequestJsonPath, VstsRestAPI.Configuration _workItemConfig)
+        private void CreatePullRequest(Project model, string pullRequestJsonPath, VstsRestAPI.ADOConfiguration _workItemConfig)
         {
             try
             {
@@ -1845,7 +1845,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="jsonPaths"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, Configuration _endpointConfig)
+        private void CreateServiceEndPoint(Project model, List<string> jsonPaths, ADOConfiguration _endpointConfig)
         {
             try
             {
@@ -1967,7 +1967,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="testPlanJson"></param>
         /// <param name="_defaultConfiguration"></param>
-        private void CreateTestManagement(List<WIMapData> wiMapping, Project model, string testPlanJson, VstsRestAPI.Configuration _testPlanVersion)
+        private void CreateTestManagement(List<WIMapData> wiMapping, Project model, string testPlanJson, VstsRestAPI.ADOConfiguration _testPlanVersion)
         {
             try
             {
@@ -2041,7 +2041,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_defaultConfiguration"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private bool CreateBuildDefinition(Project model, VstsRestAPI.Configuration _buildConfig, string id)
+        private bool CreateBuildDefinition(Project model, VstsRestAPI.ADOConfiguration _buildConfig, string id)
         {
             bool flag = false;
             try
@@ -2118,7 +2118,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="model"></param>
         /// <param name="json"></param>
         /// <param name="_configuration"></param>
-        private void QueueABuild(Project model, string json, VstsRestAPI.Configuration _buildConfig)
+        private void QueueABuild(Project model, string json, VstsRestAPI.ADOConfiguration _buildConfig)
         {
             try
             {
@@ -2154,7 +2154,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="id"></param>
         /// <param name="teamMembers"></param>
         /// <returns></returns>
-        private bool CreateReleaseDefinition(Project model, VstsRestAPI.Configuration _releaseConfiguration, string id, TeamMemberResponse.TeamMembers teamMembers)
+        private bool CreateReleaseDefinition(Project model, VstsRestAPI.ADOConfiguration _releaseConfiguration, string id, TeamMemberResponse.TeamMembers teamMembers)
         {
             bool flag = false;
             try
@@ -2253,7 +2253,7 @@ namespace VstsDemoBuilder.Services
         /// <param name="_configuration2"></param>
         /// <param name="_configuration3"></param>
         /// <param name="releaseConfig"></param>
-        public void CreateQueryAndWidgets(Project model, List<string> listQueries, VstsRestAPI.Configuration _queriesVersion, VstsRestAPI.Configuration _dashboardVersion, VstsRestAPI.Configuration _releaseConfig, VstsRestAPI.Configuration _projectConfig, VstsRestAPI.Configuration _boardConfig,string teamName=null)
+        public void CreateQueryAndWidgets(Project model, List<string> listQueries, VstsRestAPI.ADOConfiguration _queriesVersion, VstsRestAPI.ADOConfiguration _dashboardVersion, VstsRestAPI.ADOConfiguration _releaseConfig, VstsRestAPI.ADOConfiguration _projectConfig, VstsRestAPI.ADOConfiguration _boardConfig,string teamName=null)
         {
             try
             {
@@ -2726,7 +2726,7 @@ namespace VstsDemoBuilder.Services
         /// </summary>
         /// <param name="model"></param>
         /// <param name="_wikiConfiguration"></param>
-        public void CreateProjetWiki(string templatesFolder, Project model, Configuration _wikiConfiguration)
+        public void CreateProjetWiki(string templatesFolder, Project model, ADOConfiguration _wikiConfiguration)
         {
             try
             {
@@ -2807,7 +2807,7 @@ namespace VstsDemoBuilder.Services
                 logger.Info(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") + "\t" + "\t" + ex.Message + "\t" + "\n" + ex.StackTrace + "\n");
             }
         }
-        public void CreateCodeWiki(Project model, VstsRestAPI.Configuration _wikiConfiguration)
+        public void CreateCodeWiki(Project model, VstsRestAPI.ADOConfiguration _wikiConfiguration)
         {
             try
             {
@@ -2866,7 +2866,7 @@ namespace VstsDemoBuilder.Services
                 AddMessage(model.id.ErrorId(), "Error while creating wiki: " + ex.Message);
             }
         }
-        public void CreateDeploymentGroup(string templateFolder, Project model, Configuration _deploymentGroup)
+        public void CreateDeploymentGroup(string templateFolder, Project model, ADOConfiguration _deploymentGroup)
         {
             string path = GetJsonFilePath(model.IsPrivatePath, model.PrivateTemplatePath, model.SelectedTemplate, @"\DeploymentGroups\CreateDeploymentGroup.json");
             //templateFolder + model.SelectedTemplate + "\\DeploymentGroups\\CreateDeploymentGroup.json";
@@ -2910,7 +2910,7 @@ namespace VstsDemoBuilder.Services
             return string.Empty;
         }
 
-        private bool AddUserToProject(Configuration con, Project model)
+        private bool AddUserToProject(ADOConfiguration con, Project model)
         {
             try
             {
@@ -3022,7 +3022,7 @@ namespace VstsDemoBuilder.Services
             return ExtensionRequired;
         }
 
-        private void CreateVaribaleGroups(Project model, Configuration _variableGroups)
+        private void CreateVaribaleGroups(Project model, ADOConfiguration _variableGroups)
         {
             VariableGroups variableGroups = new VariableGroups(_variableGroups);
             model.Environment.VariableGroups = new Dictionary<int, string>();
@@ -3068,7 +3068,7 @@ namespace VstsDemoBuilder.Services
             return false;
         }
 
-        public void CreateDeliveryPlans(Project model, VstsRestAPI.Configuration _projectConfig)
+        public void CreateDeliveryPlans(Project model, VstsRestAPI.ADOConfiguration _projectConfig)
         {
             try
             {
@@ -3120,7 +3120,7 @@ namespace VstsDemoBuilder.Services
             }
         }
 
-        public void IncludeSubAreas(string json, VstsRestAPI.Configuration _projectConfig, TeamResponse teamRes)
+        public void IncludeSubAreas(string json, VstsRestAPI.ADOConfiguration _projectConfig, TeamResponse teamRes)
         {
             try
             {

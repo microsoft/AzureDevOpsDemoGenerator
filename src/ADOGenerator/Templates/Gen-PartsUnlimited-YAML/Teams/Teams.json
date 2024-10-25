@@ -1,0 +1,20 @@
+[
+  {
+    "id": "c4af0040-253e-408a-8140-f447fc2c022f",
+    "name": "PartsUnlimited_YAML Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "54ecfc56-b83b-4c81-92ba-c0dc792900b8",
+    "name": "PUL-DB",
+    "description": "PUL DB Team",
+    "isDefault": "false"
+  },
+  {
+    "id": "de6f7771-bf20-4c9b-bebd-043f7c32cc30",
+    "name": "PUL",
+    "description": "Parts Unlimited Web Team",
+    "isDefault": "false"
+  }
+]

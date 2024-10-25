@@ -12,7 +12,7 @@ namespace VstsRestAPI.WorkItemAndTracking
     public partial class BoardColumn : ApiServiceBase
     {
         public string rowFieldName;
-        public BoardColumn(IConfiguration configuration) : base(configuration) { }
+        public BoardColumn(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Update kanban board colums styles
@@ -158,7 +158,7 @@ namespace VstsRestAPI.WorkItemAndTracking
             return new GetBoardColumnResponseAgile.ColumnResponse();
         }
 
-        public void IncludeSubAreas(string json, VstsRestAPI.Configuration _projectConfig, TeamResponse teamRes)
+        public void IncludeSubAreas(string json, VstsRestAPI.ADOConfiguration _projectConfig, TeamResponse teamRes)
         {
             try
             {

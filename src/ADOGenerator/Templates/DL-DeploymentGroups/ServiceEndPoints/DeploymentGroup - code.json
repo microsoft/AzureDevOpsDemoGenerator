@@ -1,0 +1,14 @@
+{
+    "data": {},
+    "name": "DeploymentGroup-code",
+    "type": "git",
+    "url":"https://vstsdemodata.visualstudio.com/Deployment%20Groups/_git/DeploymentGroup",
+    "authorization": {
+      "scheme": "UsernamePassword",
+      "parameters": {
+        "username": "$username$",
+        "password": "$password$"
+      }
+    },
+    "isReady": true
+  }

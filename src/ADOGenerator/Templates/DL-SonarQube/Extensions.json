@@ -1,0 +1,12 @@
+﻿{
+  "Extensions": [
+    {
+      "extensionName": "SonarQube",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarqube' target='_blank'><b>SonarQube</b></a>",
+      "publisherId": "SonarSource",
+      "extensionId": "sonarqube",
+      "publisherName": "SonarSource",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarqube' target='_blank'>License Terms</a>"
+    }
+  ]
+}

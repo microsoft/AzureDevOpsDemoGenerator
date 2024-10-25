@@ -1,0 +1,4 @@
+{
+  "name": "Followed work items",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AreaPath], [System.IterationPath] from WorkItems where [System.Id] in (@Follows)"
+}

@@ -1,0 +1,16 @@
+{
+  "data": {},
+  "name": "spacegame-web",
+  "type": "git",
+  "url": "https://github.com/jamcneil/mslearn-tailspin-spacegame-web",
+  "authorization": {
+    "parameters": {
+      "username": "demogenerator",
+      "password": "password"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}

@@ -1,0 +1,123 @@
+{
+  "count": 3,
+  "value": [
+    {
+      "id": 777,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "GitHub",
+        "System.TeamProject": "GitHub",
+        "System.IterationPath": "GitHub",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-11-28T05:49:17.257Z",
+        "System.CreatedBy": "kini.satish <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-11-28T05:49:45.817Z",
+        "System.ChangedBy": "kini.satish <kini.satish@hotmail.com>",
+        "System.Title": "Create new endpoint with the type GitHub in VSTS",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/776",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/777"
+    },
+    {
+      "id": 779,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "GitHub",
+        "System.TeamProject": "GitHub",
+        "System.IterationPath": "GitHub",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-11-28T06:30:08.037Z",
+        "System.CreatedBy": "kini.satish <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-11-28T06:30:08.037Z",
+        "System.ChangedBy": "kini.satish <kini.satish@hotmail.com>",
+        "System.Title": "Create new build definition",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/778",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/779"
+    },
+    {
+      "id": 780,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "GitHub",
+        "System.TeamProject": "GitHub",
+        "System.IterationPath": "GitHub",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-11-28T06:30:43.103Z",
+        "System.CreatedBy": "kini.satish <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-11-28T06:30:43.103Z",
+        "System.ChangedBy": "kini.satish <kini.satish@hotmail.com>",
+        "System.Title": "Change the source repository to GitHub",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/778",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/780"
+    }
+  ],
+  "HttpStatusCode": 0
+}

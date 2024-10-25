@@ -1,0 +1,60 @@
+{
+  "Extensions": [
+    {
+      "extensionName": "AWS Toolkit for Azure DevOps",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-vsts-tools' target='_blank'><b>AWS Toolkit for Azure DevOps</b></a>",
+      "publisherId": "AmazonWebServices",
+      "extensionId": "aws-vsts-tools",
+      "publisherName": "Amazon Web Services",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-vsts-tools' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Decompose",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=cschleiden.decompose' target='_blank'><b>Decompose</b></a>",
+      "publisherId": "cschleiden",
+      "extensionId": "decompose",
+      "publisherName": "Christopher Schleiden",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=cschleiden.decompose' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "ARM Outputs",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs' target='_blank'><b>ARM Outputs</b></a>",
+      "publisherId": "keesschollaart",
+      "extensionId": "arm-outputs",
+      "publisherName": "Kees Schollaart",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Team Project Health",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-devlabs.TeamProjectHealth' target='_blank'><b>Team Project Health</b></a>",
+      "publisherId": "ms-devlabs",
+      "extensionId": "TeamProjectHealth",
+      "publisherName": "Microsoft DevLabs",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-devlabs.TeamProjectHealth' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Ansible",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-vscs-rm.vss-services-ansible' target='_blank'><b>Ansible</b></a>",
+      "publisherId": "ms-vscs-rm",
+      "extensionId": "vss-services-ansible",
+      "publisherName": "Microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-vscs-rm.vss-services-ansible' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Packer",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=riezebosch.Packer' target='_blank'><b>Packer</b></a>",
+      "publisherId": "riezebosch",
+      "extensionId": "Packer",
+      "publisherName": "riezebosch",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=riezebosch.Packer' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Kubernetes extension",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=tsuyoshiushio.k8s-endpoint' target='_blank'><b>Kubernetes extension</b></a>",
+      "publisherId": "tsuyoshiushio",
+      "extensionId": "k8s-endpoint",
+      "publisherName": "Tsuyoshi Ushio",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=tsuyoshiushio.k8s-endpoint' target='_blank'>License Terms</a>"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://vstsdemodata.visualstudio.com/DefaultCollection/PartsUnlimited/_git/PartsUnlimited"
+    },
+	"serviceEndpointId": "$partsUnlimited-code$",
+  "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

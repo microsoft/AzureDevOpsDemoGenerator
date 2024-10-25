@@ -1,0 +1,19 @@
+﻿{
+  "Extensions": [
+    {
+      "extensionName": "ARM Outputs",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs' target='_blank'><b>ARM Outputs</b></a>",
+      "publisherId": "keesschollaart",
+      "extensionId": "arm-outputs",
+      "License": "<a href='https://marketplace.visualstudio.com/items/keesschollaart.arm-outputs/license' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Team Project Health",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-devlabs.TeamProjectHealth' target='_blank'><b>Team Project Health</b></a>",
+      "publisherId": "ms-devlabs",
+      "extensionId": "TeamProjectHealth",
+      "publisherName": "microsoft",
+      "License": "<a href='https://marketplace.visualstudio.com/items/ms-devlabs.TeamProjectHealth/license' target='_blank'>License Terms</a>"
+    }
+  ]
+}

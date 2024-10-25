@@ -1,0 +1,12 @@
+{
+  "TeamIterationMap": [
+    {
+      "TeamName": "Team1",
+      "Iterations": [ "Sprint 1", "Sprint 2", "Sprint 3" ]
+    },
+    {
+      "TeamName": "Team2",
+      "Iterations": [ "Sprint 4", "Sprint 5", "Sprint 6" ]
+    }
+  ]
+}

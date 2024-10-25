@@ -10,7 +10,7 @@ namespace VstsRestAPI.Service
 {
     public class ServiceEndPoint : ApiServiceBase
     {
-        public ServiceEndPoint(IConfiguration configuration) : base(configuration) { }
+        public ServiceEndPoint(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Create service endpoints

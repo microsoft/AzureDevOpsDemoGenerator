@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "Website",
+  "type": "git",
+  "url": "https://github.com/Microsoft/TailwindTraders-Website",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$GitUserName$",
+      "password": "$GitUserPassword$"
+    }
+  },
+  "isReady": true
+}

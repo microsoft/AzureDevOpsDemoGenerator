@@ -1,0 +1,151 @@
+{
+  "count": 3,
+  "value": [
+    {
+      "id": 26301,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "DevOps-Dojo",
+        "System.TeamProject": "DevOps-Dojo",
+        "System.IterationPath": "DevOps-Dojo\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2019-05-14T15:34:33.83Z",
+        "System.CreatedBy": "Aakanksha . <aak@microsoft.com>",
+        "System.ChangedDate": "2019-05-14T17:18:57.543Z",
+        "System.ChangedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.Title": "Update Code Behind for Checkin.aspx.cs",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Aakanksha . <aak@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": "<div><span>This backlog should be the epic/features/user stories that students should do in the classroom, nothing else.&nbsp; <a href=\"#\" data-vss-mention=\"version:2.0,cb9715f6-e4a0-6958-99d4-f54dba591bb5\">@Aakanksha .</a>&nbsp;</span></div>"
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26300",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/26301"
+    },
+    {
+      "id": 24273,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "DevOps-Dojo",
+        "System.TeamProject": "DevOps-Dojo",
+        "System.IterationPath": "DevOps-Dojo\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Removed",
+        "System.Reason": "Removed from the backlog",
+        "System.CreatedDate": "2019-05-06T15:26:45.083Z",
+        "System.CreatedBy": "Ron Vincent <rovin@microsoft.com>",
+        "System.ChangedDate": "2019-05-14T17:14:22.657Z",
+        "System.ChangedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.Title": "Write marchdown document on Mindset",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/22788",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/24273"
+    },
+    {
+      "id": 22789,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "DevOps-Dojo",
+        "System.TeamProject": "DevOps-Dojo",
+        "System.IterationPath": "DevOps-Dojo\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Removed",
+        "System.Reason": "Removed from the backlog",
+        "System.CreatedDate": "2019-05-01T17:28:14.757Z",
+        "System.CreatedBy": "Ron Vincent <rovin@microsoft.com>",
+        "System.ChangedDate": "2019-05-14T17:14:58.813Z",
+        "System.ChangedBy": "Kan Tang <kantan@microsoft.com>",
+        "System.Title": "Write Markdown document for Culture",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Ron Vincent <rovin@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/22788",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/Commit/5f64706a-c618-4444-8fec-a037e2197618%2Fefafe663-30fa-4087-9895-1f48198f8437%2F6004190f3f7fc122235f66dbd3609b55269b1d6d",
+          "attributes": {
+            "authorizedDate": "2019-05-02T15:30:10.673Z",
+            "id": "4498707",
+            "resourceCreatedDate": "2019-05-02T15:30:10.673Z",
+            "resourceModifiedDate": "2019-05-02T15:30:10.673Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Fixed in Commit"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/Commit/5f64706a-c618-4444-8fec-a037e2197618%2Fefafe663-30fa-4087-9895-1f48198f8437%2F1a1a86af4a46684f3a7e8d804c2b2b594c1919c6",
+          "attributes": {
+            "authorizedDate": "2019-05-02T15:53:00.753Z",
+            "id": "4498783",
+            "resourceCreatedDate": "2019-05-02T15:53:00.753Z",
+            "resourceModifiedDate": "2019-05-02T15:53:00.753Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Fixed in Commit"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/servicescode/_apis/wit/workItems/22789"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

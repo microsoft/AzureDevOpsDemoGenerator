@@ -10,7 +10,7 @@ namespace VstsRestAPI.Queues
 {
     public class Queue : ApiServiceBase
     {
-        public Queue(IConfiguration configuration) : base(configuration) { }
+        public Queue(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Get Agent queue

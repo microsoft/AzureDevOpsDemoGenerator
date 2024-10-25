@@ -1,0 +1,38 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": 22,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "ContosoShuttle",
+        "System.TeamProject": "ContosoShuttle",
+        "System.IterationPath": "ContosoShuttle\\Sprint 2",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2018-08-20T20:39:47.103Z",
+        "System.CreatedBy": "David Svab (Infosys Ltd) <v-dasvab@microsoft.com>",
+        "System.ChangedDate": "2019-01-14T15:52:40.913Z",
+        "System.ChangedBy": "David Svab (Infosys Ltd) <v-dasvab@microsoft.com>",
+        "System.Title": "Connector Shuttle Schedule Site",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Connector Shuttle Schedule Site",
+        "System.AssignedTo": "nmunger109@outlook.com",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/contososhuttle/_apis/wit/workItems/22"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

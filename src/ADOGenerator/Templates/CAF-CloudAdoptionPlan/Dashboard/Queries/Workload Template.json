@@ -1,0 +1,4 @@
+{
+  "name": "Workload Template",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.Description], [System.AssignedTo], [System.State], [System.Tags] from WorkItemLinks where (Source.[System.TeamProject] = @project and Source.[System.WorkItemType] <> '' and Source.[System.State] <> '' and Source.[System.Tags] contains 'Workload Template') and ([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward') and (Target.[System.TeamProject] = @project and Target.[System.WorkItemType] <> '') mode (Recursive)"
+}

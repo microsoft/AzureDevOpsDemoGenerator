@@ -1,0 +1,27 @@
+{
+  "children": [
+    {
+      "name": "Sprint 1",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 2",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 3",
+      "structureType": "iteration",
+      "hasChildren": false
+    },
+    {
+      "name": "Sprint 4",
+      "structureType": "iteration",
+      "hasChildren": false
+    }
+  ],
+  "name": "ContosoShuttle",
+  "structureType": "iteration",
+  "hasChildren": true
+}

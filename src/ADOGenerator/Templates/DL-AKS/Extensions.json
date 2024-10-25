@@ -1,0 +1,21 @@
+﻿{
+  "Extensions": [
+    {
+      "extensionName": "Kubernetes extension",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=tsuyoshiushio.k8s-endpoint' target='_blank'>Kubernetes extension</a>",
+      "publisherId": "tsuyoshiushio",
+      "extensionId": "k8s-endpoint",
+      "publisherName": "Tsuyoshi Ushio",
+      "License": ""
+    },
+    {
+      "extensionName": "Replace Tokens",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens' target='_blank'><b>Replace Tokens</b></a>",
+      "publisherId": "qetza",
+      "extensionId": "replacetokens",
+      "publisherName": "Guillaume Rouchon",
+      "License": "<a href='https://marketplace.visualstudio.com/items/qetza.replacetokens/license' target='_blank'>License Terms</a>"
+
+    }
+  ]
+}

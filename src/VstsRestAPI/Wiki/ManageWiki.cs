@@ -9,7 +9,7 @@ namespace VstsRestAPI.Wiki
 {
     public class ManageWiki : ApiServiceBase
     {
-        public ManageWiki(IConfiguration configuration) : base(configuration) { }
+        public ManageWiki(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Create wiki

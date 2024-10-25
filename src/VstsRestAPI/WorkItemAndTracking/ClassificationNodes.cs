@@ -13,7 +13,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 {
     public partial class ClassificationNodes : ApiServiceBase
     {
-        public ClassificationNodes(IConfiguration configuration) : base(configuration) { }
+        public ClassificationNodes(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Get Iteration

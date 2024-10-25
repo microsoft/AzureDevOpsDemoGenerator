@@ -1,0 +1,21 @@
+﻿{
+  "Extensions": [
+    {
+      "extensionName": "Terraform",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks ' target='_blank'><b>Terraform</b></a>",
+      "publisherId": "ms-devlabs",
+      "extensionId": "custom-terraform-tasks",
+      "publisherName": "Microsoft DevLabs",
+      "License": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks' target='_blank'>License Terms</a>"
+    },
+    {
+      "extensionName": "Replace Tokens",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens' target='_blank'><b>Replace Tokens</b></a>",
+      "publisherId": "qetza",
+      "extensionId": "replacetokens",
+      "publisherName": "Guillaume Rouchon",
+      "License": "<a href='https://marketplace.visualstudio.com/items/qetza.replacetokens/license' target='_blank'>License Terms</a>"
+
+    }
+  ]
+}

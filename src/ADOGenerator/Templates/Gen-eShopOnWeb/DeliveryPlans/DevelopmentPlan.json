@@ -1,0 +1,59 @@
+{
+  "name": "DevelopmentPlan",
+  "type": "deliveryTimelineView",
+  "properties": {
+    "teamBacklogMappings": [
+      {
+        "teamId": "$App Development Team$",
+        "categoryReferenceName": "Microsoft.RequirementCategory"
+      },
+      {
+        "teamId": "$DBA Team$",
+        "categoryReferenceName": "Microsoft.RequirementCategory"
+      }
+    ],
+    "criteria": null,
+    "cardSettings": {
+      "fields": {
+        "showId": false,
+        "showAssignedTo": true,
+        "assignedToDisplayFormat": "avatarOnly",
+        "showState": true,
+        "showTags": true,
+        "showParent": false,
+        "showEmptyFields": false,
+        "showChildRollup": false,
+        "additionalFields": null,
+        "coreFields": [
+          {
+            "referenceName": "System.AssignedTo",
+            "displayName": "Assigned To",
+            "fieldType": "string",
+            "isIdentity": true
+          },
+          {
+            "referenceName": "System.State",
+            "displayName": "State",
+            "fieldType": "string",
+            "isIdentity": false
+          },
+          {
+            "referenceName": "System.Tags",
+            "displayName": "Tags",
+            "fieldType": "plainText",
+            "isIdentity": false
+          }
+        ]
+      }
+    },
+    "markers": [
+      {
+        "date": "2023-08-20T00:00:00Z",
+        "label": "Client Presentation",
+        "color": "#51399F"
+      }
+    ],
+    "styleSettings": [],
+    "tagStyleSettings": []
+  }
+}

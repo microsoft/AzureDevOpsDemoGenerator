@@ -1,0 +1,84 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 806,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WhiteSource Bolt",
+        "System.TeamProject": "WhiteSource Bolt",
+        "System.IterationPath": "WhiteSource Bolt",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-12-05T07:30:44.597Z",
+        "System.CreatedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2017-12-05T07:30:44.597Z",
+        "System.ChangedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.Title": "Code Validation at Build",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/807",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/806"
+    },
+    {
+      "id": 805,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "WhiteSource Bolt",
+        "System.TeamProject": "WhiteSource Bolt",
+        "System.IterationPath": "WhiteSource Bolt",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-12-05T07:30:44.597Z",
+        "System.CreatedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2017-12-05T07:30:44.597Z",
+        "System.ChangedBy": "eCanarys Automations <ecanarys9@outlook.com>",
+        "System.Title": "Secure source code",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/801",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/805"
+    }
+  ],
+  "HttpStatusCode": 0
+}

@@ -1,0 +1,2230 @@
+{
+  "count": 36,
+  "value": [
+    {
+      "id": 4804,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:18Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:49:28.777Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6 - Networking",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review</div><div><a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-understand-ip-address#best-practices?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">IP addressing </a>of IoT Hub and <a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-protocol-gateway?WT.mc_id=devops_userstory_service_iot-inproduct-devopsporta\">IoT Protocol gateway</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4671",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4804"
+    },
+    {
+      "id": 4803,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:17.86Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:49:23.15Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5 - Device Configurations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Study details on <a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-configuration-best-practices?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Device Configurations</a>&nbsp; and Device <a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-x509ca-overview?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Authentication</a></div><div>Concepts <a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-x509ca-concept?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">details</a></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4671",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4803"
+    },
+    {
+      "id": 4802,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:17.543Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:17.543Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Insight : IoT Digital Twin",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Insight : IoT Digital Twin",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4735",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4708",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4709",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4802"
+    },
+    {
+      "id": 4801,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:17.4Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:17.4Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Action : IoT Digital Twin",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Action : IoT Digital Twin",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4690",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4684",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4801"
+    },
+    {
+      "id": 4800,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:17.267Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:17.267Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Things : IoT Digital Twin",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Things : IoT Digital Twin",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4685",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4686",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4683",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4697",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4687",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4800"
+    },
+    {
+      "id": 4799,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:17.123Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:17.123Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Insight : Securing IoT Edge Devices",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Insight : Securing IoT Edge Devices",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4736",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4737",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4738",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4799"
+    },
+    {
+      "id": 4798,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:16.983Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:16.983Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Action : Securing IoT Edge Devices",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Action : Securing IoT Edge Devices",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4741",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4798"
+    },
+    {
+      "id": 4797,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:16.727Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:16.727Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Things : Securing IoT Edge Devices",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Things : Securing IoT Edge Devices",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4742",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4739",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4740",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4797"
+    },
+    {
+      "id": 4796,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:16.567Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:16.567Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Action:  IoT Edge Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>In most cases data from the IoT edge will get collected into the cloud for historical analysis &amp; visualization but sometimes you'll need to visualize data at the edge and for that there are open-source tools like Grafana that can be hosted &amp; managed with Azure IoT Edge.</div><div><br></div><div><a href=\"https://github.com/Azure-Samples/iot-edge-influxdb-grafana?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Azure-Samples/iot-edge-influxdb-grafana: This repo sends simulated data to influxdb and displays it using grafana as an HMI. (github.com)</a></div><div>&nbsp;</div><div><a href=\"https://github.com/Azure-Samples/iot-edge-for-iiot/blob/master/2-DeployOfflineDashboard.md?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">iot-edge-for-iiot/2-DeployOfflineDashboard.md at master · Azure-Samples/iot-edge-for-iiot (github.com)</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4747",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4678",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4743",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4796"
+    },
+    {
+      "id": 4795,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:16.307Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:16.307Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Insight:  IoT Edge Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Azure Stream Analytics on IoT Edge empowers developers to deploy near-real-time analytical intelligence closer to IoT devices so that they can unlock the full value of device-generated data. Azure Stream Analytics is designed for low latency, resiliency, efficient use of bandwidth, and compliance. Enterprises can deploy control logic close to the industrial operations and complement Big Data analytics done in the cloud.<br></span><div><br></div><span>Azure Stream Analytics on IoT Edge runs within the Azure IoT Edge framework. Once the job is created in Stream Analytics, you can deploy and manage it using IoT Hub.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4748",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4678",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4795"
+    },
+    {
+      "id": 4794,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:16.07Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:16.07Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Things:  IoT Edge Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Azure IoT Edge lets you deploy and manage business logic on the edge in the form of modules. Azure IoT Edge modules are the smallest unit of computation managed by IoT Edge and can contain Azure services (such as Azure Stream Analytics) or your own solution-specific code. To understand how modules are developed, deployed, and maintained, consider the four conceptual elements of a module:<br></div><div><br></div><div><span>IoT Edge module images contain applications that take advantage of the management, security, and communication features of the IoT Edge runtime. You can develop your own module images, or export one from a supported Azure service, such as Azure Stream Analytics. The images exist in the cloud and they can be updated, changed, and deployed in different solutions. For instance, a module that uses machine learning to predict production line output exists as a separate image than a module that uses computer vision to control a drone.<br></span><div><br></div><span>Each time a module image is deployed to a device and started by the IoT Edge runtime; a new instance of that module is created. Two devices in various parts of the world could use the same module image. However, each device would have its own module instance when the module is started on the device.</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4678",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4749",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4744",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4750",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4794"
+    },
+    {
+      "id": 4793,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:15.92Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:15.92Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Insight:  Using Microsoft Azure IoT Solution Accelerators",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><b>Deployment options</b><br></span><div>You can deploy the solution accelerators from the Microsoft Azure IoT Solution Accelerators site or using the command line.&nbsp;<span style=\"\">The cost of running a solution accelerator is the combined cost of running the underlying Azure services. You see details of the Azure services used when you choose your deployment options.</span></div></div><div><span style=\"\"><br></span></div><div><span style=\"\"><span><b>Architectures and languages</b><br></span><div>The original solution accelerators were written using .NET using a model-view-controller (MVC) architecture. Microsoft is updating the solution accelerators to a new microservices architecture.</div></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4745",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4677",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4793"
+    },
+    {
+      "id": 4792,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:15.78Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:15.78Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Things:  Using Microsoft Azure IoT Solution Accelerators",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;\"><b>Connected Factory Solution Accelerator</b></span><br></span></div><div><span>Use the Connected Factory solution accelerator to collect telemetry from industrial assets with an OPC Unified Architecture interface and to control them. Industrial assets might include assembly and test stations on a factory production line.&nbsp;</span><span style=\"\">You can use the connected factory dashboard component of this solution accelerator to monitor and manage your industrial devices.</span></div><div><span style=\"\"><br></span></div><div><span style=\"\"><span style=\"display:inline !important;\"><b>Device Simulation Solution Accelerator</b></span><br></span></div><div><span style=\"\"><span>Use the Device Simulation solution accelerator to run simulated devices that generate realistic telemetry. You can use this solution accelerator to test the behavior of the other solution accelerators or to test your own custom IoT solutions.&nbsp;</span><span>You can use the device simulation web app to configure and run simulations.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4746",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4677",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4792"
+    },
+    {
+      "id": 4791,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:15.643Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:15.643Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Action:  IoT Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"font-family:&quot;Segoe UI Condensed&quot;, &quot;Segoe UI&quot;, &quot;Segoe WP&quot;, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Real-time data empowers users to make quick decisions on time-sensitive information, and to identify emergent trends as they happen. We’ve seen an explosion of powerful real-time use cases – from factories using IoT sensors to monitor their equipment, to media agencies monitoring their social media campaigns as they go viral. Power BI further amplifies the power of real-time data with an easy setup process, and an array of powerful visualization and analysis tools.</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4751",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4676",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4791"
+    },
+    {
+      "id": 4790,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:15.387Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:15.387Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Insight:  IoT Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>It's important for any Iot analytics solution to be focused on actionable business outcomes and tuned for the specific use cases and data &amp; device characteristics present in the solution. Some IoT use cases are more geared towards telemetry collection and storage while others may have unique needs. Each Azure IoT analytics service has capabilities which will fit for specific use cases. Refer to the documentation below which can be used to help find the right service:</div><div><br></div><div><a href=\"https://azure.microsoft.com/en-us/product-categories/iot/?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Azure IoT Products and Services | Microsoft Azure</a><br></div><div><a href=\"https://azure.microsoft.com/en-us/overview/iot/#products?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Azure IoT – Internet of Things Platform | Microsoft Azure</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4676",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4752",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4790"
+    },
+    {
+      "id": 4789,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:15.253Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:15.253Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Things:  IoT Analytics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Azure has many purpose-built analytics services in which customers build solutions that meet their needs. To gain the benefit from IoT analytics one or more of these services are often used:</div><div><br></div><div><b>Azure Stream Analytics</b>:&nbsp;&nbsp;a real-time analytics and complex event-processing engine that is designed to analyze and process high volumes of fast streaming data from multiple sources simultaneously. Patterns and relationships can be identified in information extracted from several input sources including devices, sensors, clickstreams, social media feeds, and applications. These patterns can be used to trigger actions and initiate workflows such as creating alerts, feeding information to a reporting tool, or storing transformed data for later use. Also, Stream Analytics is available on Azure IoT Edge runtime, enabling to process data on IoT devices.<br><div><br></div><div><b>Azure Databricks</b>:&nbsp;&nbsp;provides an interactive workspace that enables collaboration between data engineers, data scientists, and machine learning engineers. For a big data pipeline, the data (raw or structured) is ingested into Azure through Azure Data Factory in batches, or streamed near real-time using Apache Kafka, Event Hub, or IoT Hub.<br></div><div><br></div><div><b>Azure Time Series Insights</b>:&nbsp;&nbsp;<span>an open and scalable end-to-end IoT analytics service featuring best-in-class user experiences and rich APIs to integrate its powerful capabilities into your existing workflow or application.&nbsp;</span><span>You can use it to collect, process, store, query and visualize data at Internet of Things (IoT) scale--data that's highly contextualized and optimized for time series.&nbsp;</span><span>Azure Time Series Insights is designed for ad hoc data exploration and operational analysis allowing you to uncover hidden trends, spotting anomalies, and conduct root-cause analysis. It's an open and flexible offering that meets the broad needs of industrial IoT deployments.</span><br></div><div><br></div><b>Azure Data Explorer</b>:&nbsp;&nbsp;a fast and highly scalable data exploration service for log and telemetry data. It helps you handle the many data streams emitted by modern software, so you can collect, store, and analyze data. Azure Data Explorer is ideal for analyzing large volumes of diverse data from any data source, such as websites, applications, IoT devices, and more. This data is used for diagnostics, monitoring, reporting, machine learning, and additional analytics capabilities. Azure Data Explorer makes it simple to ingest this data and enables you to do complex ad hoc queries on the data in seconds.</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4753",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4676",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4789"
+    },
+    {
+      "id": 4788,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:15.12Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:15.12Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Action : Solution Scenario : Condition Monitoring for Industrial IoT",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><b style=\"box-sizing:border-box;\">Architecture Components</b></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/code-structure.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/code-structure.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://github.com/Azure/Industrial-IoT\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://github.com/Azure/Industrial-IoT</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/</a><span style=\"box-sizing:border-box;\">&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(Microservices)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-details.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-details.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-flow.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-flow.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/api/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/api/</a><span style=\"box-sizing:border-box;\">&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(REST APIs)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/dependencies.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/dependencies.html</a></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><br style=\"box-sizing:border-box;\"></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><b style=\"box-sizing:border-box;\">e-book</b></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><a href=\"https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf</a></p><br style=\"box-sizing:border-box;\"><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4719",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4717",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4718",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4674",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4788"
+    },
+    {
+      "id": 4787,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:14.973Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:14.973Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Insight : Solution Scenario : Condition Monitoring for Industrial IoT",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><b style=\"box-sizing:border-box;\">Architecture Components</b></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/code-structure.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/code-structure.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://github.com/Azure/Industrial-IoT\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://github.com/Azure/Industrial-IoT</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/</a><span style=\"box-sizing:border-box;\">&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(Microservices)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-details.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-details.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-flow.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-flow.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/api/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/api/</a><span style=\"box-sizing:border-box;\">&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(REST APIs)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/dependencies.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/dependencies.html</a></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><br style=\"box-sizing:border-box;\"></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><b style=\"box-sizing:border-box;\">e-book</b></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><a href=\"https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf</a></p><br style=\"box-sizing:border-box;\"><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4720",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4722",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4724",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4725",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4727",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4674",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4726",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4721",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4723",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4787"
+    },
+    {
+      "id": 4786,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:14.837Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:14.837Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Historical Data Upload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Years of historical data likely exists in your current SCADA, MES, or historian system. In most cases, you will want to import your historical data into your IIoT analytics solution.</span><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br style=\"box-sizing:border-box;\"></span></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Please review the<span>&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/guide/iiot-guidance/iiot-services#historical-data-ingestion?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">guidance&nbsp;</a>&nbsp;</span><span style=\"box-sizing:border-box;\">and from<span>&nbsp;</span><a href=\"https://www.ge.com/digital/documentation/historian/version81/c_about_using_azure_iot_hub.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Historian</a></span></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">Also review details from<span>&nbsp;</span><a href=\"https://openautomationsoftware.com/knowledge-base/transfer-opc-azure/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">OPC</a></span><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4674",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4786"
+    },
+    {
+      "id": 4785,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:14.337Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:14.337Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Things : Solution Scenario : Condition Monitoring for Industrial IoT",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;margin:0px 0in 0px 0.375in;\"><span style=\"box-sizing:border-box;color:rgb(34, 34, 34);font-family:segoe-ui_normal, &quot;Segoe UI&quot;, Segoe, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size:16px;text-align:left;display:inline !important;\">The architecture we recommend for IoT solutions is cloud native, microservice, and serverless based. The IoT solution subsystems should be built as discrete services that are independently deployable, and able to scale independently. These attributes enable greater scale, more flexibility in updating individual subsystems, and provide the flexibility to choose appropriate technology on a per subsystem basis. It is critical to have the ability to monitor individual subsystems as well as the IoT application as a whole. We recommend subsystems communicate over REST/HTTPS using JSON (as it is human readable) though binary protocols should be used for high performance needs. The architecture also supports a hybrid cloud and edge compute strategy; i.e. some data processing is expected to happen on premise. We recommend use of an orchestrator (e.g. Azure Kubernetes Services - AKS or Service Fabric) to scale individual subsystems horizontally or PaaS services (e.g. Azure App Services) that offer built-in horizontal scale capabilities<br style=\"box-sizing:border-box;\"></span></div><div style=\"box-sizing:border-box;margin:0px 0in 0px 0.375in;\"><span style=\"box-sizing:border-box;color:rgb(34, 34, 34);font-family:segoe-ui_normal, &quot;Segoe UI&quot;, Segoe, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size:16px;text-align:left;display:inline !important;\"><br style=\"box-sizing:border-box;\"></span></div><div style=\"box-sizing:border-box;margin:0px 0in 0px 0.375in;\"><span style=\"box-sizing:border-box;color:rgb(34, 34, 34);font-family:segoe-ui_normal, &quot;Segoe UI&quot;, Segoe, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size:16px;text-align:left;display:inline !important;\">Azure<span style=\"box-sizing:border-box;\">&nbsp;</span></span><a href=\"https://azure.github.io/Industrial-IoT/?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">Industrial IoT</a><span style=\"box-sizing:border-box;color:rgb(34, 34, 34);font-family:segoe-ui_normal, &quot;Segoe UI&quot;, Segoe, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size:16px;text-align:left;display:inline !important;\"><span style=\"box-sizing:border-box;\">&nbsp;</span>allows plant operators to discover OPC UA enabled servers in a factory network and register them in Azure IoT Hub.</span><br style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;margin:0px 0in 0px 0.375in;\"><br style=\"box-sizing:border-box;\"></div><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><br style=\"box-sizing:border-box;\"></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><b style=\"box-sizing:border-box;\">Architecture Components</b></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/code-structure.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/code-structure.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://github.com/Azure/Industrial-IoT\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://github.com/Azure/Industrial-IoT</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/</a><span style=\"box-sizing:border-box;\">&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(Microservices)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-details.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-details.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-flow.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-flow.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/api/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/api/</a><span style=\"box-sizing:border-box;\">&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(REST APIs)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/dependencies.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/dependencies.html</a></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><br style=\"box-sizing:border-box;\"></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><b style=\"box-sizing:border-box;\">e-book</b></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><a href=\"https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf</a></p><br style=\"box-sizing:border-box;\"><br style=\"box-sizing:border-box;\"><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4710",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4711",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4707",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4674",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4731",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4729",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4730",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4728",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4712",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4785"
+    },
+    {
+      "id": 4784,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:14.19Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:14.19Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Action : Predictive Maintenance for Industrial IoT",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><b style=\"box-sizing:border-box;\">Architecture Components</b></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/code-structure.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/code-structure.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://github.com/Azure/Industrial-IoT\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://github.com/Azure/Industrial-IoT</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/</a><span style=\"box-sizing:border-box;\">&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(Microservices)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-details.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-details.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-flow.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-flow.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/api/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/api/</a><span style=\"box-sizing:border-box;\">&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(REST APIs)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/dependencies.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/dependencies.html</a></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><br style=\"box-sizing:border-box;\"></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><b style=\"box-sizing:border-box;\">e-book</b></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><a href=\"https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf</a></p><br><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4757",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4673",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4706",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4755",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4784"
+    },
+    {
+      "id": 4783,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:14.053Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:14.053Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Insight : Predictive Maintenance for Industrial IoT",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><b style=\"box-sizing:border-box;\">Architecture Components</b></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/code-structure.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/code-structure.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://github.com/Azure/Industrial-IoT\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://github.com/Azure/Industrial-IoT</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/</a><span style=\"box-sizing:border-box;\">&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(Microservices)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-details.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-details.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-flow.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-flow.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/api/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/api/</a><span style=\"box-sizing:border-box;\">&nbsp;<span style=\"box-sizing:border-box;\">&nbsp;</span></span>(REST APIs)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/dependencies.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/dependencies.html</a></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><br style=\"box-sizing:border-box;\"></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><b style=\"box-sizing:border-box;\">e-book</b></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><a href=\"https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf</a></p><br><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4701",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4734",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4698",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4756",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4696",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4699",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4688",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4673",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4700",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4693",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4783"
+    },
+    {
+      "id": 4782,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:13.907Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:13.907Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Historical Data Upload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Years of historical data likely exists in your current SCADA, MES, or historian system. In most cases, you will want to import your historical data into your IIoT analytics solution.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Please review the <a href=\"https://docs.microsoft.com/en-us/azure/architecture/guide/iiot-guidance/iiot-services#historical-data-ingestion?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">guidance&nbsp;</a>&nbsp;</span><span style=\"\">and from <a href=\"https://www.ge.com/digital/documentation/historian/version81/c_about_using_azure_iot_hub.html\">Historian</a></span></div><div><br></div><div><span style=\"\">Also review details from <a href=\"https://openautomationsoftware.com/knowledge-base/transfer-opc-azure/\">OPC</a></span><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4673",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4782"
+    },
+    {
+      "id": 4781,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:13.753Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:13.753Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Things : Predictive Maintenance for Industrial IoT",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div style=\"box-sizing:border-box;margin:0px 0in 0px 0.375in;\"><span style=\"color:rgb(34, 34, 34);font-family:segoe-ui_normal, &quot;Segoe UI&quot;, Segoe, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size:16px;text-align:left;display:inline !important;\">The architecture we recommend for IoT solutions is cloud native, microservice, and serverless based. The IoT solution \nsubsystems should be built as discrete services that are independently deployable, and able to scale independently. \nThese attributes enable greater scale, more flexibility in updating individual subsystems, and provide the flexibility to \nchoose appropriate technology on a per subsystem basis. It is critical to have the ability to monitor individual \nsubsystems as well as the IoT application as a whole. We recommend subsystems communicate over REST/HTTPS using \nJSON (as it is human readable) though binary protocols should be used for high performance needs. The architecture \nalso supports a hybrid cloud and edge compute strategy; i.e. some data processing is expected to happen on premise. \nWe recommend use of an orchestrator (e.g. Azure Kubernetes Services - AKS or Service Fabric) to scale individual \nsubsystems horizontally or PaaS services (e.g. Azure App Services) that offer built-in horizontal scale capabilities<br></span></div><div style=\"box-sizing:border-box;margin:0px 0in 0px 0.375in;\"><span style=\"color:rgb(34, 34, 34);font-family:segoe-ui_normal, &quot;Segoe UI&quot;, Segoe, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size:16px;text-align:left;display:inline !important;\"><br></span></div><div style=\"box-sizing:border-box;margin:0px 0in 0px 0.375in;\"><span style=\"color:rgb(34, 34, 34);font-family:segoe-ui_normal, &quot;Segoe UI&quot;, Segoe, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size:16px;text-align:left;display:inline !important;\">Azure<span>&nbsp;</span></span><a href=\"https://azure.github.io/Industrial-IoT/?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Industrial IoT</a><span style=\"color:rgb(34, 34, 34);font-family:segoe-ui_normal, &quot;Segoe UI&quot;, Segoe, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size:16px;text-align:left;display:inline !important;\"><span>&nbsp;</span>allows plant operators to discover OPC UA enabled servers in a factory network and register them in Azure IoT Hub.</span><br></div><div style=\"box-sizing:border-box;margin:0px 0in 0px 0.375in;\"><br></div><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><br></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><b>Architecture Components</b></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/code-structure.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/code-structure.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://github.com/Azure/Industrial-IoT\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://github.com/Azure/Industrial-IoT</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/</a><span style=\"box-sizing:border-box;\">&nbsp;&nbsp;&nbsp;&nbsp;<span>&nbsp;</span></span>(Microservices)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-details.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-details.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/architecture-flow.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/architecture-flow.html</a></p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/api/\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/api/</a><span style=\"box-sizing:border-box;\">&nbsp;<span>&nbsp;</span></span>(REST APIs)</p><p style=\"box-sizing:border-box;margin:0in 0in 0in 0.375in;\"><a href=\"https://azure.github.io/Industrial-IoT/services/dependencies.html\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://azure.github.io/Industrial-IoT/services/dependencies.html</a></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><br></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><b>e-book</b></p><p style=\"box-sizing:border-box;margin-left:0.375in;margin-top:7pt;margin-bottom:0pt;\"><a href=\"https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">https://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf</a></p><br><br><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4673",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4758",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4759",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4760",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4761",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4781"
+    },
+    {
+      "id": 4780,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:13.617Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:48:19.627Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Review Landing Zone",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"></div><div style=\"box-sizing:border-box;\">Setup Azure Subscription</div><div style=\"box-sizing:border-box;\">Setup<span>&nbsp;</span><a href=\"https://github.com/Azure/Enterprise-Scale#:~:text=Objective%20%20%20%20Key%20customer%20landing%20zone%2c%20%20Yes%20%206%20more%20rows%20?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Enterprise scale Landing Zone&nbsp;</a></div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4764",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4670",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4765",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4780"
+    },
+    {
+      "id": 4779,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:13.48Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:51:25.48Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Implement Operational Excellence",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement Operational Excellence",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4703",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4695",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4692",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4689",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4681",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4679",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4779"
+    },
+    {
+      "id": 4778,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:13.2Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:51:20.49Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Implement Process Efficiency",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-iot-using-azure-pipelines?view=azure-devops?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4679",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4778"
+    },
+    {
+      "id": 4777,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:13.047Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:48:10.567Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Review the scope and align with the scenarios",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review Scenarios to being the scoping ::</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/iot/introduction-to-solutions?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Conceptual Overview</a>&nbsp; and <a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/iot/builders-developers-operators?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Examples</a></div><div><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4767",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4754",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4766",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4763",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4762",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4670",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4768",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4777"
+    },
+    {
+      "id": 4776,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:12.85Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:48:03.383Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Preparation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Preparation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4715",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4714",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4670",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4716",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4776"
+    },
+    {
+      "id": 4775,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:12.653Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:49:17.333Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4 - High Availability and Disaster Recovery",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-ha-dr?context=/azure/iot-hub/rc/rc?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">guidance</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4671",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4775"
+    },
+    {
+      "id": 4774,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:12.497Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:49:10.387Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3 - Implement Scalability",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/architecture/example-scenario/iot/application-stamps?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">guidance </a>and<a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-how-to-clone?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\"> 1 more</a></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4671",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4774"
+    },
+    {
+      "id": 4773,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:12.367Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:49:02.027Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2 - Implement Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Study<a href=\"https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-best-practices?context=/azure/iot-hub/rc/rc?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\"> IoT Security best practices</a>&nbsp;and <a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/security-baseline?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Security Baseline</a></div><div><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">When designing a system, it is important to understand the potential threats to that system, and add appropriate defenses accordingly, as the system is designed and architected. It is important to design the product from the start with security in mind because understanding how an attacker might be able to compromise a system helps make sure appropriate mitigations are in place from the beginning.</span><br></div><div><br></div><div><b>Please Review</b></div><div><font color=\"#171717\" face=\"Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif\"><span style=\"font-size:16px;\"><a href=\"https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-architecture?context=/azure/iot-hub/rc/rc?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Architecture</a></span></font></div><div><a href=\"https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-security-deployment?context=/azure/iot-hub/rc/rc?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">Deployment Security</a></div><div><a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#:~:text=Azure%20IoT%20Hub%20grants%20access%20to%20endpoints%20by%2care%20all%20providers%20in%20the%20Azure%20Resource%20Manager.?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">IoT Hub Security</a>&nbsp; and using <a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-ip-filtering?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">IP filters</a></div><div><span style=\"\">SaaS Solution using </span><a href=\"https://docs.microsoft.com/en-us/azure/defender-for-iot/getting-started?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\" style=\"\">defender</a><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4671",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4773"
+    },
+    {
+      "id": 4772,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:12.217Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-18T14:48:55.773Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1 - Implement Reliability",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review the guidance on implementing <a href=\"https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-reliability-features-in-sdks?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">reliable messaging using client </a>&nbsp;SDK</div><div><br></div><div>e.g. C SDK details are <a href=\"https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/connection_and_messaging_reliability.md?WT.mc_id=devops_userstory_service_iot-inproduct-devopsportal\">here</a></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4671",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4772"
+    },
+    {
+      "id": 4771,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:12.07Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:12.07Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "\"Action\" Implementation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "&quot;Action&quot; Implementation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4675",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4732",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4771"
+    },
+    {
+      "id": 4770,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:11.93Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:11.93Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "\"Insight\" Implementation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "&quot;Insight&quot; Implementation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4713",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4705",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4733",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4675",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4770"
+    },
+    {
+      "id": 4769,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Modern IOT",
+        "System.TeamProject": "Modern IOT",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-03-16T14:05:11.713Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-03-16T14:05:11.713Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "\"Things\" Implementation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "&quot;Things&quot; Implementation",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4704",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4675",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4682",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4694",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4680",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4691",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4702",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4769"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

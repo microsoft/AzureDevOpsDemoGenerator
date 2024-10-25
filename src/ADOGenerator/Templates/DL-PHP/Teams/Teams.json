@@ -1,0 +1,20 @@
+[
+  {
+    "id": "8577f590-73e2-4ff3-98e5-ea9a9e9e0ecb",
+    "name": "php Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "dfcd5600-2230-4acc-9cfe-2825174dc3d5",
+    "name": "Team2",
+    "description": "Team2 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "d6888d90-d149-4429-94eb-3b466bc5b921",
+    "name": "Team1",
+    "description": "Team1 Description",
+    "isDefault": "false"
+  }
+]

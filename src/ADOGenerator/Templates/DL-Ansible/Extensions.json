@@ -1,0 +1,22 @@
+﻿{
+  "Extensions": [
+    {
+      "extensionName": "Replace Tokens",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=qetza.replacetokens' target='_blank'><b>Replace Tokens</b></a>",
+      "publisherId": "qetza",
+      "extensionId": "replacetokens",
+      "publisherName": "Guillaume Rouchon",
+      "License": "<a href='https://marketplace.visualstudio.com/items/qetza.replacetokens/license' target='_blank'>License Terms</a>"
+
+    },
+    {
+      "extensionName": "Ansible",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=ms-vscs-rm.vss-services-ansible' target='_blank'><b>Ansible</b></a>",
+      "publisherId": "ms-vscs-rm",
+      "extensionId": "vss-services-ansible",
+      "publisherName": "microsoft",
+      "License": ""
+
+    }
+  ]
+}

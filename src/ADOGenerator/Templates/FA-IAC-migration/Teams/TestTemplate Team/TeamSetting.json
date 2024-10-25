@@ -1,0 +1,8 @@
+{
+  "bugsBehavior": "asTasks",
+  "backlogVisibilities": {
+    "Microsoft.EpicCategory": true,
+    "Microsoft.FeatureCategory": false,
+    "Microsoft.RequirementCategory": true
+  }
+}

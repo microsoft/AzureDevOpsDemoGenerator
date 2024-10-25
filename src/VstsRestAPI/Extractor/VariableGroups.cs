@@ -9,7 +9,7 @@ namespace VstsRestAPI.Extractor
 {
     public class VariableGroups : ApiServiceBase
     {
-        public VariableGroups(IConfiguration configuration) : base(configuration)
+        public VariableGroups(IADOConfiguration configuration) : base(configuration)
         {
         }
         private ILog logger = LogManager.GetLogger("ErrorLog");

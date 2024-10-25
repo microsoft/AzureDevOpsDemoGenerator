@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "DevOps-Dojo-Setup-code",
+  "type": "git",
+  "url": "https://dev.azure.com/servicescode/DevOps-Dojo/_git/DevOps-Dojo-Setup",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

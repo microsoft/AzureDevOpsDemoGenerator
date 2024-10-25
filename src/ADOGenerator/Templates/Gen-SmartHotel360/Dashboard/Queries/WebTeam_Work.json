@@ -1,0 +1,4 @@
+{
+  "name": "WebTeam_Work",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo], [System.State], [System.Tags] from WorkItems where [System.TeamProject] = @project and [System.WorkItemType] <> '' and [System.State] <> '' and [System.AreaPath] = '$projectId$\\Web'"
+}

@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "azure-key-vault-code",
+  "type": "git",
+  "url": "https://dev.azure.com/vstsdemodata/azure-key-vault/_git/azure-key-vault",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

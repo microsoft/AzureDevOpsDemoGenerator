@@ -1,0 +1,20 @@
+[
+  {
+    "id": "4e9e69f1-791f-48ee-b521-398a3389d6e4",
+    "name": "Selenium Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "3cbd5fc9-bcda-4678-81db-a6189daf4196",
+    "name": "Team1",
+    "description": "Team1 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "504773da-cddb-4a15-84b1-f2669b79d482",
+    "name": "Team2",
+    "description": "Team2 Description",
+    "isDefault": "false"
+  }
+]

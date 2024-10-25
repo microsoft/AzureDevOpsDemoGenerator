@@ -1,0 +1,10 @@
+﻿{
+  "version": {
+    "version": "master"
+  },
+  "type": "codeWiki",
+  "name": "MHCCodeWiki",
+  "projectId": "$ProjectID$",
+  "repositoryId": "$RepoID$",
+  "mappedPath": "/Wiki"
+}

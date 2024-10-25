@@ -1,0 +1,11 @@
+{
+  "parameters":
+    {
+      "gitSource":
+        {
+          "url": "https://vstsdemodata.visualstudio.com/MyHealthClinic/_git/MyHealthClinic2"
+        },
+      "serviceEndpointId": "$myHealthClinic-code$",
+      "deleteServiceEndpointAfterImportIsDone": true
+    }
+}

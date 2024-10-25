@@ -41,8 +41,8 @@
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -152,7 +152,7 @@
   <ItemGroup>
     <Compile Include="ApiServiceBase.cs" />
     <Compile Include="Build\BuildDefinition.cs" />
-    <Compile Include="Configuration.cs" />
+    <Compile Include="ADOConfiguration.cs" />
     <Compile Include="DeliveryPlans\Plans.cs" />
     <Compile Include="DeploymentGroup\DeploymentGroup.cs" />
     <Compile Include="ExtensionManagement\GetListExtenison.cs" />
@@ -193,7 +193,7 @@
     <Compile Include="Viewmodel\Extractor\RepositoryList.cs" />
     <Compile Include="Viewmodel\Extractor\Teams.cs" />
     <Compile Include="Git\Repository.cs" />
-    <Compile Include="IConfiguration.cs" />
+    <Compile Include="IADOConfiguration.cs" />
     <Compile Include="ProjectsAndTeams\Accounts.cs" />
     <Compile Include="ProjectsAndTeams\Projects.cs" />
     <Compile Include="ProjectsAndTeams\Teams.cs" />

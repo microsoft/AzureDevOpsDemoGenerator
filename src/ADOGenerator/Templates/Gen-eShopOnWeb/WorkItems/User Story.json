@@ -1,0 +1,2599 @@
+{
+  "count": 50,
+  "value": [
+    {
+      "id": 4506,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:09:44.95Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T09:48:59.333Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "As a existing User, I want to track my order status",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4504",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4881",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Dependency-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4509",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Successor"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4880",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4882",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4548",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4547",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4506"
+    },
+    {
+      "id": 4507,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:09:44.95Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As an Administrator, I want to manage product inventory efficiently",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4889",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4585",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4890",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4569",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4568",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4574",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4567",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4575",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4581",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5299",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5293",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4507"
+    },
+    {
+      "id": 4508,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:09:44.95Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a Customer, I want to leave product reviews and ratings",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4894",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4895",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4586",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4508"
+    },
+    {
+      "id": 4509,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T12:09:44.95Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a Guest User, I want to track my order without creating an account.",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4504",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Dependency-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4506",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Predecessor"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4899",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4898",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4509"
+    },
+    {
+      "id": 4587,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
+        "System.WorkItemType": "User Story",
+        "System.State": "Resolved",
+        "System.Reason": "Code complete and unit tests pass",
+        "System.CreatedDate": "2023-06-22T13:35:27.47Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Integration with popular social media platforms",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": "High Scope",
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4901",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4515",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4517",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4503",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4587"
+    },
+    {
+      "id": 4589,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T14:37:54.623Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Analysis",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4563",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4559",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4900",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4524",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4588",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4589"
+    },
+    {
+      "id": 4590,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-22T14:38:16.643Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Enhancements in performance and load time",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4521",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4523",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4561",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4892",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4588",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4891",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4522",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4590"
+    },
+    {
+      "id": 4591,
+      "rev": 12,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "Closed",
+        "System.Reason": "Acceptance tests pass",
+        "System.CreatedDate": "2023-06-22T14:44:45.517Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T10:07:10.983Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Wishlist enhancement",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4558",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4505",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4555",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4556",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4885",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4888",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4884",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Dependency-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4598",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Predecessor"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4883",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/30007311-34b8-4487-bb97-ec54d3a7171a%2Fab597fb4-b639-4c9f-a005-598748471c93%2F80",
+          "attributes": {
+            "authorizedDate": "2023-07-26T13:52:32.737Z",
+            "id": "14719790",
+            "resourceCreatedDate": "2023-07-26T13:52:32.737Z",
+            "resourceModifiedDate": "2023-07-26T13:52:32.737Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/Commit/30007311-34b8-4487-bb97-ec54d3a7171a%2fab597fb4-b639-4c9f-a005-598748471c93%2ff7ada583ef26ae759a2690651d7e4f3f30a1e6e2",
+          "attributes": {
+            "authorizedDate": "2023-07-26T14:00:10.643Z",
+            "id": "14719834",
+            "resourceCreatedDate": "2023-07-26T14:00:10.643Z",
+            "resourceModifiedDate": "2023-07-26T14:00:10.643Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Fixed in Commit"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4591"
+    },
+    {
+      "id": 4598,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-28T09:50:41.9Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Separate fields for cart and Wishlist section in database",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Dependency-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4591",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Successor"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4598"
+    },
+    {
+      "id": 4599,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-28T09:53:33.13Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Encrypting the card and other payment details ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4724",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Dependency-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4602",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Successor"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4725",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4599"
+    },
+    {
+      "id": 4602,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-28T10:12:22.78Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Credit card section",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4886",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Dependency-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4599",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Predecessor"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4601",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4887",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4602"
+    },
+    {
+      "id": 4603,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Implementation started",
+        "System.CreatedDate": "2023-06-28T10:13:04.04Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T09:54:02.55Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Debit card section",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4897",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4896",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4601",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4603"
+    },
+    {
+      "id": 4604,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-28T10:14:38.593Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Internet banking option",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4601",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4893",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4604"
+    },
+    {
+      "id": 4605,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-28T12:45:16.11Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "DB catalog to store notification messages and alerts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5304",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4605"
+    },
+    {
+      "id": 4606,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-28T12:46:56.6Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Separate table for returned orders ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4606"
+    },
+    {
+      "id": 4607,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-28T12:47:51.77Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Identity DB  enhancement",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4607"
+    },
+    {
+      "id": 4608,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-28T12:48:11.637Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Catalog DB enhancements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4608"
+    },
+    {
+      "id": 4722,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-06-30T10:58:19.363Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Database maintenance activity ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4723",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4722"
+    },
+    {
+      "id": 4845,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T05:43:53.577Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-27T07:24:46.39Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Add azure cognitive search service",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4502",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4845"
+    },
+    {
+      "id": 4846,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T05:44:22.07Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T09:36:48.337Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Implement login with different social media platforms",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4848",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4501",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4850",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4847",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4849",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4846"
+    },
+    {
+      "id": 4852,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "Closed",
+        "System.Reason": "Acceptance tests pass",
+        "System.CreatedDate": "2023-07-10T08:46:26.107Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "API to fetch product visited by individual account",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4851",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/Commit/30007311-34b8-4487-bb97-ec54d3a7171a%2fab597fb4-b639-4c9f-a005-598748471c93%2f7549c72c7465f8ecf8032f5de4b1931316852e4a",
+          "attributes": {
+            "authorizedDate": "2023-07-25T18:32:39.85Z",
+            "id": "14705451",
+            "resourceCreatedDate": "2023-07-25T18:32:39.85Z",
+            "resourceModifiedDate": "2023-07-25T18:32:39.85Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Fixed in Commit"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/30007311-34b8-4487-bb97-ec54d3a7171a%2Fab597fb4-b639-4c9f-a005-598748471c93%2F79",
+          "attributes": {
+            "authorizedDate": "2023-07-25T18:29:33.17Z",
+            "id": "14705428",
+            "resourceCreatedDate": "2023-07-25T18:29:33.17Z",
+            "resourceModifiedDate": "2023-07-25T18:29:33.17Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4852"
+    },
+    {
+      "id": 4858,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Implementation started",
+        "System.CreatedDate": "2023-07-10T09:07:02.833Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a database administrator, I want to analyze the existing database structure and dependencies",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4861",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4858"
+    },
+    {
+      "id": 4859,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Implementation started",
+        "System.CreatedDate": "2023-07-10T09:10:35.207Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a developer, I want to create scripts for schema and data migration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4861",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4859"
+    },
+    {
+      "id": 4860,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "Resolved",
+        "System.Reason": "Code complete and unit tests pass",
+        "System.CreatedDate": "2023-07-10T09:10:57.453Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a tester, I want to validate the migrated database to ensure data integrity",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4861",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4860"
+    },
+    {
+      "id": 4863,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:04:56.487Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a database administrator, I want to analyze the database workload and identify performance bottlenecks",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4862",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4863"
+    },
+    {
+      "id": 4865,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:06:50.29Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a developer, I want to optimize slow-performing queries and improve query execution plans",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4864",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4865"
+    },
+    {
+      "id": 4866,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:07:10.34Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a tester, I want to validate the performance improvements and record benchmark metrics",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4864",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4866"
+    },
+    {
+      "id": 4868,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:19:52.083Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a database administrator, I want to configure scheduled backups and monitor their completion",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4867",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4868"
+    },
+    {
+      "id": 4869,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:20:07.407Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a developer, I want to create scripts to restore the database from backups",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4867",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4869"
+    },
+    {
+      "id": 4870,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:20:18.297Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a tester, I want to validate the recovery process and ensure data consistency",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4867",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4870"
+    },
+    {
+      "id": 4872,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "Resolved",
+        "System.Reason": "Code complete and unit tests pass",
+        "System.CreatedDate": "2023-07-10T10:31:21.357Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "regulatory standards for the database system",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4871",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4872"
+    },
+    {
+      "id": 4873,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "Resolved",
+        "System.Reason": "Code complete and unit tests pass",
+        "System.CreatedDate": "2023-07-10T10:31:38.23Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a developer, I want to implement data encryption mechanisms to protect sensitive information",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4871",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4873"
+    },
+    {
+      "id": 4874,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Implementation started",
+        "System.CreatedDate": "2023-07-10T10:32:08.99Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a tester, I want to validate the security controls and perform security vulnerability assessments",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4871",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4874"
+    },
+    {
+      "id": 4876,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:35:37.397Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a database administrator, I want to establish a version control system for the database schema",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4875",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4876"
+    },
+    {
+      "id": 4877,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:36:02.3Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a developer, I want to create scripts for database schema changes and ensure they are versioned properly",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4875",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4877"
+    },
+    {
+      "id": 4878,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:36:14.15Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a release manager, I want to automate the deployment of database schema changes to various environments",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4875",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4878"
+    },
+    {
+      "id": 4879,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-10T10:36:33.293Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a tester, I want to verify that the deployed database schema changes are applied correctly and do not impact existing functionality",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4875",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4879"
+    },
+    {
+      "id": 5092,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Reintroduced in Scope",
+        "System.CreatedDate": "2023-07-18T07:22:10.64Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T09:59:37.077Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "As a customer, I want to view new tutorials",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5095",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5096",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4903",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5092"
+    },
+    {
+      "id": 5093,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "Closed",
+        "System.Reason": "Acceptance tests pass",
+        "System.CreatedDate": "2023-07-18T07:22:41.793Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-27T12:17:55.25Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "As a customer, I would like to see recently viewed tutorial",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Suraj <suraj@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4903",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5093"
+    },
+    {
+      "id": 5094,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "Closed",
+        "System.Reason": "Acceptance tests pass",
+        "System.CreatedDate": "2023-07-18T07:24:26.47Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "As a customer, I would need an option to request new tutorials",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4903",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5094"
+    },
+    {
+      "id": 5285,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-22T08:12:40.613Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Algorithm to display the expected delivery date",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5285"
+    },
+    {
+      "id": 5286,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\App Development Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-22T08:16:35.263Z",
+        "System.CreatedBy": "Suraj <suraj@ecanarys.com>",
+        "System.ChangedDate": "2023-07-25T23:42:55.57Z",
+        "System.ChangedBy": "Gloridel.Morales <Gloridel.Morales@microsoft.com>",
+        "System.Title": "Option to change the shipment address after order placed",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5290",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5286"
+    },
+    {
+      "id": 5295,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-27T07:19:52.04Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-27T07:24:55.403Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Show related product based on the history below search box",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5295"
+    },
+    {
+      "id": 5296,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-27T07:20:06.547Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-27T07:24:55.403Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Showcase search history",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5294",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5296"
+    },
+    {
+      "id": 5298,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-27T07:23:20.333Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-27T07:25:00.99Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Search box should show upon clicking search button",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5297",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5298"
+    },
+    {
+      "id": 5301,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-28T09:37:28.527Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T09:37:28.527Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Store social login details into user details table",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5300",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5301"
+    },
+    {
+      "id": 5302,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-28T09:37:39.257Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T09:37:39.257Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "validate the login user details",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5300",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5302"
+    },
+    {
+      "id": 5303,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\DBA Team",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-07-28T09:37:51.72Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-07-28T09:37:51.72Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "encrypt user personal details in db",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5300",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5303"
+    },
+    {
+      "id": 5312,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Active",
+        "System.CreatedDate": "2023-08-03T10:39:11.327Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-08-03T10:41:31.967Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Login and new user registraion to the eShopOnWeb portal using email id and password",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5311",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4566",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4579",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4572",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5312"
+    },
+    {
+      "id": 5313,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "eShoponweb",
+        "System.TeamProject": "eShoponweb",
+        "System.IterationPath": "$ProjectName$\\Iteration 3",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2023-08-03T10:39:40.62Z",
+        "System.CreatedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.ChangedDate": "2023-08-03T10:39:40.62Z",
+        "System.ChangedBy": "Akshay Hosur <akshay.hosur@ecanarys.com>",
+        "System.Title": "Register to eShop using your email id and passoword",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "Microsoft.VSTS.Common.TestedBy-Forward",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/4572",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Tested By"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5311",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/suraj-ecanarys/_apis/wit/workItems/5313"
+    },
+    {
+      "id": 5319,
+      "rev": 1,
+      "fields": {
+        "System.Id": 5319,
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.Rev": 1,
+        "System.AuthorizedDate": "2023-08-04T04:36:42.58Z",
+        "System.RevisedDate": "9999-01-01T00:00:00Z",
+        "System.IterationId": 888,
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Active",
+        "System.Title": "Change the background color of the [ADD TO BASKET] button",
+        "System.BoardColumn": "Active",
+        "System.BoardColumnDone": false,
+        "Microsoft.VSTS.Common.StateChangeDate": "2023-08-04T04:36:42.58Z",
+        "Microsoft.VSTS.Common.Priority": 2,
+        "Microsoft.VSTS.Common.ValueArea": "Business"
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/30007311-34b8-4487-bb97-ec54d3a7171a/_apis/wit/workItems/5318",
+          "attributes": {
+            "isLocked": false,
+            "name": "Parent"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5320,
+      "rev": 2,
+      "fields": {
+        "System.Id": 5320,
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.Rev": 2,
+        "System.AuthorizedDate": "2023-08-04T04:37:06.683Z",
+        "System.RevisedDate": "9999-01-01T00:00:00Z",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Active",
+        "System.CreatedDate": "2023-08-04T04:37:00.413Z",
+        "System.CommentCount": 0,
+        "System.Title": "Change the background color of the product page",
+        "System.BoardColumn": "Active",
+        "System.BoardColumnDone": false,
+        "Microsoft.VSTS.Common.StateChangeDate": "2023-08-04T04:37:00.413Z",
+        "Microsoft.VSTS.Common.Priority": 2,
+        "Microsoft.VSTS.Common.ValueArea": "Business"
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/30007311-34b8-4487-bb97-ec54d3a7171a/_apis/wit/workItems/5318",
+          "attributes": {
+            "isLocked": false,
+            "name": "Parent"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5321,
+      "rev": 1,
+      "fields": {
+        "System.Id": 5321,
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.Rev": 1,
+        "System.AuthorizedDate": "2023-08-04T04:37:28.53Z",
+        "System.RevisedDate": "9999-01-01T00:00:00Z",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "User Story",
+        "System.State": "Active",
+        "System.Reason": "Active",
+        "System.CommentCount": 0,
+        "System.Title": "On hover of the button - color of the button should change",
+        "System.BoardColumn": "Active",
+        "System.BoardColumnDone": false,
+        "Microsoft.VSTS.Common.StateChangeDate": "2023-08-04T04:37:28.53Z",
+        "Microsoft.VSTS.Common.Priority": 2,
+        "Microsoft.VSTS.Common.ValueArea": "Business"
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/suraj-ecanarys/30007311-34b8-4487-bb97-ec54d3a7171a/_apis/wit/workItems/5318",
+          "attributes": {
+            "isLocked": false,
+            "name": "Parent"
+          }
+        }
+      ]
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

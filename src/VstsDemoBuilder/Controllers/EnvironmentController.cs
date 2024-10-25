@@ -489,7 +489,7 @@ namespace VstsDemoBuilder.Controllers
             try
             {
                 AccountMembers.Account accountMembers = new AccountMembers.Account();
-                VstsRestAPI.Configuration _defaultConfiguration = new VstsRestAPI.Configuration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = "2.2", PersonalAccessToken = accessToken };
+                VstsRestAPI.ADOConfiguration _defaultConfiguration = new VstsRestAPI.ADOConfiguration() { UriString = "https://" + accountName + ".visualstudio.com/DefaultCollection/", VersionNumber = "2.2", PersonalAccessToken = accessToken };
                 VstsRestAPI.ProjectsAndTeams.Accounts objAccount = new VstsRestAPI.ProjectsAndTeams.Accounts(_defaultConfiguration);
                 accountMembers = objAccount.GetAccountMembers(accountName, accessToken);
                 if (accountMembers.count > 0)

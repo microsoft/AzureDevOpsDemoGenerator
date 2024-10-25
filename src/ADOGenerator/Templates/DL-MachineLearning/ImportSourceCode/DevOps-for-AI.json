@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://vstsdemodata.visualstudio.com/_git/DevOps-for-AI"
+    },
+    "serviceEndpointId": "$DevOps-for-AI-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

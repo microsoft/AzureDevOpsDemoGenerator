@@ -1,0 +1,68 @@
+{
+  "triggers": [
+    {
+      "branchFilters": [],
+      "pathFilters": [],
+      "settingsSourceType": 2,
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": "continuousIntegration"
+    },
+    {
+      "settingsSourceType": 2,
+      "branchFilters": [
+        "+master"
+      ],
+      "forks": {
+        "enabled": true,
+        "allowSecrets": false
+      },
+      "pathFilters": [],
+      "requireCommentsForNonTeamMembersOnly": false,
+      "isCommentRequiredForPullRequest": false,
+      "triggerType": "pullRequest"
+    }
+  ],
+  "properties": {},
+  "tags": [],
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "yamlFilename": "azure-pipelines.yml",
+    "type": 2
+  },
+  "repository": {
+    "properties": {
+      "apiUrl": "https://api.github.com/repos/$username$/mslearn-tailspin-spacegame-web",
+      "branchesUrl": "https://api.github.com/repos/$username$/mslearn-tailspin-spacegame-web/branches",
+      "cloneUrl": "https://github.com/$username$/mslearn-tailspin-spacegame-web.git",
+      "connectedServiceId": "$spacegame-web$",
+      "defaultBranch": "master",
+      "id": "$username$/mslearn-tailspin-spacegame-web",
+      "isPrivate": "False",
+      "manageUrl": "https://github.com/$username$/mslearn-tailspin-spacegame-web",
+      "refsUrl": "https://api.github.com/repos/aksh-h/mslearn-tailspin-spacegame-web/git/refs"
+    },
+    "id": "$username$/mslearn-tailspin-spacegame-web",
+    "type": "GitHub",
+    "name": "$username$/mslearn-tailspin-spacegame-web",
+    "url": "https://github.com/$username$/mslearn-tailspin-spacegame-web.git",
+    "defaultBranch": "master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "drafts": [],
+  "queue": {
+    "id": 8,
+    "name": "Hosted Ubuntu 1604",
+    "pool": {
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "name": "mslearn-tailspin-spacegame-web",
+  "type": "build",
+  "queueStatus": "enabled"
+}

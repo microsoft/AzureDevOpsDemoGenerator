@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wayneme/Secure Research/_git/Secure Research"
+    },
+    "serviceEndpointId": "$Secure Research-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

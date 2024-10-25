@@ -13,7 +13,7 @@ namespace VstsRestAPI.Extractor
 {
     public class BuildandReleaseDefs : ApiServiceBase
     {
-        public BuildandReleaseDefs(IConfiguration configuration) : base(configuration) { }
+        public BuildandReleaseDefs(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         //https://d2a2v2.visualstudio.com/selenium2/_apis/build/definitions?api-version=4.1
         // Get Build Definition count

@@ -23,7 +23,7 @@ namespace VstsRestAPI.WorkItemAndTracking
         private string projectId = string.Empty;
         private Dictionary<string, string> pullRequests = new Dictionary<string, string>();
         private ILog logger = LogManager.GetLogger("ErrorLog");
-        public ImportWorkItems(IConfiguration configuration, string rowFieldName) : base(configuration)
+        public ImportWorkItems(IADOConfiguration configuration, string rowFieldName) : base(configuration)
         {
             boardRowFieldName = rowFieldName;
         }

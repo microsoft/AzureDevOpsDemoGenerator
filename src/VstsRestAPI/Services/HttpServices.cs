@@ -8,8 +8,8 @@ namespace VstsRestAPI.Services
 {
     public class HttpServices
     {
-        private Configuration oConfiguration = new Configuration();
-        public HttpServices(Configuration config)
+        private ADOConfiguration oConfiguration = new ADOConfiguration();
+        public HttpServices(ADOConfiguration config)
         {
             oConfiguration.UriString = config.UriString;
             oConfiguration.Project = config.Project;

@@ -1,0 +1,12 @@
+{
+  "children": [
+    {
+      "name": "Sprint 1",
+      "structureType": "iteration",
+      "hasChildren": false
+    }
+  ],
+  "name": "toy-website-end-to-end",
+  "structureType": "iteration",
+  "hasChildren": true
+}

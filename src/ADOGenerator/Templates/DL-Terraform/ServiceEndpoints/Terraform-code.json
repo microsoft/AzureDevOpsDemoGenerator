@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "Terraform-code",
+  "type": "git",
+  "url": "https://dev.azure.com/vstsdemodata/_git/Terraform",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/vandyr/NIST 800-171 Template/_git/Cloud Adoption Plan Master"
+    },
+    "serviceEndpointId": "$Cloud Adoption Plan Master-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

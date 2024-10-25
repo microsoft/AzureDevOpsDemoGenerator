@@ -1,0 +1,64 @@
+[
+  {
+    "BoardName": "Epics",
+    "value": [
+      {
+        "name": "To Do",
+        "itemLimit": 0,
+        "stateMappings": {
+          "Epic": "To Do"
+        },
+        "columnType": "incoming"
+      },
+      {
+        "name": "Doing",
+        "itemLimit": 5,
+        "stateMappings": {
+          "Epic": "Doing"
+        },
+        "columnType": "inProgress",
+        "isSplit": false,
+        "description": ""
+      },
+      {
+        "name": "Done",
+        "itemLimit": 0,
+        "stateMappings": {
+          "Epic": "Done"
+        },
+        "columnType": "outgoing"
+      }
+    ]
+  },
+  {
+    "BoardName": "Issues",
+    "value": [
+      {
+        "name": "To Do",
+        "itemLimit": 0,
+        "stateMappings": {
+          "Issue": "To Do"
+        },
+        "columnType": "incoming"
+      },
+      {
+        "name": "Doing",
+        "itemLimit": 5,
+        "stateMappings": {
+          "Issue": "Doing"
+        },
+        "columnType": "inProgress",
+        "isSplit": false,
+        "description": ""
+      },
+      {
+        "name": "Done",
+        "itemLimit": 0,
+        "stateMappings": {
+          "Issue": "Done"
+        },
+        "columnType": "outgoing"
+      }
+    ]
+  }
+]

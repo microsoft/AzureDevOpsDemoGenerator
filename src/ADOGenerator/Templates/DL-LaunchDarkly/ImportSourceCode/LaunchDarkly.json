@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/vstsdemodata/LaunchDarkly-Updated/_git/LaunchDarkly"
+    },
+    "serviceEndpointId": "$LaunchDarkly-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

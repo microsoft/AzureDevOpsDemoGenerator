@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "$Repo$-code",
+  "type": "git",
+  "url": "$Host$/_git/$Repo$",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

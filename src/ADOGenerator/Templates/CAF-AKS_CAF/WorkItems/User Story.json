@@ -1,0 +1,575 @@
+{
+  "count": 8,
+  "value": [
+    {
+      "id": 974,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Define Strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Define Strategy - Business transformations can be implemented withthe help of the AKS Strategy. The current section defines the business agility,market demands, and various rationalizing factors associated with the adoptionof the AKS that would enable business to evolve.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/976",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/966",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/975",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/974"
+    },
+    {
+      "id": 967,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "These set of tasks are around coming up with a plan to help migrate a workload to AKS",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/966",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/969",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/968",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/970",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/973",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/971",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/972",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/967"
+    },
+    {
+      "id": 962,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Ready",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Develop the skills needed to prepare an actionable migration plan. Thisincludes business justification and other required business-planning skills.\n<br>Plan: Acquire the skills needed to put in order an actionablemigration plan. This includes business justification and other requiredbusiness-planning skills.\n<br>Ready: Develop the skills in order to prepare the business,culture, people, and environment for eminent changes.\n<br>As the organization paves the way for the AKS adoption effort, each teamshould document staff concerns as they rise by identifying:\n<br>\n<br> * &nbsp;The type of concern. For example, workers might beresistant to the changes in job duties that come with the adoption effort.\n<br> * &nbsp;The impact if the concern isn't addressed. For example,resistance to adoption might result in workers being slow to execute therequired changes.\n<br> * &nbsp;The area equipped to address the concern. For example, thebest equipped skill to address any concern is the Certified KubernetesApplication Developer (CKAD) program\n<br> * &nbsp;The Certified Kubernetes Application Developer (CKAD)program has been developed by the Cloud Native Computing Foundation (CNCF), incollaboration with The Linux Foundation, to help expand the Kubernetesecosystem through standardized training and certification. \n<br> * &nbsp;The Cloud Native Computing Foundation is committed toexpanding the community of Kubernetes-knowledgeable application developers,thereby enabling continued growth across the broad set of organizations a usingthe technology\n<br> * &nbsp;Certification is a key step in that process, allowingcertified application developers to quickly establish their credibility andvalue in the job market, while also allowing companies to hire high-qualityteams to support their growth\n<br> * &nbsp;The Certified Kubernetes Application Developer examcertifies that the users can design, build, configure, and expose cloud nativeapplications for Kubernetes. \n<br> * &nbsp;A Certified Kubernetes Application Developer can defineapplication resources and use core primitives to build, monitor, andtroubleshoot scalable applications and tools in Kubernetes.\n<br> * &nbsp;The successful candidate will be comfortable using anOCI-Compliant Container Runtime, such as Docker or rkt, Cloud nativeapplication concepts and architectures, and the programming language, such asPython, Node.js, Go, or Java.\n<br>\n<br>Thecertification program allows users to demonstrate their competence in ahands-on, command-line environment. The purpose of the Certified KubernetesApplication Developer (CKAD) program is to provide assurance that CKADs havethe skills, knowledge, and competency to perform the responsibilities ofKubernetes application developers.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/964",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/965",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/963",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/953",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/962"
+    },
+    {
+      "id": 954,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Adopt",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "There arevarious decisions and data points that help align with the specific plans foradoption. The following activities support alignment of the cloud adoptionplan:\n<br>\n<br> * &nbsp;Prerequisites: Confirmthat all prerequisite steps have been compiled with, before a plan is created.The various requirements are discussed in detail in the mentionedlink \n<br>\n<br> * &nbsp;Define and prioritize workloads: Prioritize thefirst 10 workloads to establish an initial adoption backlog\n<br> * &nbsp;Align assets to workloads: Identify which assets(proposed or existing) are required to support the prioritized workloads\n<br> * &nbsp;Review rationalization decisions: Reviewrationalization decisions to refine adoption-path decisions: Migrate orInnovate\n<br> * &nbsp;Establish iterations and releaseplans: Iterations are the time blocks allocated to dowork. Releases are the definition of the work to be done beforetriggering a change to production processes\n<br>\n<br> * &nbsp;Estimate timelines: Establish rough timelines forrelease planning purposes, based on initial estimates",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/961",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/960",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/955",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/959",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/957",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/956",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/958",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/953",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/954"
+    },
+    {
+      "id": 949,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Govern",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Governance refers to a set of rules summarized as policies aimed atminimizing risk, controlling costs and driving efficiency, transparency andaccountability for an environment. The managed services create new paradigmsfor the technologies that support the business. Cloud governance is aniterative process. As the digital estate changes over time, so do theirgovernance processes and policies.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/950",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/951",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/952",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/949"
+    },
+    {
+      "id": 943,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Manage",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Manage - The operation of the digital assets that deliver tangible businessoutcomes need to be managed. Without a plan for reliable, well-managedoperations of the deployed workloads, these efforts yield any significantvalue.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/947",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/948",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/944",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/945",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/946",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/943"
+    },
+    {
+      "id": 939,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "Best Practices",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Best Practices - All the best practices around an AKS implementation are available on the following documentation. (https://docs.microsoft.com/en-us/azure/aks/best-practices)",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/941",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/938",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/940",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/939"
+    },
+    {
+      "id": 934,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "AKA_Project",
+        "System.TeamProject": "AKA_Project",
+        "System.IterationPath": "AKA_Project",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-07-16T17:12:36.69Z",
+        "System.CreatedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.ChangedDate": "2020-07-16T17:12:36.69Z",
+        "System.ChangedBy": "Viswanadham kudapu <Viswanadham.kudapu@peopletech.com>",
+        "System.Title": "CAF Project Review and Closure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "This user story is to review the project and close out as appropriate",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/933",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/935",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/936",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/937",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/Viswanadhamkudapu/_apis/wit/workItems/934"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

@@ -1,0 +1,11 @@
+{
+  "Extensions": [
+    {
+      "extensionName": "ARM Outputs",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs' target='_blank'><b>ARM Outputs</b></a>",
+      "publisherId": "keesschollaart",
+      "extensionId": "arm-outputs",
+      "License": "<a href='https://marketplace.visualstudio.com/items/keesschollaart.arm-outputs/license' target='_blank'>License Terms</a>"
+    }
+  ]
+}

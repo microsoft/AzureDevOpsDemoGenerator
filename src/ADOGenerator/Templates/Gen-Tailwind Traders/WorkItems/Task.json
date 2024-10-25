@@ -1,0 +1,617 @@
+{
+  "count": 12,
+  "value": [
+    {
+      "id": 102,
+      "rev": 13,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2018-10-22T08:03:56.253Z",
+        "System.CreatedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.ChangedDate": "2018-11-30T07:43:55.663Z",
+        "System.ChangedBy": "Eduard Tomas <etomas@plainconcepts.com>",
+        "System.Title": "As a User I want to view a public landing page with static information - JS",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/253",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Build/Build/6",
+          "attributes": {
+            "authorizedDate": "2018-10-23T10:06:59.017Z",
+            "id": "6504704",
+            "resourceCreatedDate": "2018-10-23T10:06:59.017Z",
+            "resourceModifiedDate": "2018-10-23T10:06:59.017Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "comment": "This build was automatically linked to this work item based on this work item's linked commits",
+            "name": "Integrated in build"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/49fa88ec-f0a8-417b-8858-c824a4e8582a%2fe09b416c-8a2c-45a2-976a-8165f248b1b8%2f1",
+          "attributes": {
+            "authorizedDate": "2018-10-23T09:50:31.19Z",
+            "id": "6504604",
+            "resourceCreatedDate": "2018-10-23T09:50:31.19Z",
+            "resourceModifiedDate": "2018-10-23T09:50:31.19Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/Commit/49fa88ec-f0a8-417b-8858-c824a4e8582a%2fe09b416c-8a2c-45a2-976a-8165f248b1b8%2fe253cb272a93936e38cd206de000f69e179820c0",
+          "attributes": {
+            "authorizedDate": "2018-10-23T09:51:28.237Z",
+            "id": "6504605",
+            "resourceCreatedDate": "2018-10-23T09:51:28.237Z",
+            "resourceModifiedDate": "2018-10-23T09:51:28.237Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Fixed in Commit"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Build/Build/275",
+          "attributes": {
+            "authorizedDate": "2018-11-30T07:43:55.663Z",
+            "id": "7228543",
+            "resourceCreatedDate": "2018-11-30T07:43:55.663Z",
+            "resourceModifiedDate": "2018-11-30T07:43:55.663Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "comment": "This build was automatically linked to this work item based on this work item's linked commits",
+            "name": "Integrated in build"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/102"
+    },
+    {
+      "id": 125,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2018-10-25T10:39:35.18Z",
+        "System.CreatedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.ChangedDate": "2018-10-25T10:39:44.54Z",
+        "System.ChangedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.Title": "As a User I want to see a list of popular products in the landing page - Layout",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/105",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/125"
+    },
+    {
+      "id": 104,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2018-10-22T08:11:26.02Z",
+        "System.CreatedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.ChangedDate": "2018-11-05T11:06:57.09Z",
+        "System.ChangedBy": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "System.Title": "As a User I want to see a list of recommended product categories in the landing page",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "ivillanueva <ivillanueva@plainconcepts.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/253",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/104"
+    },
+    {
+      "id": 279,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Active",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2019-01-25T21:16:15.207Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2019-01-28T06:21:30.25Z",
+        "System.ChangedBy": "Sriramdas Balaji <sriramdas.balaji@ecanarys.com>",
+        "System.Title": "Update DB schema ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Sriramdas Balaji <sriramdas.balaji@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/112",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/279"
+    },
+    {
+      "id": 262,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-01-25T20:58:48.603Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2019-01-25T22:00:20.693Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "Route to login screen if not signed in or upon timeout",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/112",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/262"
+    },
+    {
+      "id": 261,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2019-01-25T20:58:10.447Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2019-01-25T21:18:17.807Z",
+        "System.ChangedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.Title": "Remove item if qty is set to zero",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/255",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/261"
+    },
+    {
+      "id": 260,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2019-01-25T20:57:07.977Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2019-01-28T06:05:50.563Z",
+        "System.ChangedBy": "Sriramdas Balaji <sriramdas.balaji@ecanarys.com>",
+        "System.Title": "Shows the total price of all items",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/253",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/260"
+    },
+    {
+      "id": 259,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Active",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2019-01-25T20:56:42.757Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2019-01-28T06:21:21.097Z",
+        "System.ChangedBy": "Sriramdas Balaji <sriramdas.balaji@ecanarys.com>",
+        "System.Title": "Create a new route and view for cart",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Sriramdas Balaji <sriramdas.balaji@ecanarys.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/253",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/259"
+    },
+    {
+      "id": 244,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2019-01-25T18:13:44.527Z",
+        "System.CreatedBy": "Sachin Raj <sraj@microsoft.com>",
+        "System.ChangedDate": "2019-01-28T06:05:12.753Z",
+        "System.ChangedBy": "Sriramdas Balaji <sriramdas.balaji@ecanarys.com>",
+        "System.Title": "As a user, I want to choose to unsubscribe newsletters",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/241",
+          "attributes": {
+            "isLocked": "false"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/244"
+    },
+    {
+      "id": 196,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2018-11-29T19:04:47.007Z",
+        "System.CreatedBy": "David Sanchez <dasanagu@microsoft.com>",
+        "System.ChangedDate": "2018-11-29T19:52:29.56Z",
+        "System.ChangedBy": "David Sanchez <dasanagu@microsoft.com>",
+        "System.Title": "Update ARM template for deployment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "David Sanchez <dasanagu@microsoft.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/196"
+    },
+    {
+      "id": 123,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2018-10-24T14:14:37.237Z",
+        "System.CreatedBy": "Eduard Tomas <etomas@plainconcepts.com>",
+        "System.ChangedDate": "2018-11-30T07:43:55.663Z",
+        "System.ChangedBy": "Eduard Tomas <etomas@plainconcepts.com>",
+        "System.Title": "Create docker image",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Eduard Tomas <etomas@plainconcepts.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/105",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/Commit/49fa88ec-f0a8-417b-8858-c824a4e8582a%2fe09b416c-8a2c-45a2-976a-8165f248b1b8%2fd9cf8de09144f18690c4d734d58283c72eb663a9",
+          "attributes": {
+            "authorizedDate": "2018-10-24T14:15:13.267Z",
+            "id": "6533533",
+            "resourceCreatedDate": "2018-10-24T14:15:13.267Z",
+            "resourceModifiedDate": "2018-10-24T14:15:13.267Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Fixed in Commit"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/49fa88ec-f0a8-417b-8858-c824a4e8582a%2fe09b416c-8a2c-45a2-976a-8165f248b1b8%2f5",
+          "attributes": {
+            "authorizedDate": "2018-10-24T14:15:02.423Z",
+            "id": "6533532",
+            "resourceCreatedDate": "2018-10-24T14:15:02.423Z",
+            "resourceModifiedDate": "2018-10-24T14:15:02.423Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Build/Build/11",
+          "attributes": {
+            "authorizedDate": "2018-10-24T14:17:33.44Z",
+            "id": "6533547",
+            "resourceCreatedDate": "2018-10-24T14:17:33.44Z",
+            "resourceModifiedDate": "2018-10-24T14:17:33.44Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "comment": "This build was automatically linked to this work item based on this work item's linked commits",
+            "name": "Integrated in build"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Build/Build/275",
+          "attributes": {
+            "authorizedDate": "2018-11-30T07:43:55.663Z",
+            "id": "7228541",
+            "resourceCreatedDate": "2018-11-30T07:43:55.663Z",
+            "resourceModifiedDate": "2018-11-30T07:43:55.663Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "comment": "This build was automatically linked to this work item based on this work item's linked commits",
+            "name": "Integrated in build"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/123"
+    },
+    {
+      "id": 122,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "Website",
+        "System.TeamProject": "Website",
+        "System.IterationPath": "Website\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Closed",
+        "System.Reason": "Completed",
+        "System.CreatedDate": "2018-10-24T11:08:30.183Z",
+        "System.CreatedBy": "Eduard Tomas <etomas@plainconcepts.com>",
+        "System.ChangedDate": "2018-11-30T07:43:55.663Z",
+        "System.ChangedBy": "Eduard Tomas <etomas@plainconcepts.com>",
+        "System.Title": "Create Azure environment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Eduard Tomas <etomas@plainconcepts.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/105",
+          "attributes": {
+            "isLocked": "false"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/49fa88ec-f0a8-417b-8858-c824a4e8582a%2fe09b416c-8a2c-45a2-976a-8165f248b1b8%2f3",
+          "attributes": {
+            "authorizedDate": "2018-10-24T11:09:14.34Z",
+            "id": "6530484",
+            "resourceCreatedDate": "2018-10-24T11:09:14.34Z",
+            "resourceModifiedDate": "2018-10-24T11:09:14.34Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Build/Build/275",
+          "attributes": {
+            "authorizedDate": "2018-11-30T07:43:55.663Z",
+            "id": "7228542",
+            "resourceCreatedDate": "2018-11-30T07:43:55.663Z",
+            "resourceModifiedDate": "2018-11-30T07:43:55.663Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "comment": "This build was automatically linked to this work item based on this work item's linked commits",
+            "name": "Integrated in build"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/Commit/49fa88ec-f0a8-417b-8858-c824a4e8582a%2fe09b416c-8a2c-45a2-976a-8165f248b1b8%2f3a4cdf97cc0ea5f01ab4d3931b3f330047df28bd",
+          "attributes": {
+            "authorizedDate": "2018-10-24T11:09:34.95Z",
+            "id": "6530485",
+            "resourceCreatedDate": "2018-10-24T11:09:34.95Z",
+            "resourceModifiedDate": "2018-10-24T11:09:34.95Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Fixed in Commit"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Build/Build/10",
+          "attributes": {
+            "authorizedDate": "2018-10-24T11:17:49.95Z",
+            "id": "6530709",
+            "resourceCreatedDate": "2018-10-24T11:17:49.95Z",
+            "resourceModifiedDate": "2018-10-24T11:17:49.95Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "comment": "This build was automatically linked to this work item based on this work item's linked commits",
+            "name": "Integrated in build"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/tailwindtraders/_apis/wit/workItems/122"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

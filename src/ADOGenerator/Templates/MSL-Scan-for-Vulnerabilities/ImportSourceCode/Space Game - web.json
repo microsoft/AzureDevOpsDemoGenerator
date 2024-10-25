@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/Tailspin4444/Space Game - web/_git/Space Game - web"
+    },
+    "serviceEndpointId": "$Space Game - web-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

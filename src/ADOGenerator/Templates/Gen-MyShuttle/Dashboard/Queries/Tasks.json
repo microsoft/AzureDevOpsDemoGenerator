@@ -1,0 +1,4 @@
+{
+  "name": "Tasks",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo], [System.State], [System.Tags] from workitems where [System.TeamProject] = @project and [System.WorkItemType] = 'Task' order by [System.ChangedDate] desc"
+}

@@ -1,0 +1,784 @@
+{
+    "name": "eShopOnWeb",
+    "description": "",
+    "refreshInterval": 5,
+    "position": 1,
+    "widgets": [
+        {
+            "name": "Epics",
+            "position": {
+                "row": 1,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#db552c\",\"queryId\":\"$Epics$\",\"queryName\":\"Epics\",\"colorRules\":[],\"lastArtifactName\":\"Epics\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Active Stories",
+            "position": {
+                "row": 3,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$Active Stories$\",\"queryName\":\"Active Stories\",\"colorRules\":[],\"lastArtifactName\":\"Active Stories\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "url": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/2ad46a05-d61d-4202-b512-14078d46a7ea",
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/2ad46a05-d61d-4202-b512-14078d46a7ea"
+                },
+                "group": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets"
+                },
+                "dashboard": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/Dashboards/9a836c44-1c39-435a-a7c3-a10a15f9e7fd"
+                }
+            },
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Active Epic",
+            "position": {
+                "row": 1,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#db552c\",\"queryId\":\"$Active Epic$\",\"queryName\":\"Active Epic\",\"colorRules\":[],\"lastArtifactName\":\"Active Epic\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "url": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/ab0a5ff3-4d54-4855-8483-162671933c87",
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/ab0a5ff3-4d54-4855-8483-162671933c87"
+                },
+                "group": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets"
+                },
+                "dashboard": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/Dashboards/9a836c44-1c39-435a-a7c3-a10a15f9e7fd"
+                }
+            },
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Active Tasks",
+            "position": {
+                "row": 4,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#fbbc3d\",\"queryId\":\"$Active Tasks$\",\"queryName\":\"Active Tasks\",\"colorRules\":[],\"lastArtifactName\":\"Active Tasks\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "url": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/147ea43c-dcf7-43ba-8f10-25fb0157ce62",
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/147ea43c-dcf7-43ba-8f10-25fb0157ce62"
+                },
+                "group": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets"
+                },
+                "dashboard": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/Dashboards/9a836c44-1c39-435a-a7c3-a10a15f9e7fd"
+                }
+            },
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+      {
+        "name": "Bugs By Priority by Priority",
+        "position": {
+          "row": 5,
+          "column": 5
+        },
+        "size": {
+          "rowSpan": 2,
+          "columnSpan": 2
+        },
+        "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$Bugs By Priority$\",\"title\":\"Bugs By Priority by Priority\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$Bugs By Priority$\",\"groupBy\":\"Microsoft.VSTS.Common.Priority\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"userColors\":[],\"lastArtifactName\":\"Bugs By Priority by Priority\"}",
+        "settingsVersion": {
+          "major": 3,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "isNameConfigurable": true,
+        "lightboxOptions": {
+          "width": 900,
+          "height": 700,
+          "resizable": true
+        }
+      },
+        {
+            "name": "New Feature",
+            "position": {
+                "row": 2,
+                "column": 2
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#339947\",\"queryId\":\"$New Feature$\",\"queryName\":\"New Feature\",\"colorRules\":[],\"lastArtifactName\":\"New Feature\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Closed Feature",
+            "position": {
+                "row": 2,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#339947\",\"queryId\":\"$Closed Feature$\",\"queryName\":\"Closed Feature\",\"colorRules\":[],\"lastArtifactName\":\"Closed Feature\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "New Epic",
+            "position": {
+                "row": 1,
+                "column": 2
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#db552c\",\"queryId\":\"$New Epic$\",\"queryName\":\"New Epic\",\"colorRules\":[],\"lastArtifactName\":\"New Epic\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "All Bugs",
+            "position": {
+                "row": 5,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#e60017\",\"queryId\":\"$All Bugs$\",\"queryName\":\"All Bugs\",\"colorRules\":[{\"isEnabled\":true,\"backgroundColor\":\"#db552c\",\"thresholdCount\":1,\"operator\":\">=\"},{\"isEnabled\":true,\"backgroundColor\":\"#e60017\",\"thresholdCount\":10,\"operator\":\">\"}],\"lastArtifactName\":\"All Bugs\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "url": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/26d94c7c-6fc8-4bc0-bf4a-3d24d77a1a0d",
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/26d94c7c-6fc8-4bc0-bf4a-3d24d77a1a0d"
+                },
+                "group": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets"
+                },
+                "dashboard": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/Dashboards/9a836c44-1c39-435a-a7c3-a10a15f9e7fd"
+                }
+            },
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+      {
+        "name": "All Bugs by State",
+        "position": {
+          "row": 3,
+          "column": 7
+        },
+        "size": {
+          "rowSpan": 2,
+          "columnSpan": 2
+        },
+        "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$All Bugs$\",\"title\":\"All Bugs by State\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$All Bugs$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"userColors\":[],\"lastArtifactName\":\"All Bugs by State\"}",
+        "settingsVersion": {
+          "major": 3,
+          "minor": 0,
+          "patch": 0
+        },
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "isNameConfigurable": true,
+        "lightboxOptions": {
+          "width": 900,
+          "height": 700,
+          "resizable": true
+        }
+      },
+        {
+            "name": "Tasks",
+            "position": {
+                "row": 4,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#fbbc3d\",\"queryId\":\"$Tasks$\",\"queryName\":\"Tasks\",\"colorRules\":[],\"lastArtifactName\":\"Tasks\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "url": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/6edb2670-4279-4cd1-8b33-5cce16d9bda6",
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/6edb2670-4279-4cd1-8b33-5cce16d9bda6"
+                },
+                "group": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets"
+                },
+                "dashboard": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/Dashboards/9a836c44-1c39-435a-a7c3-a10a15f9e7fd"
+                }
+            },
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Features",
+            "position": {
+                "row": 2,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#339947\",\"queryId\":\"$Features$\",\"queryName\":\"Features\",\"colorRules\":[],\"lastArtifactName\":\"Features\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "url": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/cee02331-0a6a-44fd-a04b-6170168e6686",
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/cee02331-0a6a-44fd-a04b-6170168e6686"
+                },
+                "group": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets"
+                },
+                "dashboard": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/Dashboards/9a836c44-1c39-435a-a7c3-a10a15f9e7fd"
+                }
+            },
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Closed Bugs",
+            "position": {
+                "row": 5,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#db552c\",\"queryId\":\"$Closed Bugs$\",\"queryName\":\"Closed Bugs\",\"colorRules\":[],\"lastArtifactName\":\"Closed Bugs\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "url": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/f26fd786-5807-4c8f-9fbe-6b9c6f5c22a2",
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/f26fd786-5807-4c8f-9fbe-6b9c6f5c22a2"
+                },
+                "group": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets"
+                },
+                "dashboard": {
+                    "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/Dashboards/9a836c44-1c39-435a-a7c3-a10a15f9e7fd"
+                }
+            },
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+      {
+        "name": "Epics by State",
+        "position": {
+          "row": 3,
+          "column": 5
+        },
+        "size": {
+          "rowSpan": 2,
+          "columnSpan": 2
+        },
+        "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$Epics$\",\"title\":\"Epics by State\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$Epics$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"userColors\":[],\"lastArtifactName\":\"Epics by State\"}",
+        "settingsVersion": {
+          "major": 3,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "url": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/ba8eaad5-25b6-42ca-8de5-6d2f05bd2de9",
+        "_links": {
+          "self": {
+            "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets/ba8eaad5-25b6-42ca-8de5-6d2f05bd2de9"
+          },
+          "group": {
+            "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/dashboards/Widgets"
+          },
+          "dashboard": {
+            "href": "https://dev.azure.com/suraj-ecanarys/_apis/Dashboard/Dashboards/9a836c44-1c39-435a-a7c3-a10a15f9e7fd"
+          }
+        },
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "isNameConfigurable": true,
+        "lightboxOptions": {
+          "width": 900,
+          "height": 700,
+          "resizable": true
+        }
+      },
+        {
+            "name": "Active Bugs",
+            "position": {
+                "row": 5,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#db552c\",\"queryId\":\"$Active Bugs$\",\"queryName\":\"Active Bugs\",\"colorRules\":[],\"lastArtifactName\":\"Active Bugs\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "New Tasks",
+            "position": {
+                "row": 4,
+                "column": 2
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#fbbc3d\",\"queryId\":\"$New Tasks$\",\"queryName\":\"New Tasks\",\"colorRules\":[],\"lastArtifactName\":\"New Tasks\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Closed Stories",
+            "position": {
+                "row": 3,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$Closed Stories$\",\"queryName\":\"Closed Stories\",\"colorRules\":[],\"lastArtifactName\":\"Closed Stories\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "New Stories",
+            "position": {
+                "row": 3,
+                "column": 2
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$New Stories$\",\"queryName\":\"New Stories\",\"colorRules\":[],\"lastArtifactName\":\"New Stories\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "Closed Tasks",
+            "position": {
+                "row": 4,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#fbbc3d\",\"queryId\":\"$Closed Tasks$\",\"queryName\":\"Closed Tasks\",\"colorRules\":[],\"lastArtifactName\":\"Closed Tasks\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+      {
+        "name": "All workitems by Work Item Type",
+        "position": {
+          "row": 1,
+          "column": 5
+        },
+        "size": {
+          "rowSpan": 2,
+          "columnSpan": 2
+        },
+        "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$All workitems$\",\"title\":\"All workitems by Work Item Type\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$All workitems$\",\"groupBy\":\"System.WorkItemType\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"userColors\":[],\"lastArtifactName\":\"All workitems by Work Item Type\"}",
+        "settingsVersion": {
+          "major": 3,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "isNameConfigurable": true,
+        "lightboxOptions": {
+          "width": 900,
+          "height": 700,
+          "resizable": true
+        }
+      },
+        {
+            "name": "Closed Epic",
+            "position": {
+                "row": 1,
+                "column": 4
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#db552c\",\"queryId\":\"$Closed Epic$\",\"queryName\":\"Closed Epic\",\"colorRules\":[],\"lastArtifactName\":\"Closed Epic\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+      {
+        "name": "All Stories by State",
+        "position": {
+          "row": 1,
+          "column": 7
+        },
+        "size": {
+          "rowSpan": 2,
+          "columnSpan": 2
+        },
+        "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$All Stories$\",\"title\":\"All Stories by State\",\"chartType\":\"ColumnChart\",\"transformOptions\":{\"filter\":\"$All Stories$\",\"groupBy\":\"System.State\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"userColors\":[],\"lastArtifactName\":\"All Stories by State\"}",
+        "settingsVersion": {
+          "major": 3,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "isNameConfigurable": true,
+        "lightboxOptions": {
+          "width": 900,
+          "height": 700,
+          "resizable": true
+        }
+      },
+        {
+            "name": "User Stories",
+            "position": {
+                "row": 3,
+                "column": 1
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#009ccc\",\"queryId\":\"$User Stories$\",\"queryName\":\"User Stories\",\"colorRules\":[],\"lastArtifactName\":\"User Stories\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+      {
+        "name": "Bugs By Severity by Severity",
+        "position": {
+          "row": 5,
+          "column": 7
+        },
+        "size": {
+          "rowSpan": 2,
+          "columnSpan": 2
+        },
+        "settings": "{\"scope\":\"WorkitemTracking.Queries\",\"groupKey\":\"$Bugs By Severity$\",\"title\":\"Bugs By Severity by Severity\",\"chartType\":\"PieChart\",\"transformOptions\":{\"filter\":\"$Bugs By Severity$\",\"groupBy\":\"Microsoft.VSTS.Common.Severity\",\"orderBy\":{\"direction\":\"descending\",\"propertyName\":\"value\"},\"measure\":{\"aggregation\":\"count\",\"propertyName\":\"\"},\"historyRange\":null,\"groupByTags\":false},\"userColors\":[],\"lastArtifactName\":\"Bugs By Severity by Severity\"}",
+        "settingsVersion": {
+          "major": 3,
+          "minor": 0,
+          "patch": 0
+        },
+        "artifactId": "",
+        "isEnabled": true,
+        "contentUri": null,
+        "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "typeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget",
+        "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.WitChartWidget.Configuration",
+        "isNameConfigurable": true,
+        "lightboxOptions": {
+          "width": 900,
+          "height": 700,
+          "resizable": true
+        }
+      },
+        {
+            "name": "Active Feature",
+            "position": {
+                "row": 2,
+                "column": 3
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#339947\",\"queryId\":\"$Active Feature$\",\"queryName\":\"Active Feature\",\"colorRules\":[],\"lastArtifactName\":\"Active Feature\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        },
+        {
+            "name": "New Bugs",
+            "position": {
+                "row": 5,
+                "column": 2
+            },
+            "size": {
+                "rowSpan": 1,
+                "columnSpan": 1
+            },
+            "settings": "{\"defaultBackgroundColor\":\"#db552c\",\"queryId\":\"$New Bugs$\",\"queryName\":\"New Bugs\",\"colorRules\":[],\"lastArtifactName\":\"New Bugs\"}",
+            "settingsVersion": {
+                "major": 1,
+                "minor": 0,
+                "patch": 0
+            },
+            "artifactId": "",
+            "isEnabled": true,
+            "contentUri": null,
+            "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "typeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget",
+            "configurationContributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "configurationContributionRelativeId": "Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget.Configuration",
+            "isNameConfigurable": true
+        }
+    ],
+    "dashboardScope": "project"
+}

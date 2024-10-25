@@ -9,7 +9,7 @@ namespace VstsRestAPI.TestManagement
 {
     public class TestManagement : ApiServiceBase
     {
-        public TestManagement(IConfiguration configuration) : base(configuration) { }
+        public TestManagement(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Create test plans

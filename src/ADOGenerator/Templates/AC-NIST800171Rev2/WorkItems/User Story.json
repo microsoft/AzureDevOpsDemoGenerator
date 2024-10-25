@@ -1,0 +1,2835 @@
+{
+  "count": 53,
+  "value": [
+    {
+      "id": 699,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:47.517Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Prerequisites",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Validate completion of prerequisites &amp; document answers",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/648",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/666",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/686",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/699"
+    },
+    {
+      "id": 700,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:47.71Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Assess the workload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/?branch=pr-en-us-47\">https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/migrate/migration-considerations/assess/?branch=pr-en-us-47</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/662",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/675",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/682",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/693",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/652",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/700"
+    },
+    {
+      "id": 701,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:47.87Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "VM - UX Server",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "VM to be migrated",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/688",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/672",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/685",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/647",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/667",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/701"
+    },
+    {
+      "id": 702,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:48.03Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "VM - Middle Tier",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "VM to be migrated",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/654",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/660",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/677",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/680",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/695",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/702"
+    },
+    {
+      "id": 703,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:48.193Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "VM 3 - SQL Server",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "VM to be migrated",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/661",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/653",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/694",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/681",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/676",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/703"
+    },
+    {
+      "id": 704,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:48.413Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Test Workload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Validate funcationality of the workload",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/668",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/689",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/646",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/671",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/704"
+    },
+    {
+      "id": 705,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:49.043Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Optimize Workload Assets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Tune the migrated assets based on observations",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/670",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/645",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/669",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/690",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/705"
+    },
+    {
+      "id": 706,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:49.213Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Promote Workload",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Tune the migrated assets based on testing feedback",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/650",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/684",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/664",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/691",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/673",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/706"
+    },
+    {
+      "id": 707,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:49.37Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Decomission Retired Assets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Realize cost savings by terminating retired assets",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Workload Template",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/649",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/665",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/687",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/637",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/707"
+    },
+    {
+      "id": 708,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:49.523Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Extend the landing zone for VMWare",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Resolve defined prerequisites necessary to migrate VMWare assets to Azure</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/657",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/658",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/636",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/696",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/708"
+    },
+    {
+      "id": 709,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:49.68Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Migrate VMs",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Migrate a select group of VMs from the on-premises host to a host on Azure</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/636",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/678",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/679",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/655",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/698",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/659",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/709"
+    },
+    {
+      "id": 710,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:49.853Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Update migration assessment, decision tree, and tooling",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span>Evaluate the results of the migration from the first host to inform iterative processes</span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "First Host",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/697",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/656",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/636",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/710"
+    },
+    {
+      "id": 941,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T15:23:03.553Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T15:23:09.747Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Azure Architecture Framework",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The Azure architecture framework is a set of guiding tenets that can be used to improve the quality of a workload. The framework consists of five pillars of architecture excellence: Cost, DevOps, Resiliency, Scalability, and Security.<br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/architecture/framework/\">https://docs.microsoft.com/en-us/azure/architecture/framework/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/941"
+    },
+    {
+      "id": 711,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:50.043Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Azure Readiness Guide",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Review the </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/ready/azure-readiness-guide/index\">Azure Readiness Guide</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> to become familiar with the tools and approaches needed in landing zone creation.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/711"
+    },
+    {
+      "id": 713,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:50.453Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:06:11.7Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Landing zone considerations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Review </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/ready/considerations/index\">landing zone considerations</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> to understand the alternative decisions which could impact your landing zone design.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/713"
+    },
+    {
+      "id": 874,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:26:13.257Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Azure Subscription Architecture",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/875",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/876",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/877",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/874"
+    },
+    {
+      "id": 880,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:39:08.827Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:42:38.853Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Identity and Access Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/885",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/880"
+    },
+    {
+      "id": 884,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:42:25.03Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:51:39.517Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Azure Network Architecture",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Azure Virtual Datacenter: A network perspective</div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/reference/networking-vdc\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/reference/networking-vdc</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/886",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/890",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/891",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/888",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/889",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/887",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/884"
+    },
+    {
+      "id": 879,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:37:27.24Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T15:17:12.28Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Governance, Security and Compliance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Enforce and automate policies and security settings that help you follow applicable legal requirements.<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/881",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/904",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/940",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/882",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/892",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/905",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/900",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/883",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/899",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/879"
+    },
+    {
+      "id": 878,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T10:35:51.717Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:42:54.553Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Monitoring and Reporting",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Get visibility across resources to find and fix problems, optimize performance, and gain insight into customer behavior.<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/894",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/896",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/895",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/897",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/893",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/898",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/878"
+    },
+    {
+      "id": 901,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T11:10:58.8Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:11:08.6Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Cloud Automation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/902",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/901"
+    },
+    {
+      "id": 712,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:50.233Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T11:08:04.3Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "CAF Migrate Landing Zone blueprint",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Evaluate the </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/ready/azure-readiness-guide/migration-landing-zone\">CAF Migrate Landing Zone blueprint</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">. If the assumptions and decisions in that article align to your business and technical objectives, the blueprint can be used to create your landing zone.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/712"
+    },
+    {
+      "id": 715,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:50.78Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Digital Estate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/digital-estate/inventory\">Inventory</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> and </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/digital-estate/rationalize\">rationalize the digital estate</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> based on assumptions which align with motivations and business outcomes.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/639",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/715"
+    },
+    {
+      "id": 716,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:50.94Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Initial organizational alignment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Establish a plan for </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/organization/index\">organizational alignment</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">, included defined </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/organization/raci-alignment\">RACI diagrams</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/639",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/716"
+    },
+    {
+      "id": 717,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:51.12Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Skills readiness plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Create a plan for addressing </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-in/azure/cloud-adoption-framework/ready/suggested-skills\">skills readiness gaps</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/639",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/717"
+    },
+    {
+      "id": 718,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:51.283Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Update this Cloud Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Update this </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/plan/plan-intro\">cloud adoption plan</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> to manage effort and change.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/639",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/644",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/643",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/642",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/641",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/718"
+    },
+    {
+      "id": 719,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:51.44Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T17:08:05.377Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Motivations",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"display:inline !important;background-color:rgb(255, 255, 255);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;\"><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><span style=\"font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;display:inline !important;\">Business transformations that are supported by cloud adoption can be driven by various motivations. It's likely that several motivations apply at the same time. The goal of the lists in the following table is to help spark ideas about which motivations are relevant. From there, you can prioritize and assess the potential impacts of the motivations. In this article, we recommend that your cloud adoption team meet with various executives and business leaders using the list below to understand which of these motivations are affected by the cloud adoption effort.&nbsp;<br><br><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/motivations\">https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/strategy/motivations</a></p></span></span></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/640",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/719"
+    },
+    {
+      "id": 720,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:51.59Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Business Outcomes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Engage motivated stakeholders and executives to document specific </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/business-strategy/business-outcomes/index\">business outcomes</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/640",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/720"
+    },
+    {
+      "id": 721,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:51.76Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Business Case",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">Develop a </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/business-strategy/cloud-migration-business-case\">business case</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> to validate the financial model supporting the motivations and outcomes.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/640",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/721"
+    },
+    {
+      "id": 722,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-01T18:05:52.053Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T10:26:22.61Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "First Adoption Project",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\">In parallel to strategy and plan development, technical staff should begin implementation of a </span><a style=\"cursor:pointer;font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;outline-color:invert;\" href=\"https://docs.microsoft.com/en-us/azure/architecture/cloud-adoption/business-strategy/first-adoption-project\">first adoption project</a><span style=\"display:inline !important;background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);font-family:Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;font-size:16px;list-style-type:decimal;\"> to expand cloud skills.</span><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/640",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/722"
+    },
+    {
+      "id": 939,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T15:18:02.72Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-07T15:18:02.72Z",
+        "System.ChangedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.Title": "Security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/638",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/939"
+    },
+    {
+      "id": 935,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:09:56.793Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:53:57.567Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Site Recovery",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;text-align:left;display:inline !important;\">Site Recovery helps ensure business continuity by keeping business apps and workloads running during outages. Site Recovery replicates workloads running on physical and virtual machines (VMs) from a primary site to a secondary location. When an outage occurs at your primary site, you fail over to secondary location, and access apps from there. After the primary location is running again, you can fail back to it.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/site-recovery/\">https://docs.microsoft.com/en-us/azure/site-recovery/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/933",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/935"
+    },
+    {
+      "id": 934,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:09:46.973Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:52:57.367Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Backup",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">The Azure Backup service provides simple, secure, and cost-effective solutions to back up your data and recover it from the Microsoft Azure cloud.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/backup/\">https://docs.microsoft.com/en-us/azure/backup/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/933",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/934"
+    },
+    {
+      "id": 932,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:08:58.777Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:14:26.127Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Log Analytics Workspace",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">All log data collected by Azure Monitor is stored in a Log Analytics workspace. A workspace is essentially a container where log data is collected from a variety of sources. You may have a single Log Analytics workspace for all your monitoring data or may have requirements for multiple workspaces.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment\">https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/931",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/932"
+    },
+    {
+      "id": 930,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:08:19.233Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:06:35.49Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Advanced Threat Protection",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure offers built in advanced threat detection functionality through services such as Azure Active Directory (Azure AD), Azure Monitor logs, and Azure Security Center. This collection of security services and capabilities provides a simple and fast way to understand what is happening within your Azure deployments.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/security/fundamentals/threat-detection\">https://docs.microsoft.com/en-us/azure/security/fundamentals/threat-detection</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/930"
+    },
+    {
+      "id": 929,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:07:45.533Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:05:42.73Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure VPN & ER",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">A VPN gateway is a specific type of virtual network gateway that is used to send encrypted traffic between an Azure virtual network and an on-premises location over the public Internet. You can also use a VPN gateway to send encrypted traffic between Azure virtual networks over the Microsoft network.<br><br><span style=\"font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;display:inline !important;\">ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection facilitated by a connectivity provider.</span><br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/vpn-gateway/\">https://docs.microsoft.com/en-us/azure/vpn-gateway/</a><br><a href=\"https://docs.microsoft.com/en-us/azure/expressroute/\">https://docs.microsoft.com/en-us/azure/expressroute/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/929"
+    },
+    {
+      "id": 928,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:07:29.497Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:03:22.99Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Bastion",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div style=\"margin:16px 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;\">The Azure Bastion service is a new fully platform-managed PaaS service that you provision inside your virtual network. It provides secure and seamless RDP/SSH connectivity to your virtual machines directly in the Azure portal over TLS. When you connect via Azure Bastion, your virtual machines do not need a public IP address.<br><br><span style=\"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif;\"><a href=\"https://docs.microsoft.com/en-us/azure/bastion/\">https://docs.microsoft.com/en-us/azure/bastion/</a></span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/928"
+    },
+    {
+      "id": 927,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:07:18.587Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:01:57.483Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Encryption",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure offers a variety of options for encryption, including encryption at rest, encryption in flight, and key management with Azure Key Vault.<span>&nbsp;<br></span></span><br><a href=\"https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-overview\">https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-overview</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/927"
+    },
+    {
+      "id": 926,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:07:05.93Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:52:08.003Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Network Security Groups",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">You can filter network traffic to and from Azure resources in an Azure virtual network with a network security group. A network security group contains security rules that allow or deny inbound network traffic to, or outbound network traffic from, several types of Azure resources. To learn about which Azure resources can be deployed into a virtual network and have network security groups associated to them.</span><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">&nbsp;For each rule, you can specify source and destination, port, and protocol.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/virtual-network/security-overview\">https://docs.microsoft.com/en-us/azure/virtual-network/security-overview</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/926"
+    },
+    {
+      "id": 925,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:06:45.897Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:51:24.1Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure DDoS",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Distributed denial of service (DDoS) attacks are some of the largest availability and security concerns facing customers that are moving their applications to the cloud. A DDoS attack attempts to exhaust an application's resources, making the application unavailable to legitimate users. DDoS attacks can be targeted at any endpoint that is publicly reachable through the internet.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><a href=\"https://docs.microsoft.com/en-us/azure/virtual-network/ddos-protection-overview\">https://docs.microsoft.com/en-us/azure/virtual-network/ddos-protection-overview</a></p></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/925"
+    },
+    {
+      "id": 924,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:06:16.157Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:50:21.84Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Key Vault",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;\">Azure Key Vault helps solve the following problems:</p><ul style=\"margin:16px 0px 16px 38px;list-style:none;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;\"><li style=\"margin:0px;outline:0px;list-style:outside none disc;\"><strong style=\"font-weight:bolder;\">Secrets Management</strong><span>&nbsp;</span>- Azure Key Vault can be used to Securely store and tightly control access to tokens, passwords, certificates, API keys, and other secrets</li><li style=\"margin:0px;outline:0px;list-style:outside none disc;\"><strong style=\"font-weight:bolder;\">Key Management</strong><span>&nbsp;</span>- Azure Key Vault can also be used as a Key Management solution. Azure Key Vault makes it easy to create and control the encryption keys used to encrypt your data.</li><li style=\"margin:0px;outline:0px;list-style:outside none disc;\"><strong style=\"font-weight:bolder;\">Certificate Management</strong><span>&nbsp;</span>- Azure Key Vault is also a service that lets you easily provision, manage, and deploy public and private Transport Layer Security/Secure Sockets Layer (TLS/SSL) certificates for use with Azure and your internal connected resources.</li><li style=\"margin:0px;outline:0px;list-style:outside none disc;\"><strong style=\"font-weight:bolder;\">Store secrets backed by Hardware Security Modules</strong><span>&nbsp;</span>- The secrets and keys can be protected either by software or FIPS 140-2 Level 2 validated HSMs</li></ul><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><a href=\"https://docs.microsoft.com/en-us/azure/key-vault/\">https://docs.microsoft.com/en-us/azure/key-vault/</a></p></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/924"
+    },
+    {
+      "id": 923,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:06:02.67Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:49:09.467Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Active Directory",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/923"
+    },
+    {
+      "id": 922,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:05:53.153Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:46:08.693Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Firewall",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"></span></div><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;\"><span style=\"font-size:12.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#171717;\">Azure Firewall is a\nmanaged, cloud-based network security service that protects your Azure Virtual\nNetwork resources. It's a fully stateful firewall as a service with built-in\nhigh availability and unrestricted cloud scalability.</span><span style=\"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:black;\"></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;\"><span style=\"font-size:12.0pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:#171717;\"><br style=\"\"><br style=\"\"></span><span style=\"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:black;\"></span></p><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;margin-bottom:0in;margin-bottom:.0001pt;\"><u><span style=\"font-size:10.5pt;font-family:&quot;Segoe UI&quot;,sans-serif;color:blue;\"><span><a href=\"https://docs.microsoft.com/en-us/azure/firewall/overview\">https://docs.microsoft.com/en-us/azure/firewall/overview</a></span></span></u></p>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/922"
+    },
+    {
+      "id": 921,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:05:43.043Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:41:20.38Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Web Application Firewall",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Web Application Firewall (WAF) provides centralized protection of your web applications from common exploits and vulnerabilities. Web applications are increasingly targeted by malicious attacks that exploit commonly known vulnerabilities. SQL injection and cross-site scripting are among the most common attacks.</span><div><span style=\"\"><br></span></div><div><a href=\"https://docs.microsoft.com/en-us/azure/web-application-firewall/\" style=\"\">https://docs.microsoft.com/en-us/azure/web-application-firewall/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/921"
+    },
+    {
+      "id": 920,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:05:16.34Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:36:27.297Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Application Gateway",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Application Gateway is a web traffic load balancer that enables you to manage traffic to your web applications. Traditional load balancers operate at the transport layer (OSI layer 4 - TCP and UDP) and route traffic based on source IP address and port, to a destination IP address and port.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/application-gateway/\">https://docs.microsoft.com/en-us/azure/application-gateway/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/919",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/920"
+    },
+    {
+      "id": 918,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:04:34.687Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:08:54.61Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Sentinel",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Microsoft Azure Sentinel is a scalable, cloud-native,<span>&nbsp;</span></span><strong style=\"font-weight:bolder;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;\">security information event management (SIEM)</strong><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>and<span>&nbsp;</span></span><strong style=\"font-weight:bolder;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;\">security orchestration automated response (SOAR)</strong><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>solution. Azure Sentinel delivers intelligent security analytics and threat intelligence across the enterprise, providing a single solution for alert detection, threat visibility, proactive hunting, and threat response.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/sentinel/\">https://docs.microsoft.com/en-us/azure/sentinel/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/915",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/918"
+    },
+    {
+      "id": 917,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:04:23.88Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:08:16.223Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Monitor",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Monitor maximizes the availability and performance of your applications and services by delivering a comprehensive solution for collecting, analyzing, and acting on telemetry from your cloud and on-premises environments. It helps you understand how your applications are performing and proactively identifies issues affecting them and the resources they depend on.<br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><p style=\"margin:0in 0in 8pt;font-size:11pt;font-family:Calibri, sans-serif;\"><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/\">https://docs.microsoft.com/en-us/azure/azure-monitor/</a></p></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/915",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/917"
+    },
+    {
+      "id": 916,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:04:12.22Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T16:07:16.643Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Security Center",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Security Center is a unified infrastructure security management system that strengthens the security posture of your data centers, and provides advanced threat protection across your hybrid workloads in the cloud - whether they're in Azure or not - as well as on premises.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/security-center/\">https://docs.microsoft.com/en-us/azure/security-center/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/915",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/916"
+    },
+    {
+      "id": 914,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:02:19.373Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:21:45.38Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Service Map",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Service Map automatically discovers application components on Windows and Linux systems and maps the communication between services. With Service Map, you can view your servers in the way that you think of them: as interconnected systems that deliver critical services. Service Map shows connections between servers, processes, inbound and outbound connection latency, and ports across any TCP-connected architecture, with no configuration required other than the installation of an agent.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/azure-monitor/insights/service-map\">https://docs.microsoft.com/en-us/azure/azure-monitor/insights/service-map</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/909",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/914"
+    },
+    {
+      "id": 913,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:02:01.833Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:20:25.233Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Automation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Automation delivers a cloud-based automation and configuration service that provides consistent management across your Azure and non-Azure environments. It consists of process automation, update management, and configuration features. Azure Automation provides complete control during deployment, operations, and decommissioning of workloads and resources. This article provides a brief overview of Azure Automation and answers some common questions. For more information about the different capabilities, visit the links throughout this overview.</span><br></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\"><a href=\"https://docs.microsoft.com/en-us/azure/automation/\">https://docs.microsoft.com/en-us/azure/automation/</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/909",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/913"
+    },
+    {
+      "id": 912,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:01:50.677Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:19:34.09Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Policy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Policy is a service in Azure that you use to create, assign, and manage policies. These policies enforce different rules and effects over your resources, so those resources stay compliant with your corporate standards and service level agreements. Azure Policy meets this need by evaluating your resources for non-compliance with assigned policies. All data stored by Azure Policy is encrypted at rest.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/governance/policy/\">https://docs.microsoft.com/en-us/azure/governance/policy/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/909",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/912"
+    },
+    {
+      "id": 911,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "$ProjectName$\\Iteration 2",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:01:40.753Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:18:42.327Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Network Watcher",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Network Watcher provides tools to monitor, diagnose, view metrics, and enable or disable logs for resources in an Azure virtual network. Network Watcher is designed to monitor and repair the network health of IaaS (Infrastructure-as-a-Service) products which includes Virtual Machines, Virtual Networks, Application Gateways, Load balancers, etc. Note: It is not intended for and will not work for PaaS monitoring or Web analytics.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/network-watcher/\">https://docs.microsoft.com/en-us/azure/network-watcher/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/909",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/911"
+    },
+    {
+      "id": 910,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "NIST 800-171 Template",
+        "System.TeamProject": "NIST 800-171 Template",
+        "System.IterationPath": "NIST 800-171 Template",
+        "System.WorkItemType": "User Story",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-04-07T12:01:30.867Z",
+        "System.CreatedBy": "Vandy Rodrigues <vandyr@microsoft.com>",
+        "System.ChangedDate": "2020-04-08T15:17:46Z",
+        "System.ChangedBy": "Clayton Barlow <clbarlow@microsoft.com>",
+        "System.Title": "Azure Information Protection",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Segoe WP&quot;, &quot;Helvetica Neue&quot;, Helvetica, Tahoma, Arial, sans-serif;font-size:16px;display:inline !important;\">Azure Information Protection (sometimes referred to as AIP) is a cloud-based solution that helps an organization to classify and optionally, protect its documents and emails by applying labels. Labels can be applied automatically by administrators who define rules and conditions, manually by users, or a combination where users are given recommendations.<br></span><br><a href=\"https://docs.microsoft.com/en-us/azure/information-protection/\">https://docs.microsoft.com/en-us/azure/information-protection/</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/909",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vandyr/_apis/wit/workItems/910"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

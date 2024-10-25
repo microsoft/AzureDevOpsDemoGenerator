@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://github.com/MicrosoftDocs/mslearn-publish-reusable-bicep-code-using-azure-pipelines.git"
+    },
+    "serviceEndpointId": "",
+    "deleteServiceEndpointAfterImportIsDone": false
+  }
+}

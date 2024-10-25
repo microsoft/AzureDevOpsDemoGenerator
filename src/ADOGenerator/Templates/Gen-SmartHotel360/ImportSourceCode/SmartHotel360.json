@@ -1,0 +1,10 @@
+{
+  "parameters":
+    {
+      "gitSource": {
+        "url": "https://vstsdemodata.visualstudio.com/smh360_scrum/_git/SmartHotel360"
+      },
+      "serviceEndpointId": "$SmartHotel360-code$",
+      "deleteServiceEndpointAfterImportIsDone": true
+    }
+}

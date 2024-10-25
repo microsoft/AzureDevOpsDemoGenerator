@@ -1,0 +1,2127 @@
+{
+  "count": 53,
+  "value": [
+    {
+      "id": 4636,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-19T21:55:50.08Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:47.493Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Identity and Access",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Ensure team have correct access rights and roles to build and deploy</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4231",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4636"
+    },
+    {
+      "id": 4635,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-19T21:54:44.857Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:47.493Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Connectivity",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Verify connectivity and routing requirements</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4231",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4635"
+    },
+    {
+      "id": 4633,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-19T21:29:25.383Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Available Scripts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">In the project directory<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\"><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/tree/main/Application_Frontend_Deployment/contoso-retail\">contoso-retail</a></code>, you can run:</p><h3 style=\"box-sizing:border-box;margin-top:24px;margin-bottom:16px;font-size:1.25em;font-weight:600;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\"><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/tree/main/Application_Frontend_Deployment#yarn-start\" style=\"box-sizing:border-box;float:left;padding-right:4px;margin-left:-20px;\"></a><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">yarn start</code></h3><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">Runs the app in the development mode.<br style=\"box-sizing:border-box;\">Open<span>&nbsp;</span><a href=\"http://localhost:3000/\" rel=nofollow style=\"box-sizing:border-box;\">http://localhost:3000</a><span>&nbsp;</span>to view it in the browser.</p><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">The page will reload if you make edits.<br style=\"box-sizing:border-box;\">You will also see any lint errors in the console.</p><h3 style=\"box-sizing:border-box;margin-top:24px;margin-bottom:16px;font-size:1.25em;font-weight:600;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\"><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/tree/main/Application_Frontend_Deployment#yarn-test\" style=\"box-sizing:border-box;float:left;padding-right:4px;margin-left:-20px;\"></a><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">yarn test</code></h3><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">Launches the test runner in the interactive watch mode.<br style=\"box-sizing:border-box;\">See the section about<span>&nbsp;</span><a href=\"https://facebook.github.io/create-react-app/docs/running-tests\" rel=nofollow style=\"box-sizing:border-box;\">running tests</a><span>&nbsp;</span>for more information.</p><h3 style=\"box-sizing:border-box;margin-top:24px;margin-bottom:16px;font-size:1.25em;font-weight:600;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\"><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/tree/main/Application_Frontend_Deployment#yarn-build\" style=\"box-sizing:border-box;float:left;padding-right:4px;margin-left:-20px;\"></a><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">yarn build</code></h3><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">Builds the app for production to the<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">build</code><span>&nbsp;</span>folder.<br style=\"box-sizing:border-box;\">It correctly bundles React in production mode and optimizes the build for the best performance.</p><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">The build is minified and the filenames include the hashes.<br style=\"box-sizing:border-box;\">Your app is ready to be deployed!</p><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">See the section about<span>&nbsp;</span><a href=\"https://facebook.github.io/create-react-app/docs/deployment\" rel=nofollow style=\"box-sizing:border-box;\">deployment</a><span>&nbsp;</span>for more information.</p><h3 style=\"box-sizing:border-box;margin-top:24px;margin-bottom:16px;font-size:1.25em;font-weight:600;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\"><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/tree/main/Application_Frontend_Deployment#yarn-eject\" style=\"box-sizing:border-box;float:left;padding-right:4px;margin-left:-20px;\"></a><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">yarn eject</code></h3><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><strong style=\"box-sizing:border-box;font-weight:600;\">Note: this is a one-way operation. Once you<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">eject</code>, you can’t go back!</strong></p><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">If you aren’t satisfied with the build tool and configuration choices, you can<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">eject</code><span>&nbsp;</span>at any time. This command will remove the single build dependency from your project.</p><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">eject</code><span>&nbsp;</span>will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.</p><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">You don’t have to ever use<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">eject</code>. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.</p><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4630",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4633"
+    },
+    {
+      "id": 4632,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-19T21:27:49.817Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Demo Site",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>View Demo:&nbsp;<a href=\"https://synapsefornextgenretail.azurewebsites.net/\">https://synapsefornextgenretail.azurewebsites.net/</a>&nbsp;</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4630",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4632"
+    },
+    {
+      "id": 4631,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-19T21:27:27.34Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Edit config.ts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Edit the Config.ts file</div><div><span style=\"color:rgb(36, 41, 46);font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;text-align:left;background-color:rgba(27, 31, 35, 0.05);display:inline !important;\">/contoso-retail/src/config.ts&nbsp;</span><br></div><div><br></div><div><br></div><pre><code><div><pre style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;margin-top:0px;margin-bottom:16px;padding:16px;overflow:auto;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\"><code style=\"box-sizing:border-box;margin:0px;border-radius:6px;display:inline;\">&nbsp;/** USER PROFILE API from API Management URL */ \n&nbsp; &nbsp; export const GET_USER_PROFILES = &quot;[ENTER USERS PROFILE API]&quot; +&quot;?subscription-key=&quot; + SUBSCRIPTION_KEY;\n\n&nbsp; &nbsp; /** ITEM RECOMMENDATION from API Management URL */\n&nbsp; &nbsp; export function getItemRecommendations(product_id: number) {\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return &quot;[ENTER ITEM RECOMMENDER API ]&quot; + product_id + &quot;?subscription-key=&quot; + SUBSCRIPTION_KEY;\n&nbsp; &nbsp; }\n\n&nbsp; &nbsp; /** GET USER RECOMMENDATION API from API Management */ \n&nbsp; &nbsp; export function getUserRecommendations(user_id: string) {\n&nbsp; &nbsp; &nbsp; &nbsp; return &quot;[ENTER GET USER RECOMMENDATION API]&quot; + user_id + &quot;?subscription-key=&quot; + SUBSCRIPTION_KEY;\n&nbsp; &nbsp; }\n\n&nbsp; &nbsp; /** GET PRODUCT DETAILS API from API Management */\n&nbsp; &nbsp; export function getProductDetails(product_id: string) {\n&nbsp; &nbsp; &nbsp; &nbsp; return &quot;[ENTER GET PRODUCT DETAILS API]&quot; + product_id + &quot;?subscription-key=&quot; + SUBSCRIPTION_KEY;\n&nbsp; &nbsp; }\n\n&nbsp; &nbsp; /** GET PRODUCT BY CATEGORY API from API Management */ \n&nbsp; &nbsp; export const GET_PRODUCTS_BY_CATEGORY = &quot;[ENTER GET PRODUCT BY CATEGORY ID API]&quot; + &quot;?subscription-key=&quot; + SUBSCRIPTION_KEY + &quot;&amp;categoryname=&quot;;\n\n&nbsp; &nbsp; /** EVENT HUB NAMESPACE from Event Hub */\n&nbsp; &nbsp; export const EVENT_HUB_NAMESPACE = &quot;[ENTER NAMESPACE]&quot;;\n\n&nbsp; &nbsp; /** EVENT HUB KEY NAME from Event Hubs */ \n&nbsp; &nbsp; export const EVENT_HUB_KEYNAME = &quot;[ENTER KEY NAME]&quot;;\n\n&nbsp; &nbsp; /** EVENT HUB ACCESS KEY from Event Hub */ \n&nbsp; &nbsp; export const EVENT_HUB_ACCESS_KEY = &quot;[ENTER ACCESS KEY]&quot;;\n&nbsp; &nbsp; \n&nbsp; &nbsp; /** PRODUCT IMAGE STORAGE ACCOUNT NAME from Application_Backend_Deploymnet */ \n&nbsp; &nbsp; export const STORAGE_ACCOUNT = &quot;[ENTER STORAGE ACCOUNT NAME]&quot;\n\n&nbsp; &nbsp; /** POWER BI URL */\n&nbsp; &nbsp; export const POWER_BI_URL = &quot;[ENTER POWER BI NAME]&quot;</code></pre><br></div></code></pre>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4630",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4631"
+    },
+    {
+      "id": 4628,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-19T17:34:07.907Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Execute the notebook",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks?tabs=classical\">Synapse Studio notebooks - Azure Synapse Analytics | Microsoft Docs</a>&nbsp;<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4625",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4628"
+    },
+    {
+      "id": 4627,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-19T17:33:10.3Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Import to CreateOrUpdateProductDetails.ipynb to Synapse workspace",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Import<span>&nbsp;</span><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/blob/main/Analytics_Deployment/synapse-workspace/notebooks/01_CreateOrUpdateProductDetails.ipynb\" style=\"box-sizing:border-box;\"><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Analytics_Deployment\\synapse-workspace\\notebooks\\01_CreateOrUpdateProductDetails.ipynb</code></a><span>&nbsp;</span>to the Synapse workspace and fill out the parameters for the filesystem name and the account name.<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4625",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4627"
+    },
+    {
+      "id": 4626,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-19T17:30:49.643Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Upload JSON to Datalake",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/blob/main/Analytics_Deployment/data/product_detail.json\">product_detail.json</a></span></div><div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">Upload this JSON to the Azure Data Lake Storage Account attached to your Synapse workspace</span><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;\"><li style=\"box-sizing:border-box;\">Make sure you put it into the filesystem that is the Primary Filesystem for the Synapse workspace</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Put it in the folder<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">synapse/workspaces</code><span>&nbsp;</span>in the filesystem that is the primary filesystem for the Synapse workspace</li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4625",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4626"
+    },
+    {
+      "id": 4607,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-18T00:34:16.667Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:30.723Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Accountability and responsibility for the build",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Who is on point for the actual build</div><div>Agreement on naming standards, tagging rules for ownership and reporting</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4229",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4607"
+    },
+    {
+      "id": 4272,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-10T00:07:28.233Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Configure Application Front-end",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Navigate to the Application Front-end config.ts file:&nbsp;<a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Application_Frontend_Deployment/contoso-retail/src/config.ts\">Azure-Synapse-Solution-Accelerator-Retail-Recommender/config.ts at master · microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender (github.com)</a></div><div><br></div><div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">add the<span>&nbsp;</span></span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\">EVENT_HUB_ACCESS_KEY</code><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">,<span>&nbsp;</span></span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\">EVENT_HUB_KEYNAME</code><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">, and<span>&nbsp;</span></span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\">EVENT_HUB_NAMESPACE</code><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><span>&nbsp;</span>created in the previous steps to the application</span><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4215",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4272"
+    },
+    {
+      "id": 4271,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-10T00:05:48.283Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Configure the Event Hub",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px !important;\"><li style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;box-sizing:border-box;margin-top:0.25em;\"><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">From the Overview, go to<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Event Hubs</code>, click the<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">clickthrough</code><span>&nbsp;</span>Event Hub created in the previous step</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Click<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Capture events</code><span>&nbsp;</span>to turn on and configure the settings to send events to the storage account you are using for this solution accelerator.</li></ul></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">Navigate to the<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">clickthrough</code><span>&nbsp;</span>Event Hub and click<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Shared access policies</code>, click &quot;+ Add&quot; and configure a new policy and click<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">send</code>.</p></li><ul style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">Click<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Create</code></li></ul></ol><div><font color=\"#24292e\" face=\"SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace\"><span style=\"font-size:13.6px;\"><br></span></font></div></div><div><font color=\"#24292e\" face=\"SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace\"><span style=\"font-size:13.6px;\"><a href=\"https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Reference: Features and Terminology&nbsp;</a></span></font></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4215",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4271"
+    },
+    {
+      "id": 4270,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-10T00:03:37.813Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Create Event Hub and Namespace",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Deploy into the Resource Group you are using for this solution accelerator</div><div><a href=\"https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Quickstart: Create Event Hub and Namespace</a></div><div><br></div><pre><code><div><pre style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;margin-top:0px;margin-bottom:0px;padding:16px;overflow:auto;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\"><span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;Set your Azure subscription to the subscription used in this solution accelerator</span>\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;NOTE: you will need to replace the following: </span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;- &lt;Subscription-Id&gt;</span>\naz account <span style=\"box-sizing:border-box;\">set</span>&nbsp;--subscription <span style=\"box-sizing:border-box;\">&lt;</span>Subscription-Id<span style=\"box-sizing:border-box;\">&gt;</span>\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;Create Event Hub namespace </span>\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;NOTE: you will need to replace the following: </span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;- &lt;event-hub-namespace&gt;, &lt;resourse-group&gt;, &lt;location&gt;</span>\naz eventhubs namespace create --name <span style=\"box-sizing:border-box;\">&lt;</span>event-hub-namespace<span style=\"box-sizing:border-box;\">&gt;</span>&nbsp;--resource-group <span style=\"box-sizing:border-box;\">&lt;</span>resource-group<span style=\"box-sizing:border-box;\">&gt;</span>&nbsp;-l <span style=\"box-sizing:border-box;\">&lt;</span>location<span style=\"box-sizing:border-box;\">&gt;</span>\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;Creat Event Hub called clickthrough</span>\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;NOTE: you will need to replace the followng: </span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;- &lt;resource-group&gt;, &lt;event-hub-namespace&gt;</span>\naz eventhubs eventhub create --name clickthrough --resource-group <span style=\"box-sizing:border-box;\">&lt;</span>resource-group<span style=\"box-sizing:border-box;\">&gt;</span>&nbsp;--namespace-name <span style=\"box-sizing:border-box;\">&lt;</span>event-hub-namespace<span style=\"box-sizing:border-box;\">&gt;</span></pre><br></div></code></pre>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4215",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4270"
+    },
+    {
+      "id": 4269,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T23:18:06.657Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "8. Create and Configure API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;margin-top:0.25em;\">In the Azure API Management, go to<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">APIs</code><span>&nbsp;</span>and choose<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Blank API</code></li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Configure the name of your API and click Create</li></ol><div><span style=\"color:rgb(106, 115, 125);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\">Now you are ready to integrate the API with your front-end by utilizing the API you built in Azure API Management</span><br></div><div><span style=\"color:rgb(106, 115, 125);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\"><b>Example recommendation call</b></span></div><pre><code><div><span style=\"color:rgb(106, 115, 125);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\"><span style=\"color:rgb(36, 41, 46);font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;background-color:rgba(27, 31, 35, 0.05);display:inline !important;\">https://{ENTER_YOUR_APIM_NAME}.net/{VERSION_NUM_OF_API}/get_shopper_recommendations?subscription-key={APIM_SUBSCRIPTION_KEY}&amp;user_id=568778435</span><br></span></div></code></pre>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4269"
+    },
+    {
+      "id": 4268,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T23:16:55.7Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7. Deploy Azure API Management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Deploy to resource group for this solution accelerator</div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/azure/api-management/get-started-create-service-instance?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Quickstart - Create an Azure API Management instance | Microsoft Docs</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4268"
+    },
+    {
+      "id": 4267,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T23:06:49.46Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Initialize, Deploy and Upload data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><h4 style=\"box-sizing:border-box;margin-top:24px;margin-bottom:16px;font-weight:600;font-size:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\">In this step we are going to deploy master data and upload images for Product and Profile APIs</h4></div><div><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/blob/main/Application_Backend_Deployment/Step4.md\">Azure-Synapse-Retail-Recommender-Solution-Accelerator/Step4.md at main · microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator (github.com)</a><br></div><div><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4267"
+    },
+    {
+      "id": 4266,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T22:53:38.717Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Configure SSL",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><h4 style=\"box-sizing:border-box;margin-top:24px;margin-bottom:16px;font-weight:600;font-size:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\">Your API services has been already deployed in Kubernetes but you can't access their service endpoint so far.<br style=\"box-sizing:border-box;\">Because they don't expose any public network endpoint. so we are going to set up Network Ingress configuration and apply SSL encryption.</h4><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;\"><li style=\"box-sizing:border-box;\">Creating Certificate Issuer</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Creating Certicifate with LetsEncrypt</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Config Ingress Controller for Services to support SSL</li></ul><br></div><div><br></div><div><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/blob/main/Application_Backend_Deployment/Step3.md\">Azure-Synapse-Retail-Recommender-Solution-Accelerator/Step3.md at main · microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator (github.com)</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4266"
+    },
+    {
+      "id": 4265,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T22:45:23.337Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Configure Kubernetes Ingress Controller and Cert Manager",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Update parameters in deploy1.bat.</div><div><a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Application_Backend_Deployment/Deploy1.bat\">Azure-Synapse-Solution-Accelerator-Retail-Recommender/Deploy1.bat at master · microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender (github.com)</a></div><div><br></div><div><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;\"><li style=\"box-sizing:border-box;\">Deploy API Services in Kubernetes</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Deploy Nginix Ingress Controller in Kubernetes</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Deploy cert-manager to preparing self-signed certificate to support SSL</li></ul><br></div><div><br></div><div>NOTE: Email address should be valid for your certificate</div><div><br></div><div>&nbsp;<span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">Wait for a while ingress-nginx-controller-* 's READY status from 0/1 to 1/1.&nbsp;<span style=\"display:inline !important;\">Once nginx controller's READY status is 1/1, press CTRL+C and exit the batch process.</span></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4265"
+    },
+    {
+      "id": 4264,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T22:30:46.433Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Deploy Azure Resources using deploy1.bat",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The following script will deploy these services.&nbsp;<a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Application_Backend_Deployment/Step1%2c2.md\">Azure-Synapse-Solution-Accelerator-Retail-Recommender/Step1,2.md at master · microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender (github.com)</a></div><div><br></div><div><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;\"><li style=\"box-sizing:border-box;\">Deploy Azure Container Registry Service (<a href=\"https://docs.microsoft.com/en-us/azure/container-instances/container-instances-quickstart?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">quickstart</a>)</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Deploy Azure Kubernetes Service&nbsp; (<a href=\"https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">quickstart</a>)</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Deploy Azure Storage Account (<a href=\"https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">quickstart</a>)</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Deploy Azure CosmosDB Mongo API (<a href=\"https://docs.microsoft.com/en-us/azure/cosmos-db/create-cosmosdb-resources-portal?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">quickstart</a>)</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Setting Service Principal to work together with ACR and AKS (<a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">overview</a>)</li></ul><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4264"
+    },
+    {
+      "id": 4263,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T22:25:34.877Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Local Build and Test",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Local build and test : Open solution file<span>&nbsp;<a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Application_Backend_Deployment/Contoso.Retail.NextGen/src/Contoso.Retail.NextGen.API.sln\">Azure-Synapse-Solution-Accelerator-Retail-Recommender/Contoso.Retail.NextGen.API.sln at master · microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender (github.com)</a>&nbsp;</span>from your Visual Studio.&nbsp;<br></div><div><br></div><div><b>NOTE</b>:&nbsp;<span style=\"font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\"><font color=\"#24292e\">Through Azure Pipeline, you may deploy on Kubernetes cluster. Check&nbsp;</font>deployment.yml and service.yml </span><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\">in <a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/tree/master/Application_Backend_Deployment/Contoso.Retail.NextGen/manifests\">manifests</a></span><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\"><span>&nbsp;</span>folder and<span>&nbsp;</span></span><a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Application_Backend_Deployment/Contoso.Retail.NextGen/azure-pipelines.yml\" style=\"box-sizing:border-box;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">azure-pipelines.yml</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4263"
+    },
+    {
+      "id": 4262,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T22:13:51.293Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Prerequisites ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\">Azure CLI - For Azure Resources and Source code deployment (<a href=\"https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Install the Azure CLI | Microsoft Docs</a>)&nbsp;</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Kubectl- For Deploying API Services and Configuration (<a href=\"https://kubernetes.io/docs/tasks/tools/install-kubectl/\">Install and Set Up kubectl | Kubernetes</a>)&nbsp;</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Docker Desktop - For Debugging in local or containerizing codes in Deployment process (<a href=\"https://www.docker.com/get-started\">Get Started with Docker | Docker</a>)</li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><span>PowerShell 7.x&nbsp;</span>- For executing Deployment Script (<a href=\"https://github.com/PowerShell/PowerShell#get-powershell\">PowerShell/PowerShell: PowerShell for every system! (github.com)</a></li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Helm 3.x - For installing cert-manager, ingress-nginx Ingress Controller (<a href=\"https://helm.sh/docs/intro/install/\">Helm | Installing Helm</a>)</li></ol><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4214",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4262"
+    },
+    {
+      "id": 4261,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T21:34:18.393Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Run the model",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">run<span>&nbsp;</span></span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\">python deploy_model.py</code><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><span>&nbsp;</span>and the model will be registered with AMLS and deployed to the AKS cluster.</span><br></div><div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/tree/main/Analytics_Deployment/amls/model_deployment\">Azure-Synapse-Retail-Recommender-Solution-Accelerator/Analytics_Deployment/amls/model_deployment at main · microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator (github.com)</a><br></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4213",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4261"
+    },
+    {
+      "id": 4260,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T21:33:22.323Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Deploy the model: Prepare deploy_model.py",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"\">Update deploy_model.py</span><br></div><div><span style=\"\"><br></span></div><div><span style=\"\"><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/tree/main/Analytics_Deployment/amls/model_deployment\">Azure-Synapse-Retail-Recommender-Solution-Accelerator/Analytics_Deployment/amls/model_deployment at main · microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator (github.com)</a><br></span></div><pre><code><div><pre style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;margin-top:0px;margin-bottom:0px;padding:16px;overflow:auto;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\"><span style=\"box-sizing:border-box;\"># Subscription ID for the Solution Accelerator</span>\n<span style=\"box-sizing:border-box;\">SUBSCRIPTION_ID</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n<span style=\"box-sizing:border-box;\"># Resource Group that you are using for the Solution Accelerator</span>\n<span style=\"box-sizing:border-box;\">RESOURCE_GROUP</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n<span style=\"box-sizing:border-box;\"># Found in the output of the Service Principal created earlier</span>\n<span style=\"box-sizing:border-box;\">TENANT_ID</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n<span style=\"box-sizing:border-box;\"># Found in the output of the Service Principal created earlier</span>\n<span style=\"box-sizing:border-box;\">APP_ID</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n<span style=\"box-sizing:border-box;\"># Found in the output of the Service Principal created earlier</span>\n<span style=\"box-sizing:border-box;\">SP_PASSWORD</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n<span style=\"box-sizing:border-box;\"># Name of the Azure Machine Learning Service that you deployed</span>\n<span style=\"box-sizing:border-box;\">WORKSPACE_NAME</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n<span style=\"box-sizing:border-box;\"># Name of the Azure Kubernetes Service that you deployed</span>\n<span style=\"box-sizing:border-box;\">AKS_CLUSTER_NAME</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span></pre><br></div></code></pre>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4213",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4260"
+    },
+    {
+      "id": 4259,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T21:32:18.787Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Deploy the model: Prepare score.py",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Update the score.py file</div><div><br></div><div><a href=\"https://github.com/microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator/tree/main/Analytics_Deployment/amls/model_deployment\">Azure-Synapse-Retail-Recommender-Solution-Accelerator/Analytics_Deployment/amls/model_deployment at main · microsoft/Azure-Synapse-Retail-Recommender-Solution-Accelerator (github.com)</a><br></div><div><br></div><pre><code><div><pre style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;margin-top:0px;margin-bottom:0px;padding:16px;overflow:auto;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\"><span style=\"box-sizing:border-box;\">def</span>&nbsp;<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">init</span></span>():\n&nbsp; &nbsp; <span style=\"box-sizing:border-box;\">## Add in your Data Lake Details Here</span>\n&nbsp; &nbsp; \n&nbsp; &nbsp; <span style=\"box-sizing:border-box;\">## The DATA_LAKE_NAME should be the attached Data Lake to your Synapse workspace where the saved ALS Model is</span>\n&nbsp; &nbsp; <span style=\"box-sizing:border-box;\">DATA_LAKE_NAME</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n&nbsp; &nbsp; <span style=\"box-sizing:border-box;\">## DATA_LAKE_FILE_SYSTEM_NAME should be the filesystem that is attached to the Synapse workspace where the Model is saved</span>\n&nbsp; &nbsp; <span style=\"box-sizing:border-box;\">DATA_LAKE_FILE_SYSTEM_NAME</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n&nbsp; &nbsp; <span style=\"box-sizing:border-box;\">## DATA_LAKE_PRIMARY_KEY is the Primary Key of the Azure Data Lake Storage Gen2 that can be found in the portal</span>\n&nbsp; &nbsp; <span style=\"box-sizing:border-box;\">DATA_LAKE_PRIMARY_KEY</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span></pre><br></div></code></pre>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4213",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4259"
+    },
+    {
+      "id": 4258,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T21:30:02.693Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Create data model",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">In the repository on your local machine, open<span>&nbsp;<a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/tree/master/Analytics_Deployment/amls/model_deployment\">Azure-Synapse-Solution-Accelerator-Retail-Recommender/Analytics_Deployment/amls/model_deployment at master · microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender (github.com)</a></span><span>&nbsp;</span>in an IDE like VS Code</p></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">Run<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">pip install -r requirements.txt</code></p></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">Edit the<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">download_model.py</code><span>&nbsp;</span>file:</p><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">In the file<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">download_model.py</code>, edit the following:<div style=\"box-sizing:border-box;margin-bottom:16px;\"><pre style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;margin-top:0px;margin-bottom:0px;padding:16px;overflow:auto;border-radius:6px;\"><span style=\"box-sizing:border-box;\"><b># Enter the name of the Azure Data Lake Storage Gen2 Account</b></span>\n<span style=\"box-sizing:border-box;\">DATA_LAKE_NAME</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n<span style=\"box-sizing:border-box;\"><b># Enter the name of the filesystem</b></span>\n<span style=\"box-sizing:border-box;\">DATA_LAKE_FILE_SYSTEM_NAME</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span>\n<span style=\"box-sizing:border-box;\"><b># Enter the Primary Key of the Data Lake Account</b></span>\n<span style=\"box-sizing:border-box;\">DATA_LAKE_PRIMARY_KEY</span><span style=\"box-sizing:border-box;\">=</span><span style=\"box-sizing:border-box;\">&quot;&quot;</span></pre></div></li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Now run<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">python download_model.py</code><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">This should create a ZIP of the model on your local machine.</li></ul></li></ul></li></ol><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4213",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4258"
+    },
+    {
+      "id": 4257,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T21:26:04.83Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Create new inference cluster",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">Launch the Azure Machine Learning Studio:</p><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">Go to the resource page in the portal and click the &quot;Launch Studio&quot;</li></ul></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">Go to &quot;Compute&quot;, click &quot;Inference Clusters&quot; and click &quot;+ New&quot;</p><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">fill in the <b>Compute Name</b>, <b>Region</b>, choose the <b>Dev-test or Production </b>for the cluster purpose and select Create.</li></ul></li></ol><a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-attach-compute-cluster?tabs=python?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Create a compute cluster for Machine Learning</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4213",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4257"
+    },
+    {
+      "id": 4256,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T21:14:58.71Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Configure and Train data models",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Fill out the parameters in the following files and run in order.</div><div><span style=\"\"><br></span></div><div><span style=\"\"><ol><li><span style=\"\">Clean training data:&nbsp;</span><a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Analytics_Deployment/synapse-workspace/notebooks/02_Clean_Training_Data.ipynb\" style=\"\">https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Analytics_Deployment/synapse-workspace/notebooks/02_Clean_Training_Data.ipynb</a></li><li>&nbsp;ALS Model training:&nbsp;<a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Analytics_Deployment/synapse-workspace/notebooks/03_ALS_Model_Training.ipynb\" style=\"\">https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Analytics_Deployment/synapse-workspace/notebooks/03_ALS_Model_Training.ipynb</a></li><li>Recommendation Refresh:&nbsp;<a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Analytics_Deployment/synapse-workspace/notebooks/04_RecommendationRefresh.ipynb\" style=\"\">https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Analytics_Deployment/synapse-workspace/notebooks/04_RecommendationRefresh.ipynb</a></li></ol></span></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4212",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4256"
+    },
+    {
+      "id": 4255,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T21:05:52.213Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Create Service Principal",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Service Principal needs contributor access to Azure Machine Learning Service. <a href=\"https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Creating Service Principal</a></div><div><br></div><div><strong style=\"box-sizing:border-box;font-weight:600;\">Note</strong>: Save the client-id and password of this Service Principal for future steps in the<span>&nbsp;</span><a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Analytics_Deployment/synapse-workspace/notebooks/03_ALS_Model_Training.ipynb\" style=\"box-sizing:border-box;\">Notebook</a>. This will install the Azure Machine Learning CLI Extention.<br></div><div><br></div><pre><code><div><pre style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;margin-top:0px;margin-bottom:0px;padding:16px;overflow:auto;border-radius:6px;color:rgb(36, 41, 46);\"><span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>After running the script, it will propt you to login to the portal or enter a device code. </span>\naz login\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>Install the Azure Machine Learning CLI Extention </span>\naz extension add -n azure-cli-ml\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;Set the subscription you will be using for this solution accelerator</span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;NOTE: you will need to replace the following </span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;- &lt;subscription-id&gt;</span>\naz account <span style=\"box-sizing:border-box;\">set</span>&nbsp;--subscription <span style=\"box-sizing:border-box;\">&lt;</span>subsciption-id<span style=\"box-sizing:border-box;\">&gt;</span>\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;Create a Service Principal</span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;NOTE: you will need to replace the following </span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;- &lt;service-principal-name&gt;: Desired name for the serive principal</span>\naz ad sp create-for-rbac --sdk-auth --name <span style=\"box-sizing:border-box;\">&lt;</span>service-principal-name<span style=\"box-sizing:border-box;\">&gt;</span>\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;Get details of your service principal </span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;NOTE: you will need to replace the following</span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;- &lt;client-id&gt;: the client id from the previous step</span>\naz ad sp show --id <span style=\"box-sizing:border-box;\">&lt;</span>client-id<span style=\"box-sizing:border-box;\">&gt;</span>&nbsp;\n\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;Assign contributor role to the Azure Machine Learning Service </span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;NOTE: you will need to replace the following</span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;- &lt;workspace-name&gt;: Azure Machine learning workspace name</span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;- &lt;resource-group&gt;: name of the resource group used for this solution accelerator </span>\n<span style=\"box-sizing:border-box;\"><span style=\"box-sizing:border-box;\">#</span>&nbsp;- &lt;object-id&gt;: the object id of the service principal </span>\naz ml workspace share -w <span style=\"box-sizing:border-box;\">&lt;</span>workspace-name<span style=\"box-sizing:border-box;\">&gt;</span>&nbsp;-g <span style=\"box-sizing:border-box;\">&lt;</span>resource-group<span style=\"box-sizing:border-box;\">&gt;</span>&nbsp;--user <span style=\"box-sizing:border-box;\">&lt;</span>object-id<span style=\"box-sizing:border-box;\">&gt;</span>&nbsp;--role contributor</pre><br></div></code></pre>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4212",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4255"
+    },
+    {
+      "id": 4254,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T21:03:56.293Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Deploy Azure Machine Learning Service",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-1st-experiment-sdk-setup\">Tutorial: Get started in Jupyter Notebooks (Python) - Azure Machine Learning | Microsoft Docs</a>&nbsp;<br></div><div><br></div><div><strong style=\"box-sizing:border-box;font-weight:600;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;\">NOTE</strong><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">: Along with the service comes the following:</span><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;\"><li style=\"box-sizing:border-box;\">Azure Key Vault</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Azure Storage</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Azure Application Insights</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Azure Container Registry (<strong style=\"box-sizing:border-box;font-weight:600;\">ATTENTION</strong>: The name of this service will be needed in the deployment of the Azure Kubernetes Service)<ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">You can find the name of the associated Container Registry in the resource page of the deployed Azure Machine Learning Service</li></ul></li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4212",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4254"
+    },
+    {
+      "id": 4253,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T20:53:31.507Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Import the notebook",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;margin-top:0.25em;\">Import<span style=\"box-sizing:border-box;\">&nbsp;</span><a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/blob/master/Analytics_Deployment/synapse-workspace/notebooks/01_CreateOrUpdateProductDetails.ipynb\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\"><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Analytics_Deployment\\synapse-workspace\\notebooks\\01_CreateOrUpdateProductDetails.ipynb</code></a><span style=\"box-sizing:border-box;\">&nbsp;</span>to the Synapse workspace and fill out the parameters for the filesystem name and the account name</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Execute the Notebook</li></ol><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4211",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4253"
+    },
+    {
+      "id": 4252,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T20:52:18.49Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Upload JSON to ADLS",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Use the product_details.json file:&nbsp;<a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/tree/master/Analytics_Deployment/data\">Azure-Synapse-Solution-Accelerator-Retail-Recommender/Analytics_Deployment/data at master · microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender (github.com)</a></div><div><br></div><div><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\">Upload the JSON to the Azure Data Lake Storage Account attached to your Synapse workspace<ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">Make sure you put it into the filesystem that is the Primary Filesystem for the Synapse workspace</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Put it in the folder<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">synapse/workspaces</code><span>&nbsp;</span>in the filesystem that is the primary filesystem for the Synapse workspace</li></ul></li></ol><br></div><div><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4211",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4252"
+    },
+    {
+      "id": 4250,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T20:34:13.337Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Link Cosmos db to your Synapse Workspace",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/synapse-link/how-to-connect-synapse-link-cosmos-db#connect-an-azure-cosmos-db-database-to-a-synapse-workspace\">Connect to Azure Synapse Link (preview) for Azure Cosmos DB - Azure Synapse Analytics | Microsoft Docs</a><br></div><div><br></div><div><strong style=\"box-sizing:border-box;font-weight:600;\">NOTE</strong>: Make sure to create a Linked Service in the Synapse workspace for the Cosmos DB connection and name it<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">retail_ai_cosmos_synapse_link</code><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4211",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4250"
+    },
+    {
+      "id": 4249,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T20:32:58.227Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Create Second Container",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Database id: Use existing: product_data</div><div>Container id: user_recommendations</div><div>Partition key: /user_id</div><div>Analytics store: On</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4211",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4249"
+    },
+    {
+      "id": 4248,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T20:31:54.89Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Create First Container",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Database ID: use existing: product_data</div><div>Container id: product_details</div><div>Partition key: /productID</div><div><br></div><div>Analytics store: Off</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4211",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4248"
+    },
+    {
+      "id": 4247,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T20:30:19.957Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Create New Database",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">Go to the Cosmos DB service that was created in Step 2</p></li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><p style=\"box-sizing:border-box;margin-top:16px;margin-bottom:16px;\">Go to the Data Explorer and create a database named<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">product_data</code><span>&nbsp;</span>with the configurations below:</p></li></ol><div><font color=\"#24292e\" face=\"-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji\"><span style=\"font-size:16px;\">Provision throughput: checked</span></font></div><div><span style=\"font-size:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;\">Select manual, throughput variable of 1,000</span><br></div><br>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4211",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4247"
+    },
+    {
+      "id": 4246,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T20:23:14.297Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Assign permissions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">Ensure that you give yourself and any other user admin privilages for this accelerator by going to the<span>&nbsp;</span></span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\">Manage</code><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><span>&nbsp;</span>tab, then<span>&nbsp;</span></span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\">Access control</code><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><span>&nbsp;</span>underneath<span>&nbsp;</span></span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;color:rgb(36, 41, 46);text-align:left;\">Security</code><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><span>&nbsp;</span>and click &quot;+ Add&quot;</span><br></div><div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"><br></span></div><div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">Admin roles</span></div><div><ul><li><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\">Workspace Admin</span></li><li><font color=\"#24292e\" face=\"-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji\"><span style=\"font-size:16px;\">SQL Admin</span></font></li><li><font color=\"#24292e\" face=\"-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji\"><span style=\"font-size:16px;\">Apache Spark admin</span></font></li></ul><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;text-align:left;display:inline !important;\"></span></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4210",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4246"
+    },
+    {
+      "id": 4245,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T20:16:34.213Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Upload configuration packages",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;margin-top:0.25em;\">Go to the &quot;Manage&quot; tab in the Synapse workspace and click on the Apache Spark pools</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Click on the Spark Pool that you deployed and click &quot;Packages, then click &quot;Upload environment config file&quot;<ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">Go to<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Analytics Deployment\\synapse-workspace\\cluster_config</code><span>&nbsp;</span>to get the requirements.txt for upload</li></ul></li></ol><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4210",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4245"
+    },
+    {
+      "id": 4244,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T20:14:07.86Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Import data into Synapse",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\">Launch the Synapse workspace:<ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">Go to the resource page in the portal and click the &quot;Launch Synapse Studio&quot;</li></ul></li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Go to &quot;Develop&quot;, click the &quot;+&quot;, and click Import:<ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:0px;\"><li style=\"box-sizing:border-box;\">In the demo's repository, go to<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Analytics Deployment\\synapse-workspace\\notebooks</code><span>&nbsp;</span>to select all of the the Spark Notebooks</li></ul><li><span style=\"\">Click Publish and confirm the assets to be published</span><br></li></li></ol><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4210",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4244"
+    },
+    {
+      "id": 4243,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:46:04.71Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "8. Storage Account permissions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"box-sizing:border-box;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">In order to read files from your Azure Storage Account from the Synapse workspace, you will need to grant<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Storage Blob Data Contributor</code>. Follow the steps below to assign Storage Blob Data Contributor to the users.</p><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\">Go to the Azure Data Lake Storage Account created in Step 2</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Go to the<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Access Control (IAM)</code></li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Click &quot;+ Add&quot;</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Click &quot;Add role assignment&quot;</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Now click the Role dropdown and select<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">Storage Blob Data Contributor</code><span>&nbsp;</span>and search for your username and the other user's usernames to be added by using the search bar.</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Click &quot;Save&quot; at the bottom</li></ol><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4209",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4243"
+    },
+    {
+      "id": 4242,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:44:40.54Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7. NOTE: Azure CLI extension for Azure Synapse",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ol style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\">Open Powershell as Administrator</li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Navigate to this folder<span>&nbsp;<a href=\"https://github.com/microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender/tree/master/Resource_Deployment/deployment/backend\">Azure-Synapse-Solution-Accelerator-Retail-Recommender/Resource_Deployment/deployment/backend at master · microsoft/Azure-Synapse-Solution-Accelerator-Retail-Recommender (github.com)</a></span></li><li style=\"box-sizing:border-box;margin-top:0.25em;\">Run the following command:<span>&nbsp;</span><code style=\"box-sizing:border-box;font-family:SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;font-size:13.6px;padding:0.2em 0.4em;margin:0px;border-radius:6px;\">./deployment_script.ps1</code></li></ol><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4209",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4242"
+    },
+    {
+      "id": 4241,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:42:56.493Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T22:18:39.153Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Cosmos DB account name",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><strong style=\"box-sizing:border-box;font-weight:600;\">Cosmos DB Account Name</strong>: the name of the Cosmos DB Account that will be used to store the User Recommendations and Product Details<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4209",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4241"
+    },
+    {
+      "id": 4240,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:42:38.97Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T22:18:26.1Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Directory path for dataset",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><strong style=\"box-sizing:border-box;font-weight:600;\">Directory Path</strong>: the directory path where the dataset is located locally on your computer<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4209",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4240"
+    },
+    {
+      "id": 4239,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:41:59.387Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T22:18:12.65Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Location for resources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><strong style=\"box-sizing:border-box;font-weight:600;\">Location</strong>: the location to deploy all the resources<br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4209",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4239"
+    },
+    {
+      "id": 4238,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:41:39.52Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T22:17:59.447Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Username and Password for Synapse workspace",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;margin-top:0.25em;\"><strong style=\"box-sizing:border-box;font-weight:600;\">Username</strong>: SQL user for Synapse workspace</li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><strong style=\"box-sizing:border-box;font-weight:600;\">Password</strong>: SQL user for Synapse workspace (must be at least 8 characters)</li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4209",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4238"
+    },
+    {
+      "id": 4237,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:39:49.887Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T22:17:29.543Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Define a globally unique resource name",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/azure/synapse-analytics/get-started-create-workspace?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Quickstart: Get started - create a Synapse workspace - Azure Synapse Analytics | Microsoft Docs</a><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4209",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4237"
+    },
+    {
+      "id": 4236,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:38:31.75Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T22:16:32.337Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Get Azure Subscription ID and Resource Group Name",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><ul style=\"box-sizing:border-box;padding-left:2em;margin-top:0px;margin-bottom:16px;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><li style=\"box-sizing:border-box;\"><strong style=\"box-sizing:border-box;font-weight:600;\">Subscription</strong>: Azure Subscription Id</li><li style=\"box-sizing:border-box;margin-top:0.25em;\"><strong style=\"box-sizing:border-box;font-weight:600;\">Resource Group</strong>: Name of the resource group to create</li></ul><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4209",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4236"
+    },
+    {
+      "id": 4235,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:37:47.91Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:58:17.947Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Download data from Kaggle Open Dataset",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\">- 2019-Oct.csv</span><br style=\"box-sizing:border-box;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\">- 2019-Nov.csv</span><br style=\"box-sizing:border-box;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\">- 2019-Dec.csv.gz (available<span>&nbsp;</span></span><a href=\"https://drive.google.com/drive/folders/1Nan8X33H8xrXS5XhCKZmSpClFTCJsSpE\" rel=nofollow style=\"box-sizing:border-box;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">here</a><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\">)</span><br style=\"box-sizing:border-box;color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\"><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\">- 2020-Jan.csv.gz (available<span>&nbsp;</span></span><a href=\"https://drive.google.com/drive/folders/1Nan8X33H8xrXS5XhCKZmSpClFTCJsSpE\" rel=nofollow style=\"box-sizing:border-box;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;\">here</a><span style=\"color:rgb(36, 41, 46);font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;;font-size:16px;display:inline !important;\">)</span><br></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Adopt",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4208",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4235"
+    },
+    {
+      "id": 4234,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:32:58.517Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:47.493Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Verify and validate policies for compliance",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>If this is a demo environment are their policies which prevent you from building the demo.</div><div>Validate compliance requirements for data usage&nbsp;</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4232",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4234"
+    },
+    {
+      "id": 4233,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:31:21.25Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:47.493Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Subscription & Resource Groups",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>You will need to know which subscription and resource group you are deploying to.</div><div><br></div><div>Subscription name &amp; ID</div><div>Resource group</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4231",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4233"
+    },
+    {
+      "id": 4230,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T19:16:29.31Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:30.723Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Alignment of the CCOE, Platform, Governance and Data teams",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Ensure that common principles and operating environment are adhered to.</div><div><br></div><div><b>Cloud Function Alignment</b></div><div><span style=\"\">Strategy &amp; CCOE informed and cleared the path to proceed with project</span><br></div><div>Governance &amp; Security informed and no blockers from a compliance perspective</div><div>Data and Platform/Adoption function have the correct rights, roles and operating environment</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4229",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4230"
+    },
+    {
+      "id": 4228,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T18:49:59.81Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:30.723Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Tutorial: Data Role Learning Paths on Microsoft Learn",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/browse/?products=azure%2csql-server%2cwindows-server&amp;roles=data-scientist?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Data Scientist Learning Path on Microsoft Docs</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/browse/?products=azure&amp;roles=data-engineer?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Data engineer Learning Path on Microsoft Docs</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/browse/?products=azure&amp;roles=data-analyst?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Data Analyst Learning Path on Microsoft Docs</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4224",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4228"
+    },
+    {
+      "id": 4227,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T18:49:15.18Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:30.723Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Tutorial: Azure Machine Learning",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-machine-learning-service?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Introduction to Azure Machine Learning SDK</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Use automated machine learning in Azure Machine Learning</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/modules/automate-model-selection-with-azure-automl?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Automate machine learning model selection with Azure Machine Learning</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4224",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4227"
+    },
+    {
+      "id": 4226,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T18:48:49.217Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:30.723Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Tutorial: Azure Kubernetes Service",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-kubernetes-service?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Introduction to Azure Kubernetes Service</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/modules/aks-deploy-container-app?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Deploy a containerized application on Azure Kubernetes Service</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4224",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4226"
+    },
+    {
+      "id": 4225,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Retail Recommender - Solution Accelerator",
+        "System.TeamProject": "Retail Recommender - Solution Accelerator",
+        "System.IterationPath": "$ProjectName$\\Iteration 1",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-02-09T18:48:26.75Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-02-19T21:57:30.723Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Tutorial: Azure Synapse",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><a href=\"https://docs.microsoft.com/en-us/learn/modules/introduction-azure-synapse-analytics?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Introduction to Azure Synapse Analytics</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/modules/data-integration-azure-data-factory?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Integrate Data with Azure Data Factory or Azure Synapse Pipeline</a></div><div><br></div><div><a href=\"https://docs.microsoft.com/en-us/learn/modules/explore-azure-synapse-studio?wt.mc_id=devops_userstory_service_retai-inproduct-devopsportal\">Explore Azure Synapse Studio</a></div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Planning",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4224",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/4225"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

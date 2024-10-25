@@ -1,0 +1,357 @@
+{
+  "count": 9,
+  "value": [
+    {
+      "id": 819,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-12-29T05:45:30.817Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T05:45:30.817Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Use ARM template to for automatically provisioning Octopus server",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/815",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/819"
+    },
+    {
+      "id": 820,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-12-29T05:47:13.05Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T05:47:13.05Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Access Octopus server with VM DMS name to verify the deployment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/815",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/820"
+    },
+    {
+      "id": 821,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-12-29T05:47:42.283Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T05:47:42.283Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Create API key in Octopus server",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/816",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/821"
+    },
+    {
+      "id": 822,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-12-29T05:48:24.643Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T05:48:24.643Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Create Service endpoint in VSTS with Octopus URL and API key",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/816",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/822"
+    },
+    {
+      "id": 823,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-12-29T05:51:26.143Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T05:51:26.143Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Create Environment in Octopus Server",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/817",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/823"
+    },
+    {
+      "id": 824,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-12-29T05:56:46.723Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T05:56:46.723Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Link Azure account to Environment with Management certificate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/817",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/824"
+    },
+    {
+      "id": 825,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-12-29T05:57:23.287Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T05:57:23.287Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Create Octopus Project",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/818",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/825"
+    },
+    {
+      "id": 827,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-12-29T06:09:23.38Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T06:09:23.38Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Add build task in VSTS to automate CD",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/818",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/827"
+    },
+    {
+      "id": 826,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2017-12-29T06:08:34.46Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T06:45:17.677Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Add  step \"Deploy an Azure Web\"",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/818",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/826"
+    }
+  ],
+  "HttpStatusCode": 0
+}

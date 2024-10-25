@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2036
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VstsDemoBuilder", "VstsDemoBuilder\VstsDemoBuilder.csproj", "{E1796A5C-DA7B-4077-86F3-B2C8626257B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VstsRestAPI", "VstsRestAPI\VstsRestAPI.csproj", "{720825C0-F4F3-44F3-9492-3BC4C967034D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADOGenerator", "ADOGenerator\ADOGenerator.csproj", "{2B9CBA33-D24A-4E5C-A8F2-FE22E99932E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +23,10 @@ Global
 		{720825C0-F4F3-44F3-9492-3BC4C967034D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{720825C0-F4F3-44F3-9492-3BC4C967034D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{720825C0-F4F3-44F3-9492-3BC4C967034D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7AB69A60-0D63-41D0-8FA8-0FC003C9F624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AB69A60-0D63-41D0-8FA8-0FC003C9F624}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AB69A60-0D63-41D0-8FA8-0FC003C9F624}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AB69A60-0D63-41D0-8FA8-0FC003C9F624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9CBA33-D24A-4E5C-A8F2-FE22E99932E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9CBA33-D24A-4E5C-A8F2-FE22E99932E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9CBA33-D24A-4E5C-A8F2-FE22E99932E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9CBA33-D24A-4E5C-A8F2-FE22E99932E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

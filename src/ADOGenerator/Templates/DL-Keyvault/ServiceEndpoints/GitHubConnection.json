@@ -1,0 +1,15 @@
+{
+  "data": {},
+  "name": "GithUbConnection",
+  "type": "GitHub",
+  "url": "https://github.com",
+  "authorization": {
+    "scheme": "InstallationToken",
+	"Parameters":{
+	"AccessToken":"AccessToken"
+	}
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}

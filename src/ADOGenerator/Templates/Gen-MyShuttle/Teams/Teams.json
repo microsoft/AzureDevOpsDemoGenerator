@@ -1,0 +1,20 @@
+[
+  {
+    "id": "9dd1ef55-eb9a-41d2-bc89-27493fd3b614",
+    "name": "MyShuttle Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "2dd3af32-fd5f-4e0a-8cc3-a616b98f7ec5",
+    "name": "Team2",
+    "description": "Team2 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "8aeed92a-c937-48ca-bd6f-fd652708aaeb",
+    "name": "Team1",
+    "description": "Team1 Description",
+    "isDefault": "false"
+  }
+]

@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+			
+		},		
+		"name": "ContosoShuttle-code",
+		"type": "git",
+		"url": "https://dev.azure.com/contososhuttle/_git/ContosoShuttle",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$ContosoUserID$",
+      "password": "$ContosoPassword$"
+    }
+  },
+		"isReady": true
+}

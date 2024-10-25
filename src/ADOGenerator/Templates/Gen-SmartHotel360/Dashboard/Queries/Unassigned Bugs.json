@@ -1,0 +1,4 @@
+{
+  "name": "Unassigned Bugs",
+  "wiql": "select [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo], [System.State], [System.Tags] from WorkItems where [System.TeamProject] = @project and [System.WorkItemType] = 'Bug' and [System.State] <> 'Done' and [System.AssignedTo] = ''"
+}

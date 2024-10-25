@@ -9,7 +9,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 {
     public class Cards : ApiServiceBase
     {
-        public Cards(IConfiguration configuration) : base(configuration) { }
+        public Cards(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Update Card fields

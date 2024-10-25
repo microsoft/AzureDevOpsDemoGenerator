@@ -1,0 +1,47 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "variables": {
+        "EnvironmentType": {
+          "value": "Test"
+        },
+        "ResourceGroupName": {
+          "value": "ToyWebsiteTest"
+        },
+        "ReviewApiKey": {
+          "value": "sandboxsecretkey",
+          "isSecret": true
+        },
+        "ReviewApiUrl": {
+          "value": "https://sandbox.contoso.com/reviews"
+        }
+      },
+      "id": "10",
+      "type": "Vsts",
+      "name": "ToyWebsiteTest",
+      "isShared": false
+    },
+    {
+      "variables": {
+        "EnvironmentType": {
+          "value": "Production"
+        },
+        "ResourceGroupName": {
+          "value": "ToyWebsiteProduction"
+        },
+        "ReviewApiKey": {
+          "value": "productionsecretkey",
+          "isSecret": true
+        },
+        "ReviewApiUrl": {
+          "value": "https://api.contoso.com/reviews"
+        }
+      },
+      "id": "9",
+      "type": "Vsts",
+      "name": "ToyWebsiteProduction",
+      "isShared": false
+    }
+  ]
+}

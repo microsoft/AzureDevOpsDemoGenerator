@@ -1,0 +1,11 @@
+{
+  "parameters":
+    {
+      "gitSource":
+        {
+          "url": "https://vstsdemodata.visualstudio.com/_git/GitHub"
+        },
+      "serviceEndpointId": "$GitHub-code$",
+      "deleteServiceEndpointAfterImportIsDone": true
+    }
+}

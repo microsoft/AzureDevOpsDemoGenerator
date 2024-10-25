@@ -10,7 +10,7 @@ namespace VstsRestAPI.Git
 {
     public class Repository : ApiServiceBase
     {
-        public Repository(IConfiguration configuration) : base(configuration) { }
+        public Repository(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Get Source Code from Git Hub

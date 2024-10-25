@@ -13,7 +13,7 @@ namespace VstsRestAPI.DeliveryPlans
 {
     public class Plans : ApiServiceBase
     {
-        public Plans(IConfiguration configuration) : base(configuration) { }
+        public Plans(IADOConfiguration configuration) : base(configuration) { }
 
         /// <summary>
         /// Create Delivery plans

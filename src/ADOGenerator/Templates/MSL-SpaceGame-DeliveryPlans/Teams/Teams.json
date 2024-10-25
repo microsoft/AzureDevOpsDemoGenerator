@@ -1,0 +1,20 @@
+[
+  {
+    "id": "fdb020e6-d88f-4f76-bcc7-13d90d87387d",
+    "name": "Space Game - web - Delivery plans Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "2930864c-0d39-4ef0-b5c6-75f444044f4b",
+    "name": "Space Game Web Team",
+    "description": "",
+    "isDefault": "false"
+  },
+  {
+    "id": "706e1331-eac2-47f9-a3e5-3484302804ee",
+    "name": "Space Game Engine Team",
+    "description": "",
+    "isDefault": "false"
+  }
+]

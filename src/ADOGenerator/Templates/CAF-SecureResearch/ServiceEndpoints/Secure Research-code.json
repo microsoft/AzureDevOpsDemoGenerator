@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "Secure Research-code",
+  "type": "git",
+  "url": "https://dev.azure.com/wayneme/Secure Research/_git/Secure Research",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

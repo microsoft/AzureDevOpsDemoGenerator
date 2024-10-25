@@ -6,7 +6,7 @@ namespace VstsRestAPI.ExtensionManagement
 {
     public class GetListExtenison : ApiServiceBase
     {
-        public GetListExtenison(IConfiguration configuration) : base(configuration)
+        public GetListExtenison(IADOConfiguration configuration) : base(configuration)
         {
         }
 

@@ -1,0 +1,240 @@
+{
+  "count": 6,
+  "value": [
+    {
+      "id": 1407,
+      "rev": 11,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 5",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-07-23T06:49:58.607Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T14:21:31.14Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Lengthy usernames not accepted",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "Demo is long!",
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Bug; Guests",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1738",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1407"
+    },
+    {
+      "id": 1713,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Unable to connect through 3G network",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1713"
+    },
+    {
+      "id": 1705,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Services has a bug",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1658",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1705"
+    },
+    {
+      "id": 1690,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Same face patterns are not recognized",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1654",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1690"
+    },
+    {
+      "id": 1686,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Room lights are not dimming within the app",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1653",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1686"
+    },
+    {
+      "id": 1406,
+      "rev": 13,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "smh360_scrum",
+        "System.IterationPath": "smh360_scrum\\Sprint 2",
+        "System.WorkItemType": "Bug",
+        "System.State": "Committed",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-07-23T06:49:58.31Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T14:21:31.14Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Search hotel works only for certain cities",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "Search hotel works only for certain cities",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 3.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Search Hotel Bug",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1738",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1406"
+    }
+  ],
+  "HttpStatusCode": 0
+}

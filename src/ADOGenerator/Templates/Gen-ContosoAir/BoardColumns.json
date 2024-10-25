@@ -1,0 +1,42 @@
+[
+  {
+    "name": "New",
+    "itemLimit": 0,
+    "stateMappings": {
+      "User Story": "New",
+      "Bug": "New"
+    },
+    "columnType": "incoming"
+  },
+  {
+    "name": "Active",
+    "itemLimit": 5,
+    "stateMappings": {
+      "User Story": "Active",
+      "Bug": "Active"
+    },
+    "isSplit": true,
+    "description": "",
+    "columnType": "inProgress"
+  },
+  {
+    "name": "Resolved",
+    "itemLimit": 5,
+    "stateMappings": {
+      "User Story": "Resolved",
+      "Bug": "Resolved"
+    },
+    "isSplit": false,
+    "description": "",
+    "columnType": "inProgress"
+  },
+  {
+    "name": "Closed",
+    "itemLimit": 0,
+    "stateMappings": {
+      "User Story": "Closed",
+      "Bug": "Closed"
+    },
+    "columnType": "outgoing"
+  }
+]

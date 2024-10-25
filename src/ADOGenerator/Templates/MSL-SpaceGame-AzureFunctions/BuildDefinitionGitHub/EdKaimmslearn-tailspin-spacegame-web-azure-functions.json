@@ -1,0 +1,97 @@
+{
+  "triggers": [
+    {
+      "branchFilters": [],
+      "pathFilters": [],
+      "settingsSourceType": 2,
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": "continuousIntegration"
+    },
+    {
+      "settingsSourceType": 2,
+      "branchFilters": [
+        "+master"
+      ],
+      "forks": {
+        "enabled": true,
+        "allowSecrets": true
+      },
+      "pathFilters": [],
+      "requireCommentsForNonTeamMembersOnly": false,
+      "isCommentRequiredForPullRequest": false,
+      "triggerType": "pullRequest"
+    }
+  ],
+  "properties": {},
+  "tags": [],
+  "_links": "{}",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "yamlFilename": "azure-pipelines.yml",
+    "type": 2
+  },
+  "repository": {
+    "properties": {
+      "apiUrl": "https://api.github.com/repos/$username$/mslearn-tailspin-spacegame-web-azure-functions",
+      "branchesUrl": "https://api.github.com/repos/$username$/mslearn-tailspin-spacegame-web-azure-functions/branches",
+      "cloneUrl": "https://github.com/$username$/mslearn-tailspin-spacegame-web-azure-functions.git",
+      "connectedServiceId": "$GitHub_210c1c54$",
+      "defaultBranch": "master",
+      "fullName": "repository",
+      "hasAdminPermissions": "False",
+      "isFork": "True",
+      "isPrivate": "True",
+      "lastUpdated": "2020-03-03T19:32:10Z",
+      "manageUrl": "https://github.com/$username$/mslearn-tailspin-spacegame-web-azure-functions",
+      "nodeId": "MDEwOlJlcG9zaXRvcnkyNDQ3MjQxNjQ=",
+      "ownerId": "1214799",
+      "orgName": "EdKaim",
+      "refsUrl": "https://api.github.com/repos/$username$/mslearn-tailspin-spacegame-web-azure-functions/git/refs",
+      "safeRepository": "EdKaim/mslearn-tailspin-spacegame-web-azure-functions",
+      "shortName": "mslearn-tailspin-spacegame-web-azure-functions",
+      "ownerAvatarUrl": "https://avatars0.githubusercontent.com/u/1214799?v=4",
+      "archived": "False",
+      "externalId": "244724164",
+      "ownerIsAUser": "True",
+      "reportBuildStatus": "true"
+    },
+    "id": "$username$/mslearn-tailspin-spacegame-web-azure-functions",
+    "type": "GitHub",
+    "name": "$username$/mslearn-tailspin-spacegame-web-azure-functions",
+    "url": "https://github.com/$username$/mslearn-tailspin-spacegame-web-azure-functions.git",
+    "defaultBranch": "master",
+    "clean": null,
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "authoredBy": "{}",
+  "drafts": [],
+  "queue": {
+    "_links": {
+      "self": {
+        "href": "https://dev.azure.com/sharplogic/_apis/build/Queues/1219"
+      }
+    },
+    "id": 1219,
+    "name": "Hosted Ubuntu 1604",
+    "url": "https://dev.azure.com/sharplogic/_apis/build/Queues/1219",
+    "pool": {
+      "id": "",
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "id": "",
+  "name": "mslearn-tailspin-spacegame-web-azure-functions",
+  "url": "",
+  "uri": "",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled",
+  "revision": 1,
+  "createdDate": "",
+  "project": "{}"
+}

@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/vstsdemodata/azure-key-vault/_git/azure-key-vault"
+    },
+    "serviceEndpointId": "$azure-key-vault-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

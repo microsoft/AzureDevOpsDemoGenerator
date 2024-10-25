@@ -1,0 +1,2825 @@
+{
+  "count": 72,
+  "value": [
+    {
+      "id": 1804,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-08-20T07:29:58.24Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-20T07:29:58.24Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Capture guest details to Cosmos DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1371",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1804"
+    },
+    {
+      "id": 1392,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Work stopped",
+        "System.CreatedDate": "2018-07-23T06:49:56.84Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:19:33.29Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Implement to search for loyalty membership",
+        "Microsoft.VSTS.Scheduling.Effort": 3.0,
+        "System.Description": "Search loyalty membership",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Front-desk; Members; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1369",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1392"
+    },
+    {
+      "id": 1380,
+      "rev": 13,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-07-23T06:49:55.513Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:19:48.103Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Search for an existing reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "As a manager, I should be able to search for an existing reservation:<div><br></div><div>1. Guest first and last name should be listed along with the duration</div><div><br></div>",
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Manager",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1369",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1380"
+    },
+    {
+      "id": 1382,
+      "rev": 12,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-07-23T06:49:55.717Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:20:02.87Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Implement off-season discount",
+        "Microsoft.VSTS.Scheduling.Effort": 18.0,
+        "System.Description": "As a front-desk agent, I should be able to apply off-season discount, such that:<div><br></div><div>1. When new bookings are taken off-season discount should be applied</div><div>2. Should be valid for a time period</div><div>3. Should be available for members only</div>",
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Front-desk; Members; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1370",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1382"
+    },
+    {
+      "id": 1383,
+      "rev": 12,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Commitment made by the team",
+        "System.CreatedDate": "2018-07-23T06:49:55.823Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:20:16.043Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Generate complimentary parking coupons ",
+        "Microsoft.VSTS.Scheduling.Effort": 10.0,
+        "System.Description": "<span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">Complimentary parking coupons can be used when guests park their vehicle in designated coupon car parks during specified parking hours.&nbsp;</span><div><font face=\"Segoe UI, sans-serif\"><br></font><div>The front-desk agent should be able to enter the correct vehicle and parking details on behalf of the other person to start a parking session. The parking coupons can be generated either through app or from a computer.</div><div><br><div><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">- coupons should include a valid date and time range</span></div><div><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\">- should include car parks in which it can be used</span></div><div><span style=\"font-size:10.5pt;line-height:107%;font-family:&quot;Segoe UI&quot;, sans-serif;background-image:initial;background-position:initial;background-size:initial;background-repeat:initial;background-attachment:initial;background-origin:initial;background-clip:initial;\"><br></span></div></div></div>",
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Front-desk; Guests; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1379",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1383"
+    },
+    {
+      "id": 1396,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-23T06:49:57.247Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:35:35.197Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Add new columns",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Add new columns in the guests table for capturing additional information of guests for a particular reservation.<div><br></div>",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 12.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1389",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1396"
+    },
+    {
+      "id": 1395,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-23T06:49:57.153Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:35:35.197Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Dining notification",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Dining notifications should be sent to guests who are in the vicinity of the dining area.",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 8.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1384",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1395"
+    },
+    {
+      "id": 1676,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-22T09:50:19.33Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create training script",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create demo script for hotel managers to get training of the features",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 4.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1644",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1676"
+    },
+    {
+      "id": 1720,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create document",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1720"
+    },
+    {
+      "id": 1719,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create POCOs for the Graph to be generated",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1719"
+    },
+    {
+      "id": 1717,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create console program that generate booking data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1717"
+    },
+    {
+      "id": 1715,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Receive email or text notifications",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1715"
+    },
+    {
+      "id": 1714,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Google or Facebook Login",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1659",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1714"
+    },
+    {
+      "id": 1729,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Print breakfast coupons",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1661",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1729"
+    },
+    {
+      "id": 1728,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Not reflecting guest details after update",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1661",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1728"
+    },
+    {
+      "id": 1834,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-08-23T06:18:43.787Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Implement cosmos db storage for reservation changes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1368",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1834"
+    },
+    {
+      "id": 1809,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-08-20T07:48:38.293Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Integrate iPad Connectivity",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1381",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1809"
+    },
+    {
+      "id": 1808,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$\\Mobile",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-08-20T07:48:10.81Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Disable walk-in reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1381",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1808"
+    },
+    {
+      "id": 1812,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-08-20T08:58:12.257Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Capture data in SQL DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1387",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1812"
+    },
+    {
+      "id": 1807,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-08-20T07:47:46.417Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Integrate Google Calendar",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1373",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1807"
+    },
+    {
+      "id": 1806,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-08-20T07:31:02.693Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Algorithm to check available conference rooms",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1373",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1806"
+    },
+    {
+      "id": 1805,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-08-20T07:30:40.787Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Implement multiple notifications",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1371",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1805"
+    },
+    {
+      "id": 1693,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Update generator to adapt to new DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 2.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1654",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1693"
+    },
+    {
+      "id": 1692,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Recreate AzureML experiment in R",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<font color=\"#111111\" face=\"Open Sans, arial, verdana\"><span style=\"font-size:16px;\">Implement Azure ML to share the real-time predictive analytics of the new personal assistant with Cortana.&nbsp;</span></font>",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1654",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1692"
+    },
+    {
+      "id": 1689,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create ARM Template",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 2.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1653",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1689"
+    },
+    {
+      "id": 1701,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create ePCR collection",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1655",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1701"
+    },
+    {
+      "id": 1700,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Insert ePCR data in Cosmos DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1655",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1700"
+    },
+    {
+      "id": 1699,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Configure Alerts for email and text notifications",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1655",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1699"
+    },
+    {
+      "id": 1698,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Dashboard notification for all sensors that are switched ON",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1655",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1698"
+    },
+    {
+      "id": 1697,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create external tables to access Hotels DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1654",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1697"
+    },
+    {
+      "id": 1679,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Encryption of the key code with room number",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Implement key codes with encryption for all rooms.",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 8.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1645",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1679"
+    },
+    {
+      "id": 1681,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Add required methods to API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Add required methods to API for implementing keyless room entry",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 2.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1645",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1681"
+    },
+    {
+      "id": 1664,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Find my room API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1649",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1664"
+    },
+    {
+      "id": 1663,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "What do you need API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": null,
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1663"
+    },
+    {
+      "id": 1662,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New backlog item",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Ambient settings API",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Xamarin",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1653",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1662"
+    },
+    {
+      "id": 1675,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "New task",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create Schema and insert data into Azure SQL DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create a schema and insert guest details into Azure SQL DB.",
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1644",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1675"
+    },
+    {
+      "id": 1674,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create Azure SQL DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1388",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1674"
+    },
+    {
+      "id": 1673,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Integrate in First Response repository",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1388",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1673"
+    },
+    {
+      "id": 1377,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 4",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-07-23T06:49:55.153Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-23T06:40:51.65Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Apply membership points",
+        "Microsoft.VSTS.Scheduling.Effort": 5.0,
+        "System.Description": "Apply membership points",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": "Front-desk; Members; Reservation",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1370",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1377"
+    },
+    {
+      "id": 1376,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Task",
+        "System.State": "To Do",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-07-23T06:49:55.027Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-23T06:40:51.65Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Add breakfast to room rate",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Add breakfast to room rate",
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Guest; Room",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1388",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1376"
+    },
+    {
+      "id": 1401,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-23T06:49:57.793Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:35:35.197Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Allow filtering of data",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "The user needs to be able to filter the guests list data based on -&nbsp;<div><br></div><div>1. Number of guests</div><div>2. Age&nbsp;</div><div>3. Gender</div>",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 8.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1389",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/cf20ba8d-265d-4e08-8eae-244dca8002c7%2F26b80411-f31b-488e-a08f-577077cdc4d5%2F12",
+          "attributes": {
+            "authorizedDate": "2018-07-23T10:53:51.993Z",
+            "id": "1313387",
+            "resourceCreatedDate": "2018-07-23T10:53:51.993Z",
+            "resourceModifiedDate": "2018-07-23T10:53:51.993Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1401"
+    },
+    {
+      "id": 1400,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-23T06:49:57.7Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:35:35.197Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Validate meals voucher ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Meals vouchers with the guests should be validated for -&nbsp;<div><br></div><div>1. Date</div><div>2. Number of guests</div><div>3. Hotel's location</div><div>4. Guest Name</div>",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1384",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1400"
+    },
+    {
+      "id": 1398,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-23T06:49:57.53Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:35:35.197Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "UI Changes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Change the UI for separating guests details from the main user's details.",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 21.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1389",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1398"
+    },
+    {
+      "id": 1671,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-22T09:50:04.72Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Walk-in registration with automatic recognition of guests",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create walk-in registration for hotel guests to automatically recognize them based on their previous facial recognition registration or registered mobile number or registered social id.",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 4.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1644",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1671"
+    },
+    {
+      "id": 1677,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-22T09:50:24.547Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create Azure Cosmos DB",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Create Azure cosmos db for registering bluetooth based registrations.",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 1.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1644",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1677"
+    },
+    {
+      "id": 1691,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Facial recognition algorithm to be implemented",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>The face recognition system should be developed in two modes:</div><div><br></div><div>Verification or authentication of a facial image: it basically compares the input facial image with the facial image related to the user which is requiring the authentication. It is basically a 1x1 comparison.</div><div><br></div><div>Identification or facial recognition: it basically compares the input facial image with all facial images from a dataset with the aim to find the user that matches that face. It is basically a 1xN comparison.</div>",
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 7.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1654",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1691"
+    },
+    {
+      "id": 1696,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create entity framework classes and configuration",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Craig Cambell <craig109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 4.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1654",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1696"
+    },
+    {
+      "id": 1695,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Update R scripts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1654",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1695"
+    },
+    {
+      "id": 1687,
+      "rev": 8,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Compatibility for Hue lighting system",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Develop the mobile app to make it compatible with Hue lighting system",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 12.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1653",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1687"
+    },
+    {
+      "id": 1680,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Work started",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Adapt to Azure Functions model",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Build reservation module on Azure functions model with an event-driven, serverless compute experience.",
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 5.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1645",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1680"
+    },
+    {
+      "id": 1374,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "In Progress",
+        "System.Reason": "Additional work found",
+        "System.CreatedDate": "2018-07-23T06:49:54.823Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-23T06:40:51.65Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Update membership profile",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Update membership profile",
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": null,
+        "System.Tags": "Guest; membership",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1389",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1374"
+    },
+    {
+      "id": 1797,
+      "rev": 9,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-08-20T06:54:32.453Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-20T08:53:05.953Z",
+        "System.ChangedBy": "Sriramdas Balaji <sriramdas.balaji@outlook.com>",
+        "System.Title": "Store my credit card details securely",
+        "Microsoft.VSTS.Scheduling.Effort": 7.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1650",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1797"
+    },
+    {
+      "id": 1405,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-23T06:49:58.2Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:35:35.197Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Add breakfast print button",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Add print button for breakfast option to print the vouchers for guests.",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1384",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1405"
+    },
+    {
+      "id": 1403,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-23T06:49:57.967Z",
+        "System.CreatedBy": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "System.ChangedDate": "2018-08-22T09:35:35.197Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Update checkout rule engine",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Update checkout rule engine",
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1389",
+          "attributes": {
+            "isLocked": "False",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1403"
+    },
+    {
+      "id": 1727,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "App background to have theme based on the chosen room",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1660",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1727"
+    },
+    {
+      "id": 1726,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create evaluation scripts",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1660",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1726"
+    },
+    {
+      "id": 1725,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create Cosmos DB account",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1665",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1725"
+    },
+    {
+      "id": 1724,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create ARM template",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1660",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1724"
+    },
+    {
+      "id": 1722,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Ability to change app background color",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Nagaraj B <nagaraj.bhairaji@hotmail.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1660",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1722"
+    },
+    {
+      "id": 1721,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Unable to customize themes",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1660",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1721"
+    },
+    {
+      "id": 1710,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create stored procedure for production",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1658",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1710"
+    },
+    {
+      "id": 1709,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Generate Hotel Conference Rooms Tweets",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1658",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1709"
+    },
+    {
+      "id": 1708,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Generate data about hotels, people, locations and sentiments",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1658",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1708"
+    },
+    {
+      "id": 1707,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Generate Tweets, Sentiments, hashtags and Tag Phrases",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1658",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1707"
+    },
+    {
+      "id": 1704,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Compatibility of the app for Android Play Store",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Hoy <ecanarys9@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1656",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1704"
+    },
+    {
+      "id": 1703,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Compatibility of the app for IOS Play Store",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1656",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1703"
+    },
+    {
+      "id": 1702,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Compatibility of the app for Windows Marketplace",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1656",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1702"
+    },
+    {
+      "id": 1688,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Create tables",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Design and create tables for controlling the lighting system",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1653",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1688"
+    },
+    {
+      "id": 1683,
+      "rev": 6,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Able to modify reservation from mobile or website",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1649",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1683"
+    },
+    {
+      "id": 1678,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Push notification to the guest phone with room details and offers",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Ability to push notifications to guests' smartphones about room and facilities offers should be implemented along with discounts and other offers",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1645",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1678"
+    },
+    {
+      "id": 1672,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 2",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:48:16.59Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Install sensors along with the latest location-aware mobility",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Sensors need to be installed in the reception area and parking lots to recognize the guests.",
+        "System.AssignedTo": "Lowell Steel <lsteel109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1644",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1672"
+    },
+    {
+      "id": 1647,
+      "rev": 10,
+      "fields": {
+        "System.AreaPath": "$ProjectName$",
+        "System.TeamProject": "$ProjectName$",
+        "System.IterationPath": "$ProjectName$\\Sprint 1",
+        "System.WorkItemType": "Task",
+        "System.State": "Done",
+        "System.Reason": "Work finished",
+        "System.CreatedDate": "2018-07-24T09:29:40.777Z",
+        "System.CreatedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.ChangedDate": "2018-08-23T06:29:49.93Z",
+        "System.ChangedBy": "Hoy <ecanarys9@outlook.com>",
+        "System.Title": "Ability to find an existing reservation",
+        "Microsoft.VSTS.Scheduling.Effort": 4.0,
+        "System.Description": "The user should be able to find and review or modify their reservation online using first name, last name, and reservation confirmation number or log into the SMH360 account.",
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Reservations; search; Web experience",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1665",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/1647"
+    }
+  ],
+  "HttpStatusCode": 0
+}

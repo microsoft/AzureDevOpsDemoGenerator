@@ -1,0 +1,16 @@
+﻿{
+  "data": {
+
+  },
+  "name": "WebGoat-code",
+  "type": "git",
+  "url": "https://dev.azure.com/vstsdemodata/_git/WhiteSource%20Bolt",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

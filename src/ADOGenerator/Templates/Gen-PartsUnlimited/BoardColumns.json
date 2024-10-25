@@ -1,0 +1,46 @@
+[
+  {
+    "description": "",
+    "name": "New",
+    "itemLimit": 0,
+    "stateMappings": {
+      "Product Backlog Item": "New",
+      "Bug": "New"
+    },
+    "columnType": "incoming",
+    "isSplit": null
+  },
+  {
+    "description": "Defintion of Done for the In Progress column:\n\nFor App Dev Team\n-------------------\n      1. Prototype approved by stakeholders\n      2. User stories submitted\n      3. Time and effort estimation completed\n\nPlease be sure that all of these are **complete** before moving something into the *Done* section of the In Progress column. Please refer to the [Team Wiki](http://devopsconferences.visualstudio.com/wiki) site for more details",
+    "name": "Design",
+    "itemLimit": 10,
+    "stateMappings": {
+      "Product Backlog Item": "Approved",
+      "Bug": "Approved"
+    },
+    "columnType": "inProgress",
+    "isSplit": true
+  },
+  {
+    "description": "Defintion of Done for the In Progress column:\n             1. All unit test written\n             2. Tested by someone other than yourself\n             3. Upgrade scripts written and tested\nPlease be sure that all of these are **complete** before moving something into the *Done* section of the In Progress column. Please refer to the [Team Wiki](http://devopsconferences.visualstudio.com/wiki) site for more details",
+    "name": "Develop & Test",
+    "itemLimit": 15,
+    "stateMappings": {
+      "Product Backlog Item": "Committed",
+      "Bug": "Committed"
+    },
+    "columnType": "inProgress",
+    "isSplit": true
+  },
+  {
+    "description": "",
+    "name": "Done",
+    "itemLimit": 0,
+    "stateMappings": {
+      "Product Backlog Item": "Done",
+      "Bug": "Done"
+    },
+    "columnType": "outgoing",
+    "isSplit": null
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "GitHub_fafc3095",
+  "type": "git",
+  "url": "https://github.com/amillerb/fta-live-devops-iac-migration-src",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$GitUserName$",
+      "password": "$GitUserPassword$"
+    }
+  },
+  "isReady": true
+}

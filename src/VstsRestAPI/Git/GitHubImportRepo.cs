@@ -6,7 +6,7 @@ namespace VstsRestAPI.Git
 {
     public class GitHubImportRepo : ApiServiceBase
     {
-        public GitHubImportRepo(IConfiguration configuration) : base(configuration)
+        public GitHubImportRepo(IADOConfiguration configuration) : base(configuration)
         {
         }
 

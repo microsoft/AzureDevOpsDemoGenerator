@@ -10,7 +10,7 @@ namespace VstsRestAPI.ProjectsAndTeams
 {
     public class Teams : ApiServiceBase
     {
-        public Teams(IConfiguration configuration) : base(configuration) { }
+        public Teams(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Create teams

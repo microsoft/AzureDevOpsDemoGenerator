@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2f556caa-9951-4dda-8a12-70f0eb8b0987",
+    "name": "Team2",
+    "description": "Team2 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "b32c72f9-18ca-409c-9f10-faaffe0a54bd",
+    "name": "Docker Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "ea6e12f1-9289-455f-939d-0baecdefd437",
+    "name": "Team1",
+    "description": "Team1 Description",
+    "isDefault": "false"
+  }
+]

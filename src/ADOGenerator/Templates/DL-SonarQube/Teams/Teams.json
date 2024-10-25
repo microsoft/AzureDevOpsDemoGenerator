@@ -1,0 +1,20 @@
+[
+  {
+    "id": "996c7f47-21e0-4142-b2b8-fab8ec0579de",
+    "name": "SonarQube Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  },
+  {
+    "id": "0417c63e-cba9-40d5-8426-666929f77f74",
+    "name": "Team2",
+    "description": "Team2 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "530894e0-7dab-4e27-890e-484d7298804e",
+    "name": "Team1",
+    "description": "Team1 Description",
+    "isDefault": "false"
+  }
+]

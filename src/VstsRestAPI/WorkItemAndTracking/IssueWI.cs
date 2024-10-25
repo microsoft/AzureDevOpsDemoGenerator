@@ -7,7 +7,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 {
     public class IssueWI
     {
-        private Configuration con = new Configuration();
+        private ADOConfiguration con = new ADOConfiguration();
         private ILog logger = LogManager.GetLogger("ErrorLog");
 
         // Create Issue Work Items

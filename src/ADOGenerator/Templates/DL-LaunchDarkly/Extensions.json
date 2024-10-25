@@ -1,0 +1,12 @@
+﻿{
+  "Extensions": [
+    {
+      "extensionName": "LaunchDarkly Integration V2",
+      "link": "<a href='https://marketplace.visualstudio.com/items?itemName=launchdarkly.launchdarkly-extension' target='_blank'><b>LaunchDarkly Integration V2</b></a>",
+      "publisherId": "launchdarkly",
+      "extensionId": "launchdarkly-extension",
+      "publisherName": "LaunchDarkly",
+      "License": ""
+    }
+  ]
+}

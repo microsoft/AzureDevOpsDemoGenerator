@@ -1,0 +1,4 @@
+﻿{
+  "name": "Bugs",
+  "wiql": "SELECT [System.Id],[System.WorkItemType],[System.Title],[System.AssignedTo],[System.State],[System.Tags] FROM workitems WHERE [System.TeamProject] = @project AND [System.WorkItemType] = 'Bug' AND [System.State] <> 'Closed' AND [System.IterationPath] UNDER @currentIteration('[$projectId$]\\$projectId$ Team')"
+}

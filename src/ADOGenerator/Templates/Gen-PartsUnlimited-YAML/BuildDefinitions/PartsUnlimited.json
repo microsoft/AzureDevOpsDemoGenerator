@@ -1,0 +1,60 @@
+{
+  "triggers": [
+    {
+      "branchFilters": [
+
+      ],
+      "pathFilters": [
+
+      ],
+      "settingsSourceType": 2,
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": "continuousIntegration"
+    }
+  ],
+  "properties": {
+
+  },
+  "tags": [
+
+  ],
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "yamlFilename": "./azure-pipelines.yml",
+    "type": 2
+  },
+  "repository": {
+    "id": "$PartsUnlimited$",
+    "type": "TfsGit",
+    "name": "PartsUnlimited",
+    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/PartsUnlimited",
+    "defaultBranch": "refs/heads/master",
+    "clean": null,
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "drafts": [
+
+  ],
+  "queue": {
+    "_links": {
+      "self": {
+        "href": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Hosted Ubuntu 1604$"
+      }
+    },
+    "id": "$Hosted Ubuntu 1604$",
+    "name": "Hosted Ubuntu 1604",
+    "url": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Hosted Ubuntu 1604$",
+    "pool": {
+
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "name": "PartsUnlimited",
+  "path": "\\",
+  "type": "build"
+}

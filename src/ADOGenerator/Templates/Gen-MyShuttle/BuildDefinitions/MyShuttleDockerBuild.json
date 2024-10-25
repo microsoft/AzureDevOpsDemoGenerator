@@ -1,0 +1,291 @@
+{
+  "options": [
+    {
+      "enabled": true,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "726005",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+  "properties": {},
+  "tags": [],
+  "buildNumberFormat": "$(date:yyyyMMdd)$(rev:.r)",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "phases": [
+      {
+        "steps": [
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Maven pom.xml",
+            "timeoutInMinutes": 0,
+            "task": {
+              "id": "ac4ee482-65da-4485-a532-7b085873e532",
+              "versionSpec": "3.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "mavenPOMFile": "pom.xml",
+              "goals": "package",
+              "options": "-DskipITs --settings ./maven/settings.xml",
+              "publishJUnitResults": "false",
+              "testResultsFiles": "**/surefire-reports/TEST-*.xml",
+              "testRunTitle": "",
+              "codeCoverageTool": "None",
+              "classFilter": "",
+              "classFilesDirectories": "",
+              "srcDirectories": "",
+              "failIfCoverageEmpty": "false",
+              "javaHomeSelection": "JDKVersion",
+              "jdkVersion": "default",
+              "jdkUserInputPath": "",
+              "jdkArchitecture": "x64",
+              "mavenVersionSelection": "Default",
+              "mavenPath": "",
+              "mavenSetM2Home": "false",
+              "mavenOpts": "-Xmx1024m",
+              "mavenFeedAuthenticate": "false",
+              "sqAnalysisEnabled": "false",
+              "sqMavenPluginVersionChoice": "latest",
+              "checkstyleAnalysisEnabled": "false",
+              "pmdAnalysisEnabled": "false",
+              "findbugsAnalysisEnabled": "false"
+            }
+          },
+          {
+            "environment": {
+
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Copy WAR file",
+            "timeoutInMinutes": 0,
+            "task": {
+              "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+              "versionSpec": "2.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "SourceFolder": "$(build.sourcesdirectory)",
+              "Contents": "target/myshuttledev*.war\n*.sql",
+              "TargetFolder": "$(build.artifactstagingdirectory)",
+              "CleanTargetFolder": "false",
+              "OverWrite": "false",
+              "flattenFolders": "false"
+            }
+          },
+          {
+            "environment": {
+
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Artifact: drop",
+            "timeoutInMinutes": 0,
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "PathtoPublish": "$(build.artifactstagingdirectory)",
+              "ArtifactName": "drop",
+              "ArtifactType": "Container",
+              "TargetPath": "",
+              "Parallel": "false",
+              "ParallelCount": "8"
+            }
+          },
+          {
+            "environment": {
+
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Build an image",
+            "timeoutInMinutes": 0,
+            "task": {
+              "id": "e28912f1-0114-4464-802a-a3a35437fd16",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "containerregistrytype": "Azure Container Registry",
+              "dockerRegistryEndpoint": "",
+              "azureSubscriptionEndpoint": "",
+              "azureContainerRegistry": "",
+              "command": "Build an image",
+              "dockerFile": "src/Dockerfile",
+              "arguments": "",
+              "useDefaultContext": "false",
+              "buildContext": ".",
+              "pushMultipleImages": "false",
+              "tagMultipleImages": "false",
+              "imageName": "Web:$(Build.BuildNumber)",
+              "imageNamesPath": "",
+              "qualifyImageName": "true",
+              "includeSourceTags": "false",
+              "includeLatestTag": "true",
+              "addDefaultLabels": "true",
+              "imageDigestFile": "",
+              "containerName": "",
+              "ports": "",
+              "volumes": "",
+              "envVars": "",
+              "workingDirectory": "",
+              "entrypointOverride": "",
+              "containerCommand": "",
+              "runInBackground": "true",
+              "restartPolicy": "no",
+              "maxRestartRetries": "",
+              "dockerHostEndpoint": "",
+              "enforceDockerNamingConvention": "true",
+              "memoryLimit": ""
+            }
+          },
+          {
+            "environment": {
+
+            },
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Push an image",
+            "timeoutInMinutes": 0,
+            "task": {
+              "id": "e28912f1-0114-4464-802a-a3a35437fd16",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "containerregistrytype": "Azure Container Registry",
+              "dockerRegistryEndpoint": "",
+              "azureSubscriptionEndpoint": "",
+              "azureContainerRegistry": "",
+              "command": "Push an image",
+              "dockerFile": "**/Dockerfile",
+              "arguments": "",
+              "useDefaultContext": "true",
+              "buildContext": "",
+              "pushMultipleImages": "false",
+              "tagMultipleImages": "false",
+              "imageName": "Web:$(Build.BuildNumber)",
+              "imageNamesPath": "",
+              "qualifyImageName": "true",
+              "includeSourceTags": "false",
+              "includeLatestTag": "false",
+              "addDefaultLabels": "true",
+              "imageDigestFile": "",
+              "containerName": "",
+              "ports": "",
+              "volumes": "",
+              "envVars": "",
+              "workingDirectory": "",
+              "entrypointOverride": "",
+              "containerCommand": "",
+              "runInBackground": "true",
+              "restartPolicy": "no",
+              "maxRestartRetries": "",
+              "dockerHostEndpoint": "",
+              "enforceDockerNamingConvention": "true",
+              "memoryLimit": ""
+            }
+          }
+        ],
+        "name": "Agent job 1",
+        "refName": "Phase_1",
+        "condition": "succeeded()",
+        "target": {
+          "executionOptions": {
+            "type": 0
+          },
+          "allowScriptsAuthAccessOption": false,
+          "type": 1
+        },
+        "jobAuthorizationScope": "projectCollection",
+        "jobCancelTimeoutInMinutes": 1
+      }
+    ],
+    "type": 1
+  },
+  "repository": {
+    "properties": {
+      "cleanOptions": "0",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "checkoutNestedSubmodules": "false",
+      "fetchDepth": "0"
+    },
+    "id": "$MyShuttle$",
+    "type": "TfsGit",
+    "name": "MyShuttle",
+    "defaultBranch": "refs/heads/master",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": {
+
+  },
+  "quality": "definition",
+  "drafts": [
+
+  ],
+  "queue": {
+    "name": "Hosted Ubuntu 1604",
+    "pool": {
+      "name": "Hosted Ubuntu 1604",
+      "isHosted": true
+    }
+  },
+  "name": "MyShuttleDockerBuild",
+  "type": "build",
+  "queueStatus": "enabled"
+}

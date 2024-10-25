@@ -16,7 +16,7 @@ namespace VstsRestAPI.ProjectsAndTeams
 {
     public class Projects : ApiServiceBase
     {
-        public Projects(IConfiguration configuration) : base(configuration) { }
+        public Projects(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Check for the existance of project

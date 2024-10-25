@@ -1,0 +1,103 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 3016,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "PartsUnlimited_YAML",
+        "System.TeamProject": "PartsUnlimited_YAML",
+        "System.IterationPath": "PartsUnlimited_YAML",
+        "System.WorkItemType": "Bug",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.CreatedDate": "2019-05-03T04:58:02.913Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-05-03T04:58:08.177Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Decline in orders noticed - Please Investigate immediately",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Decline in orders noticed - Please Investigate immediately",
+        "System.AssignedTo": "Noah Munger <nmunger109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": "Expedite",
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/attachments/f8590db0-b12f-474e-ad0b-fc09aa93e983",
+          "attributes": {
+            "authorizedDate": "2019-05-03T04:58:08.05Z",
+            "id": "2389448",
+            "resourceCreatedDate": "2019-05-03T04:58:08.05Z",
+            "resourceModifiedDate": "2019-05-03T04:58:08.05Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "appInsights.png"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/02dace75-887f-41d5-8cec-75cb554322ee%2Fe39c00bd-7571-452a-a7f0-af9500d27984%2F21",
+          "attributes": {
+            "authorizedDate": "2019-05-03T04:58:08.177Z",
+            "id": "2389449",
+            "resourceCreatedDate": "2019-05-03T04:58:08.177Z",
+            "resourceModifiedDate": "2019-05-03T04:58:08.177Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3016"
+    },
+    {
+      "id": 3015,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "PartsUnlimited_YAML",
+        "System.TeamProject": "PartsUnlimited_YAML",
+        "System.IterationPath": "PartsUnlimited_YAML\\Sprint 3",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.CreatedDate": "2019-05-03T04:58:02.76Z",
+        "System.CreatedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.ChangedDate": "2019-05-03T04:58:02.76Z",
+        "System.ChangedBy": "Akshay H <H.akshay@outlook.com>",
+        "System.Title": "Sel_IE_Navigate Failed in 2488",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Sel_IE_Navigate Failed in 2488",
+        "System.AssignedTo": "Christina Kelly 🏈 <ckelly109@outlook.com>",
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/2877",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/vstsdemodata/_apis/wit/workItems/3015"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

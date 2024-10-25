@@ -1,0 +1,33 @@
+[
+  {
+    "BoardName": "Epics",
+    "value": [
+      {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "name": null
+      }
+    ]
+  },
+  {
+    "BoardName": "Features",
+    "value": [
+      {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "name": null
+      }
+    ]
+  },
+  {
+    "BoardName": "Stories",
+    "value": [
+      {
+        "id": "0137a60b-1ed1-4edd-ba10-c37cf83927d2",
+        "name": "High Scope"
+      },
+      {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "name": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,199 @@
+{
+  "count": 4,
+  "value": [
+    {
+      "id": 812,
+      "rev": 4,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:06:53.68Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-08T21:38:27.86Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Cloud Adoption Strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Adoption Strategy",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Strategy",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/821",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/812"
+    },
+    {
+      "id": 813,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:06:54.013Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-05-13T20:05:30.96Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Cloud Adoption Plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Cloud Adoption Plan",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Plan",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/820",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/813"
+    },
+    {
+      "id": 814,
+      "rev": 5,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T19:06:54.367Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-07-17T20:03:53.777Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Cloud Ready",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Cloud Ready - review the Cloud Ready checklist.</div><div><br></div><div>In this section we provide links to content and topics which will influence some of the decisions</div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Ready",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/819",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3203",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/attachments/d21b1f7f-b0c1-47f0-9708-c15ec94b0753",
+          "attributes": {
+            "authorizedDate": "2020-05-14T02:12:40.383Z",
+            "id": "741518",
+            "resourceCreatedDate": "2020-05-14T02:12:21.93Z",
+            "resourceModifiedDate": "2020-05-14T02:12:21.653Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "resourceSize": "38500",
+            "name": "readiness-checklist[1].docx"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/814"
+    },
+    {
+      "id": 941,
+      "rev": 7,
+      "fields": {
+        "System.AreaPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.TeamProject": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.IterationPath": "CAF ADO Strategy-Plan-Ready-Gov",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2020-05-13T20:05:08.81Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2020-10-02T22:30:44.843Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "Cloud Govern",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "The cloud creates new paradigms for the technologies that support the business. Datacenters can be torn down and rebuilt with one line of code, we have to rethink traditional approaches.",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": "Govern",
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/3199",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        },
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/942",
+          "attributes": {
+            "isLocked": "false",
+            "name": "Child"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/941"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

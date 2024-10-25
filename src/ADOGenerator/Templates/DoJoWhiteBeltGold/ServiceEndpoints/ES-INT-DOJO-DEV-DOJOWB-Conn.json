@@ -1,0 +1,23 @@
+{
+  "data": {
+    "environment": "AzureCloud",
+    "subscriptionId": "f2e68202-1605-4760-aa3d-b9859a54acb2",
+    "subscriptionName": "ES-INT-DOJO-DEV-DOJOWB",
+    "scopeLevel": "Subscription"
+  },
+  "name": "ES-INT-DOJO-DEV-DOJOWB-Conn",
+  "type": "azurerm",
+  "url": "https://management.azure.com/",
+  "authorization": {
+    "parameters": {
+      "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+      "servicePrincipalId": "ccaed2ec-06c7-4b45-aa8a-88a14d12438d",
+      "authenticationType": "spnKey",
+      "servicePrincipalKey": "spnKey"
+    },
+    "scheme": "ServicePrincipal"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}

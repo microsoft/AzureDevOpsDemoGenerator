@@ -1,0 +1,17 @@
+﻿{
+  "defaultValue": "$ProjectName$\\Mobile",
+  "values": [
+    {
+      "value": "$ProjectName$\\Mobile",
+      "includeChildren": true
+    },
+    {
+      "value": "$ProjectName$",
+      "includeChildren": false
+    },
+    {
+      "value": "$ProjectName$\\Web",
+      "includeChildren": false
+    }
+  ]
+}

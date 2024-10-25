@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "DevOps-Dojo-Booking-code",
+  "type": "git",
+  "url": "https://dev.azure.com/servicescode/DevOps-Dojo/_git/DevOps-Dojo-Booking",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

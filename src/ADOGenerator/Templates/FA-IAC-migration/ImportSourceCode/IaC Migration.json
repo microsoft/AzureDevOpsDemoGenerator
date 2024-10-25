@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://github.com/amillerb/fta-live-devops-iac-migration-src"
+    },
+    "serviceEndpointId": "$GitHub_fafc3091$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

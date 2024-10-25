@@ -5,7 +5,7 @@ namespace VstsRestAPI.DeploymentGRoup
 {
     public class DeploymentGroup : ApiServiceBase
     {
-        public DeploymentGroup(IConfiguration configuration) : base(configuration)
+        public DeploymentGroup(IADOConfiguration configuration) : base(configuration)
         {
         }
 

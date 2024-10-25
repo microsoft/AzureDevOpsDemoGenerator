@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/bobsmess/SAP on Azure quick-start guide/_git/SAP on Azure quick-start guide"
+    },
+    "serviceEndpointId": "$SAP on Azure quick-start guide-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "BoardName": "Epics",
+    "value": [
+      {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "name": null
+      }
+    ]
+  },
+  {
+    "BoardName": "Features",
+    "value": [
+      {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "name": null
+      }
+    ]
+  },
+  {
+    "BoardName": "Stories",
+    "value": [
+      {
+        "id": "544a79f7-f804-48fd-8650-4e5ad7aed0b7",
+        "name": "Data Patches"
+      },
+      {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "name": null
+      }
+    ]
+  }
+]

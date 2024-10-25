@@ -1,0 +1,9 @@
+﻿{
+  "defaultValue": "$ProjectName$\\$AreaName$",
+  "values": [
+    {
+      "value": "$ProjectName$\\$AreaName$",
+      "includeChildren": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/wayneme/Windows Virtual Desktop/_git/Azure Sentinel Template"
+    },
+    "serviceEndpointId": "$Azure Sentinel Template-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

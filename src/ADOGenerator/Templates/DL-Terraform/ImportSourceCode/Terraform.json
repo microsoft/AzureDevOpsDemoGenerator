@@ -1,0 +1,10 @@
+{
+  "parameters":
+    {
+      "gitSource": {
+        "url": "https://dev.azure.com/vstsdemodata/_git/Terraform"
+      },
+      "serviceEndpointId": "$Terraform-code$",
+      "deleteServiceEndpointAfterImportIsDone": true
+    }
+}

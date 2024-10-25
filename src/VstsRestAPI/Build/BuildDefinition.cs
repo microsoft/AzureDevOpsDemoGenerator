@@ -10,7 +10,7 @@ namespace VstsRestAPI.Build
 {
     public class BuildDefinition : ApiServiceBase
     {
-        public BuildDefinition(IConfiguration configuration) : base(configuration) { }
+        public BuildDefinition(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Create Build Definition

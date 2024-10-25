@@ -1,0 +1,40 @@
+{
+  "id": 85,
+  "name": "WhiteSource Bolt",
+  "structureType": "iteration",
+  "hasChildren": true,
+  "children": [
+    {
+      "id": 87,
+      "name": "Iteration 1",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://vstsdemodata.visualstudio.com/851b582e-a87d-46e1-ba2c-023e9daedda7/_apis/wit/classificationNodes/Iterations/Iteration%201",
+      "children": null
+    },
+    {
+      "id": 88,
+      "name": "Iteration 2",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://vstsdemodata.visualstudio.com/851b582e-a87d-46e1-ba2c-023e9daedda7/_apis/wit/classificationNodes/Iterations/Iteration%202",
+      "children": null
+    },
+    {
+      "id": 89,
+      "name": "Iteration 3",
+      "structureType": "iteration",
+      "hasChildren": false,
+      "url": "https://vstsdemodata.visualstudio.com/851b582e-a87d-46e1-ba2c-023e9daedda7/_apis/wit/classificationNodes/Iterations/Iteration%203",
+      "children": null
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "https://vstsdemodata.visualstudio.com/851b582e-a87d-46e1-ba2c-023e9daedda7/_apis/wit/classificationNodes/Iterations"
+    }
+  },
+  "url": "https://vstsdemodata.visualstudio.com/851b582e-a87d-46e1-ba2c-023e9daedda7/_apis/wit/classificationNodes/Iterations",
+  "HttpStatusCode": 200,
+  "Message": null
+}

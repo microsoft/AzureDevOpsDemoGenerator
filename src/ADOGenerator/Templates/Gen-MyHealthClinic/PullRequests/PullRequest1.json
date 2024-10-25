@@ -1,0 +1,11 @@
+﻿{
+  "title": "Added Contact Us Tab to homepage",
+  "description": "Added Contact Us Tab. Please review.",
+  "sourceRefName": "refs/heads/AddingContactUs",
+  "targetRefName": "refs/heads/master",
+  "reviewers": [
+    {
+      "id": "$reviewer$"
+    }
+  ]
+}

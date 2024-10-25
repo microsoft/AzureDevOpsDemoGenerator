@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/CAFTemplate/Cloud Adoption Plan Master/_git/Cloud Adoption Plan Master"
+    },
+    "serviceEndpointId": "$Cloud Adoption Plan Master-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

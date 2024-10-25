@@ -1,0 +1,51 @@
+[
+  {
+    "cards": {
+      "Epic": [
+        {
+          "fieldIdentifier": "System.Id"
+        },
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "System.State"
+        }
+      ]
+    },
+    "BoardName": "Epics"
+  },
+  {
+    "cards": {
+      "Issue": [
+        {
+          "fieldIdentifier": "System.Id"
+        },
+        {
+          "fieldIdentifier": "System.Title"
+        },
+        {
+          "fieldIdentifier": "System.AssignedTo",
+          "displayFormat": "AvatarAndFullName"
+        },
+        {
+          "fieldIdentifier": "System.Tags"
+        },
+        {
+          "fieldIdentifier": "System.State"
+        },
+        {
+          "fieldIdentifier": "Microsoft.VSTS.Scheduling.Effort"
+        }
+      ]
+    },
+    "BoardName": "Issues"
+  }
+]

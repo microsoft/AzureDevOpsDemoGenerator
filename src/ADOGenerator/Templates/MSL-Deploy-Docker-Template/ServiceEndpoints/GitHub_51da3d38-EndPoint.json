@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "GitHub_51da3d38",
+  "type": "git",
+  "url": "https://github.com/MicrosoftDocs/mslearn-tailspin-spacegame-web-docker",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$GitUserName$",
+      "password": "$GitUserPassword$"
+    }
+  },
+  "isReady": true
+}

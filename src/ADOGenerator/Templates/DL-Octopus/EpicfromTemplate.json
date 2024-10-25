@@ -1,0 +1,84 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 843,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-12-29T08:43:37.23Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T08:43:39.603Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Using Octopus for Release",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/813",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/843"
+    },
+    {
+      "id": 844,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Octopus",
+        "System.TeamProject": "Octopus",
+        "System.IterationPath": "Octopus",
+        "System.WorkItemType": "Epic",
+        "System.State": "New",
+        "System.Reason": "New epic",
+        "System.CreatedDate": "2017-12-29T08:44:31.167Z",
+        "System.CreatedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.ChangedDate": "2017-12-29T08:44:31.9Z",
+        "System.ChangedBy": "Satish Kini <kini.satish@hotmail.com>",
+        "System.Title": "Releasing Application to Azure",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": null,
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Forward",
+          "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/814",
+          "attributes": {
+            "isLocked": "False"
+          }
+        }
+      ],
+      "url": "https://vstsdemodata.visualstudio.com/_apis/wit/workItems/844"
+    }
+  ],
+  "HttpStatusCode": 0
+}

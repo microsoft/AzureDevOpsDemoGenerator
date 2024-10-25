@@ -1,0 +1,16 @@
+{
+  "data": {
+
+  },
+  "name": "Retail Recommender - Solution Accelerator-code",
+  "type": "git",
+  "url": "https://dev.azure.com/wayneme/Retail Recommender - Solution Accelerator/_git/Retail Recommender - Solution Accelerator",
+  "authorization": {
+    "scheme": "UsernamePassword",
+    "parameters": {
+      "username": "$username$",
+      "password": "$password$"
+    }
+  },
+  "isReady": true
+}

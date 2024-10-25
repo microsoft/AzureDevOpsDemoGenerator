@@ -1,0 +1,370 @@
+{
+  "source": "userInterface",
+  "revision": 2,
+  "description": null,
+  "createdBy": "{}",
+  "createdOn": "",
+  "modifiedBy": "{}",
+  "modifiedOn": "",
+  "isDeleted": false,
+  "lastRelease": {
+    "id": 7,
+    "name": "Release-7",
+    "artifacts": [],
+    "_links": {},
+    "description": "Triggered by PHP 210.",
+    "releaseDefinition": {
+      "id": 1,
+      "projectReference": null,
+      "_links": {}
+    },
+    "createdOn": "2021-08-31T15:36:08.56Z",
+    "createdBy": {
+      "displayName": "Akshay Hosur",
+      "url": "https://spsprodsin1.vssps.visualstudio.com/A5ddcb812-79aa-4fdb-b9d3-ae14ee6520a0/_apis/Identities/ddc8930b-7be3-6d29-ba63-9a7b2edf1b5e",
+      "_links": {
+        "avatar": {
+          "href": "https://dev.azure.com/akshayhosur/_apis/GraphProfile/MemberAvatars/aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl"
+        }
+      },
+      "id": "ddc8930b-7be3-6d29-ba63-9a7b2edf1b5e",
+      "uniqueName": "akshay.hosur@ecanarys.com",
+      "imageUrl": "https://dev.azure.com/akshayhosur/_apis/GraphProfile/MemberAvatars/aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl",
+      "descriptor": "aad.ZGRjODkzMGItN2JlMy03ZDI5LWJhNjMtOWE3YjJlZGYxYjVl"
+    }
+  },
+  "variables": {
+    "Location": {
+      "value": "SouthEastAsia"
+    },
+    "myResourceGroup": {
+      "value": "PHP-RG"
+    },
+    "webappname": {
+      "value": "phpe2ec29e3203"
+    }
+  },
+  "variableGroups": [],
+  "environments": [
+    {
+      "id": 1,
+      "name": "Dev",
+      "rank": 1,
+      "owner": {
+        "displayName": "$OwnerDisplayName$",
+        "url": "",
+        "_links": "{}",
+        "id": "$OwnerId$",
+        "uniqueName": "$OwnerUniqueName$",
+        "imageUrl": "",
+        "descriptor": ""
+      },
+      "variables": {},
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 1
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "beforeGates"
+        }
+      },
+      "deployStep": {
+        "id": 2
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 3
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": "afterSuccessfulGates"
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": "none"
+            },
+            "agentSpecification": {
+              "identifier": "windows-2019"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": "$Azure Pipelines$",
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": "agentBasedDeployment",
+          "name": "Run on agent",
+          "refName": null,
+          "workflowTasks": [
+            {
+              "environment": {},
+              "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+              "version": "1.*",
+              "name": "Azure CLI ",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectedServiceNameARM": "",
+                "scriptLocation": "inlineScript",
+                "scriptPath": "",
+                "inlineScript": "call az group create --location $(Location) --name $(myResourceGroup)\ncall az appservice plan create --name $(webappname) --resource-group $(myResourceGroup) --sku S1\ncall az webapp create --name $(webappname) --resource-group $(myResourceGroup) --plan $(webappname)",
+                "args": "",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
+                "cwd": "",
+                "failOnStandardError": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "497d490f-eea7-4f2b-ab94-48d9c1acdcb1",
+              "version": "3.*",
+              "name": "Azure App Service Deploy",
+              "refName": "AzureRmWebAppDeployment1",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": true,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "ConnectedServiceName": "",
+                "WebAppKind": "app",
+                "WebAppName": "$(webappName)",
+                "DeployToSlotFlag": "false",
+                "ResourceGroupName": "",
+                "SlotName": "",
+                "ImageSource": "Registry",
+                "AzureContainerRegistry": "",
+                "AzureContainerRegistryLoginServer": "",
+                "AzureContainerRegistryImage": "",
+                "AzureContainerRegistryTag": "",
+                "DockerRepositoryAccess": "public",
+                "RegistryConnectedServiceName": "",
+                "PrivateRegistryImage": "",
+                "PrivateRegistryTag": "",
+                "DockerNamespace": "",
+                "DockerRepository": "",
+                "DockerImageTag": "",
+                "VirtualApplication": "",
+                "Package": "$(System.DefaultWorkingDirectory)/_php-yml/drop/*.zip",
+                "BuiltinLinuxPackage": "$(System.DefaultWorkingDirectory)/**/*.zip",
+                "RuntimeStack": "node|4.4",
+                "StartupCommand": "",
+                "WebAppUri": "",
+                "ScriptType": "",
+                "InlineScript": ":: You can provide your deployment commands here. One command per line.",
+                "ScriptPath": "",
+                "GenerateWebConfig": "false",
+                "WebConfigParameters": "",
+                "AppSettings": "",
+                "ConfigurationSettings": "",
+                "TakeAppOfflineFlag": "false",
+                "UseWebDeploy": "false",
+                "SetParametersFile": "",
+                "RemoveAdditionalFilesFlag": "false",
+                "ExcludeFilesFromAppDataFlag": "false",
+                "AdditionalArguments": "",
+                "RenameFilesFlag": "false",
+                "XmlTransformation": "false",
+                "XmlVariableSubstitution": "false",
+                "JSONFiles": ""
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": "event",
+          "value": ""
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 0,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "currentRelease": {
+        "id": 7,
+        "url": "https://vsrm.dev.azure.com/akshayhosur/cb8c4049-6bf2-4d8a-a211-d0037ef56ae0/_apis/Release/releases/7",
+        "_links": {}
+      },
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {
+        "dataSourceBindings": [
+          {
+            "dataSourceName": "AzureRMWebAppNames",
+            "parameters": {},
+            "endpointId": "",
+            "target": "WebAppName"
+          },
+          {
+            "dataSourceName": "AzureAppKind",
+            "parameters": {
+              "WebAppName": "$(WebAppName)"
+            },
+            "endpointId": "",
+            "target": "WebAppKind",
+            "resultTemplate": "{\"Value\":\"{{{ #stringReplace ',' '' kind }}}\",\"DisplayValue\":\"{{{ #stringReplace ',' '' kind }}}\"}"
+          }
+        ]
+      },
+      "properties": {
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
+      },
+      "preDeploymentGates": {
+        "id": 0,
+        "gatesOptions": {
+          "isEnabled": false,
+          "timeout": 1440,
+          "samplingInterval": 15,
+          "stabilizationTime": 15,
+          "minimumSuccessDuration": 0
+        },
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "id": 0,
+        "gatesOptions": {
+          "isEnabled": false,
+          "timeout": 1440,
+          "samplingInterval": 15,
+          "stabilizationTime": 15,
+          "minimumSuccessDuration": 0
+        },
+        "gates": []
+      },
+      "environmentTriggers": [],
+      "badgeUrl": ""
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "$ProjectId$:$PHP-YAML-id$",
+      "type": "Build",
+      "alias": "_php-yaml",
+      "definitionReference": {
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "$PHP-YAML-id$",
+          "name": "php-yaml"
+        },
+        "definitions": {
+          "id": "",
+          "name": ""
+        },
+        "IsMultiDefinitionType": {
+          "id": "False",
+          "name": "False"
+        },
+        "project": {
+          "id": "$ProjectId$",
+          "name": "$ProjectName$"
+        },
+        "repository": {
+          "id": "",
+          "name": ""
+        },
+        "artifactSourceDefinitionUrl": "{}"
+      },
+      "isPrimary": true,
+      "isRetained": false
+    }
+  ],
+  "triggers": [],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "tags": [],
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "BuildSummary"
+    },
+    "IntegrateBoardsWorkItems": {
+      "$type": "System.String",
+      "$value": "False"
+    },
+    "IntegrateJiraWorkItems": {
+      "$type": "System.String",
+      "$value": "false"
+    }
+  },
+  "id": "",
+  "name": "PHP",
+  "path": "\\",
+  "projectReference": null,
+  "url": "",
+  "_links": "{}"
+}

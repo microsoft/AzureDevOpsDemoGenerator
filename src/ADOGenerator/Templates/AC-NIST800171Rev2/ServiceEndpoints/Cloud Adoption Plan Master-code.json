@@ -1,0 +1,16 @@
+{
+  "data": {},
+  "name": "Cloud Adoption Plan Master-code",
+  "type": "git",
+  "url": "https://dev.azure.com/CAFTemplate/Cloud Adoption Plan Master/_git/Cloud Adoption Plan Master",
+  "authorization": {
+    "parameters": {
+      "username": "h.akshay@outlook.com",
+      "password": "password"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}

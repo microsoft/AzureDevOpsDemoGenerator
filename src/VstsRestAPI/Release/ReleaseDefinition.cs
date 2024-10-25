@@ -10,7 +10,7 @@ namespace VstsRestAPI.Release
 {
     public class ReleaseDefinition : ApiServiceBase
     {
-        public ReleaseDefinition(IConfiguration configuration) : base(configuration) { }
+        public ReleaseDefinition(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Create Release Definition

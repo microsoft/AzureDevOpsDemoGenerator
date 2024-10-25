@@ -1,0 +1,10 @@
+{
+  "repositories": [
+    {
+      "fullName": "Microsoft/TailwindTraders-Backend"
+    },
+    {
+      "fullName": "Microsoft/TailwindTraders-Website"
+    }
+  ]
+}

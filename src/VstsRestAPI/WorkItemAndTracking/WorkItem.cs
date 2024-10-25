@@ -11,7 +11,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 {
     public partial class WorkItem : ApiServiceBase
     {
-        public WorkItem(IConfiguration configuration) : base(configuration) { }
+        public WorkItem(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Method to create the workItems

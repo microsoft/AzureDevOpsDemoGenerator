@@ -1,0 +1,9 @@
+{
+  "parameters": {
+    "gitSource": {
+      "url": "https://dev.azure.com/servicescode/DevOps-Dojo-WhiteBelt/_git/DevOps-Dojo-Setup"
+    },
+    "serviceEndpointId": "$DevOps-Dojo-Setup-code$",
+    "deleteServiceEndpointAfterImportIsDone": true
+  }
+}

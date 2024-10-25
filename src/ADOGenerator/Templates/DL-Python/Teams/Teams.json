@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2451e53b-9ed5-4da6-9f48-86c1c8ebbe1b",
+    "name": "Team1",
+    "description": "Team1 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "1a30290c-6644-4848-bb28-0d67af7cf5c8",
+    "name": "Team2",
+    "description": "Team2 Description",
+    "isDefault": "false"
+  },
+  {
+    "id": "1a15f7ef-533f-49e8-b115-26963f75c2df",
+    "name": "Python Team",
+    "description": "The default project team.",
+    "isDefault": "true"
+  }
+]

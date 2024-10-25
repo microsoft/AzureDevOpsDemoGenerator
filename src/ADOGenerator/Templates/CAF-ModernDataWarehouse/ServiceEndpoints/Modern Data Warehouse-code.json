@@ -1,0 +1,16 @@
+{
+  "data": {},
+  "name": "Modern Data Warehouse-code",
+  "type": "git",
+  "url": "https://dev.azure.com/lpcs/Modern Data Warehouse/_git/Modern Data Warehouse",
+  "authorization": {
+    "parameters": {
+      "username": "",
+      "password": "password"
+    },
+    "scheme": "UsernamePassword"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}

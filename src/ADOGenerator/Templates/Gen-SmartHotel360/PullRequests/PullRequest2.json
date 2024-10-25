@@ -1,0 +1,11 @@
+{
+  "title": "Added Packages",
+  "description": "Added Packages",
+  "sourceRefName": "refs/heads/feature/bot-widget",
+  "targetRefName": "refs/heads/master",
+  "reviewers": [
+    {
+      "id": "$reviewer$"
+    }
+  ]
+}

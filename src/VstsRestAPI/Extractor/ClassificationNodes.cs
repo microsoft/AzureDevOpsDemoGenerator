@@ -10,7 +10,7 @@ namespace VstsRestAPI.Extractor
 {
     public class ClassificationNodes : ApiServiceBase
     {
-        public ClassificationNodes(IConfiguration configuration) : base(configuration) { }
+        public ClassificationNodes(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         // Get Iteration Count
         public GetINumIteration.Iterations GetiterationCount()

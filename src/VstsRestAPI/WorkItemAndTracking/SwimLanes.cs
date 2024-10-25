@@ -7,7 +7,7 @@ namespace VstsRestAPI.WorkItemAndTracking
 {
     public class SwimLanes : ApiServiceBase
     {
-        public SwimLanes(IConfiguration configuration) : base(configuration) { }
+        public SwimLanes(IADOConfiguration configuration) : base(configuration) { }
         private ILog logger = LogManager.GetLogger("ErrorLog");
         /// <summary>
         /// Update swim lanes

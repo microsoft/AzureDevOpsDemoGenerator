@@ -1,0 +1,1237 @@
+{
+  "count": 30,
+  "value": [
+    {
+      "id": 6877,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:30.68Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T17:53:06.303Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Build an initial strategy",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Customers who integrate this scenario into their cloud adoption strategy are motivated by the following common drivers: </p><ul style=\"margin:16px 0px 16px 38px;list-style:none;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><li style=\"margin:0px;list-style:outside none disc;\">A scalable analytics framework designed to enable building an enterprise data platform </li><li style=\"margin:0px;list-style:outside none disc;\">Self service to empower the user in data exploration, data asset creation, and product development </li><li style=\"margin:0px;list-style:outside none disc;\">Foster a data led culture with reusable data assets, data communities, secure third-party exchange, and in-place sharing </li><li style=\"margin:0px;list-style:outside none disc;\">Share data with confidence secured by policies, common identity, confidentiality, and encryption </li><li style=\"margin:0px;list-style:outside none disc;\">Improved customer experiences and engagements </li><li style=\"margin:0px;list-style:outside none disc;\">Transformation of products or services </li><li style=\"margin:0px;list-style:outside none disc;\">Market disruption with new products or services </li><li style=\"margin:0px;list-style:outside none disc;\">Democratization and self-service environments </li> </ul> </div><div><span>Please review this </span><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/strategy?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6907",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6877"
+    },
+    {
+      "id": 6878,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:31.033Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T17:53:13.75Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Define your plan",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review&nbsp;&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/digital-estate/5-rs-of-rationalization?wt.mc_id=devops_eslz-data-analytics_content_1\">five Rs of rationalizing your digital estate</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">.&nbsp;</span> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><br></span> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">This scenario narrows the primary focus of rationalization to the&nbsp;</span><span style=\"font-weight:600;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">data estate</span><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">, which is a subset of the overall digital estate. This plan will also look broader and deeper at the data estate than you might in other plans. Specifically, it must include plans for your overall analytics and<a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/govern?wt.mc_id=devops_eslz-data-analytics_content_1\">&nbsp;</a></span><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/govern?wt.mc_id=devops_eslz-data-analytics_content_1\">data governance</a><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">&nbsp;required to support the desired maturity.</span><br> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><br></span> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/plan?wt.mc_id=devops_eslz-data-analytics_content_1\">Develop a plan for data management and analytics</a><br></span> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6907",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6878"
+    },
+    {
+      "id": 6879,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:31.64Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T17:53:20Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Review your environment ",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Enterprise-scale for analytics and AI builds upon enterprise landing zones for ease of deployment and governance. The principal purpose of the enterprise landing zones is to ensure that when an application or workload lands on Azure, the required &quot;plumbing&quot; is already in place. It provides greater agility and compliance with enterprise security and governance requirements. Enterprise-scale landing zones must be in place before you deploy your first data management and analytics landing zones.</span><br> </div><div><br> </div><div><br> </div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/ready?wt.mc_id=devops_eslz-data-analytics_content_1\">Review your environment for Azure landing zones</a><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6907",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6879"
+    },
+    {
+      "id": 6880,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:31.807Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T17:53:26.083Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Review / Construct your business requirments",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">A scalable data platform is critical for your enterprise to accommodate the rapid growth of data.</span><br> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span> </div><div>Select Implementation Options </div><div><br> </div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-scale#single-data-landing-zone?wt.mc_id=devops_eslz-data-analytics_content_1\">Single Data Landing Zone</a> </div><div><br> </div><div>OR </div><div><br> </div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-scale#multiple-data-landing-zones\">Multiple Data Landing Zone</a> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6907",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6880"
+    },
+    {
+      "id": 6881,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:32.167Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:14:49.83Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Review Enterprise enrollment",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Azure landing zones for enterprise-scale for analytics and AI don't have any considerations or recommendations that affect enterprise enrollment or Azure AD tenant decisions. </p><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">However, it's important to understand the decisions made by the cloud platform team, and to be aware of existing<span>&nbsp;</span><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/enterprise-enrollment-and-azure-ad-tenants?wt.mc_id=devops_eslz-data-analytics_content_1\">enterprise enrollment or Azure Active Directory (Azure AD)</a> tenant decisions. </p><br> </div><div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-enterprise-enrollment-and-azure-ad-tenants?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6908",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6881"
+    },
+    {
+      "id": 6882,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:32.343Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:15:01.217Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Review Identity and access management",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Since data management and analytics is a mission-critical element, the guidance on the enterprise-scale design areas should also be included in your design.</span><br> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-identity-and-access-management?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a></span> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6908",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6882"
+    },
+    {
+      "id": 6883,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:32.5Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:15:17.677Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Review Network topology and connectivity",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Review networking pattern best practices </div><div><br> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Integrating across clouds.</span><br><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Restricting data exfiltration.</span><br><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Creating access for remote workers.</span><br><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Interfacing with on-premises and software as a service (SaaS) solutions.</span><br><br> </div><div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-network-topology-and-connectivity?wt.mc_id=devops_eslz-data-analytics_content_1?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6908",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6883"
+    },
+    {
+      "id": 6884,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:32.747Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:15:23.203Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Organize resources",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>&nbsp;</span>Your strategy should include business and operational details as components of resource names and metadata tags.<span>&nbsp;</span></span><br> </div><div><br> </div><div>Please review - <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-resource-organization?wt.mc_id=devops_eslz-data-analytics_content_1?wt.mc_id=devops_eslz-data-analytics_content_1\">Resource organization</a><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6908",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6884"
+    },
+    {
+      "id": 6885,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:33.113Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:15:31.103Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "5. Apply governance disciplines",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><span>Apply best practices </span>security, compliance, and governance design criteria for enterprise-scale data management and analytics</span><br> </div><div><br> </div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-security-governance-and-compliance?wt.mc_id=devops_eslz-data-analytics_content_1?wt.mc_id=devops_eslz-data-analytics_content_1\">Security, governance, and compliance</a> for enterprise-scale data management and analytics&nbsp;<br> </div><div><br> </div><div><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-policies?wt.mc_id=devops_eslz-data-analytics_content_1?wt.mc_id=devops_eslz-data-analytics_content_1\">Policies in Azure enterprise-scale for analytics and AI&nbsp;</a><br> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6908",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6885"
+    },
+    {
+      "id": 6886,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:33.3Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:15:43.52Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "6. Create Operations baseline",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-management-and-monitoring?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6908",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6886"
+    },
+    {
+      "id": 6887,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:33.657Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:15:49.61Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "7. Plan for BCDR",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">When you design architecture for a cloud service, consider your availability requirements and how to respond to potential interruptions in the service. An issue could be localized to the specific instance or region-wide. Having plans for both is important. Depending on your recovery time objective and the recovery point objective, you might choose an aggressive strategy for high availability and disaster recovery</span><br> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-business-continuity-and-disaster-recovery?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a></span> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6908",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6887"
+    },
+    {
+      "id": 6888,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:33.803Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:17:13.423Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Deploy Data management landing zone",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-provision-platform#data-management-landing-zone-deployment-process?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div><div><br> </div><div>Use the templates here to <a href=\"https://github.com/Azure/data-management-zone?wt.mc_id=devops_eslz-data-analytics_content_1\">automate </a>the deployment </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6909",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6888"
+    },
+    {
+      "id": 6889,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:34.07Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:17:31.933Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Deploy Data Landing Zone(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-provision-platform#data-landing-zone-deployment-process?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div><div><br> </div><div>and this <a href=\"https://github.com/Azure/data-landing-zone?wt.mc_id=devops_eslz-data-analytics_content_1\">templates </a>for automation </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6911",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6889"
+    },
+    {
+      "id": 6890,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:34.22Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:17:38.52Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Deploy data integration batch processing zone(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-provision-platform#data-integration-and-data-product-deployment-process?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div><div><br> </div><div>And these <a href=\"https://github.com/Azure/data-product-batch?wt.mc_id=devops_eslz-data-analytics_content_1\">templates</a> for automation </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6910",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6890"
+    },
+    {
+      "id": 6891,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:34.603Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:17:44.34Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Deploy data integration stream processing landing zone(s)",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"><span style=\"display:inline !important;\">Please review this<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-provision-platform#data-integration-and-data-product-deployment-process?wt.mc_id=devops_eslz-data-analytics_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">guidance</a><br> </div><br> </div><div>and this <a href=\"https://github.com/Azure/data-product-streaming?wt.mc_id=devops_eslz-data-analytics_content_1\">templates </a>for automation </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6910",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6891"
+    },
+    {
+      "id": 6892,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:34.837Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:17:50.263Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Deploy data product zone - data analytics and zones",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><div style=\"box-sizing:border-box;\"> </div> </div><span style=\"display:inline !important;\">Please review this<span>&nbsp;</span></span><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/eslz-provision-platform#data-integration-and-data-product-deployment-process?wt.mc_id=devops_eslz-data-analytics_content_1\" style=\"box-sizing:border-box;text-decoration:underline;cursor:pointer;\">guidance</a><div><br> </div><div>and these <a href=\"https://github.com/Azure/data-product-analytics?wt.mc_id=devops_eslz-data-analytics_content_1\">templates </a>for automation </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6910",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6892"
+    },
+    {
+      "id": 6893,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:34.983Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:15:56.487Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "8. Review and select data landing zone topologies - Single, Multiple, Highly Sensitive",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please study to reference architectures to identify the topologies that match your business requirements </div><div><br> </div><div>Single Data landing zone -&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/architectures/reference-architecture-adatum?wt.mc_id=devops_eslz-data-analytics_content_1?wt.mc_id=devops_eslz-data-analytics_content_1\">Adatum Corporation scenario</a>&nbsp; </div><div><br> </div><div>Multiple Data Landing Zone -&nbsp;<a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/architectures/reference-architecture-relecloud?wt.mc_id=devops_eslz-data-analytics_content_1?wt.mc_id=devops_eslz-data-analytics_content_1\">Relecloud scenario</a>&nbsp; </div><div><br> </div><div>Highly Sensitive Data Landing Zone -<a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/architectures/reference-architecture-lamna?wt.mc_id=devops_eslz-data-analytics_content_1?wt.mc_id=devops_eslz-data-analytics_content_1\">&nbsp;</a><span style=\"\"><a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/architectures/reference-architecture-lamna?wt.mc_id=devops_eslz-data-analytics_content_1?wt.mc_id=devops_eslz-data-analytics_content_1\">Lamna Healthcare scenario</a>&nbsp;</span> </div><div><br> </div><div><br> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6908",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6893"
+    },
+    {
+      "id": 6894,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:35.137Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:17:18.63Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Study Data Management Landing Zone details",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\">The data management landing zone is classified as a management function and is central to the enterprise-scale for analytics and AI platform. It's responsible for the governance of the platform and enables communication to ingest data sources from Azure, third-party clouds, and on-premises data sources.</span><br> </div><div><span style=\"color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;display:inline !important;\"><br></span> </div><div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/architectures/data-management-landing-zone?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6909",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6894"
+    },
+    {
+      "id": 6895,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:35.42Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:17:23.62Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Review Data Governance maturity model",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/govern?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6909",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6895"
+    },
+    {
+      "id": 6896,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:35.567Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:17:57.077Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Implement Authentication",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Integrate <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/secure-authentication?wt.mc_id=devops_eslz-data-analytics_content_1\">with Azure AD </a> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6912",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6896"
+    },
+    {
+      "id": 6897,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:35.72Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:18:03.177Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Implement Authorization",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Apply <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/secure-analytics-role-based-access-control?wt.mc_id=devops_eslz-data-analytics_content_1\">RBAC </a> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6912",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6897"
+    },
+    {
+      "id": 6898,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:35.89Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:18:09.16Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Implement enhanced process security",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Apply Azure AD <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/security-provisioning#the-azure-ad-entitlement-process?wt.mc_id=devops_eslz-data-analytics_content_1\">entitlement management</a> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6912",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6898"
+    },
+    {
+      "id": 6899,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:36.08Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:18:15.02Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Implement Data Categorization",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div><p style=\"margin:1rem 0px 0px;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\">Before ingesting data, you must categorize the data as<span>&nbsp;</span><strong style=\"font-weight:600;\">confidential or below</strong><span>&nbsp;</span>or<span>&nbsp;</span><strong style=\"font-weight:600;\">sensitive (personal data)</strong>: </p><ul style=\"margin:16px 0px 16px 38px;list-style:none;color:rgb(23, 23, 23);font-family:&quot;Segoe UI&quot;, SegoeUI, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;\"><li style=\"margin:0px;list-style:outside none disc;\"><p style=\"margin:1rem 0px 0px;\">Data might be sorted into<span>&nbsp;</span><strong style=\"font-weight:600;\">confidential or below</strong><span>&nbsp;</span>if a user gains access to the data asset in<span>&nbsp;</span><strong style=\"font-weight:600;\">enriched</strong><span>&nbsp;</span>or<span>&nbsp;</span><strong style=\"font-weight:600;\">curated</strong>. Users can view all columns and rows. </p> </li><li style=\"margin:0px;list-style:outside none disc;\"><p style=\"margin:1rem 0px 0px;\">Data might be sorted into<span>&nbsp;</span><strong style=\"font-weight:600;\">sensitive (personal data)</strong><span>&nbsp;</span>if there are restrictions for which columns and rows are visible to different users. </p> </li> </ul><br> </div><div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/secure-data-privacy?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6912",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6899"
+    },
+    {
+      "id": 6900,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:36.227Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T17:53:45.917Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Review Data Operation function",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/organize-data-operations?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6913",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6900"
+    },
+    {
+      "id": 6901,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:36.56Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T17:53:51.82Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Study and validate personas and roles description",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/organize-persona-and-teams?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6913",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6901"
+    },
+    {
+      "id": 6902,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:36.717Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T17:53:57.18Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Study and validate team functions",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/organize-persona-and-teams#data-governance-roles-and-responsibilities?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6913",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6902"
+    },
+    {
+      "id": 6903,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:36.867Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T17:54:02.807Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "4. Create RACI",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Create roles and accountability matrix based on team creation </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6913",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6903"
+    },
+    {
+      "id": 6904,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:37.143Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:12:16.337Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "1. Define data governance requriments",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review this <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/govern-requirements?wt.mc_id=devops_eslz-data-analytics_content_1\">guidance</a> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6914",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6904"
+    },
+    {
+      "id": 6905,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:37.4Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:12:21.287Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "2. Review and validate requirements",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Please review the <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/govern-components?wt.mc_id=devops_eslz-data-analytics_content_1\">component requirements</a> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6914",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6905"
+    },
+    {
+      "id": 6906,
+      "rev": 2,
+      "fields": {
+        "System.AreaPath": "Modern Data Analytics",
+        "System.TeamProject": "Modern Data Analytics",
+        "System.IterationPath": "Modern Data Analytics",
+        "System.WorkItemType": "Task",
+        "System.State": "New",
+        "System.Reason": "New",
+        "System.CreatedDate": "2021-11-09T17:49:37.55Z",
+        "System.CreatedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.ChangedDate": "2021-11-09T19:12:27.793Z",
+        "System.ChangedBy": "Wayne Meyer <wayneme@microsoft.com>",
+        "System.Title": "3. Plan for implementation",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "<div>Implement as per the <a href=\"https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/data-management/govern-technology?wt.mc_id=devops_eslz-data-analytics_content_1\">plan</a> </div><div><br> </div>",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6914",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/wayneme/_apis/wit/workItems/6906"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}
