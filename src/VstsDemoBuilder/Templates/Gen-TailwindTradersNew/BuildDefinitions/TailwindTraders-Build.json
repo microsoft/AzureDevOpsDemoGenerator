@@ -16,22 +16,23 @@
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
   "process": {
-    "yamlFilename": "azure-pipelines-docker.yml",
+    "yamlFilename": "tailwindtraders-build.yml",
     "type": 2
   },
   "repository": {
     "properties": {
-      "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/MyShuttle",
-      "fullName": "MyShuttle",
+      "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/TailwindTraders",
+      "fullName": "TailwindTraders",
       "defaultBranch": "refs/heads/master",
       "isFork": "False",
-      "safeRepository": "$MyShuttle$",
-      "reportBuildStatus": "true"
+      "safeRepository": "$TailwindTraders$",
+      "reportBuildStatus": "true",
+      "fetchDepth": "1"
     },
-    "id": "$MyShuttle$",
+    "id": "$TailwindTraders$",
     "type": "TfsGit",
-    "name": "MyShuttle",
-    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/MyShuttle",
+    "name": "TailwindTraders",
+    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/TailwindTraders",
     "defaultBranch": "refs/heads/master",
     "clean": null,
     "checkoutSubmodules": false
@@ -42,20 +43,20 @@
   "queue": {
     "_links": {
       "self": {
-        "href": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Hosted Ubuntu 1604$"
+        "href": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Azure Pipelines$"
       }
     },
-    "id": "$Hosted Ubuntu 1604$",
-    "name": "Hosted Ubuntu 1604",
-    "url": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Hosted Ubuntu 1604$",
+    "id": "$Azure Pipelines$",
+    "name": "Azure Pipelines",
+    "url": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Azure Pipelines$",
     "pool": {
       "id": "",
-      "name": "Hosted Ubuntu 1604",
+      "name": "Azure Pipelines",
       "isHosted": true
     }
   },
   "id": "",
-  "name": "MyShuttle-Docker-YAML",
+  "name": "TailwindTraders-Build",
   "url": "",
   "uri": "",
   "path": "\\",

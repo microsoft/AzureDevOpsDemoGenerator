@@ -1,0 +1,19 @@
+{
+  "name": "$name$",
+  "position": {
+    "row":"" ,
+    "column": ""
+  },
+  "size": {
+    "rowSpan": 1,
+    "columnSpan": 1
+  },
+ "settings":"{\"defaultBackgroundColor\":\"#e60017\",\"queryId\":\"$QueryId$\",\"queryName\":\"$QueryName$\",\"colorRules\":[]}",
+  "settingsVersion": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+ 
+  "contributionId": "ms.vss-dashboards-web.Microsoft.VisualStudioOnline.Dashboards.QueryScalarWidget"
+}

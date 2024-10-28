@@ -1,0 +1,82 @@
+{
+  "triggers": [
+    {
+      "branchFilters": [],
+      "pathFilters": [],
+      "settingsSourceType": 2,
+      "batchChanges": false,
+      "maxConcurrentBuildsPerBranch": 1,
+      "triggerType": "continuousIntegration"
+    }
+  ],
+  "variables": {
+    "p_comosdb_name": {
+      "value": "db"
+    },
+    "p_site_prefix": {
+      "value": "contoso-air"
+    },
+    "web": {
+      "value": "contosoair$UUID$"
+    },
+    "SUBSCRIPTIONID": {
+      "value": "0BD9A007-24FC-496D-B3E8-79DA25E16277"
+    }
+  },
+  "properties": {},
+  "tags": [],
+  "_links": "{}",
+  "jobAuthorizationScope": "projectCollection",
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "yamlFilename": "azure-pipelines.yml",
+    "type": 2
+  },
+  "repository": {
+    "properties": {
+      "cloneUrl": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/ContosoAir-tc",
+      "fullName": "ContosoAir-tc",
+      "defaultBranch": "refs/heads/master",
+      "isFork": "False",
+      "safeRepository": "$ContosoAir-tc$",
+      "reportBuildStatus": "true",
+      "fetchDepth": "1"
+    },
+    "id": "$ContosoAir-tc$",
+    "type": "TfsGit",
+    "name": "ContosoAir-tc",
+    "url": "https://$Organization$@dev.azure.com/$Organization$/$ProjectName$/_git/ContosoAir-tc",
+    "defaultBranch": "refs/heads/master",
+    "clean": null,
+    "checkoutSubmodules": false
+  },
+  "quality": "definition",
+  "authoredBy": "{}",
+  "drafts": [],
+  "queue": {
+    "_links": {
+      "self": {
+        "href": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Azure Pipelines$"
+      }
+    },
+    "id": "$Azure Pipelines$",
+    "name": "Azure Pipelines",
+    "url": "https://dev.azure.com/$Organization$/_apis/build/Queues/$Azure Pipelines$",
+    "pool": {
+      "id": "",
+      "name": "Azure Pipelines",
+      "isHosted": true
+    }
+  },
+  "id": "",
+  "name": "ContosoAirWebCI",
+  "url": "",
+  "uri": "",
+  "path": "\\",
+  "type": "build",
+  "queueStatus": "enabled",
+  "revision": 3,
+  "createdDate": "",
+  "project": "{}"
+}

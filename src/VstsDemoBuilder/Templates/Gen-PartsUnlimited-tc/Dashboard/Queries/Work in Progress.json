@@ -1,0 +1,4 @@
+﻿{
+  "name": "Work in Progress_WI",
+  "wiql": "SELECT [System.Id],[System.WorkItemType],[System.Title], [System.AssignedTo],[System.State],[Microsoft.VSTS.Scheduling.RemainingWork] FROM workitems WHERE [System.TeamProject] = @project     AND [System.IterationPath] UNDER '$projectId$\\Sprint 2' AND [System.WorkItemType] IN GROUP 'Microsoft.TaskCategory'     AND [System.State] = 'In Progress' ORDER BY [System.AssignedTo],[Microsoft.VSTS.Common.BacklogPriority],[System.Id]"
+}

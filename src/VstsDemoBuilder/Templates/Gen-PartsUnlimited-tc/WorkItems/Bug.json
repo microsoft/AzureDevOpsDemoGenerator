@@ -1,0 +1,96 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": 12426,
+      "rev": 1,
+      "fields": {
+        "System.AreaPath": "PartsUnlimited-tc",
+        "System.TeamProject": "PartsUnlimited-tc",
+        "System.IterationPath": "$ProjectName$\\Sprint 3",
+        "System.WorkItemType": "Bug",
+        "System.State": "New",
+        "System.Reason": "New defect reported",
+        "System.Title": "Sel_IE_Navigate Failed in 2488",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Sel_IE_Navigate Failed in 2488",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 2.0,
+        "System.BoardLane": null,
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "System.LinkTypes.Hierarchy-Reverse",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/12288",
+          "attributes": {
+            "isLocked": "false",
+            "comment": "Making a new link for the dependency",
+            "name": "Parent"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/12426"
+    },
+    {
+      "id": 12427,
+      "rev": 3,
+      "fields": {
+        "System.AreaPath": "PartsUnlimited-tc",
+        "System.TeamProject": "PartsUnlimited-tc",
+        "System.IterationPath": "PartsUnlimited-tc",
+        "System.WorkItemType": "Bug",
+        "System.State": "Approved",
+        "System.Reason": "Approved by the Product Owner",
+        "System.Title": "Decline in orders noticed - Please Investigate immediately",
+        "Microsoft.VSTS.Scheduling.Effort": 0.0,
+        "System.Description": "Decline in orders noticed - Please Investigate immediately",
+        "System.AssignedTo": null,
+        "Microsoft.VSTS.Scheduling.RemainingWork": 0.0,
+        "Microsoft.VSTS.Common.Priority": 1.0,
+        "System.BoardLane": "Expedite",
+        "System.Tags": null,
+        "Microsoft.VSTS.TCM.Steps": null,
+        "Microsoft.VSTS.TCM.Parameters": null,
+        "Microsoft.VSTS.TCM.LocalDataSource": null,
+        "Microsoft.VSTS.TCM.AutomationStatus": null,
+        "System.History": null
+      },
+      "relations": [
+        {
+          "rel": "AttachedFile",
+          "url": "https://dev.azure.com/akshayhosur/_apis/wit/attachments/be8215ac-d583-40b6-9620-7e1ed8d8eea9",
+          "attributes": {
+            "authorizedDate": "2023-12-19T08:21:59.423Z",
+            "id": "7741214",
+            "resourceCreatedDate": "2023-12-19T08:21:59.423Z",
+            "resourceModifiedDate": "2023-12-19T08:21:59.423Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "appInsights.png"
+          }
+        },
+        {
+          "rel": "ArtifactLink",
+          "url": "vstfs:///Git/PullRequestId/f8066fe0-646f-4433-a7a6-ef44ab469f50%2F%2F$Fixed Product Search Functionality$",
+          "attributes": {
+            "authorizedDate": "2023-12-19T08:21:59.72Z",
+            "id": "7741215",
+            "resourceCreatedDate": "2023-12-19T08:21:59.72Z",
+            "resourceModifiedDate": "2023-12-19T08:21:59.72Z",
+            "revisedDate": "9999-01-01T00:00:00Z",
+            "name": "Pull Request"
+          }
+        }
+      ],
+      "url": "https://dev.azure.com/akshayhosur/_apis/wit/workItems/12427"
+    }
+  ],
+  "HttpStatusCode": 0,
+  "Message": null
+}

@@ -1,0 +1,11 @@
+﻿{
+   "title": "Fixed Product Search Functionality",
+  "description": "Please review",
+  "sourceRefName": "refs/heads/FixSearchFunctionality",
+  "targetRefName": "refs/heads/master",
+  "reviewers": [
+    {
+      "id": "$reviewer$"
+    }
+  ]
+}

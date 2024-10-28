@@ -1,0 +1,23 @@
+{
+  "data": {
+    "environment": "AzureCloud",
+    "subscriptionId": "2CF8AA01-169D-4182-94BB-5DE7825B37D6",
+    "subscriptionName": "Visual Studio Enterprise",
+    "scopeLevel": "Subscription"
+  },
+  "name": "AzureRM",
+  "type": "azurerm",
+  "url": "https://management.azure.com/",
+  "authorization": {
+    "parameters": {
+      "tenantId": "2CF8AA01-169D-4182-94BB-5DE7825B37D6",
+      "servicePrincipalId": "2CF8AA01-169D-4182-94BB-5DE7825B37D6",
+      "authenticationType": "spnKey",
+      "servicePrincipalKey": "spnKey"
+    },
+    "scheme": "ServicePrincipal"
+  },
+  "isShared": false,
+  "isReady": true,
+  "owner": "Library"
+}
