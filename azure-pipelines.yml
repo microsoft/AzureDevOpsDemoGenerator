@@ -42,3 +42,36 @@ stages:
       inputs:
         PathtoPublish: '$(build.sourcesdirectory)\Artifacts'
         ArtifactName: '$(artifactName)'
+
+- stage: Test
+  dependsOn: Build
+  condition: and(succeeded(), or(eq(variables['Build.Reason'], 'IndividualCI'), eq(variables['Build.Reason'], 'Manual')))
+  displayName: Test Deployment
+  jobs: 
+  - deployment: DeployWeb
+    displayName: Deploy to Test Environment
+    environment: 
+      name: 'Test'
+    variables: 
+       webAppName: 'adogen-aga6aehvg2d2hrhb.canadacentral-01'
+    strategy:
+      runOnce:
+        deploy:
+          pool: 
+            vmImage: 'windows-2019'         
+          steps:
+            - task: DownloadBuildArtifacts@0
+              displayName: 'Download Build Artifacts'
+              inputs:
+                buildType: 'current'
+                downloadType: 'single'
+                artifactName: 'drop'
+                downloadPath: '$(System.DefaultWorkingDirectory)'
+            
+            - task: AzureRmWebAppDeployment@4
+              inputs:
+                ConnectionType: 'AzureRM'
+                azureSubscription: 'demogen-local'
+                appType: webApp
+                WebAppName: '$(webAppName)'
+                AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
