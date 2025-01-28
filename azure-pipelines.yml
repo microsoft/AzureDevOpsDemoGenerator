@@ -7,7 +7,7 @@ stages:
       demands:
       - msbuild
       - visualstudio
-      vmImage: 'windows-2019'
+      vmImage: 'windows-2022'
 
     variables:
       solution: '**\src\VSTSDemoGeneratorV2.sln'
@@ -54,31 +54,30 @@ stages:
       name: 'Test'
     variables: 
        webAppName: 'adogen'
-    strategy:
-      runOnce:
-        deploy:
-          pool: 
-            name: Azure Pipelines
-            demands:
-            - msbuild
-            - visualstudio
-            vmImage: 'windows-2019'  
-          steps:
-            - task: DownloadBuildArtifacts@0
-              displayName: 'Download Build Artifacts'
-              inputs:
-                buildType: 'current'
-                downloadType: 'single'
-                artifactName: 'drop'
-                downloadPath: '$(System.DefaultWorkingDirectory)'
-            
-            - task: AzureRmWebAppDeployment@4
-              inputs:
-                ConnectionType: 'AzureRM'
-                azureSubscription: 'demogen-local'
-                appType: 'webApp'
-                WebAppName: 'adogen'
-                packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-                AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
-                enableCustomDeployment: true
-                DeploymentType: 'webDeploy'
+  - job: Build
+    pool:
+      name: Azure Pipelines
+      demands:
+      - msbuild
+      - visualstudio
+      vmImage: 'windows-2022'
+
+      steps:
+        - task: DownloadBuildArtifacts@0
+          displayName: 'Download Build Artifacts'
+          inputs:
+            buildType: 'current'
+            downloadType: 'single'
+            artifactName: 'drop'
+            downloadPath: '$(System.DefaultWorkingDirectory)'
+        
+        - task: AzureRmWebAppDeployment@4
+          inputs:
+            ConnectionType: 'AzureRM'
+            azureSubscription: 'demogen-local'
+            appType: 'webApp'
+            WebAppName: 'adogen'
+            packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+            AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
+            enableCustomDeployment: true
+            DeploymentType: 'webDeploy'
