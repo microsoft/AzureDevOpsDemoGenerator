@@ -66,9 +66,12 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'demogen-local'
+        azureSubscription: 'demogen-production'
         appType: 'webApp'
-        WebAppName: '$(webAppName)-staging'
+        WebAppName: 'adogen'
+        deployToSlotOrASE: true
+        ResourceGroupName: 'ADO'
+        SlotName: 'staging'
         package: '$(System.DefaultWorkingDirectory)/**/*.zip'
         AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
         enableCustomDeployment: true
@@ -97,10 +100,10 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'demogen-local'
+        azureSubscription: 'demogen-production'
         appType: 'webApp'
-        WebAppName: '$(webAppName)'
+        WebAppName: 'adogen'
         package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-        AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
+        AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId) -ClientSecret $(ClientSecret) -RedirectUri $(RedirectUri) -AppScope $(AppScope)'
         enableCustomDeployment: true
         DeploymentType: 'webDeploy'
