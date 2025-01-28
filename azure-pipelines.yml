@@ -54,7 +54,7 @@ stages:
       name: 'Test'
     variables: 
        webAppName: 'adogen'
-  - job: Build
+  - job: Deploy
     pool:
       name: Azure Pipelines
       demands:
