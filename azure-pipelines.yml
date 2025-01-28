@@ -47,14 +47,10 @@ stages:
   dependsOn: Build
   condition: and(succeeded(), or(eq(variables['Build.Reason'], 'IndividualCI'), eq(variables['Build.Reason'], 'Manual')))
   displayName: Test Deployment
-  jobs: 
-  - deployment: DeployWeb
-    displayName: Deploy to Test Environment
-    environment: 
-      name: 'Test'
+  jobs:   
+  - job: Deploy
     variables: 
        webAppName: 'adogen'
-  - job: Deploy
     pool:
       name: Azure Pipelines
       demands:
