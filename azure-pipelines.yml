@@ -51,26 +51,25 @@ stages:
   - job: Deploy
     variables: 
        webAppName: 'adogen'
+       artifactName: 'drop'
     pool:
-      name: Azure Pipelines
       vmImage: 'windows-2022'
-
-      steps:
-        - task: DownloadBuildArtifacts@0
-          displayName: 'Download Build Artifacts'
-          inputs:
-            buildType: 'current'
-            downloadType: 'single'
-            artifactName: 'drop'
-            downloadPath: '$(System.DefaultWorkingDirectory)'
-        
-        - task: AzureRmWebAppDeployment@4
-          inputs:
-            ConnectionType: 'AzureRM'
-            azureSubscription: 'demogen-local'
-            appType: 'webApp'
-            WebAppName: 'adogen'
-            packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-            AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
-            enableCustomDeployment: true
-            DeploymentType: 'webDeploy'
+    steps:
+    - task: DownloadBuildArtifacts@0
+      displayName: 'Download Build Artifacts'
+      inputs:
+        buildType: 'current'
+        downloadType: 'single'
+        artifactName: '$(artifactName)'
+        downloadPath: '$(System.DefaultWorkingDirectory)'
+    
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'demogen-local'
+        appType: 'webApp'
+        WebAppName: '$(webAppName)'
+        package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
+        enableCustomDeployment: true
+        DeploymentType: 'webDeploy'
