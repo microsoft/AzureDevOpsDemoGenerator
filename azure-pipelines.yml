@@ -53,9 +53,6 @@ stages:
        webAppName: 'adogen'
     pool:
       name: Azure Pipelines
-      demands:
-      - msbuild
-      - visualstudio
       vmImage: 'windows-2022'
 
       steps:
