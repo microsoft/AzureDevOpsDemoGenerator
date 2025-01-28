@@ -72,6 +72,9 @@ stages:
               inputs:
                 ConnectionType: 'AzureRM'
                 azureSubscription: 'demogen-local'
-                appType: webApp
-                WebAppName: '$(webAppName)'
+                appType: 'webApp'
+                WebAppName: 'adogen'
+                packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
                 AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
+                enableCustomDeployment: true
+                DeploymentType: 'webDeploy'
