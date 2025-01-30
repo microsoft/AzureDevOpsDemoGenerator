@@ -73,7 +73,7 @@ stages:
         ResourceGroupName: 'azuredevopsdemogenerator-production-group'
         SlotName: 'staging'
         package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-        AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
+        AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-stage) -ClientSecret $(ClientSecret-stage) -RedirectUri $(RedirectUri-stage) -AppScope $(AppScope-stage)'
         enableCustomDeployment: true
         DeploymentType: 'webDeploy'
     
