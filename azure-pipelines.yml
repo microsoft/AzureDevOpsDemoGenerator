@@ -43,14 +43,14 @@ stages:
         PathtoPublish: '$(build.sourcesdirectory)\Artifacts'
         ArtifactName: '$(artifactName)'
 
-- stage: Test
+- stage: Staging
   dependsOn: Build
   condition: and(succeeded(), or(eq(variables['Build.Reason'], 'IndividualCI'), eq(variables['Build.Reason'], 'PullRequest')))
-  displayName: Test Deployment
+  displayName: Staging Deployment
   jobs:   
   - job: Deploy
     variables: 
-       webAppName: 'adogen'
+       webAppName: 'azuredevopsdemogenerator'
        artifactName: 'drop'
     pool:
       vmImage: 'windows-2022'
@@ -66,11 +66,11 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'demogen-production'
+        azureSubscription: 'AzureDevOpsDemoGenProd'
         appType: 'webApp'
-        WebAppName: 'adogen'
+        WebAppName: 'azuredevopsdemogenerator'
         deployToSlotOrASE: true
-        ResourceGroupName: 'ADO'
+        ResourceGroupName: 'azuredevopsdemogenerator-production-group'
         SlotName: 'staging'
         package: '$(System.DefaultWorkingDirectory)/**/*.zip'
         AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId-test) -ClientSecret $(ClientSecret-test) -RedirectUri $(RedirectUri-test) -AppScope $(AppScope-test)'
@@ -84,7 +84,7 @@ stages:
   jobs:   
   - job: 'Prod'
     variables: 
-       webAppName: 'adogen'
+       webAppName: 'azuredevopsdemogenerator'
        artifactName: 'drop'
     pool:
       vmImage: 'windows-2022'
@@ -100,9 +100,9 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'demogen-production'
+        azureSubscription: 'AzureDevOpsDemoGenProd'
         appType: 'webApp'
-        WebAppName: 'adogen'
+        WebAppName: 'azuredevopsdemogenerator'
         package: '$(System.DefaultWorkingDirectory)/**/*.zip'
         AppSettings: '-DefaultTemplate eShopOnWeb -Password $(Password) -ClientId $(ClientId) -ClientSecret $(ClientSecret) -RedirectUri $(RedirectUri) -AppScope $(AppScope)'
         enableCustomDeployment: true
