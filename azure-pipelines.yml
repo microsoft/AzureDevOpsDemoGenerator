@@ -126,10 +126,3 @@ stages:
               WebAppName: 'azuredevopsdemogenerator'
               ResourceGroupName: 'azuredevopsdemogenerator-production-group'
               SourceSlot: 'preprod'
-          - task: AzureAppServiceSettings@1
-            displayName: Azure App Settings            
-            inputs:
-              azureSubscription: 'AzureDevOpsDemoGenProd'
-              appName: 'azuredevopsdemogenerator'
-              resourceGroupName: 'azuredevopsdemogenerator-production-group'
-              appSettings: '-DefaultTemplate eShopOnWeb'
