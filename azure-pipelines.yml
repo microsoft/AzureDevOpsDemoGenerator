@@ -107,7 +107,7 @@ stages:
 
 - stage: Prod
   condition: and(succeeded(), eq(variables['Build.Reason'], 'Manual'))
-  dependsOn: Build
+  dependsOn: Preprod
   displayName: Prod Deployment
   jobs:   
   - deployment: Prod
