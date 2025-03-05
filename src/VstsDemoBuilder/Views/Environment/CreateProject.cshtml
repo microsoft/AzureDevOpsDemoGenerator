@@ -137,7 +137,7 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" id="switch" href="https://aex.dev.azure.com/"  target="_blank">Switch Directory</a>
+                    <a class="dropdown-item" id="switch" href="https://aex.dev.azure.com/" target="_blank">Switch Directory</a>
                     <a class="dropdown-item" href="../Account/SignOut">Sign out</a>
                 </div>
             </li>
@@ -157,7 +157,9 @@
             <span style="color:#b71616">@ViewBag.ErrorMessage</span>
         </div>
     }
-
+    <div class="text-center VSTS-details" style="background-color: #f7bfdc; border: 1px; font-display: unset">
+        <p>Starting <b>February 28, 2025</b>, we are eliminating the need for us to authenticate on your behalf. Instead you will have access to an executable (.exe) file to create projects. The application is available now and you can learn how to run it in the <a href="https://github.com/microsoft/AzDevOpsDemoGenerator/blob/main/docs/RunApplication.md" rel="noopener" target="_blank">AzDevOpsDemoGenerator repo</a>. If you encounter any issues, please let us know by creating an issue <a href="https://github.com/microsoft/AzDevOpsDemoGenerator/issues/" rel="noopener" target="_blank">here</a></p>
+    </div>
     <div class="container-fluid mt-3">
         <div class="row VSTS-mh-100">
             <!--
@@ -305,12 +307,13 @@
             -->
             <div class="col-md-3 order-2 order-md-3">
                 <div class="card text-white mb-3 vstsScroll" id="announcement" style="max-height:250px;overflow-y:auto;">
-                    <div class="card-header bg-primary">Note - enable the classic build and release pipeline!!</div>
+                    <div class="card-header bg-primary">Note - For newly created organizations!!</div>
                     <div class="card-body" style="background-color:white; color:red;">
                         <ul style="padding-left:10px; list-style-type:none">
+                            <p>If you're using brand new organization</p>
                             <li>
-                                <p>If you're using brand new organization, please enable the creation of classic build and relase pipeline by disabling the following flag under <i>Organization Settings >> Pipelines >> Settings</i><a href="../Images/enable_classic.png" target="_blank"> here. </a></p>
-                                <p>We are working on migrating the classic pipelines to YAML.</p>
+                                <p>1. Enable the <b>Creation of classic build and release pipeline </b> by disabling the following flag under <i>Organization Settings >> Pipelines >> Settings</i><a href="../Images/enable_classic.png" target="_blank"> here. </a></p>
+                                <p>2. Enable <b>Third-party Authentication via OAuth</b> option in the <i>Organizations settings >> Policies</i></p>
                             </li>
                         </ul>
                     </div>
